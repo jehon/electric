@@ -1,0 +1,150 @@
+[2016-01-07 10:21:10] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:21:10] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:21:11] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:23:30] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:23:31] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:23:32] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:23:45] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:23:45] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:23:46] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:23:59] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:23:59] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:24:00] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:24:13] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:24:13] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:24:14] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:24:26] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:24:27] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:24:27] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:24:40] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:24:40] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:24:41] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:24:54] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:24:55] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:24:55] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:25:08] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:25:09] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:25:09] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:25:22] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:25:22] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
+[2016-01-07 10:25:23] production.ERROR: exception 'ErrorException' with message 'Undefined variable: uri' in /var/www/cryptomedic/tests/router.php:7
+Stack trace:
+#0 /var/www/cryptomedic/tests/router.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/crypto...', 7, Array)
+#1 /var/www/cryptomedic/tests/router.php(22): report('ok')
+#2 {main}  
