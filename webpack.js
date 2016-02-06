@@ -14,6 +14,7 @@ fse.emptyDirSync(__dirname + '/www/build');
 var config = {
   entry: [
     './node_modules/bootstrap/dist/css/bootstrap.css',
+    './app/components/main.jsx'
   ]
   // .concat(glob.sync('./app/css/*.css'))
   ,
