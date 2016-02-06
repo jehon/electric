@@ -13,20 +13,12 @@ fse.emptyDirSync(__dirname + '/www/build');
 
 var config = {
   entry: [
-      // 'file?name=[name].[ext]!./app/index.html',
-    ]
-    .concat([
-      './node_modules/bootstrap/dist/css/bootstrap.css',
-      './node_modules/jquery-ui/themes/ui-lightness/jquery-ui.css'
-    ])
-    .concat(glob.sync('./app/css/*.css'))
-    .concat([
-      './node_modules/bootstrap/dist/js/bootstrap.min.js',
-      // './node_modules/html2canvas/dist/html2canvas.js',
-    ])
-    ,
+    './node_modules/bootstrap/dist/css/bootstrap.css',
+  ]
+  // .concat(glob.sync('./app/css/*.css'))
+  ,
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: [ '', '.js', '.jsx' ],
     modulesDirectories: [ 'node_modules', 'app' ]
   },
   output: {
