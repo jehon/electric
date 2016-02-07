@@ -3,8 +3,8 @@ var WebpackDevServer = require('webpack-dev-server');
 var config = require('./webpack.dev.js');
 
 new WebpackDevServer(webpack(config), {
-  publicPath: config.output.publicPath,
-  // publicPath: '/www',
+  // publicPath: config.output.publicPath,
+  publicPath: '/build',
   hot: true,
   historyApiFallback: true,
   stats: {
@@ -14,12 +14,13 @@ new WebpackDevServer(webpack(config), {
     aggregateTimeout: 300,
     poll: 1000
   },
-  // proxy: {
-  //   '/cryptomedic/api/*': {
-  //     target: 'http://localhost',
-  //     secure: false,
-  //   },
-  // }
+  proxy: {
+    '/plans/*': {
+      // target: 'http://localhost',
+      target: 'file://' + __dirname + '/www/',
+      secure: false,
+    },
+  }
 }).listen(8080, '0.0.0.0', function (err) {
   if (err) {
     console.error(err);

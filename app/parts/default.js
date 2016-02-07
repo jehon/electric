@@ -1,5 +1,4 @@
 
-
 export default class {
   constructor(x, y, orientation = 'N', scale = 1) {
     this.x = x;

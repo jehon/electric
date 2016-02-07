@@ -1,9 +1,10 @@
 
 import 'babel-core/polyfill';
 import React from 'react';
-import Schema from 'components/Schema';
+import SchemaPosition from 'components/SchemaPosition';
+import schema from 'schema';
 
 React.render(
-  <Schema />,
+  <SchemaPosition image={{ src: 'http://localhost/rdc.png', width: 1089, height: 722, scale: 0.75 }}/>,
   document.getElementById('schema')
 );

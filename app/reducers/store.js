@@ -1,70 +1,29 @@
 
-import { combineReducers, compose, createStore, applyMiddleware } from 'redux';
-// import thunkMiddleware from 'redux-thunk';
-// import createLogger from 'redux-logger';
-// import { devTools, persistState } from 'redux-devtools';
-// import { DevTools, DebugPanel, LogMonitor } from 'redux-devtools/lib/react';
+import { combineReducers, createStore }                           from 'redux';
+// import thunkMiddleware                                         from 'redux-thunk';
+// import { DevTools, DebugPanel, LogMonitor }                       from 'redux-devtools/lib/react';
 
-import connection from 'reducers/connectionReducers';
-import state from 'reducers/stateReducers';
-import database from 'reducers/databaseReducers';
-import log from 'reducers/logReducers';
+import prefs                                                      from 'reducers/prefsReducers';
+import connection                                                 from 'reducers/connectionReducers';
+import stateReducers                                              from 'reducers/stateReducers';
+import circuitReducers                                            from 'reducers/circuitReducers';
 
-// Manage persistence
-// import { persistStore, autoRehydrate } from 'redux-persist';
+let store = createStore(
+  function(state, action) {
+    // Log
+    if (typeof(window.__karma__) == 'undefined') {
+      console.log('Action: ', action.type, ' with ', action.payload);
+    }
 
-// const loggerMiddleware = createLogger({
-//   level: 'info',
-//   collapsed: true,
-// });
-
-if (typeof(window.__karma__) == 'undefined') {
-  // disable logger?
-}
-
-let finalCreateStore = compose(
-  //enables middleware:
-  applyMiddleware(
-    // thunkMiddleware,
-    // loggerMiddleware
-  )
-  ,
-  // Provides support for DevTools:
-  // devTools(),
-  // Lets you write ?debug_session=<name> in address bar to persist sessions
-  // persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/))
-)(createStore);
-
-// function configureStore(initialState) {
-//   const store = autoRehydrate()(finalCreateStore)(
-//       combineReducers({
-//         connection,
-//         state,
-//         database
-//       })
-//     );
-//   if (module.hot) {
-//     // Enable Webpack hot module replacement for reducers
-//     module.hot.accept('../reducers', () => {
-//       const nextRootReducer = require('../reducers');
-//       store.replaceReducer(nextRootReducer);
-//     });
-//   }
-//   return store;
-// }
-// const store = configureStore();
-
-
-
-let store = finalCreateStore(combineReducers({
-  connection,
-  state,
-  database,
-  log
-}));
-
-// persistStore(store, { whitelist: [ "prefs" ] }, () => {
-//   store.dispatch(customRehydrate());
-// });
+    // Work the state
+    state = combineReducers({
+      prefs,
+      connection,
+      state:      stateReducers,
+      circuit:    circuitReducers,
+    })(state, action);
+    return state;
+  }
+);
 
 export default store;

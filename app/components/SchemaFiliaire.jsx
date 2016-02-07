@@ -1,17 +1,10 @@
 
 import React, { PropTypes } from 'react';
 import SVGDrawing from 'components/SVGDrawing';
-
-import OrientedPoint from 'helpers/OrientedPoint';
-
-// import * as B from "react-bootstrap";
-
 // import LoadingWrapper from "components/helpers/LoadingWrapper";
 
 export default class Schema extends React.Component {
   render() {
-    var src = new OrientedPoint(100, 100, 'N', 1);
-
     return (
       <div>
         Hello world!
@@ -30,30 +23,3 @@ export default class Schema extends React.Component {
     );
   }
 }
-
-/*
-          <circle fill="none" stroke="black" cx={src.x()} cy={src.y()} r={20*1} from="25" to="50"/>
-          <line x1={src.x()} y1={src.y()} x2={src.away(10, 10).x()} y2={src.away(10, 10).y()} strokeWidth="5" stroke="orange"/>
-
-
-A rx ry x-axis-rotation large-arc-flag sweep-flag x y
-
-besoins par objects:
-- width
-- height
-- draw
-- name
-
-to draw it:
-- list of known elements
-- find the correct element in it
-- call draw, width, height
-
-ex: block, plug, light, ...
-
-==> class? => plus robuste dans la durée? (besoin des templates alors pour avoir plus facile)
-==> components => plus facile à écrire?
-
-décision: class!!!
-
-*/
