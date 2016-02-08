@@ -1,10 +1,9 @@
 
-xls2json = require("xls-to-json");
-fs = require("fs");
-
+var xls2json = require('xls-to-json');
+var fs = require('fs');
 
 xls2json({
-  'input': __dirname + "/../references.xls",
+  'input': __dirname + '/../references.xls',
   'output': null,
   'sheet': 'elements'
 }, function(err, result) {
@@ -16,6 +15,6 @@ xls2json({
       data[result[i].code] = result[i];
     }
     console.log(data);
-    fs.writeFileSync("references.js", "export default " + JSON.stringify(data));
+    fs.writeFileSync(__dirname + '/www/build/references.js', 'export default ' + JSON.stringify(data));
   }
 });
