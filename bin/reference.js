@@ -14,7 +14,6 @@ xls2json({
     for(var i in result) {
       data[result[i].code] = result[i];
     }
-    console.log(data);
-    fs.writeFileSync(__dirname + '/www/build/references.js', 'export default ' + JSON.stringify(data));
+    fs.writeFileSync(__dirname + '/../app/build/references.js', 'export default ' + JSON.stringify(data));
   }
 });

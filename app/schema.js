@@ -10,6 +10,7 @@ export default {
           x: 75,
           y: 100,
           orientation: 90,
+          plan: 1,
           name: '90'
         },
         {
@@ -17,6 +18,7 @@ export default {
           x: 100,
           y: 200,
           orientation: 270,
+          plan: 1,
           name: '270'
         }
       ]
@@ -26,6 +28,7 @@ export default {
       x: 10,
       y: 10,
       orientation: 0,
+      plan: 1,
       name: 'T'
     },
     {
@@ -33,7 +36,8 @@ export default {
       x: 100,
       y: 40,
       orientation: 180,
-      name: '180'
+      plan: 2,
+      name: 'P2-180'
     }
   ]
 };

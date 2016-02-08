@@ -60,5 +60,5 @@
     "build-reference": "node bin/reference.js",
     "postinstall":     "node ./bin/setselenium.js",
     "postupdate":      "node ./bin/setselenium.js"
-  },
+  }
 }

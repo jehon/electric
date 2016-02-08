@@ -1,23 +1,52 @@
 
+import references from 'build/references';
+
 export default class elementHelper {
   constructor(data) {
     this.data = data;
-    this.element =
+    if (this.isValid()) {
+      this.element = references[this.data.type];
+      if (!this.element) {
+        throw new Error('Element not found: ', this.data.type);
+      }
+    }
   }
 
   isValid() {
-    return !(!this.data.type || !this.data.x & !this.data.y);
+    return this.data.type;
+  }
+
+  isPositionned(plan = false) {
+    if (!this.isValid()) {
+      return false;
+    }
+    if (!this.data.x || !this.data.y) {
+      return false;
+    }
+    if (plan && plan != this.data.plan) {
+      return false;
+    }
+    return true;
   }
 
   width() {
-    return 1;
+    if (!this.isValid()) {
+      return 0;
+    }
+    return this.element.width;
   }
 
   height() {
-    return 1;
+    if (!this.isValid()) {
+      return 0;
+    }
+    return parseFloat(this.element.height);
   }
 
   draw() {
-
+    if (!this.isValid()) {
+      return '';
+    }
+    return this.element.path;
   }
 }

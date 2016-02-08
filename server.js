@@ -15,7 +15,7 @@ new WebpackDevServer(webpack(config), {
     poll: 1000
   },
   proxy: {
-    '/plans/*': {
+    '/*': {
       target: 'http://localhost:10080',
       // target: 'file://' + __dirname + '/www/',
       secure: false,
