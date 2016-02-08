@@ -16,8 +16,8 @@ new WebpackDevServer(webpack(config), {
   },
   proxy: {
     '/plans/*': {
-      // target: 'http://localhost',
-      target: 'file://' + __dirname + '/www/',
+      target: 'http://localhost:10080',
+      // target: 'file://' + __dirname + '/www/',
       secure: false,
     },
   }

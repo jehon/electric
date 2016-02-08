@@ -16,7 +16,7 @@ var config = {
     './node_modules/bootstrap/dist/css/bootstrap.css',
     './app/components/main.jsx'
   ]
-  // .concat(glob.sync('./app/css/*.css'))
+  .concat(glob.sync('./app/css/*.css'))
   ,
   resolve: {
     extensions: [ '', '.js', '.jsx' ],
