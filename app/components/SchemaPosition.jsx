@@ -3,6 +3,15 @@ import React           from 'react';
 import SVGDrawing      from 'components/SVGDrawing';
 import ElementPosition from 'components/ElementPosition';
 
+function schemaClick(evt) {
+  console.log('here we are');
+  var e = evt.target;
+  var dim = e.getBoundingClientRect();
+  var x = evt.clientX - dim.left;
+  var y = evt.clientY - dim.top;
+  alert('x: ' + x + ' y:' + y);
+}
+
 export default class SchemaPosition extends React.Component {
   render() {
     var context = {
@@ -13,8 +22,14 @@ export default class SchemaPosition extends React.Component {
     return (
       <div>
         <div>Toolbar and title</div>
-        <SVGDrawing width={this.props.image.width} height={this.props.image.height}>
-          <image x='0' y='0' width={this.props.image.width} height={this.props.image.height} xlinkHref={this.props.image.src} />
+        <SVGDrawing
+            width={this.props.image.width} height={this.props.image.height}
+            onClick={schemaClick}
+            >
+          <image
+              x='0' y='0'
+              width={this.props.image.width} height={this.props.image.height}
+              xlinkHref={this.props.image.src} />
           <ElementPosition item={this.props.schema} context={context} />
         </SVGDrawing>
       </div>

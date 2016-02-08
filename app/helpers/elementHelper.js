@@ -33,7 +33,7 @@ export default class elementHelper {
     if (!this.isValid()) {
       return 0;
     }
-    return this.element.width;
+    return parseFloat(this.element.width);
   }
 
   height() {
