@@ -1,10 +1,9 @@
 {
-  "name": "CryptomedicApp",
+  "name": "electric_house",
   "private": true,
   "version": "4.11.4",
-  "description": "Cryptomedic application for all plateforms",
-  "repository": "https://github.com/jehon/CryptomedicApp",
-  "license": "MIT",
+  "description": "Electric house for you",
+  "license": "Private",
   "dependencies": {
     "bootstrap": "latest",
     "exports-loader": "^0.6.2",
@@ -51,12 +50,14 @@
     "svgo": "^0.6.1",
     "svgo-loader": "^1.1.0",
     "webpack": "~1",
-    "webpack-dev-server": "^1"
+    "webpack-dev-server": "^1",
+    "xls-to-json": "^0.3.2"
   },
   "scripts": {
     "build": "webpack --config webpack.js -p",
     "builddev": "webpack --config webpack.js -d",
     "dev-server": "node server.js | grep 'built\\|error\\|VALID'",
+    "build-reference": "node bin/reference.js",
     "postinstall": "bower install; node ./bin/setselenium.js",
     "postupdate": "bower update; node ./bin/setselenium.js"
   },
