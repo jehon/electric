@@ -10,4 +10,8 @@ if [ "$1" != "" ]; then
 fi
 FILENAME="$FILENAME.sql.gz"
 
-mysqldump -u root mydb | gzip -c > "$ROOT/$FILENAME"
+if mysqlshow --user=root mydb 2>/dev/null ; then
+  mysqldump -u root mydb | gzip -c > "$ROOT/$FILENAME"
+else
+  echo "No database found"
+fi

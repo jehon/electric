@@ -21,7 +21,7 @@ PROFILE
 chmod 777 /etc/profile.d/append-project.sh
 
 # Manage packages
-if test "`find /root/last_apt_get_update -mtime -1`"; then
+if test "`find /root/last_apt_get_update -mtime -1 2>/dev/null`"; then
   echo "Last apt-get update less than 1 day ago. Skipping it." >&2
   echo "To re-enable it:" >&2
   echo "rm /root/last_apt_get_update" >&2
@@ -38,15 +38,19 @@ fi
 # --force-yes
 DEBIAN_FRONTEND=noninteractive apt-get install --yes apache2 \
   build-essential \
-  multitail \
-  mysql-client \
-  crudini \
-  mysql-server \
-  nodejs \
-  curl \
+  multitail       \
+  mysql-client    \
+  crudini         \
+  mysql-server    \
+  nodejs npm      \
+  curl            \
   libapache2-mod-php5 php5-cli php5-mysql php5-mcrypt php5-curl \
-  phpmyadmin \
+  phpmyadmin      \
   git
+# end
+
+
+echo "Install terminated"
 
 # Manage user rights
 usermod -a -G adm vagrant
