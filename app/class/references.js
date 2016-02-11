@@ -20,14 +20,14 @@ export class P extends ElectricalElement {
 export class Disj extends CaseElement {
   constructor(data, context) {
     super(Object.assign({}, data, {
-      width       : '10',
-      height      : '45',
+      width       : '20',
+      height      : '60',
       name        : 'Disjoncteur'
     }), context);
   }
 
   draw() {
-    return '<path d="M0,0 l0,10 l-10,20 m10,0 l0,15"/>';
+    return '<path d="M0,0 l0,10 l10,35 m-10,0 l0,15"/>';
   }
 }
 
