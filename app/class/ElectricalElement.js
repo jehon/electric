@@ -37,23 +37,23 @@ export default class ElectricalElement {
   // Specific for filiaire
   /*************************************************/
   isVertical() {
-    if (this.data.children) {
-      return !(this.context.vertical);
-    }
+    // if (this.data.children) {
+    //   return !(this.context.vertical);
+    // }
     return this.context.vertical;
   }
 
   filiaireHeight() {
-    if (this.data.children) {
-      return 100;
-    }
+    // if (this.data.children) {
+    //   return 100;
+    // }
     return this.isVertical() ? this.height() : this.width();
   }
 
   filiaireWidth() {
-    if (this.data.children) {
-      return 100;
-    }
+    // if (this.data.children) {
+    //   return 100;
+    // }
     return this.isVertical() ? this.width() : this.height();
   }
 
