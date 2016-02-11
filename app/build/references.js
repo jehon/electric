@@ -1,1 +1,0 @@
-export default {"P":{"path":"M0,0 L0,10 m-7.5,0 l15,0 m-20,7.5 l5,0 a7.5 7.5 0 0 1 15 0 l5,0","code":"P","width":"25","height":"20","innerHeight":"15","apparent":"1","name":"Prise"},"Disj":{"path":"M0,0 L0,10 m-7.5,0 l15,0 m-20,7.5 l5,0 a7.5 7.5 0 0 1 15 0 l5,0","code":"Disj","width":"10","height":"30","innerHeight":"30","apparent":"0","name":"Disjoncteur"}}
