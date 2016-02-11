@@ -4,12 +4,11 @@ import SVGDrawing      from 'components/SVGDrawing';
 import ElementPosition from 'components/ElementPosition';
 
 function schemaClick(evt) {
-  console.log('here we are');
   var e = evt.target;
   var dim = e.getBoundingClientRect();
   var x = evt.clientX - dim.left;
   var y = evt.clientY - dim.top;
-  alert('x: ' + x + ' y:' + y);
+  console.info('clicked on x: ' + Math.round(x) + ', y: ' + Math.round(y));
 }
 
 export default class SchemaPosition extends React.Component {

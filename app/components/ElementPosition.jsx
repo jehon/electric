@@ -1,7 +1,7 @@
 
 import React, { PropTypes } from 'react';
 import away from 'helpers/away';
-import elementHelper from 'helpers/elementHelper';
+import build from 'helpers/build';
 
 var debug = false;
 
@@ -12,8 +12,10 @@ class ElementPosition extends React.Component {
     const item    = this.props.item;
 
     // Helpers
-    const element = new elementHelper(item);
+    const element = build(item);
     const tp      = away(element.height(), item.orientation);
+    const color   = this.context.color || 'red';
+    const debug   = 'yellow';
 
     return (
       <g>
@@ -22,15 +24,9 @@ class ElementPosition extends React.Component {
           <g transform={'translate(' + item.x + ',' + item.y + ')'}>
             <g transform={'scale(' + context.scale + ')'}>
               <g transform={'rotate(' + (item.orientation || 0) + ')'}>
-                <path d={element.draw()} stroke={context.color} fill='none' />
-                && { debug &&
-                  <g>
-                    <rect x={-element.width() / 2} y={0} width={element.width()} height={element.height()} stroke='blue' fill='none' />
-                    <circle cx='0'cy='0' r='1' fill='green'/>
-                  </g>
-                }
+                <rect x={-element.width() / 2} y={0} width={element.width()} height={element.height()} stroke={debug} fill='none' />
+                <g dangerouslySetInnerHTML={{__html: element.draw()}} stroke={color} fill='none' />
               </g>
-              { debug && <circle cx={tp.x()} cy={tp.y()} r='3' fill='green'/> }
               <text x={tp.x()} y={tp.y()}
                 textAnchor={away(1, item.orientation).alignmentH()}
                 dy={away(1, item.orientation).alignementV()}
