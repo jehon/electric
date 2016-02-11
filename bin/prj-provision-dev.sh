@@ -42,7 +42,7 @@ DEBIAN_FRONTEND=noninteractive apt-get install --yes apache2 \
   mysql-client    \
   crudini         \
   mysql-server    \
-  nodejs npm      \
+  nodejs npm nodejs-legacy \
   curl            \
   libapache2-mod-php5 php5-cli php5-mysql php5-mcrypt php5-curl \
   phpmyadmin      \
