@@ -17,7 +17,6 @@ new WebpackDevServer(webpack(config), {
   proxy: {
     '/*': {
       target: 'http://localhost:10080',
-      // target: 'file://' + __dirname + '/www/',
       secure: false,
     },
   }

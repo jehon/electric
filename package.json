@@ -50,8 +50,7 @@
     "svgo": "^0.6.1",
     "svgo-loader": "^1.1.0",
     "webpack": "~1",
-    "webpack-dev-server": "^1",
-    "xls-to-json": "^0.3.2"
+    "webpack-dev-server": "^1"
   },
   "scripts": {
     "build":           "webpack --config webpack.js -p",
@@ -59,5 +58,8 @@
     "dev-server":      "node server.js | grep 'built\\|error\\|VALID'",
     "postinstall":     "node ./bin/setselenium.js",
     "postupdate":      "node ./bin/setselenium.js"
+  },
+  "x": {
+    "xls-to-json": "^0.3.2"
   }
 }

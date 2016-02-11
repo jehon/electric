@@ -3,7 +3,7 @@
 require('es6-promise').polyfill();
 
 var path = require('path');
-var webpack = require('webpack');
+// var webpack = require('webpack');
 var glob = require('glob');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var fse = require('fs-extra');

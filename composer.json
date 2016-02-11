@@ -1,13 +1,11 @@
 {
-	"name": "jehon/cryptomedic",
-	"description": "Cryptomedic software",
 	"repositories": [
-        {
-        	"type": "vcs",
-         	"url": "https://www.github.com/jehon/maintenance",
-          "no-api": true
-    	}
-    ],
+    {
+     	"type": "vcs",
+     	"url": "https://www.github.com/jehon/maintenance",
+      "no-api": true
+   	}
+  ],
 
 	"require": {
 		"jehon/maintenance": "master-dev"
