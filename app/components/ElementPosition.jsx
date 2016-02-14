@@ -19,23 +19,24 @@ class ElementPosition extends React.Component {
       <g>
         {
           item.positionMustDrawOnPlan(context.plan) &&
-          <g transform={'translate(' + item.positionX + ',' + item.positionY + ')'}>
-            <g transform={'scale(' + context.scale + ')'}>
-              <g transform={'rotate(' + (item.positionOrientation || 0) + ')'}>
+          <g transform={'translate(' + item.positionX + ',' + item.positionY + ')'} >
+            <g transform={'scale(' + context.scale + ')'} >
+              <g transform={'rotate(' + (item.positionOrientation || 0) + ')'} >
                 <rect x={-item.width / 2} y={0} width={item.width} height={item.height} stroke={debug} fill='none' />
                 <g dangerouslySetInnerHTML={{__html: item.draw()}} stroke={color} fill='none' />
               </g>
               <text x={tp.x} y={tp.y}
-                textAnchor={away(1, item.positionOrientation).alignmentH()}
-                dy={away(1, item.positionOrientation).alignementV()}
-                >{item.name}</text>
+                    textAnchor={away(1, item.positionOrientation).alignmentH()}
+                    dy={away(1, item.positionOrientation).alignementV()}
+                  >
+                {item.getReference()}
+              </text>
             </g>
           </g>
         }
         {
-          item.next && item.next.map((e, i) =>
-              <ElementPosition key={i} item={e} context={context}/>
-            )
+          item.next
+          && <ElementPosition item={item.next} context={context} />
         }
       </g>
     );
@@ -46,6 +47,11 @@ export default ElementPosition;
 
 
 /*
+
+          item.next && item.next.map((e, i) =>
+              <ElementPosition key={i} item={e} context={context}/>
+            )
+
 
           <image x="0" y="0" width="128" height="146" transform="rotate(45)" xlink:href="https://developer.mozilla.org/media/img/mdn-logo.png"/>
           <path d={'M0,0 L0,10 m-7.5,0 l15,0 m-20,7.5 l5,0 a7.5 7.5 0 0 1 15 0 l5,0'} stroke={context.color} fill='none' />
