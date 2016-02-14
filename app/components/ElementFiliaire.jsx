@@ -24,9 +24,9 @@ export default class ElementFiliaire extends React.Component {
     let cx        = [];
     let cy        = [];
 
-    if (item.children) {
-      for(var i = 0; i < item.children.length; i++) {
-        ce[i] = new build(item.children[i], context);
+    if (item.next) {
+      for(var i = 0; i < item.next.length; i++) {
+        ce[i] = new build(item.next[i], context);
         if (i == 0) {
           cy[i] = y - element.filiaireHeight();
         } else {
@@ -40,16 +40,14 @@ export default class ElementFiliaire extends React.Component {
       <g>
         {
           <g transform={'translate(' + x + ',' + y + ')'} >
-            <g transform={'rotate(' + (element.isVertical() ? 180 : 270) + ')'} >
-              <g transform={'translate(' + (- element.width() / 2) + ',0)'}>
-                <rect x={-element.filiaireWidth() / 2} y={0} width={element.filiaireWidth()} height={element.filiaireHeight()} stroke={debug} fill='none' />
-                <g dangerouslySetInnerHTML={{__html: element.draw()}} stroke={color} fill='none' />
-              </g>
+            <g transform={'translate(' + (- element.width() / 2) + ',0)'}>
+              <rect x={-element.filiaireWidth() / 2} y={0} width={element.filiaireWidth()} height={element.filiaireHeight()} stroke={debug} fill='none' />
+              <g dangerouslySetInnerHTML={{__html: element.filiaireDraw()}} stroke={color} fill='none' />
             </g>
           </g>
         }
         {
-          item.children && item.children.map((e, i) =>
+          item.next && item.next.map((e, i) =>
               <ElementFiliaire key={i} context={context}
                 item={Object.assign({name: e.name || ((item.name || '') + i)}, e)}
                 x={cx[i]} y={cy[i]}
@@ -67,7 +65,7 @@ export default class ElementFiliaire extends React.Component {
 /*
 
         {
-          item.children && item.children.map((e, i) =>
+          item.next && item.next.map((e, i) =>
               <ElementFiliaire key={i} item={{name: e.name || ((item.name || '') + i), ...e}} context={context}/>
             )
         }
