@@ -1,6 +1,5 @@
 
 import React           from 'react';
-import SVGDrawing      from 'components/SVGDrawing';
 import ElementPosition from 'components/ElementPosition';
 
 function schemaClick(evt) {
@@ -21,7 +20,7 @@ export default class SchemaPosition extends React.Component {
     return (
       <div>
         <div>Toolbar and title</div>
-        <SVGDrawing
+        <svg
             width={this.props.image.width} height={this.props.image.height}
             onClick={schemaClick}
             >
@@ -30,7 +29,7 @@ export default class SchemaPosition extends React.Component {
               width={this.props.image.width} height={this.props.image.height}
               xlinkHref={this.props.image.src} />
           <ElementPosition item={this.props.schema} context={context} />
-        </SVGDrawing>
+        </svg>
       </div>
     );
   }
