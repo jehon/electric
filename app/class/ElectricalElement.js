@@ -1,7 +1,40 @@
 
 export default class ElectricalElement {
   constructor(data) {
-    this.data     = data;
+    this.data                = data;
+    this.structuredReference = null;
+  }
+
+  setPrevious(previous) {
+    this.previous = previous;
+    if (this.data.reference) {
+      // We have a specific reference
+      this.structuredReference = {
+        base:  this.data.reference,
+        index: 0
+      };
+    } else {
+      if (previous) {
+        // We have a previous, let's have a look at it
+        this.structuredReference = Object.assign({}, previous.structuredReference);
+        this.structuredReference.index++;
+      } else {
+        // We don't have a previous, let's build a default one
+        this.structuredReference = {
+          base: 'main',
+          index: 0
+        };
+      }
+    }
+  }
+
+  getReference() {
+    if (this.structuredReference.index == 0) {
+      return this.structuredReference.base;
+    } else {
+      return this.structuredReference.base + '.' + this.structuredReference.index;
+    }
+    // return 'mymname';
   }
 
   get width() {
@@ -10,10 +43,6 @@ export default class ElectricalElement {
 
   get height() {
     return parseFloat(this.data.height);
-  }
-
-  get name() {
-    return 'mymname';
   }
 
   get next() {
