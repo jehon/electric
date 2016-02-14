@@ -3,13 +3,13 @@ import ElectricalElement  from 'class/ElectricalElement';
 import CaseElement        from 'class/CaseElement';
 
 export class P extends ElectricalElement {
-  constructor(data, context) {
+  constructor(data) {
     super(Object.assign({}, data, {
-      width: 25,
-      height: 20,
-      innerHeight: 15,
-      name: 'Prise'
-    }), context);
+      width       : 25,
+      height      : 20,
+      innerHeight : 15,
+      name        : 'Prise'
+    }));
   }
 
   draw() {
@@ -18,12 +18,12 @@ export class P extends ElectricalElement {
 }
 
 export class Disj extends CaseElement {
-  constructor(data, context) {
+  constructor(data) {
     super(Object.assign({}, data, {
       width       : '20',
       height      : '60',
       name        : 'Disjoncteur'
-    }), context);
+    }));
   }
 
   draw() {
@@ -32,9 +32,9 @@ export class Disj extends CaseElement {
 }
 
 export class Diff extends Disj {
-  constructor(data, context) {
+  constructor(data) {
     super(Object.assign({}, data, {
       name        : 'Differentiel'
-    }), context);
+    }));
   }
 }
