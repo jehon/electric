@@ -9,10 +9,10 @@ export default function away(d, angle) {
   }
 
   return {
-    x: function() {
+    get x() {
       return -d * Math.sin(angle / 180 * Math.PI);
     },
-    y: function() {
+    get y() {
       return d * Math.cos(angle / 180 * Math.PI);
     },
     alignmentH: function() {

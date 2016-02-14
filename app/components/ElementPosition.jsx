@@ -1,7 +1,6 @@
 
-import React, { PropTypes } from 'react';
-import away from 'helpers/away';
-import build from 'helpers/build';
+import React from 'react';
+import away  from 'helpers/away';
 
 var debug = false;
 
@@ -12,31 +11,30 @@ class ElementPosition extends React.Component {
     const item    = this.props.item;
 
     // Helpers
-    const element = build(item);
-    const tp      = away(element.height(), item.orientation);
+    const tp      = away(item.height, item.positionOrientation);
     const color   = this.context.color || 'red';
     const debug   = 'yellow';
 
     return (
       <g>
         {
-          element.isPositionned(context.plan) &&
-          <g transform={'translate(' + item.x + ',' + item.y + ')'}>
+          item.positionMustDrawOnPlan(context.plan) &&
+          <g transform={'translate(' + item.positionX + ',' + item.positionY + ')'}>
             <g transform={'scale(' + context.scale + ')'}>
-              <g transform={'rotate(' + (item.orientation || 0) + ')'}>
-                <rect x={-element.width() / 2} y={0} width={element.width()} height={element.height()} stroke={debug} fill='none' />
-                <g dangerouslySetInnerHTML={{__html: element.draw()}} stroke={color} fill='none' />
+              <g transform={'rotate(' + (item.positionOrientation || 0) + ')'}>
+                <rect x={-item.width / 2} y={0} width={item.width} height={item.height} stroke={debug} fill='none' />
+                <g dangerouslySetInnerHTML={{__html: item.draw()}} stroke={color} fill='none' />
               </g>
-              <text x={tp.x()} y={tp.y()}
-                textAnchor={away(1, item.orientation).alignmentH()}
-                dy={away(1, item.orientation).alignementV()}
+              <text x={tp.x} y={tp.y}
+                textAnchor={away(1, item.positionOrientation).alignmentH()}
+                dy={away(1, item.positionOrientation).alignementV()}
                 >{item.name}</text>
             </g>
           </g>
         }
         {
-          item.children && item.children.map((e, i) =>
-              <ElementPosition key={i} item={{name: e.name || ((item.name || '') + i), ...e}} context={context}/>
+          item.next && item.next.map((e, i) =>
+              <ElementPosition key={i} item={e} context={context}/>
             )
         }
       </g>

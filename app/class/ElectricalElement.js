@@ -1,60 +1,64 @@
 
 export default class ElectricalElement {
-  constructor(data, context) {
+  constructor(data) {
     this.data     = data;
-    this.context  = context;
   }
 
-  isValid() {
-    return this.data.type;
-  }
-
-  isPositionned(plan = false) {
-    if (!this.isValid()) {
-      return false;
-    }
-    if (!this.data.x || !this.data.y) {
-      return false;
-    }
-    return (plan && plan == this.data.plan);
-  }
-
-  width() {
-    if (!this.isValid()) {
-      return 0;
-    }
+  get width() {
     return parseFloat(this.data.width);
   }
 
-  height() {
-    if (!this.isValid()) {
-      return 0;
-    }
+  get height() {
     return parseFloat(this.data.height);
   }
 
+  get name() {
+    return 'mymname';
+  }
+
+  get next() {
+    return this.data.next;
+  }
+
   /*************************************************
-  // Specific for filiaire
+  // Specific for POSITION
   /*************************************************/
-  isVertical() {
-    // if (this.data.children) {
-    //   return !(this.context.vertical);
-    // }
-    return this.context.vertical;
+  positionMustDrawOnPlan(plan) {
+    if (!this.data.x || !this.data.y || !this.data.plan || this.data.plan != plan) {
+      return false;
+    }
+    return true;
   }
 
-  filiaireHeight() {
-    // if (this.data.children) {
-    //   return 100;
-    // }
-    return this.isVertical() ? this.height() : this.width();
+  get positionX() {
+    return this.data.x;
   }
 
-  filiaireWidth() {
-    // if (this.data.children) {
-    //   return 100;
+  get positionY() {
+    return this.data.y;
+  }
+
+  get positionOrientation() {
+    return this.data.orientation;
+  }
+
+  /*************************************************
+  // Specific for FILIAIRE
+  /*************************************************/
+  filiaireDraw() {
+    // return '<line x1="' + '" y1="' + '" x2="' + '" y2="' + '">';
+  }
+
+  get filiaireHeight() {
+    // if (this.data.next) {
     // }
-    return this.isVertical() ? this.width() : this.height();
+    return this.height;
+  }
+
+  get filiaireWidth() {
+    // if (this.data.next) {
+    // }
+    return this.width;
   }
 
 }
