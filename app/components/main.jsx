@@ -8,6 +8,10 @@ import build            from 'helpers/build';
 
 var oschema = build(schema);
 
+React.render(
+  <SchemaFiliaire schema={oschema} />,
+  document.getElementById('schema')
+);
 
 React.render(
   <SchemaPosition schema={oschema} image={{ src: 'http://localhost/rdc.png', width: 1089, height: 722, scale: 0.75 }}/>,
