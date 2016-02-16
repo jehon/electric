@@ -42,13 +42,13 @@ export default class ArrayElement extends ElectricalElement {
     // return '<line x1="' + '" y1="' + '" x2="' + '" y2="' + '">';
   }
 
-  get filiaireHeight() {
+  filiaireHeight() {
     // if (this.data.next) {
     // }
     return this.height;
   }
 
-  get filiaireWidth() {
+  filiaireWidth() {
     // if (this.data.next) {
     // }
     return this.width;

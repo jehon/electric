@@ -18,10 +18,5 @@ export default function build(data, previous = null) {
   if (o.data.next) {
     o.data.next = build(o.data.next, o);
   }
-  // for(var i in o.data.next) {
-  //   // Instantiate children
-  //   o.data.next[i] = build(o.data.next[i], o);
-  // }
-
   return o;
 }

@@ -1,4 +1,6 @@
 
+import React              from 'react';
+
 export default class ElectricalElement {
   constructor(data) {
     this.data                = data;
@@ -41,12 +43,20 @@ export default class ElectricalElement {
     return parseFloat(this.data.width);
   }
 
+  get align() {
+    return this.width / 2;
+  }
+
   get height() {
     return parseFloat(this.data.height);
   }
 
   get next() {
     return this.data.next;
+  }
+
+  draw() {
+    console.log('empty draw');
   }
 
   /*************************************************
@@ -75,18 +85,15 @@ export default class ElectricalElement {
   // Specific for FILIAIRE
   /*************************************************/
   filiaireDraw() {
-    // return '<line x1="' + '" y1="' + '" x2="' + '" y2="' + '">';
+    console.log(this);
+    return this.draw();
   }
 
-  get filiaireHeight() {
-    // if (this.data.next) {
-    // }
+  filiaireHeight() {
     return this.height;
   }
 
-  get filiaireWidth() {
-    // if (this.data.next) {
-    // }
+  filiaireWidth() {
     return this.width;
   }
 

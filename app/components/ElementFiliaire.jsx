@@ -13,46 +13,22 @@ export default class ElementFiliaire extends React.Component {
     const item    = this.props.item;
 
     // Helpers
-    const element = new build(item, this.props.context);
     const color   = this.props.context.color || 'blue';
     const debug   = 'yellow';
-
-    let x         = this.props.x;
-    let y         = this.props.y;
-
-    let ce        = [];
-    let cx        = [];
-    let cy        = [];
-
-    if (item.next) {
-      for(var i = 0; i < item.next.length; i++) {
-        ce[i] = new build(item.next[i], context);
-        if (i == 0) {
-          cy[i] = y - element.filiaireHeight();
-        } else {
-          cy[i] = cy[i - 1] - ce[i-1].filiaireHeight();
-        }
-        cx[i] = x;
-      }
-    }
 
     return (
       <g>
         {
-          <g transform={'translate(' + x + ',' + y + ')'} >
-            <g transform={'translate(' + (- element.width() / 2) + ',0)'}>
-              <rect x={-element.filiaireWidth() / 2} y={0} width={element.filiaireWidth()} height={element.filiaireHeight()} stroke={debug} fill='none' />
-              <g dangerouslySetInnerHTML={{__html: element.filiaireDraw()}} stroke={color} fill='none' />
-            </g>
+          <g>
+            <circle cx={0} cy={0} r={3} stroke='red' fill='none' />
+            <g dangerouslySetInnerHTML={{__html: item.filiaireDraw()}} stroke={color} fill='none' />
           </g>
         }
         {
-          item.next && item.next.map((e, i) =>
-              <ElementFiliaire key={i} context={context}
-                item={Object.assign({name: e.name || ((item.name || '') + i)}, e)}
-                x={cx[i]} y={cy[i]}
-                />
-            )
+          item.next
+          && <g transform={'translate(' + 0 + ', ' + item.filiaireHeight() + ')'}>
+              <ElementFiliaire item={item.next} context={context} />
+            </g>
         }
       </g>
     );
@@ -63,6 +39,9 @@ export default class ElementFiliaire extends React.Component {
 
 
 /*
+          <g transform={'translate(' + (x - item.align) + ',' + y + ')'} >
+
+              <rect x={-item.filiaireWidth / 2} y={0} width={item.filiaireWidth} height={item.filiaireHeight} stroke={debug} fill='none' />
 
         {
           item.next && item.next.map((e, i) =>
