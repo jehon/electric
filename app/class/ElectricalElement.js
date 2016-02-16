@@ -98,3 +98,27 @@ export default class ElectricalElement {
   }
 
 }
+
+
+export var OrthogonalFiliaireMixin = Base => class extends Base {
+  filiaireDraw() {
+    return (`
+      <g>
+        <line x1=0 y1=0 x2=0 y2=${this.filiaireHeight()} />
+        <g transform='translate(0, ${this.filiaireHeight() / 2})'>
+          <g transform='rotate(270)''>
+            ${this.draw()}
+          </g>
+        </g>
+      </g>
+    `);
+  }
+
+  filiaireHeight() {
+    return this.width;
+  }
+
+  filiaireWidth() {
+    return this.height;
+  }
+};

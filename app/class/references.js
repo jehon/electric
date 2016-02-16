@@ -1,8 +1,13 @@
 
-import ElectricalElement  from 'class/ElectricalElement';
-import CaseElement        from 'class/CaseElement';
+import ElectricalElement       from 'class/ElectricalElement';
+import { OrthogonalFiliaireMixin } from 'class/ElectricalElement';
 
-export class P extends ElectricalElement {
+/*
+  draw() -> draw a component, starting point being the line itself
+    this, draw() will be naturally centered
+*/
+
+export class P extends OrthogonalFiliaireMixin(ElectricalElement) {
   constructor(data) {
     super(Object.assign({}, data, {
       width       : 25,
@@ -17,7 +22,7 @@ export class P extends ElectricalElement {
   }
 }
 
-export class Disj extends CaseElement {
+export class Disj extends ElectricalElement {
   constructor(data) {
     super(Object.assign({}, data, {
       width       : '20',
