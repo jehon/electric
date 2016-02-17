@@ -7,12 +7,11 @@ var debug = false;
 class ElementPosition extends React.Component {
   render() {
     // Parameters
-    const context = this.props.context;
     const item    = this.props.item;
+    const context = this.props.context;
 
     // Helpers
     const tp      = away(item.height, item.positionOrientation);
-    const color   = this.context.color || 'red';
     const debug   = 'yellow';
 
     return (
@@ -23,7 +22,7 @@ class ElementPosition extends React.Component {
             <g transform={'scale(' + context.scale + ')'} >
               <g transform={'rotate(' + (item.positionOrientation || 0) + ')'} >
                 <rect x={-item.width / 2} y={0} width={item.width} height={item.height} stroke={debug} fill='none' />
-                <g dangerouslySetInnerHTML={{__html: item.draw()}} stroke={color} fill='none' />
+                <g dangerouslySetInnerHTML={{__html: item.draw()}} stroke='red' fill='none' />
               </g>
               <text x={tp.x} y={tp.y}
                     textAnchor={away(1, item.positionOrientation).alignmentH()}
@@ -35,8 +34,9 @@ class ElementPosition extends React.Component {
           </g>
         }
         {
-          item.next
-          && <ElementPosition item={item.next} context={context} />
+          item.next && item.next.map((e, i) => (
+            <ElementPosition key={i} item={e} context={context} />
+          ))
         }
       </g>
     );

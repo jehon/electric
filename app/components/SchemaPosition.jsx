@@ -15,7 +15,6 @@ export default class SchemaPosition extends React.Component {
     var context = {
       plan: 1,
       scale: this.props.image.scale || 1,
-      color: 'red'
     };
     return (
       <div>

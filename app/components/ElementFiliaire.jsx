@@ -1,34 +1,28 @@
 
-import React from 'react';
-import away from 'helpers/away';
-import build from 'helpers/build';
-
-var debug = true;
+import React  from 'react';
+import config from 'helpers/config';
 
 export default class ElementFiliaire extends React.Component {
   // http://facebook.github.io/react/docs/component-specs.html#getinitialstate
   render() {
     // Parameters
-    const context = this.props.context;
     const item    = this.props.item;
-
-    // Helpers
-    const color   = this.props.context.color || 'blue';
-    const debug   = 'yellow';
 
     return (
       <g>
         {
           <g>
             <circle cx={0} cy={0} r={3} stroke='red' fill='none' />
-            <g dangerouslySetInnerHTML={{__html: item.filiaireDraw()}} stroke={color} fill='none' />
+            <g dangerouslySetInnerHTML={{__html: item.filiaireDraw()}} />
           </g>
         }
         {
-          item.next
-          && <g transform={'translate(' + 0 + ', ' + item.filiaireHeight() + ')'}>
-              <ElementFiliaire item={item.next} context={context} />
+          item.next && item.next.map((e, i) => (
+            <g key={i} transform={'translate(' + 0 + ', ' + (e.filiaireHeight() + config.filiaire.marginV) + ')'}>
+              <line x1={0} y1={10} x2={0} y2={-config.filiaire.marginV} />
+              <ElementFiliaire item={e} />
             </g>
+          ))
         }
       </g>
     );
@@ -39,6 +33,7 @@ export default class ElementFiliaire extends React.Component {
 
 
 /*
+
           <g transform={'translate(' + (x - item.align) + ',' + y + ')'} >
 
               <rect x={-item.filiaireWidth / 2} y={0} width={item.filiaireWidth} height={item.filiaireHeight} stroke={debug} fill='none' />
