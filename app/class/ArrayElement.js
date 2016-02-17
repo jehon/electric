@@ -1,23 +1,22 @@
 
 import ElectricalElement from 'class/ElectricalElement';
+import config            from 'helpers/config';
+import ElementFiliaire   from 'components/ElementFiliaire';
+import ElementPosition   from 'components/ElementPosition';
+
 
 export default class ArrayElement extends ElectricalElement {
-  constructor(data) {
-    super(data);
-    this.data     = data;
-  }
-
   setPlace(previous, index) {
     this.previous = previous;
     this.index = index;
   }
 
   get width() {
-    return 0;
+    return 100;
   }
 
   get height() {
-    return 0;
+    return config.filiaire.marginV;
   }
 
   get name() {
@@ -25,7 +24,14 @@ export default class ArrayElement extends ElectricalElement {
   }
 
   get next() {
-    return this.data.next;
+    return false;
+  }
+
+  draw() {
+    console.log('draw all', this.data);
+    for(let i of this.data) {
+      console.log('draw array: ', i , '->', this.data[i]);
+    }
   }
 
   /*************************************************
@@ -39,19 +45,8 @@ export default class ArrayElement extends ElectricalElement {
   // Specific for FILIAIRE
   /*************************************************/
   filiaireDraw() {
-    // return '<line x1="' + '" y1="' + '" x2="' + '" y2="' + '">';
+    return `
+      <line x1=0 y1=0 x2=${100} y2=0>
+    `;
   }
-
-  filiaireHeight() {
-    // if (this.data.next) {
-    // }
-    return this.height;
-  }
-
-  filiaireWidth() {
-    // if (this.data.next) {
-    // }
-    return this.width;
-  }
-
 }

@@ -1,5 +1,5 @@
 
-import ElectricalElement       from 'class/ElectricalElement';
+import ElectricalElement           from 'class/ElectricalElement';
 import { OrthogonalFiliaireMixin } from 'class/ElectricalElement';
 
 /*

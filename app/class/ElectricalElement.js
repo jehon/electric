@@ -1,6 +1,4 @@
 
-import React              from 'react';
-
 export default class ElectricalElement {
   constructor(data) {
     this.data                = data;
@@ -85,7 +83,6 @@ export default class ElectricalElement {
   // Specific for FILIAIRE
   /*************************************************/
   filiaireDraw() {
-    console.log(this);
     return this.draw();
   }
 
