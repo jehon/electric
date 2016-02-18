@@ -22,6 +22,22 @@ export class P extends OrthogonalFiliaireMixin(ElectricalElement) {
   }
 }
 
+export class S extends P {
+  constructor(data) {
+    super(Object.assign({}, data, {
+      width       : 25,
+      height      : 20,
+      innerHeight : 15,
+      name        : 'Interrupteur'
+    }));
+  }
+
+  draw() {
+    // a rx ry x-axis-rotation large-arc-flag sweep-flag dx dy
+    return '<path d="M0,0 L0,10 l 8,8 l 4,-4" /><circle cx=0 cy=10 r=3 fill="white" />';
+  }
+}
+
 export class Disj extends ElectricalElement {
   constructor(data) {
     super(Object.assign({}, data, {

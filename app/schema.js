@@ -20,8 +20,22 @@ export default {
               y: 340,
               orientation: 180,
               plan: 1,
+            },
+            {
+              type: 'P',
+              x: 510,
+              y: 134,
+              orientation: 0,
+              plan: 1,
             }
           ]
+        },
+        {
+          type: 'S',
+          x: 200,
+          y: 134,
+          orientation: 0,
+          plan: 1
         }
       ]
     }
