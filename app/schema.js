@@ -5,6 +5,10 @@ export default {
   next: [
     {
       type: 'Disj',
+      reference: 'A23',
+    },
+    {
+      type: 'Disj',
       reference: 'A24',
       next: [
         {
@@ -38,6 +42,10 @@ export default {
           plan: 1
         }
       ]
+    },
+    {
+      type: 'Disj',
+      reference: 'A25',
     }
   ]
 };

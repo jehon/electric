@@ -1,4 +1,6 @@
 
+import config from 'helpers/config';
+
 export default class ElectricalElement {
   constructor(data) {
     this.data                = data;
@@ -87,11 +89,25 @@ export default class ElectricalElement {
   }
 
   filiaireHeight() {
-    return this.height;
+    // var l = 0;
+    // if (this.data.next) {
+    //   for(var i in this.data.next) {
+    //     l = Math.max(this.data.next[i].filiaireHeight());
+    //   }
+    //   l -= config.filiaire.marginV;
+    // }
+    return this.height;// + l;
   }
 
   filiaireWidth() {
-    return this.width;
+    var l = 0;
+    if (this.data.next) {
+      for(var i in this.data.next) {
+        l += this.data.next[i].filiaireWidth() + config.filiaire.spaceH;
+      }
+      l -= config.filiaire.spaceH;
+    }
+    return Math.max(this.width, l);
   }
 
   filiaireAlignX() {
@@ -119,7 +135,8 @@ export var OrthogonalFiliaireMixin = Base => class extends Base {
   }
 
   filiaireWidth() {
-    return this.height;
+    return super.filiaireWidth() + this.height - this.width;
+    // return this.height;
   }
 
   filiaireAlignX() {
