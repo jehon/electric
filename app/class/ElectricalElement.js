@@ -88,17 +88,12 @@ export default class ElectricalElement {
     return this.draw();
   }
 
+  // Calculate the height of the element
   filiaireHeight() {
-    // var l = 0;
-    // if (this.data.next) {
-    //   for(var i in this.data.next) {
-    //     l = Math.max(this.data.next[i].filiaireHeight());
-    //   }
-    //   l -= config.filiaire.marginV;
-    // }
-    return this.height;// + l;
+    return this.height;
   }
 
+  // Calculate the width of the line
   filiaireWidth() {
     var l = 0;
     if (this.data.next) {

@@ -36,10 +36,19 @@ export default {
         },
         {
           type: 'S',
-          x: 200,
-          y: 134,
-          orientation: 0,
-          plan: 1
+          x: 500,
+          y: 355,
+          orientation: 180,
+          plan: 1,
+          next: [
+            {
+              type: 'L',
+              x: 700,
+              y: 230,
+              orientation: 0,
+              plan: 1
+            }
+          ]
         }
       ]
     },
