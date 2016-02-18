@@ -52,7 +52,17 @@ export default class ElectricalElement {
   }
 
   get next() {
+    if (!this.data.next) {
+      return [];
+    }
     return this.data.next;
+  }
+
+  get alternate() {
+    if (!this.data.alternate) {
+      return [];
+    }
+    return this.data.alternate;
   }
 
   draw() {
