@@ -41,7 +41,7 @@ export default class ElectricalElement {
     return parseFloat(this.data.width);
   }
 
-  get align() {
+  get alignX() {
     return this.width / 2;
   }
 
@@ -94,6 +94,9 @@ export default class ElectricalElement {
     return this.width;
   }
 
+  filiaireAlignX() {
+    return this.alignX;
+  }
 }
 
 
@@ -117,5 +120,9 @@ export var OrthogonalFiliaireMixin = Base => class extends Base {
 
   filiaireWidth() {
     return this.height;
+  }
+
+  filiaireAlignX() {
+    return 0;
   }
 };
