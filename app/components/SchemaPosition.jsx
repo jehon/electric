@@ -13,7 +13,7 @@ function schemaClick(evt) {
 export default class SchemaPosition extends React.Component {
   render() {
     var context = {
-      plan: 1,
+      plan: this.props.plan,
       scale: this.props.image.scale || 1,
     };
     return (

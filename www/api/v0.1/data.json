@@ -1,0 +1,131 @@
+{
+  "type": "Diff",
+  "reference": "Central",
+  "next": [
+    {
+      "type": "Disj",
+      "reference": "A11",
+      "next": [
+        {
+          "type": "S",
+          "x": 251,
+          "y": 281,
+          "orientation": 270,
+          "plan": "cave",
+          "options": {
+            "bidir": true
+          },
+          "alternate": [
+            {
+              "type": "L",
+              "x": 368,
+              "y": 243,
+              "plan": "cave"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Disj",
+      "reference": "A12",
+      "next": [
+      ]
+    },
+    {
+      "type": "Disj",
+      "reference": "A13",
+      "next": [
+      ]
+    },
+    {
+      "type": "Disj",
+      "reference": "A14",
+      "next": [
+      ]
+    },
+    {
+      "type": "Disj",
+      "reference": "A15",
+      "next": [
+      ]
+    },
+    {
+      "type": "Disj",
+      "reference": "A16",
+      "next": [
+      ]
+    },
+    {
+      "type": "Disj",
+      "reference": "A17",
+      "next": [
+      ]
+    },
+    {
+      "type": "Disj",
+      "reference": "A18",
+      "next": [
+      ]
+    },
+    {
+      "type": "Disj",
+      "reference": "A19",
+      "next": [
+      ]
+    },
+    {
+      "type": "Disj",
+      "reference": "A23"
+    },
+    {
+      "type": "Disj",
+      "reference": "A24",
+      "next": [
+        {
+          "type": "P",
+          "x": 290,
+          "y": 134,
+          "orientation": 0,
+          "plan": 1,
+          "next": [
+            {
+              "type": "P",
+              "x": 290,
+              "y": 340,
+              "orientation": 180,
+              "plan": 1
+            },
+            {
+              "type": "P",
+              "x": 510,
+              "y": 134,
+              "orientation": 0,
+              "plan": 1
+            }
+          ]
+        },
+        {
+          "type": "S",
+          "x": 500,
+          "y": 355,
+          "orientation": 180,
+          "plan": 1,
+          "alternate": [
+            {
+              "type": "L",
+              "x": 700,
+              "y": 230,
+              "orientation": 0,
+              "plan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Disj",
+      "reference": "A25"
+    }
+  ]
+}

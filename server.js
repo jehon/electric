@@ -17,7 +17,7 @@ new WebpackDevServer(webpack(config), {
   proxy: {
     '/*': {
       target: 'http://localhost:10080',
-      secure: false,
+      secure: true,
     },
   }
 }).listen(8080, '0.0.0.0', function (err) {
