@@ -8,7 +8,10 @@ export default class ElectricalElement {
   }
 
   setPrevious(previous) {
-    this.previous = previous;
+    this.getPrevious = function() {
+      return previous;
+    }
+    // this.previous = previous;
     if (this.data.reference) {
       // We have a specific reference
       this.structuredReference = {
@@ -27,6 +30,9 @@ export default class ElectricalElement {
           index: 0
         };
       }
+    }
+    if (!this.data.options) {
+      this.data.options = {};
     }
   }
 
@@ -105,14 +111,21 @@ export default class ElectricalElement {
 
   // Calculate the width of the line
   filiaireWidth() {
-    var l = 0;
+    var ln = 0;
     if (this.data.next) {
       for(var i in this.data.next) {
-        l += this.data.next[i].filiaireWidth() + config.filiaire.spaceH;
+        ln += this.data.next[i].filiaireWidth() + config.filiaire.spaceH;
       }
-      l -= config.filiaire.spaceH;
+      // ln -= config.filiaire.spaceH;
     }
-    return Math.max(this.width, l);
+    var la = 0;
+    if (this.data.alternate) {
+      for(var i in this.data.alternate) {
+        la += this.data.alternate[i].filiaireWidth() + config.filiaire.spaceH;
+      }
+    }
+
+    return Math.max(this.width, ln) + la;
   }
 
   filiaireAlignX() {

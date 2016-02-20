@@ -38,6 +38,11 @@ class ElementPosition extends React.Component {
             <ElementPosition key={i} item={e} context={context} />
           ))
         }
+        {
+          item.alternate && item.alternate.map((e, i) => (
+            <ElementPosition key={i} item={e} context={context} />
+          ))
+        }
       </g>
     );
   }

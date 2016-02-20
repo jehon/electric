@@ -14,5 +14,10 @@ export default function build(data, previous = null) {
       o.data.next[i] = build(e, o);
     });
   }
+  if (o.data.alternate) {
+    o.data.alternate.map((e, i) => {
+      o.data.alternate[i] = build(e, o);
+    });
+  }
   return o;
 }
