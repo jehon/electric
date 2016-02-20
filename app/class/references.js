@@ -50,7 +50,10 @@ export class S extends P {
 
   draw() {
     // a rx ry x-axis-rotation large-arc-flag sweep-flag dx dy
-    return '<path d="M0,0 L0,10 l 8,8 l 4,-4" /><circle cx=0 cy=10 r=3 fill="white" />';
+    return '<path d="M0,0 L0,10 l8,8 l4,-4 m-4,4'
+      + (this.data.options.bipol ? 'm -2,-2 l4,-4 m-4,4 m2,2' : '')
+      + (this.data.options.bidir ? 'm-8,-8 l-8,-8' : '')
+      + '" /><circle cx=0 cy=10 r=3 fill="white" />';
   }
 }
 
