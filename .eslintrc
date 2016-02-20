@@ -1,7 +1,9 @@
 {
-  "ecmaFeatures": {
-    "modules": true,
-    "jsx": true,
+  "parserOptions": {
+    "sourceType":   "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
   "rules": {
     "indent": [
@@ -35,5 +37,5 @@
   "plugins": [
     "react"
   ],
-  "extends": "eslint:recommended"
+  "extends": "plugin:react/recommended"
 }
