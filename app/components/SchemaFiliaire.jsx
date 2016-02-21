@@ -7,7 +7,7 @@ export default class SchemaFiliaire extends React.Component {
     return (
       <div>
         <div>Toolbar and title</div>
-        <svg width={1000} height={300} >
+        <svg width={2000} height={500} >
           <g transform='translate(50, 50)' stroke='blue' fill='none' >
             <ElementFiliaire item={this.props.schema} />
           </g>
@@ -16,3 +16,7 @@ export default class SchemaFiliaire extends React.Component {
     );
   }
 }
+
+SchemaFiliaire.propTypes = {
+  schema: React.PropTypes.object
+};

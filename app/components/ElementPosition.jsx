@@ -14,6 +14,7 @@ class ElementPosition extends React.Component {
     const tp      = away(item.height, item.positionOrientation);
     const debug   = 'yellow';
 
+    /* eslint-disable react/no-danger */
     return (
       <g>
         {
@@ -22,6 +23,7 @@ class ElementPosition extends React.Component {
             <g transform={'scale(' + context.scale + ')'} >
               <g transform={'rotate(' + (item.positionOrientation || 0) + ')'} >
                 <rect x={-item.width / 2} y={0} width={item.width} height={item.height} stroke={debug} fill='none' />
+
                 <g dangerouslySetInnerHTML={{__html: item.draw()}} stroke='red' fill='none' />
               </g>
               <text x={tp.x} y={tp.y}
@@ -45,8 +47,13 @@ class ElementPosition extends React.Component {
         }
       </g>
     );
+    /* eslint-enable */
   }
 }
+ElementPosition.propTypes = {
+  item: React.PropTypes.object,
+  context: React.PropTypes.object,
+};
 
 export default ElementPosition;
 

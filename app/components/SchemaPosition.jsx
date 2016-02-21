@@ -33,3 +33,9 @@ export default class SchemaPosition extends React.Component {
     );
   }
 }
+
+SchemaPosition.propTypes = {
+  schema: React.PropTypes.object,
+  plan: React.PropTypes.string,
+  image: React.PropTypes.object
+};

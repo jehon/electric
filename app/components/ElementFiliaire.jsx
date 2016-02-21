@@ -17,6 +17,7 @@ export default class ElementFiliaire extends React.Component {
       }
     }
 
+    /* eslint-disable react/no-danger */
     return (
       <g>
         {
@@ -69,8 +70,13 @@ export default class ElementFiliaire extends React.Component {
         }
       </g>
     );
+    /* eslint-enable */
   }
 }
+
+ElementFiliaire.propTypes = {
+  item: React.PropTypes.object
+};
 
 /*
   <circle cx={0} cy={0} r={3} stroke='red' fill='none' />
