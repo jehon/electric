@@ -24,17 +24,19 @@ export default class ElementFiliaire extends React.Component {
           <g>
             <g dangerouslySetInnerHTML={{__html: item.filiaireDraw()}} />
             <rect x={-item.filiaireAlignX()} y={0} width={item.filiaireWidth()} height={item.filiaireHeight()} fill='none' stroke='yellow' />
+            <text x={2} y={-2} fontFamily="Verdana" fontSize="6">
+              {item.getReferenceLong()}
+            </text>
           </g>
         }
         {
           item.next && item.next.map((e, i) => (
             <g key={i} transform={'translate(0, ' + (item.filiaireHeight()) + ')'}>
-              <line x1={0} y1={0} x2={0} y2={config.filiaire.marginV / 2} />
-              <g key={i} transform={'translate(' +  dd[i] + ', ' + (config.filiaire.marginV / 2) + ')'}>
+              <g key={i} transform={'translate(' +  dd[i] + ', 0)'}>
                 <line x1={0} y1={0} x2={0} y2={config.filiaire.marginV} />
                 {
                   ((i > 0) &&
-                    <line x1={-(dd[i] - dd[i-1])} y1={0} x2={0} y2={0} />
+                    <line x1={-(dd[i] - dd[i-1])} y1={0} x2={0} y2={0}/>
                   )
                 }
                 <g key={i} transform={'translate(0, ' + config.filiaire.marginV / 2 + ')'}>
