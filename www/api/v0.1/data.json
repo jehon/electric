@@ -2,76 +2,97 @@
   "type": "Diff",
   "reference": "Central",
   "next": [
-    {
-      "type": "Disj",
-      "reference": "A11",
-      "next": [
-        {
-          "type": "S",
-          "x": 251,
-          "y": 281,
-          "orientation": 270,
-          "plan": "cave",
-          "options": {
-            "bidir": true
-          },
+    { "type": "Disj", "reference": "A11", "next": [
+      { "type": "P", "x": 387, "y": 349, "orientation": 180, "plan": "cave", "next": [
+        { "type": "S", "x": 387, "y": 320, "orientation": 180, "plan": "cave", "options": { "bidir": true },
           "alternate": [
-            {
-              "type": "L",
-              "x": 368,
-              "y": 243,
-              "plan": "cave"
+            { "type": "S", "x": 251, "y": 281, "orientation": 270, "plan": "cave", "options": { "bidir": true },
+             "alternate": [ { "type": "Neon", "x": 368, "y": 243, "plan": "cave", "orientation": 90 } ]
             }
-          ]
-        }
+            ],
+          "next": [
+            { "type": "P", "x": 290, "y": 267, "orientation": 270, "plan": "cave", "next": [
+              { "type": "S", "x": 310, "y": 267, "orientation": 270, "plan": "cave", "options": { "bipol": true }, "alternate": [
+                { "type": "Neon", "x": 310, "y": 220, "plan": "cave", "orientation": 180 }
+              ]}
+            ]}
+          ]}
+      ]}
+    ]},
+    {
+      "type": "Disj", "reference": "A12", "next": [
       ]
     },
     {
-      "type": "Disj",
-      "reference": "A12",
-      "next": [
+      "type": "Disj", "reference": "A13", "next": [
       ]
     },
     {
-      "type": "Disj",
-      "reference": "A13",
-      "next": [
+      "type": "Disj", "reference": "A14", "next": [
       ]
     },
     {
-      "type": "Disj",
-      "reference": "A14",
-      "next": [
+      "type": "Disj", "reference": "A15", "next": [
       ]
     },
     {
-      "type": "Disj",
-      "reference": "A15",
-      "next": [
+      "type": "Disj", "reference": "A16", "next": [
       ]
     },
     {
-      "type": "Disj",
-      "reference": "A16",
-      "next": [
+      "type": "Disj", "reference": "A17", "next": [
       ]
     },
     {
-      "type": "Disj",
-      "reference": "A17",
-      "next": [
+      "type": "Disj", "reference": "A18", "next": [
       ]
     },
     {
-      "type": "Disj",
-      "reference": "A18",
-      "next": [
+      "type": "Disj", "reference": "A19", "next": [
       ]
     },
     {
-      "type": "Disj",
-      "reference": "A19",
-      "next": [
+      "type": "Disj", "reference": "A22", "next": [
+      ]
+    },
+    {
+      "type": "Disj", "reference": "A22", "next": [
+      ]
+    },
+    {
+      "type": "Disj", "reference": "A23", "next": [
+      ]
+    },
+    {
+      "type": "Disj", "reference": "A24", "next": [
+      ]
+    },
+    {
+      "type": "Disj", "reference": "A25", "next": [
+      ]
+    },
+    {
+      "type": "Disj", "reference": "A26", "next": [
+      ]
+    },
+    {
+      "type": "Disj", "reference": "A27", "next": [
+      ]
+    },
+    {
+      "type": "Disj", "reference": "A28", "next": [
+      ]
+    },
+    {
+      "type": "Disj", "reference": "A29", "next": [
+      ]
+    },
+    {
+      "type": "Disj", "reference": "A31", "next": [
+      ]
+    },
+    {
+      "type": "Disj", "reference": "A39", "next": [
       ]
     },
     {
@@ -82,12 +103,7 @@
       "type": "Disj",
       "reference": "A24",
       "next": [
-        {
-          "type": "P",
-          "x": 290,
-          "y": 134,
-          "orientation": 0,
-          "plan": 1,
+        { "type": "P", "x": 290, "y": 134, "orientation": 0, "plan": 1,
           "next": [
             {
               "type": "P",
