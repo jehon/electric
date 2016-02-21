@@ -9,12 +9,12 @@ import { OrthogonalFiliaireMixin } from 'class/ElectricalElement';
 
 export class P extends OrthogonalFiliaireMixin(ElectricalElement) {
   constructor(data) {
-    super(Object.assign({}, data, {
+    super(Object.assign({}, {
       width       : 25,
       height      : 20,
       innerHeight : 15,
       name        : 'Prise'
-    }));
+    }, data));
   }
 
   draw() {
@@ -22,30 +22,43 @@ export class P extends OrthogonalFiliaireMixin(ElectricalElement) {
   }
 }
 
-export class L extends P {
+export class L extends ElectricalElement {
   constructor(data) {
-    super(Object.assign({}, data, {
+    super(Object.assign({}, {
       width       : 20,
       height      : 20,
       innerHeight : 10,
       name        : 'Light'
-    }));
+    }, data));
   }
 
   draw() {
-    // a rx ry x-axis-rotation large-arc-flag sweep-flag dx dy
-    return '<path d="M0,10 l 5,5 l -10,-10 l 5,5 l5,-5 l-10,10" />';
+    return '<path d="M0,10 l5,5 l-10,-10 l5,5 l5,-5 l-10,10" />';
+  }
+}
+
+export class Neon extends L {
+  constructor(data) {
+    super(Object.assign({}, {
+      width       : 10,
+      height      : 35,
+      name        : 'Neon'
+    }, data));
+  }
+
+  draw() {
+    return '<path d="M0,5 l5,0 l-10,0 m5,0 l0,30 l5,0 l-10,0" />';
   }
 }
 
 export class S extends P {
   constructor(data) {
-    super(Object.assign({}, data, {
+    super(Object.assign({}, {
       width       : 25,
       height      : 20,
       innerHeight : 15,
       name        : 'Interrupteur'
-    }));
+    }, data));
   }
 
   draw() {
