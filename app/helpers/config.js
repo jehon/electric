@@ -1,7 +1,7 @@
 
 let config = {
   filiaire: {
-    marginV: 10,
+    marginV: 15,
     spaceH: 10
   }
 };
