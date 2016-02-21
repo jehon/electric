@@ -30,7 +30,7 @@ class ElementPosition extends React.Component {
                     textAnchor={away(1, item.positionOrientation).alignmentH()}
                     dy={away(1, item.positionOrientation).alignementV()}
                   >
-                {item.getReference()}
+                {item.getReferenceLong()}
               </text>
             </g>
           </g>
