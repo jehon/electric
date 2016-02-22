@@ -140,6 +140,26 @@
     { "type": "Disj", "reference": "B15", "label": "ch centrale", "next": [
     ]},
     { "type": "Disj", "reference": "B16", "label": "coin prière", "next": [
+      { "type": "P", "x": 411, "y": 334, "orientation": 90, "plan": "etage", "next": [
+        { "type": "S", "x": 381, "y": 334, "orientation": 90, "plan": "etage", "options": { "bidir": true, "variator": true }, "next": [
+          { "type": "L", "x": 209, "y": 368, "orientation": 0, "plan": "grenier", "next": [
+            { "type": "L", "x": 110, "y": 368, "orientation": 0, "plan": "grenier" }
+          ]}
+        ]},
+        { "type": "S", "x": 381, "y": 334, "orientation": 90, "plan": "etage", "options": { "bidir": true, "variator": true }, "next": [
+          { "type": "L", "x": 267, "y": 188, "orientation": 0, "plan": "etage", "next": [
+            { "type": "L", "x": 319, "y": 139, "orientation": 0, "plan": "etage" }
+          ]}
+        ]},
+        { "type": "P", "x": 290, "y": 140, "orientation": 0, "plan": "etage", "next": [
+          { "type": "P", "x": 290, "y": 160, "orientation": 0, "plan": "etage", "next": [
+            { "type": "P", "x": 262, "y": 350, "orientation": 270, "plan": "etage", "next": [
+              { "type": "P", "x": 292, "y": 350, "orientation": 270, "plan": "etage", "next": [
+              ]}
+            ]}
+          ]}
+        ]}
+      ]}
     ]},
     { "type": "Disj", "reference": "B17", "label": "ch bleue", "next": [
     ]},
@@ -150,6 +170,21 @@
       ]}
     ]},
     { "type": "Disj", "reference": "B19", "label": "VMC et grenier", "next": [
+      { "type": "P", "x": 446, "y": 582, "orientation": 180, "plan": "grenier", "next": [
+        { "type": "P", "x": 446, "y": 552, "orientation": 180, "plan": "grenier", "next": [
+          { "type": "P", "x": 206, "y": 414, "orientation": 0, "plan": "grenier", "next": [
+            { "type": "S", "x": 206, "y": 444, "orientation": 0, "plan": "grenier", "options": { "bidir": true }, "next": [
+              { "type": "S", "x": 632, "y": 466, "orientation": 180, "plan": "grenier", "options": { "bidir": true }, "next": [
+                { "type": "Neon", "x": 470, "y": 421, "orientation": 90, "plan": "grenier", "next": [
+                  { "type": "Neon", "x": 135, "y": 418, "orientation": 90, "plan": "grenier" },
+                  { "type": "Neon", "x": 791, "y": 194, "orientation": 90, "plan": "grenier" }
+                ]}
+              ]}
+            ]}
+          ]}
+        ]}
+      ]}
+
     ]},
     { "type": "Disj", "reference": "B21", "label": "KNX", "next": [
     ]},
