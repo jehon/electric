@@ -66,6 +66,7 @@ export class S extends P {
     return '<path d="M0,0 L0,10 l8,8 l4,-4 m-4,4'
       + (this.data.options.bipol ? 'm -2,-2 l4,-4 m-4,4 m2,2' : '')
       + (this.data.options.bidir ? 'm-8,-8 l-8,-8' : '')
+      + (this.data.options.light ? '' : '') // TODO: add light
       + '" /><circle cx=0 cy=10 r=3 fill="white" />';
   }
 }
@@ -125,3 +126,18 @@ export class Boiler extends OrthogonalFiliaireMixin(ElectricalElement) {
   }
 }
 
+/* *********** TODO ************************/
+export class CookingPlates extends OrthogonalFiliaireMixin(ElectricalElement) {
+  constructor(data) {
+    super(Object.assign({}, {
+      width       : 25,
+      height      : 20,
+      innerHeight : 15,
+      name        : 'Prise'
+    }, data));
+  }
+
+  draw() {
+    return '<path d="M0,0 L0,10 m-7.5,0 l15,0 m-20,7.5 l5,0 a7.5 7.5 0 0 1 15 0 l5,0" />';
+  }
+}
