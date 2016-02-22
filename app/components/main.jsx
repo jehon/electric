@@ -18,7 +18,7 @@ fetch('/api/v0.1/test.php').then(function(response) {
     );
 
     ReactDOM.render(
-      <SchemaPosition schema={state.oschema} image={{ src: 'http://localhost/cave.jpg', width: 1089, height: 722, scale: 0.75 }} plan='cave'/>,
+      <SchemaPosition schema={state.oschema} image={{ src: 'http://localhost/cave.jpg', width: 1089, height: 722, scale: 0.60 }} plan='cave'/>,
       document.getElementById('plan_cave')
     );
 
