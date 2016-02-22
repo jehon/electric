@@ -26,5 +26,15 @@ fetch('/api/v0.1/test.php').then(function(response) {
       <SchemaPosition schema={state.oschema} image={{ src: '/rdc.png', width: 1089, height: 722, scale: 0.60 }} plan='rdc'/>,
       document.getElementById('plan_rdc')
     );
+
+    ReactDOM.render(
+      <SchemaPosition schema={state.oschema} image={{ src: '/etage.png', width: 1089, height: 722, scale: 0.60 }} plan='etage'/>,
+      document.getElementById('plan_etage')
+    );
+
+    ReactDOM.render(
+      <SchemaPosition schema={state.oschema} image={{ src: '/grenier.png', width: 1089, height: 722, scale: 0.60 }} plan='grenier'/>,
+      document.getElementById('plan_grenier')
+    );
   });
 });
