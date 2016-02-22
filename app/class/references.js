@@ -142,3 +142,18 @@ export class CookingPlates extends OrthogonalFiliaireMixin(ElectricalElement) {
     return '<path d="M0,0 L0,10 m-7.5,0 l15,0 m-20,7.5 l5,0 a7.5 7.5 0 0 1 15 0 l5,0" />';
   }
 }
+
+/** TODO **********************/
+export class KNX extends ElectricalElement {
+  constructor(data) {
+    super(Object.assign({}, data, {
+      width       : '20',
+      height      : '60',
+      name        : 'Disjoncteur'
+    }));
+  }
+
+  draw() {
+    return '<path d="M0,0 l0,10 l10,35 m-10,0 l0,15"/>';
+  }
+}
