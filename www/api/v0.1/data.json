@@ -134,10 +134,45 @@
     { "type": "Disj", "reference": "B12", "label": "ch parents/dressing", "next": [
     ]},
     { "type": "Disj", "reference": "B13", "label": "ch coin douche/D", "next": [
+      { "type": "P", "x": 830, "y": 271, "orientation": 180, "plan": "etage", "next": [
+        { "type": "P", "x": 930, "y": 262, "orientation": 90, "plan": "etage", "next": [
+          { "type": "P", "x": 910, "y": 262, "orientation": 90, "plan": "etage", "next": [
+            { "type": "P", "x": 919, "y": 140, "orientation": 0, "plan": "etage", "next": [
+              { "type": "P", "x": 800, "y": 140, "orientation": 0, "plan": "etage" }
+            ]}
+          ]}
+        ]}
+      ]}
     ]},
     { "type": "Disj", "reference": "B14", "label": "ch coin douche/G", "next": [
+      { "type": "P", "x": 702, "y": 320, "orientation": 0, "plan": "etage", "next": [
+        { "type": "P", "x": 702, "y": 306, "orientation": 180, "plan": "etage", "next": [
+          { "type": "S", "x": 702, "y": 286, "orientation": 180, "plan": "etage", "options": { "bidir": true }, "next": [
+            { "type": "S", "x": 830, "y": 250, "orientation": 180, "plan": "etage", "options": { "bidir": true }, "next": [
+              { "type": "L", "x": 772, "y": 244, "orientation": 0, "plan": "etage" }
+            ]}
+          ]},
+          { "type": "P", "x": 682, "y": 140, "orientation": 0, "plan": "etage", "next": [
+            { "type": "P", "x": 682, "y": 160, "orientation": 0, "plan": "etage" }
+          ]}
+        ]}
+      ]}
     ]},
     { "type": "Disj", "reference": "B15", "label": "ch centrale", "next": [
+      { "type": "P", "x": 537, "y": 319, "orientation": 0, "plan": "etage", "next": [
+        { "type": "P", "x": 603, "y": 309, "orientation": 180, "plan": "etage", "next": [
+          { "type": "S", "x": 603, "y": 290, "orientation": 180, "plan": "etage", "options": { "bidir": true }, "next": [
+            { "type": "L", "x": 535, "y": 274, "orientation": 0, "plan": "etage" }
+          ]},
+          { "type": "P", "x": 642, "y": 139, "orientation": 0, "plan": "etage", "next": [
+            { "type": "P", "x": 642, "y": 159, "orientation": 0, "plan": "etage", "next": [
+              { "type": "P", "x": 451, "y": 139, "orientation": 0, "plan": "etage", "next": [
+                { "type": "P", "x": 451, "y": 159, "orientation": 0, "plan": "etage" }
+              ]}
+            ]}
+          ]}
+        ]}
+      ]}
     ]},
     { "type": "Disj", "reference": "B16", "label": "coin prière", "next": [
       { "type": "P", "x": 411, "y": 334, "orientation": 90, "plan": "etage", "next": [
@@ -152,9 +187,11 @@
           ]}
         ]},
         { "type": "P", "x": 290, "y": 140, "orientation": 0, "plan": "etage", "next": [
-          { "type": "P", "x": 290, "y": 160, "orientation": 0, "plan": "etage", "next": [
-            { "type": "P", "x": 262, "y": 350, "orientation": 270, "plan": "etage", "next": [
-              { "type": "P", "x": 292, "y": 350, "orientation": 270, "plan": "etage", "next": [
+          { "type": "P", "x": 401, "y": 140, "orientation": 0, "plan": "etage", "next": [
+            { "type": "P", "x": 290, "y": 160, "orientation": 0, "plan": "etage", "next": [
+              { "type": "P", "x": 262, "y": 350, "orientation": 270, "plan": "etage", "next": [
+                { "type": "P", "x": 292, "y": 350, "orientation": 270, "plan": "etage", "next": [
+                ]}
               ]}
             ]}
           ]}
@@ -162,11 +199,42 @@
       ]}
     ]},
     { "type": "Disj", "reference": "B17", "label": "ch bleue", "next": [
+      { "type": "P", "x": 314, "y": 400, "orientation": 0, "plan": "etage", "next": [
+        { "type": "S", "x": 314, "y": 420, "orientation": 0, "plan": "etage", "options": { "bidir": true }, "next": [
+          { "type": "S", "x": 413, "y": 479, "orientation": 90, "plan": "etage", "options": { "bidir": true }, "next": [
+            { "type": "L", "x": 334, "y": 477, "orientation": 0, "plan": "etage" }
+          ]}
+        ]},
+        { "type": "P", "x": 411, "y": 437, "orientation": 90, "plan": "etage", "next": [
+          { "type": "P", "x": 411, "y": 561, "orientation": 90, "plan": "etage", "next": [
+            { "type": "P", "x": 390, "y": 561, "orientation": 90, "plan": "etage", "next": [
+              { "type": "P", "x": 260, "y": 510, "orientation": 270, "plan": "etage", "next": [
+                { "type": "P", "x": 280, "y": 510, "orientation": 270, "plan": "etage" }
+              ]}
+            ]}
+          ]}
+        ]}
+      ]}
     ]},
     { "type": "Disj", "reference": "B18", "label": "", "next": [
       { "type": "Disj", "reference": "B28", "label": "KNX", "next": [
       ]},
-      { "type": "Disj", "reference": "B29", "label": "KNX + sdb", "next": [
+      { "type": "Disj", "reference": "B29", "label": "KNX + WC + sdb", "next": [
+        { "type": "P", "x": 457, "y": 504, "orientation": 180, "plan": "etage", "next": [
+          { "type": "S", "x": 457, "y": 516, "orientation": 0, "plan": "etage", "options": { "bipol": true }, "next": [
+            { "type": "L", "x": 466, "y": 550, "orientation": 270, "plan": "etage" }
+          ]},
+          { "type": "P", "x": 430, "y": 515, "orientation": 0, "plan": "etage", "next": [
+            { "type": "P", "x": 430, "y": 535, "orientation": 0, "plan": "etage", "next": [
+              { "type": "P", "x": 465, "y": 590, "orientation": 180, "plan": "etage" }
+            ]}
+          ]},
+          { "type": "P", "x": 523, "y": 531, "orientation": 270, "plan": "etage", "next": [
+            { "type": "S", "x": 778, "y": 303, "orientation": 270, "plan": "etage", "options": { "bipol": true, "light": true }, "next": [
+              { "type": "L", "x": 863, "y": 303, "orientation": 270, "plan": "etage" }
+            ]}
+          ]}
+        ]}
       ]}
     ]},
     { "type": "Disj", "reference": "B19", "label": "VMC et grenier", "next": [
