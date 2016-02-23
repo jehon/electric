@@ -94,6 +94,21 @@ export class Diff extends Disj {
   }
 }
 
+/** TODO **********************/
+export class Hotte extends P {
+  constructor(data) {
+    super(Object.assign({}, data, {
+      width       : '20',
+      height      : '60',
+      name        : 'Hotte'
+    }));
+  }
+
+  draw() {
+    return '<path d="M0,0 l0,10 l10,35 m-10,0 l0,15"/>';
+  }
+}
+
 /* *********** TODO ************************/
 export class Heater extends OrthogonalFiliaireMixin(ElectricalElement) {
   constructor(data) {
