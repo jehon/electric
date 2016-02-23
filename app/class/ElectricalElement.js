@@ -113,7 +113,7 @@ export var OrthogonalFiliaireMixin = Base => class extends Base {
       <g>
         <line x1=0 y1=0 x2=0 y2=${this.filiaireHeight()} />
         <g transform='translate(0, ${this.filiaireHeight() / 2})'>
-          <g transform='rotate(270)''>
+          <g transform='rotate(270)'>
             ${this.draw()}
           </g>
         </g>
