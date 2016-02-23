@@ -1,6 +1,8 @@
 
-import React           from 'react';
-import ElementPosition from 'components/ElementPosition';
+import React                 from 'react';
+import ElementPosition       from 'components/ElementPosition';
+import getDataFromImageUrl   from 'helpers/getDataFromImageUrl';
+
 
 function schemaClick(evt) {
   var e = evt.target;
@@ -11,22 +13,39 @@ function schemaClick(evt) {
 }
 
 export default class SchemaPosition extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      image: {
+        b64: ' data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
+        width: 1,
+        height: 1
+      }
+    };
+    let self = this;
+    getDataFromImageUrl(this.props.image.src)
+      .then(function(data) {
+        self.setState({ image: data });
+      });
+  }
+
   render() {
     var context = {
       plan: this.props.plan,
       scale: this.props.image.scale || 1,
     };
+
     return (
       <div>
         <div>Toolbar and title</div>
         <svg
-            width={this.props.image.width} height={this.props.image.height}
+            width={this.state.image.width} height={this.state.image.height}
             onClick={schemaClick}
             >
           <image
               x='0' y='0'
-              width={this.props.image.width} height={this.props.image.height}
-              xlinkHref={this.props.image.src} />
+              width={this.state.image.width} height={this.state.image.height}
+              xlinkHref={this.state.image.b64} />
           <ElementPosition item={this.props.schema} context={context} />
         </svg>
       </div>
