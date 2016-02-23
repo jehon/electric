@@ -95,7 +95,11 @@
   { "type": "Disj", "reference": "A18", "label": "PC", "next": [
     { "type": "P", "x": 578, "y": 371, "orientation": 0, "plan": "cave", "next": [
       { "type": "P", "x": 550, "y": 427, "orientation": 180, "plan": "rdc", "next": [
-        { "type": "P", "x": 580, "y": 427, "orientation": 180, "plan": "rdc" }
+        { "type": "P", "x": 580, "y": 427, "orientation": 180, "plan": "rdc", "next": [
+          { "type": "P", "x": 775, "y": 427, "orientation": 180, "plan": "rdc", "next": [
+            { "type": "P", "x": 775, "y": 407, "orientation": 180, "plan": "rdc" }
+          ]}
+        ]}
       ]}
     ]}
   ]},
@@ -109,18 +113,60 @@
     ]}
   ]},
   { "type": "Disj", "reference": "A21", "label": "Buanderie", "next": [
+    { "type": "P", "x": 775, "y": 437, "orientation": 0, "plan": "rdc", "next": [
+      { "type": "P", "x": 775, "y": 457, "orientation": 0, "plan": "rdc", "next": [
+        { "type": "P", "x": 775, "y": 587, "orientation": 180, "plan": "rdc", "next": [
+          { "type": "P", "x": 775, "y": 567, "orientation": 180, "plan": "rdc", "next": [
+            { "type": "P", "x": 706, "y": 587, "orientation": 180, "plan": "rdc", "next": [
+              { "type": "S", "x": 706, "y": 567, "orientation": 180, "plan": "rdc", "next": [
+                { "type": "L", "x": 670, "y": 587, "orientation": 180, "plan": "rdc" }
+              ]}
+            ]}
+          ]}
+        ]},
+        { "type": "P", "x": 610, "y": 587, "orientation": 180, "plan": "rdc" }
+      ]}
+    ]}
   ]},
   { "type": "Disj", "reference": "A22", "label": "Coin jeu", "next": [
+    { "type": "P", "x": 820, "y": 587, "orientation": 180, "plan": "rdc", "next": [
+      { "type": "P", "x": 820, "y": 567, "orientation": 180, "plan": "rdc", "next": [
+        { "type": "P", "x": 920, "y": 587, "orientation": 180, "plan": "rdc", "next": [
+          { "type": "P", "x": 920, "y": 567, "orientation": 180, "plan": "rdc", "next": [
+            { "type": "P", "x": 950, "y": 360, "orientation": 90, "label": "fenêtre", "plan": "rdc" }
+          ]}
+        ]}
+      ]}
+    ]}
   ]},
   { "type": "Disj", "reference": "A23", "label": "Frigo + WC", "next": [
+    { "type": "P", "x": 950, "y": 410, "orientation": 90, "plan": "rdc", "label": "frigo" },
+    { "type": "P", "x": 483, "y": 528, "orientation": 180, "plan": "rdc", "next": [
+      { "type": "P", "x": 483, "y": 540, "orientation": 0, "plan": "rdc", "next": [
+        { "type": "S", "x": 483, "y": 560, "orientation": 0, "plan": "rdc", "next": [
+          { "type": "L", "x": 450, "y": 560, "orientation": 0, "plan": "rdc" }
+        ]}
+      ]}
+    ]}
   ]},
   { "type": "Disj", "reference": "A24", "label": "Salon", "next": [
+    { "type": "P", "x": 292, "y": 340, "orientation": 180, "plan": "rdc", "next": [
+      { "type": "P", "x": 292, "y": 135, "orientation": 0, "plan": "rdc" }
+    ]}
   ]},
   { "type": "Disj", "reference": "A25", "label": "Salle à manger", "next": [
+    { "type": "P", "x": 500, "y": 135, "orientation": 0, "plan": "rdc", "next": [
+      { "type": "P", "x": 670, "y": 135, "orientation": 0, "plan": "rdc", "next": [
+        { "type": "P", "x": 731, "y": 355, "orientation": 180, "plan": "rdc", "next": [
+        ]}
+      ]}
+    ]}
   ]},
   { "type": "Disj", "reference": "A26", "label": "Lessiveuse", "next": [
+    { "type": "P", "x": 590, "y": 587, "orientation": 180, "label": "Lessiveuse", "plan": "rdc" }
   ]},
   { "type": "Disj", "reference": "A27", "label": "Essoreuse", "next": [
+    { "type": "P", "x": 570, "y": 587, "orientation": 180, "label": "Séchoir", "plan": "rdc" }
   ]},
   { "type": "Disj", "reference": "A31", "label": "KNX", "next": [
   ]},
@@ -177,8 +223,10 @@
     { "type": "Disj", "reference": "B16", "label": "coin prière", "next": [
       { "type": "P", "x": 411, "y": 334, "orientation": 90, "plan": "etage", "next": [
         { "type": "S", "x": 381, "y": 334, "orientation": 90, "plan": "etage", "options": { "bidir": true, "variator": true }, "next": [
-          { "type": "L", "x": 209, "y": 368, "orientation": 0, "plan": "grenier", "next": [
-            { "type": "L", "x": 110, "y": 368, "orientation": 0, "plan": "grenier" }
+          { "type": "S", "x": 205, "y": 373, "orientation": 180, "plan": "grenier", "options": { "bidir": true }, "next": [
+            { "type": "L", "x": 209, "y": 320, "orientation": 0, "plan": "grenier", "next": [
+              { "type": "L", "x": 110, "y": 320, "orientation": 0, "plan": "grenier" }
+            ]}
           ]}
         ]},
         { "type": "S", "x": 381, "y": 334, "orientation": 90, "plan": "etage", "options": { "bidir": true, "variator": true }, "next": [
@@ -238,14 +286,14 @@
       ]}
     ]},
     { "type": "Disj", "reference": "B19", "label": "VMC et grenier", "next": [
-      { "type": "P", "x": 446, "y": 582, "orientation": 180, "plan": "grenier", "next": [
-        { "type": "P", "x": 446, "y": 552, "orientation": 180, "plan": "grenier", "next": [
-          { "type": "P", "x": 206, "y": 414, "orientation": 0, "plan": "grenier", "next": [
-            { "type": "S", "x": 206, "y": 444, "orientation": 0, "plan": "grenier", "options": { "bidir": true }, "next": [
-              { "type": "S", "x": 632, "y": 466, "orientation": 180, "plan": "grenier", "options": { "bidir": true }, "next": [
-                { "type": "Neon", "x": 470, "y": 421, "orientation": 90, "plan": "grenier", "next": [
-                  { "type": "Neon", "x": 135, "y": 418, "orientation": 90, "plan": "grenier" },
-                  { "type": "Neon", "x": 791, "y": 194, "orientation": 90, "plan": "grenier" }
+      { "type": "P", "x": 446, "y": 557, "orientation": 180, "plan": "grenier", "next": [
+        { "type": "P", "x": 446, "y": 527, "orientation": 180, "plan": "grenier", "next": [
+          { "type": "P", "x": 206, "y": 389, "orientation": 0, "plan": "grenier", "next": [
+            { "type": "S", "x": 206, "y": 410, "orientation": 0, "plan": "grenier", "options": { "bidir": true }, "next": [
+              { "type": "S", "x": 590, "y": 430, "orientation": 180, "plan": "grenier", "options": { "bidir": true }, "next": [
+                { "type": "Neon", "x": 470, "y": 396, "orientation": 90, "plan": "grenier", "next": [
+                  { "type": "Neon", "x": 135, "y": 420, "orientation": 90, "plan": "grenier" },
+                  { "type": "Neon", "x": 791, "y": 170, "orientation": 90, "plan": "grenier" }
                 ]}
               ]}
             ]}
