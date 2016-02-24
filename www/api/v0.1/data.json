@@ -1,4 +1,4 @@
-{ "type": "Diff", "reference": "Central", "next": [
+{ "type": "Disj", "reference": "Central", "options": { "Isec": 300 }, "next": [
   { "type": "Disj", "reference": "A11", "label": "atelier/ecl", "next": [
     { "type": "P", "x": 387, "y": 349, "orientation": 180, "plan": "cave", "next": [
       { "type": "S", "x": 387, "y": 320, "orientation": 180, "plan": "cave", "options": { "bidir": true },
@@ -172,12 +172,42 @@
   ]},
   { "type": "Disj", "reference": "A39", "label": "KNX", "next": [
   ]},
-  { "type": "Diff", "reference": "Boitier B", "next": [
+  { "type": "Disj", "reference": "Boitier B", "options": { "I": 20 },"next": [
     { "type": "Disj", "reference": "B01", "label": "KNX + sonnette", "next": [
     ]},
     { "type": "Disj", "reference": "B11", "label": "ch parents", "next": [
+      { "type": "P", "x": 854, "y": 339, "orientation": 0, "plan": "etage", "next": [
+        { "type": "P", "x": 930, "y": 436, "orientation": 90, "plan": "etage", "next": [
+          { "type": "P", "x": 930, "y": 530, "orientation": 90, "plan": "etage", "next": [
+            { "type": "P", "x": 844, "y": 589, "orientation": 180, "plan": "etage" }
+          ]}
+        ]}
+      ]},
+      { "type": "S", "x": 584, "y": 359, "orientation": 0, "plan": "etage", "options": { "bidir": true }, "next": [
+        { "type": "S", "x": 910, "y": 436, "orientation": 90, "plan": "etage", "options": { "inverter": true }, "next": [
+          { "type": "S", "x": 910, "y": 530, "orientation": 90, "plan": "etage", "options": { "inverter": true }, "next": [
+            { "type": "S", "x": 768, "y": 538, "orientation": 0, "plan": "etage", "options": { "bidir": true }, "next": [
+              { "type": "L", "x": 850, "y": 488, "orientation": 0, "plan": "etage" }
+            ]}
+          ]}
+        ]}
+      ]}
     ]},
     { "type": "Disj", "reference": "B12", "label": "ch parents/dressing", "next": [
+      { "type": "P", "x": 758, "y": 537, "orientation": 180, "plan": "etage" },
+      { "type": "P", "x": 725, "y": 439, "orientation": 0, "plan": "etage" },
+      { "type": "S", "x": 758, "y": 537, "orientation": 0, "plan": "etage", "next": [
+        { "type": "L", "x": 661, "y": 505, "orientation": 0, "plan": "etage", "next": [
+          { "type": "L", "x": 676, "y": 476, "orientation": 0, "plan": "etage", "next": [
+            { "type": "L", "x": 722, "y": 476, "orientation": 0, "plan": "etage", "next": [
+              { "type": "L", "x": 736, "y": 504, "orientation": 0, "plan": "etage" }
+            ]}
+          ]}
+        ]}
+      ]},
+      { "type": "S", "x": 757, "y": 467, "orientation": 180, "plan": "etage", "next": [
+        { "type": "L", "x": 757, "y": 443, "orientation": 270, "plan": "etage" }
+      ]}
     ]},
     { "type": "Disj", "reference": "B13", "label": "ch coin douche/D", "next": [
       { "type": "P", "x": 830, "y": 271, "orientation": 180, "plan": "etage", "next": [
@@ -222,7 +252,7 @@
     ]},
     { "type": "Disj", "reference": "B16", "label": "coin prière", "next": [
       { "type": "P", "x": 411, "y": 334, "orientation": 90, "plan": "etage", "next": [
-        { "type": "S", "x": 381, "y": 334, "orientation": 90, "plan": "etage", "options": { "bidir": true, "variator": true }, "next": [
+        { "type": "S", "x": 381, "y": 334, "orientation": 90, "plan": "etage", "options": { "bidir": true }, "next": [
           { "type": "S", "x": 205, "y": 373, "orientation": 180, "plan": "grenier", "options": { "bidir": true }, "next": [
             { "type": "L", "x": 209, "y": 320, "orientation": 0, "plan": "grenier", "next": [
               { "type": "L", "x": 110, "y": 320, "orientation": 0, "plan": "grenier" }
@@ -266,6 +296,26 @@
     ]},
     { "type": "Disj", "reference": "B18", "label": "", "next": [
       { "type": "Disj", "reference": "B28", "label": "KNX", "next": [
+        { "type": "KNX", "reference": "12a", "next": [
+          { "type": "L", "x": 800, "y": 319, "orientation": 270, "plan": "etage", "next": [
+            { "type": "L", "x": 659, "y": 344, "orientation": 270, "plan": "etage", "next": [
+              { "type": "L", "x": 475, "y": 381, "orientation": 270, "plan": "etage", "next": [
+                { "type": "L", "x": 475, "y": 466, "orientation": 270, "plan": "etage" }
+              ]}
+            ]}
+          ]}
+        ]},
+        { "type": "KNX", "reference": "12b", "next": [
+          { "type": "P", "x": 524, "y": 514, "orientation": 270, "plan": "etage", "next": [
+            { "type": "L", "x": 546, "y": 455, "orientation": 270, "plan": "etage", "next": [
+              { "type": "L", "x": 546, "y": 507, "orientation": 270, "plan": "etage", "next": [
+                { "type": "L", "x": 546, "y": 561, "orientation": 270, "plan": "etage", "next": [
+                  { "type": "L", "x": 602, "y": 561, "orientation": 270, "plan": "etage" }
+                ]}
+              ]}
+            ]}
+          ]}
+        ]}
       ]},
       { "type": "Disj", "reference": "B29", "label": "KNX + WC + sdb", "next": [
         { "type": "P", "x": 457, "y": 504, "orientation": 180, "plan": "etage", "next": [
@@ -305,10 +355,17 @@
     { "type": "Disj", "reference": "B21", "label": "KNX", "next": [
     ]},
     { "type": "Disj", "reference": "B22", "label": "KNX", "next": [
+      { "type": "KNX", "reference": "6a", "next": [
+        { "type": "L", "x": 597, "y": 397, "orientation": 0, "plan": "etage", "next": [
+          { "type": "L", "x": 653, "y": 397, "orientation": 0, "plan": "etage", "next": [
+            { "type": "L", "x": 711, "y": 397, "orientation": 0, "plan": "etage" }
+          ]}
+        ]}
+      ]}
     ]}
   ]},
-  { "type": "Diff", "reference": "Boitier C", "next": [
-    { "type": "Diff", "reference": "Central C", "next": [
+  { "type": "Disj", "reference": "Boitier C", "option": { "I": 40 }, "next": [
+    { "type": "Disj", "reference": "Central C", "option": { "I": 40 }, "next": [
       { "type": "Disj", "reference": "C05", "label": "Chauffage", "next": [
           { "type": "Heater", "x": 809, "y": 160, "orientation": 270, "plan": "cave" }
       ]},
@@ -317,7 +374,7 @@
             { "type": "Boiler", "x": 895, "y": 328, "orientation": 180, "plan": "cave" }
           ]}
       ]},
-      { "type": "Diff", "reference": "C07", "options": { "Isec":30 }, "next": [
+      { "type": "Disj", "reference": "C07", "options": { "Isec":30 }, "next": [
         { "type": "Disj", "reference": "C16", "label": "fond jardin", "next": [
           { "type": "P", "x": 750, "y": 20, "orientation": 0, "plan": "rdc", "label": "Fond jardin" }
         ]},
