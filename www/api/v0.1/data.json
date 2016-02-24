@@ -169,8 +169,41 @@
     { "type": "P", "x": 570, "y": 587, "orientation": 180, "label": "Séchoir", "plan": "rdc" }
   ]},
   { "type": "Disj", "reference": "A31", "label": "KNX", "next": [
+    { "type": "Bridge", "reference": "G.G1", "next": [
+      { "type": "L", "x": 337, "y": 500, "orientation": 0, "plan": "rdc" }
+    ]},
+    { "type": "Bridge", "reference": "G.G2", "next": [
+      { "type": "L", "x": 229, "y": 317, "orientation": 90, "plan": "cave" }
+    ]},
+    { "type": "Bridge", "reference": "G.G3", "next": [
+      { "type": "P", "x": 232, "y": 151, "orientation": 90, "plan": "cave" }
+    ]}
   ]},
   { "type": "Disj", "reference": "A39", "label": "KNX", "next": [
+    { "type": "Bridge", "reference": "G.D1", "next": [
+      { "type": "P", "x": 694, "y": 135, "orientation": 0, "plan": "rdc" }
+    ]},
+    { "type": "Bridge", "reference": "G.D2", "next": [
+      { "type": "P", "x": 310, "y": 341, "orientation": 180, "plan": "rdc" }
+    ]},
+    { "type": "Bridge", "reference": "G.D3", "next": [
+      { "type": "P", "x": 310, "y": 135, "orientation": 0, "plan": "rdc" }
+    ]},
+    { "type": "Bridge", "reference": "G.D4", "next": [
+      { "type": "P", "x": 519, "y": 135, "orientation": 0, "plan": "rdc" }
+    ]},
+    { "type": "Bridge", "reference": "G.D5", "next": [
+      { "type": "P", "x": 949, "y": 310, "orientation": 90, "plan": "rdc" }
+    ]},
+    { "type": "Bridge", "reference": "G.D6", "next": [
+      { "type": "P", "x": 423, "y": 391, "orientation": 90, "plan": "rdc" }
+    ]},
+    { "type": "Bridge", "reference": "G.D7", "next": [
+      { "type": "P", "x": 446, "y": 345, "orientation": 270, "plan": "rdc" }
+    ]},
+    { "type": "Bridge", "reference": "G.D8", "next": [
+      { "type": "P", "x": 446, "y": 365, "orientation": 270, "plan": "rdc" }
+    ]}
   ]},
   { "type": "Disj", "reference": "Boitier B", "options": { "I": 20 },"next": [
     { "type": "Disj", "reference": "B01", "label": "KNX + sonnette", "next": [
@@ -426,9 +459,5 @@
         ]}
       ]}
     ]}
-  ]},
-  { "type": "Disj", "reference": "unknown", "next": [
-    { "type": "L", "x": 229, "y": 317, "orientation": 90, "plan": "cave" },
-    { "type": "P", "x": 232, "y": 151, "orientation": 90, "plan": "cave" }
   ]}
 ]}
