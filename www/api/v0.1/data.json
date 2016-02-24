@@ -169,11 +169,15 @@
     { "type": "P", "x": 570, "y": 587, "orientation": 180, "label": "Séchoir", "plan": "rdc" }
   ]},
   { "type": "Disj", "reference": "A31", "label": "KNX", "next": [
-    { "type": "Bridge", "reference": "G.G1", "next": [
-      { "type": "L", "x": 337, "y": 500, "orientation": 0, "plan": "rdc" }
+    { "type": "KNX", "reference": "G1", "next": [
+      { "type": "Bridge", "reference": "G.G1", "next": [
+        { "type": "L", "x": 337, "y": 500, "orientation": 0, "plan": "rdc" }
+      ]}
     ]},
-    { "type": "Bridge", "reference": "G.G2", "next": [
-      { "type": "L", "x": 229, "y": 317, "orientation": 90, "plan": "cave" }
+    { "type": "KNX", "reference": "G2", "next": [
+      { "type": "Bridge", "reference": "G.G2", "next": [
+        { "type": "L", "x": 229, "y": 317, "orientation": 90, "plan": "cave" }
+      ]}
     ]},
     { "type": "Bridge", "reference": "G.G3", "next": [
       { "type": "P", "x": 232, "y": 151, "orientation": 90, "plan": "cave" }
@@ -329,6 +333,9 @@
     ]},
     { "type": "Disj", "reference": "B18", "label": "", "next": [
       { "type": "Disj", "reference": "B28", "label": "KNX", "next": [
+        { "type": "KNX", "reference": "11a", "next": [
+          { "type": "Neon", "x": 630, "y": 500, "orientation": 90, "plan": "rdc" }
+        ]},
         { "type": "KNX", "reference": "12a", "next": [
           { "type": "L", "x": 800, "y": 319, "orientation": 270, "plan": "etage", "next": [
             { "type": "L", "x": 659, "y": 344, "orientation": 270, "plan": "etage", "next": [
@@ -386,6 +393,36 @@
 
     ]},
     { "type": "Disj", "reference": "B21", "label": "KNX", "next": [
+      { "type": "KNX", "reference": "1a", "next": [
+        { "type": "L", "x": 310, "y": 165, "orientation": 270, "plan": "rdc", "next": [
+          { "type": "L", "x": 480, "y": 165, "orientation": 270, "plan": "rdc", "next": [
+            { "type": "L", "x": 310, "y": 300, "orientation": 270, "plan": "rdc", "next": [
+              { "type": "L", "x": 480, "y": 300, "orientation": 270, "plan": "rdc" }
+            ]}
+          ]}
+        ]}
+      ]},
+      { "type": "KNX", "reference": "1b", "next": [
+        { "type": "L", "x": 310, "y": 210, "orientation": 270, "plan": "rdc", "next": [
+          { "type": "L", "x": 310, "y": 255, "orientation": 270, "plan": "rdc" }
+        ]}
+      ]},
+      { "type": "KNX", "reference": "2a", "next": [
+        { "type": "L", "x": 865, "y": 485, "orientation": 270, "plan": "rdc" }
+      ]},
+      { "type": "KNX", "reference": "2b", "next": [
+        { "type": "L", "x": 395, "y": 165, "orientation": 270, "plan": "rdc", "next": [
+          { "type": "L", "x": 395, "y": 300, "orientation": 270, "plan": "rdc" }
+        ]}
+      ]},
+      { "type": "KNX", "reference": "4a", "next": [
+        { "type": "L", "x": 395, "y": 230, "orientation": 270, "plan": "rdc" }
+      ]},
+      { "type": "KNX", "reference": "4b", "next": [
+        { "type": "L", "x": 546, "y": 225, "orientation": 180, "plan": "rdc", "next": [
+          { "type": "L", "x": 546, "y": 275, "orientation": 180, "plan": "rdc" }
+        ]}
+      ]}
     ]},
     { "type": "Disj", "reference": "B22", "label": "KNX", "next": [
       { "type": "KNX", "reference": "6a", "next": [
@@ -393,6 +430,22 @@
           { "type": "L", "x": 653, "y": 397, "orientation": 0, "plan": "etage", "next": [
             { "type": "L", "x": 711, "y": 397, "orientation": 0, "plan": "etage" }
           ]}
+        ]}
+      ]},
+      { "type": "KNX", "reference": "8a", "next": [
+        { "type": "P", "x": 518, "y": 358, "orientation": 180, "plan": "rdc" }
+      ]},
+      { "type": "KNX", "reference": "8b", "next": [
+        { "type": "L", "x": 651, "y": 237, "orientation": 0, "plan": "rdc" }
+      ]},
+      { "type": "KNX", "reference": "10a", "next": [
+        { "type": "L", "x": 480, "y": 210, "orientation": 270, "plan": "rdc", "next": [
+          { "type": "L", "x": 480, "y": 255, "orientation": 270, "plan": "rdc" }
+        ]}
+      ]},
+      { "type": "KNX", "reference": "10b", "next": [
+        { "type": "L", "x": 471, "y": 402, "orientation": 90, "plan": "rdc", "next": [
+          { "type": "L", "x": 471, "y": 452, "orientation": 90, "plan": "rdc" }
         ]}
       ]}
     ]}
@@ -432,6 +485,13 @@
             { "type": "S", "x": 849, "y": 269, "orientation": 270, "plan": "rdc", "next": [
               { "type": "L", "x": 811, "y": 200, "orientation": 90, "plan": "rdc", "next": [
                 { "type": "L", "x": 811, "y": 158, "orientation": 90, "plan": "rdc" }
+              ]}
+            ]},
+            { "type": "S", "x": 849, "y": 289, "orientation": 270, "plan": "rdc", "next": [
+              { "type": "L", "x": 876, "y": 153, "orientation": 270, "plan": "rdc", "next": [
+                { "type": "L", "x": 876, "y": 200, "orientation": 270, "plan": "rdc", "next": [
+                  { "type": "L", "x": 876, "y": 250, "orientation": 270, "plan": "rdc" }
+                ]}
               ]}
             ]}
           ]}
