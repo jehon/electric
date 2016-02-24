@@ -57,83 +57,85 @@ export class S extends P {
       width       : 25,
       height      : 20,
       innerHeight : 15,
-      name        : 'Interrupteur'
+      name        : 'Interrupteur',
+      options     : [ 'bipol', 'bidir', 'variator', 'light' ]
     }, data));
   }
 
   draw() {
     // a rx ry x-axis-rotation large-arc-flag sweep-flag dx dy
     return '<path d="M0,0 L0,10 l8,8 l4,-4 m-4,4'
-      + (this.data.options.bipol ? 'm -2,-2 l4,-4 m-4,4 m2,2' : '')
-      + (this.data.options.bidir ? 'm-8,-8 l-8,-8' : '')
-      + (this.data.options.light ? '' : '') // TODO: add light
-      + (this.data.options.variator ? '' : '') // TODO: add light
-      + '" /><circle cx=0 cy=10 r=3 fill="white" />';
+      + (this.data.options.bipol ? 'm -2,-2 l4,-4 m-4,4 m2,2 ' : '')
+      + (this.data.options.bidir ? 'M0,8 l-8,-8 l-4,4 ' : '')
+      + (this.data.options.inverter ? 'M0,8 l-8,-8 l-4,4 M0,8 l8,-8 l4,4 M0,8 l-8,8 l-4,-4 ' : '')
+      + (this.data.options.variator ? 'M-6,15 l12,0 l0,4 l-12,-4 ' : '')
+      + '" />'
+      + '<circle cx=0 cy=10 r=3 fill="white" />'
+      + (this.data.options.light ? '<path d="M0,10 l2,2 M0,10 l2,-2 M0,10 l-2,2 M0,10 l-2,-2" />' : '')
+      ;
   }
 }
 
+/* TODO: little box ***/
 export class Disj extends ElectricalElement {
   constructor(data) {
     super(Object.assign({}, data, {
       width       : '20',
       height      : '60',
-      name        : 'Disjoncteur'
+      name        : 'Disjoncteur',
+      options     : [ 'I', 'Isec' ]
     }));
   }
 
   draw() {
-    return '<path d="M0,0 l0,10 l10,35 m-10,0 l0,15"/>';
+    return '<path d="M0,0 l0,10 l10,35 m-10,0 l0,15"/>'
+    + (this.data.options.I ? '' : '' ) // TODO
+    + (this.data.options.Isec ? '' : '' ) // TODO
+    ;
   }
 }
 
-export class Diff extends Disj {
-  constructor(data) {
-    super(Object.assign({}, data, {
-      name        : 'Differentiel'
-    }));
-  }
-}
-
-/** TODO **********************/
 export class Hotte extends P {
   constructor(data) {
     super(Object.assign({}, data, {
       width       : '20',
-      height      : '60',
+      height      : '20',
       name        : 'Hotte'
     }));
   }
 
   draw() {
-    return '<path d="M0,0 l0,10 l10,35 m-10,0 l0,15"/>';
+    return '<rect x=-10 y=0 width=20 height=20 />'
+      + '<circle cx=0 cy=6  r=4 />'
+      + '<circle cx=0 cy=14 r=4 />'
+      ;
   }
 }
 
-/* *********** TODO ************************/
 export class Heater extends OrthogonalFiliaireMixin(ElectricalElement) {
   constructor(data) {
     super(Object.assign({}, {
-      width       : 25,
+      width       : 20,
       height      : 20,
-      innerHeight : 15,
-      name        : 'Prise'
+      name        : 'Chauffage'
     }, data));
   }
 
   draw() {
-    return '<path d="M0,0 L0,10 m-7.5,0 l15,0 m-20,7.5 l5,0 a7.5 7.5 0 0 1 15 0 l5,0" />';
+    return '<rect x=-10 y=0 width=20 height=20 />'
+      + '<path d="M-10,0 l0,20 M-5,0 l0,20 M0,0 l0,20 M5,0 l0,20" />';
   }
 }
 
 
-/* *********** TODO ************************/
+/* *********** TODO hachuré ********************/
 export class Boiler extends OrthogonalFiliaireMixin(ElectricalElement) {
   constructor(data) {
     super(Object.assign({}, {
       width       : 25,
       height      : 20,
       innerHeight : 15,
-      name        : 'Prise'
+      name        : 'Boiler'
     }, data));
   }
 
@@ -142,19 +144,22 @@ export class Boiler extends OrthogonalFiliaireMixin(ElectricalElement) {
   }
 }
 
-/* *********** TODO ************************/
 export class CookingPlates extends OrthogonalFiliaireMixin(ElectricalElement) {
   constructor(data) {
     super(Object.assign({}, {
       width       : 25,
       height      : 20,
       innerHeight : 15,
-      name        : 'Prise'
+      name        : 'Cuisinière'
     }, data));
   }
 
   draw() {
-    return '<path d="M0,0 L0,10 m-7.5,0 l15,0 m-20,7.5 l5,0 a7.5 7.5 0 0 1 15 0 l5,0" />';
+    return '<rect x=-10 y=0 width=20 height=20 />'
+      + '<circle cx=5  cy=15 r=2 fill="auto" />'
+      + '<circle cx=-5 cy=5  r=2 fill="auto" />'
+      + '<circle cx=-5 cy=15 r=2 fill="auto" />'
+      + '';
   }
 }
 
@@ -164,7 +169,7 @@ export class KNX extends ElectricalElement {
     super(Object.assign({}, data, {
       width       : '20',
       height      : '60',
-      name        : 'Disjoncteur'
+      name        : 'Relais KNX'
     }));
   }
 
