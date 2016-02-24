@@ -177,3 +177,17 @@ export class KNX extends ElectricalElement {
     return '<path d="M0,0 l0,10 l10,35 m-10,0 l0,15"/>';
   }
 }
+
+export class Bridge extends ElectricalElement {
+  constructor(data) {
+    super(Object.assign({}, data, {
+      width       : '1',
+      height      : '10',
+      name        : 'Bridge'
+    }));
+  }
+
+  draw() {
+    return '<path d="M0,0 l0,10"/>';
+  }
+}
