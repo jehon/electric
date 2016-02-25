@@ -42,7 +42,7 @@ export default class SchemaPosition extends React.Component {
             width={this.state.image.width} height={this.state.image.height}
             onClick={schemaClick}
             >
-          <image
+          <image opacity='0.5'
               x='0' y='0'
               width={this.state.image.width} height={this.state.image.height}
               xlinkHref={this.state.image.b64} />
