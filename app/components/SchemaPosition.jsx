@@ -1,5 +1,6 @@
 
 import React                 from 'react';
+import MySVG                 from 'components/MySVG';
 import ElementPosition       from 'components/ElementPosition';
 import getDataFromImageUrl   from 'helpers/getDataFromImageUrl';
 
@@ -37,17 +38,17 @@ export default class SchemaPosition extends React.Component {
 
     return (
       <div>
-        <div>Toolbar and title</div>
-        <svg
-            width={this.state.image.width} height={this.state.image.height}
-            onClick={schemaClick}
-            >
+        <MySVG title={'my-electric-house - ' + this.props.plan}
+          width={this.state.image.width}
+          height={this.state.image.height}
+          onClick={schemaClick}
+        >
           <image opacity='0.5'
               x='0' y='0'
               width={this.state.image.width} height={this.state.image.height}
               xlinkHref={this.state.image.b64} />
           <ElementPosition item={this.props.schema} context={context} />
-        </svg>
+        </MySVG>
       </div>
     );
   }
