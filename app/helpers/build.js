@@ -37,7 +37,13 @@ export default function build(data, nameStructure = { base: 'main', index: 0 }) 
   if (o.data.alternate) {
     o.data.alternate.map((e, i) => {
       if (o.data.alternate.length == 1) {
-        o.data.alternate[i] = build(e, Object.assign({}, nameStructure, { base: nameStructure.base + '.' + nameStructure.index, index: 1 }));
+        if (!o.data.next || o.data.next.length == 0) {
+          // We continue the numerotation
+          o.data.alternate[i] = build(e, Object.assign({}, nameStructure, { index: nameStructure.index + 1 }));
+        } else {
+          // We are on an alternate flow
+          o.data.alternate[i] = build(e, Object.assign({}, nameStructure, { base: nameStructure.base + '.' + nameStructure.index, index: 1 }));
+        }
       } else {
         o.data.alternate[i] = build(e, Object.assign({}, nameStructure, { base: nameStructure.base + '.' + nameStructure.index + '/' + i, index: 1 }));
       }
