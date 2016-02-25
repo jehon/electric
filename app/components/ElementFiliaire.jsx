@@ -11,7 +11,7 @@ export default class ElementFiliaire extends React.Component {
     if (item.next) {
       for(var i in item.next) {
         if (i > 0) {
-          dd[i] = dd[i-1] + item.next[i-1].filiaireWidth() + config.filiaire.spaceH;
+          dd[i] = dd[i-1] + item.next[i-1].filiaireHierarchicalWidth() + config.filiaire.spaceH;
         }
       }
     }
@@ -19,9 +19,9 @@ export default class ElementFiliaire extends React.Component {
     function altXPos(j) {
       let dda = 0;
       if (item.next && (item.next.length > 0)) {
-        dda += dd[item.next.length - 1] + item.next[item.next.length - 1].filiaireWidth();
+        dda += dd[item.next.length - 1] + item.next[item.next.length - 1].filiaireHierarchicalWidth();
       }
-      dda = Math.max(dda, item.width);
+      dda = Math.max(dda, item.filiaireWidth());
       for(let k = 0; k < j; k++) {
         dda += 0;
       }
@@ -34,7 +34,7 @@ export default class ElementFiliaire extends React.Component {
         {
           <g>
             <g dangerouslySetInnerHTML={{__html: item.filiaireDraw()}} />
-            <rect x={-item.filiaireAlignX()} y={0} width={item.filiaireWidth()} height={item.filiaireHeight()} fill='none' stroke='yellow' />
+            <rect x={-item.filiaireAlignX()} y={0} width={item.filiaireHierarchicalWidth()} height={item.filiaireHeight()} fill='none' stroke='yellow' />
             <text x={2} y={-2} fontFamily="Verdana" fontSize="6">
               {item.getReferenceLong()}
             </text>
@@ -90,14 +90,3 @@ export default class ElementFiliaire extends React.Component {
 ElementFiliaire.propTypes = {
   item: React.PropTypes.object
 };
-
-/*
-  <circle cx={0} cy={0} r={3} stroke='red' fill='none' />
-
-  <rect x={-item.filiaireWidth / 2} y={0} width={item.filiaireWidth} height={item.filiaireHeight} stroke={debug} fill='none' />
-  <image x="0" y="0" width="128" height="146" transform="rotate(45)" xlink:href="https://developer.mozilla.org/media/img/mdn-logo.png"/>
-  <path d={'M0,0 L0,10 m-7.5,0 l15,0 m-20,7.5 l5,0 a7.5 7.5 0 0 1 15 0 l5,0'} stroke={context.color} fill='none' />
-  <line x1="50%" y1="50%" x2="0" y2="0" stroke="blue" />
-  <line x1="100" y1="100" x2="200" y2="100" stroke="blue" />
-  <rect x="87.5" y="100" width="25" height="25" stroke="green" fill='none' />
-*/

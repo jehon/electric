@@ -82,23 +82,27 @@ export default class ElectricalElement {
     return this.height;
   }
 
-  // Calculate the width of the line
   filiaireWidth() {
+    return this.width;
+  }
+
+  // Calculate the width of the line
+  filiaireHierarchicalWidth() {
     var ln = 0;
     if (this.data.next) {
       for(var i in this.data.next) {
-        ln += this.data.next[i].filiaireWidth() + config.filiaire.spaceH;
+        ln += this.data.next[i].filiaireHierarchicalWidth() + config.filiaire.spaceH;
       }
       // ln -= config.filiaire.spaceH;
     }
     var la = 0;
     if (this.data.alternate) {
       for(var i in this.data.alternate) {
-        la += this.data.alternate[i].filiaireWidth() + config.filiaire.spaceH;
+        la += this.data.alternate[i].filiaireHierarchicalWidth() + config.filiaire.spaceH;
       }
     }
 
-    return Math.max(this.width, ln) + la;
+    return Math.max(this.filiaireWidth(), ln) + la;
   }
 
   filiaireAlignX() {
@@ -126,8 +130,7 @@ export var OrthogonalFiliaireMixin = Base => class extends Base {
   }
 
   filiaireWidth() {
-    return super.filiaireWidth() + this.height - this.width;
-    // return this.height;
+    return this.height;
   }
 
   filiaireAlignX() {
