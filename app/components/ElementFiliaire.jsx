@@ -3,7 +3,6 @@ import React  from 'react';
 import config from 'helpers/config';
 
 export default class ElementFiliaire extends React.Component {
-  // http://facebook.github.io/react/docs/component-specs.html#getinitialstate
   render() {
     // Parameters
     const item    = this.props.item;
@@ -15,6 +14,18 @@ export default class ElementFiliaire extends React.Component {
           dd[i] = dd[i-1] + item.next[i-1].filiaireWidth() + config.filiaire.spaceH;
         }
       }
+    }
+
+    function altXPos(j) {
+      let dda = 0;
+      if (item.next && (item.next.length > 0)) {
+        dda += dd[item.next.length - 1] + item.next[item.next.length - 1].filiaireWidth();
+      }
+      dda = Math.max(dda, item.width);
+      for(let k = 0; k < j; k++) {
+        dda += 0;
+      }
+      return dda;
     }
 
     /* eslint-disable react/no-danger */
@@ -48,11 +59,11 @@ export default class ElementFiliaire extends React.Component {
         }
         {
           item.alternate &&
-          <g transform='translate(20, 10)'>
+          <g transform={'translate(' + altXPos(0) + ', 10)'}>
           {
             item.alternate.map((e, i) => (
               <g key={i} transform='translate(10,0)'>
-                <line x1={-10} y1={0} x2={0} y2={0} />
+                <line x1={10-altXPos(0)} y1={0} x2={0} y2={0} />
                 <line x1={0} y1={0} x2={0} y2={config.filiaire.marginV / 2} />
                 <g key={i} transform={'translate(' +  dd[i] + ', ' + (config.filiaire.marginV / 2) + ')'}>
                   <line x1={0} y1={0} x2={0} y2={config.filiaire.marginV} />
