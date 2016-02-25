@@ -8,7 +8,7 @@ export default class SchemaFiliaire extends React.Component {
       <div>
         <div>Toolbar and title</div>
         <svg width={5000} height={500} >
-          <g transform='translate(50, 50)' stroke='blue' fill='none' >
+          <g transform='translate(50, 50)' stroke='black' fill='none' >
             <ElementFiliaire item={this.props.schema} />
           </g>
         </svg>
