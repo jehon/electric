@@ -108,6 +108,10 @@ export default class ElectricalElement {
   filiaireAlignX() {
     return this.alignX;
   }
+
+  filiaireAlignAlternateY() {
+    return 10;
+  }
 }
 
 
