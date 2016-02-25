@@ -26,12 +26,12 @@ class ElementPosition extends React.Component {
 
                 <g dangerouslySetInnerHTML={{__html: item.draw()}} stroke='red' fill='none' />
               </g>
-              <text x={tp.x} y={tp.y}
-                    textAnchor={away(1, item.positionOrientation).alignmentH()}
-                    dy={away(1, item.positionOrientation).alignementV()}
-                  >
-                {item.getReferenceLong()}
-              </text>
+              <g transform='rotate(45)'>
+                <text x={tp.x} y={tp.y}
+                    >
+                  {item.getReferenceLong()}
+                </text>
+              </g>
             </g>
           </g>
         }
@@ -59,6 +59,10 @@ export default ElementPosition;
 
 
 /*
+                      textAnchor={away(1, item.positionOrientation).alignmentH()}
+                      dy={away(1, item.positionOrientation).alignementV()}
+
+
 
           item.next && item.next.map((e, i) =>
               <ElementPosition key={i} item={e} context={context}/>
