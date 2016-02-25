@@ -44,14 +44,14 @@ export default class ElementFiliaire extends React.Component {
             <g transform={'translate(' + (item.filiaireWidth() + config.filiaire.spaceH) + ',' + (item.filiaireAlignAlternateY()) + ')'} >
               <line
                   x1={-config.filiaire.spaceH}
-                  x2={Math.max(0, item.fililaireRelativePositionX4Next() - item.filiaireWidth()) }
+                  x2={Math.max(0, item.fililaireRelativePositionX4Next() - item.filiaireWidth()) + item.alternate[item.alternate.length-1].filiaireAlignX()}
                   y1={0}
                   y2={0}
                 />
-              <g transform={'translate(' + Math.max(0, item.fililaireRelativePositionX4Next() - item.filiaireWidth()) + ',0)'} stroke='blue'>
+              <g transform={'translate(' + Math.max(0, item.fililaireRelativePositionX4Next() - item.filiaireWidth()) + ',0)'}>
                 {
                   item.alternate.map((e, i) => (
-                    <g key={i} transform={'translate(' + item.fililaireRelativePositionX4Alternate(i) + ', 0)'} >
+                    <g key={i} transform={'translate(' + (item.fililaireRelativePositionX4Alternate(i) + e.filiaireAlignX()) + ', 0)'} >
                       <line x1={0} x2={0} y1={0} y2={config.filiaire.marginV} />
                       <g transform={'translate(0, ' + (config.filiaire.marginV) + ')'}>
                         <ElementFiliaire item={e} />

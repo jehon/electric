@@ -175,7 +175,7 @@ export var OrthogonalFiliaireMixin = Base => class extends Base {
   }
 
   filiaireWidth() {
-    return this.height;
+    return this.height + this.filiaireAlignX();
   }
 
   filiaireAlignX() {
