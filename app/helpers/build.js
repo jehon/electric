@@ -15,7 +15,7 @@ export default function build(data, nameStructure = { base: 'main', index: 0 }) 
     o.setNames(o.data.reference, o.data.reference);
   } else {
     let short = nameStructure.index;
-    o.setNames(short, nameStructure.base + '.' + short);
+    o.setNames(short, nameStructure.base + (nameStructure.index == 0 ? '' : '.' + short));
   }
   if (o.data.next) {
     o.data.next.map((e, i) => {
@@ -25,10 +25,10 @@ export default function build(data, nameStructure = { base: 'main', index: 0 }) 
       } else {
         // Index by row
         o.data.next[i] = build(e, Object.assign({}, nameStructure,
-          { base: nameStructure.base + '.'
-            + (nameStructure.index == 0 ? '' : nameStructure.index + '.')
-            + i,
-            index: 1
+          { base: nameStructure.base
+            + '.' + (nameStructure.index + 1)
+            + '.' + i,
+            index: 0
           }
         ));
       }
