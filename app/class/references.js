@@ -54,11 +54,11 @@ export class Neon extends L {
 export class S extends P {
   constructor(data) {
     super(Object.assign({}, {
-      width       : 25,
-      height      : 20,
-      innerHeight : 15,
-      name        : 'Interrupteur',
-      options     : [ 'bipol', 'bidir', 'variator', 'light' ]
+      width        : 25,
+      height       : 20,
+      innerHeight  : 15,
+      name         : 'Interrupteur',
+      availOptions : [ 'bipol', 'bidir', 'variator', 'light' ]
     }, data));
   }
 
@@ -79,12 +79,12 @@ export class S extends P {
 /* TODO: little box ***/
 export class Disj extends ElectricalElement {
   constructor(data) {
-    super(Object.assign({}, data, {
-      width       : '20',
-      height      : '60',
-      name        : 'Disjoncteur',
-      options     : [ 'I', 'Isec' ]
-    }));
+    super(Object.assign({},{
+      width        : '20',
+      height       : '60',
+      name         : 'Disjoncteur',
+      availOptions : [ 'I', 'Isec' ]
+    }, data));
   }
 
   draw() {
