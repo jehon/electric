@@ -89,8 +89,15 @@ export class Disj extends ElectricalElement {
 
   draw() {
     return '<path d="M0,0 l0,10 l10,35 m-10,0 l0,15"/>'
-    + (this.data.options.I ? '' : '' ) // TODO
-    + (this.data.options.Isec ? '' : '' ) // TODO
+    + '<path d="M10,45 L14,43 L12.5,39 L9,41 z" fill="currentColor"/>'
+    + '<text x=10 y=20 font-family="Verdana" font-size="8" >'
+    + (this.data.options.I    ?
+      this.data.options.I    + 'A '
+      : '' ) // TODO
+    + (this.data.options.Isec ?
+      '\u25B3' + this.data.options.Isec + 'mA ' // U+25AD U+25B3
+      : '' ) // TODO
+    + '</text>'
     ;
   }
 }
