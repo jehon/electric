@@ -7,7 +7,7 @@ export default class SchemaFiliaire extends React.Component {
   render() {
     return (
         <MySVG
-          width={5000}
+          width={3000}
           height={600}
           title='my-electric-house - schema-filiaire'
         >
