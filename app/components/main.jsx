@@ -18,22 +18,22 @@ fetch('/api/v0.1/test.php').then(function(response) {
     );
 
     ReactDOM.render(
-      <SchemaPosition schema={state.oschema} image={{ src: '/cave.jpg', width: 1089, height: 722, scale: 0.60 }} plan='cave'/>,
+      <SchemaPosition schema={state.oschema} image={{ src: '/cave.jpg', width: 1089, height: 722, scale: 0.50 }} plan='cave'/>,
       document.getElementById('plan_cave')
     );
 
     ReactDOM.render(
-      <SchemaPosition schema={state.oschema} image={{ src: '/rdc.png', width: 1089, height: 722, scale: 0.60 }} plan='rdc'/>,
+      <SchemaPosition schema={state.oschema} image={{ src: '/rdc.png', width: 1089, height: 722, scale: 0.50 }} plan='rdc'/>,
       document.getElementById('plan_rdc')
     );
 
     ReactDOM.render(
-      <SchemaPosition schema={state.oschema} image={{ src: '/etage.png', width: 1089, height: 722, scale: 0.60 }} plan='etage'/>,
+      <SchemaPosition schema={state.oschema} image={{ src: '/etage.png', width: 1089, height: 722, scale: 0.50 }} plan='etage'/>,
       document.getElementById('plan_etage')
     );
 
     ReactDOM.render(
-      <SchemaPosition schema={state.oschema} image={{ src: '/grenier.png', width: 1089, height: 722, scale: 0.60 }} plan='grenier'/>,
+      <SchemaPosition schema={state.oschema} image={{ src: '/grenier.png', width: 1089, height: 722, scale: 0.50 }} plan='grenier'/>,
       document.getElementById('plan_grenier')
     );
   });
