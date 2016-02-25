@@ -20,8 +20,10 @@ export default function build(data, nameStructure = { base: 'main', index: 0 }) 
   if (o.data.next) {
     o.data.next.map((e, i) => {
       if (o.data.next.length == 1) {
+        // Continue numerotation if only one element is found
         o.data.next[i] = build(e, Object.assign({}, nameStructure, { index: nameStructure.index + 1 }));
       } else {
+        // Index by row
         o.data.next[i] = build(e, Object.assign({}, nameStructure,
           { base: nameStructure.base + '.'
             + (nameStructure.index == 0 ? '' : nameStructure.index + '.')
