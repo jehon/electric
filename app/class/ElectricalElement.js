@@ -7,6 +7,12 @@ export default class ElectricalElement {
     if (!this.data.options) {
       this.data.options = {};
     }
+    if (!this.data.next) {
+      this.data.next = [];
+    }
+    if (!this.data.alternate) {
+      this.data.alternate = [];
+    }
   }
 
   setNames(short, long) {
@@ -31,16 +37,10 @@ export default class ElectricalElement {
   }
 
   get next() {
-    if (!this.data.next) {
-      return [];
-    }
     return this.data.next;
   }
 
   get alternate() {
-    if (!this.data.alternate) {
-      return [];
-    }
     return this.data.alternate;
   }
 
