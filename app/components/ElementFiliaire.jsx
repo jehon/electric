@@ -13,7 +13,7 @@ export default class ElementFiliaire extends React.Component {
         {
           <g>
             <g dangerouslySetInnerHTML={{__html: item.filiaireDraw()}} />
-            <rect x={-item.filiaireAlignX()} y={0} width={item.filiaireHierarchicalWidth()} height={item.filiaireHeight()} fill='none' stroke='yellow' />
+            <rect x={-item.filiaireAlignX()} y={0} width={item.filiaireHierarchicalWidth()} height={item.filiaireHeight()} fill='none' stroke='none' />
             <text x={2} y={-2} fontFamily="Verdana" fontSize="6">
               {item.getReferenceLong()}
             </text>
