@@ -227,3 +227,18 @@ export class Transfo extends OrthogonalFiliaireMixin(ElectricalElement) {
       ;
   }
 }
+
+export class Label extends ElectricalElement {
+  constructor(data) {
+    super(Object.assign({}, data, {
+      width       : '20',
+      height      : '20',
+      name        : 'Label libre',
+      availOptions : 'text'
+    }));
+  }
+
+  draw() {
+    return '<text x="0" y="10" font-family="Verdana" font-size="6">' + this.data.options.text + '</text>';
+  }
+}
