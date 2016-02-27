@@ -42,6 +42,7 @@ export default class SchemaPosition extends React.Component {
           width={this.state.image.width}
           height={this.state.image.height}
           onClick={schemaClick}
+          viewBox={this.props.image.viewBox}
         >
           <image opacity='0.5'
               x='0' y='0'
