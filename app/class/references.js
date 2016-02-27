@@ -7,6 +7,20 @@ import { OrthogonalFiliaireMixin } from 'class/ElectricalElement';
     this, draw() will be naturally centered
 */
 
+export class PlaceHolder extends OrthogonalFiliaireMixin(ElectricalElement) {
+  constructor(data) {
+    super(Object.assign({}, {
+      width       : 25,
+      height      : 25,
+      name        : 'Place vide'
+    }, data));
+  }
+
+  draw() {
+    return '';
+  }
+}
+
 export class P extends OrthogonalFiliaireMixin(ElectricalElement) {
   constructor(data) {
     super(Object.assign({}, {
@@ -170,13 +184,16 @@ export class KNX extends ElectricalElement {
   constructor(data) {
     super(Object.assign({}, data, {
       width       : '20',
-      height      : '60',
+      height      : '35',
       name        : 'Relais KNX'
     }));
   }
 
   draw() {
-    return '<path d="M0,0 l0,10 l10,35 m-10,0 l0,15"/>';
+    return '<rect x=-10 y=0 width=20 height=35 />'
+      + '<path d="M-5,5 l0,10 l10,0" />'
+      + '<path d="M-5,30 l0,-10 l10,0" />'
+      ;
   }
 }
 
