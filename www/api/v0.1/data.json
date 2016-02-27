@@ -179,8 +179,10 @@
         { "type": "L", "x": 229, "y": 317, "orientation": 90, "plan": "cave" }
       ]}
     ]},
-    { "type": "Bridge", "reference": "G.G3", "next": [
-      { "type": "P", "x": 232, "y": 151, "orientation": 90, "plan": "cave" }
+    { "type": "KNX", "reference": "G3", "next": [
+      { "type": "Bridge", "reference": "G.G3", "next": [
+        { "type": "P", "x": 232, "y": 151, "orientation": 90, "plan": "cave" }
+      ]}
     ]}
   ]},
   { "type": "Disj", "reference": "A39", "label": "KNX", "options": {"I": 16 }, "next": [
@@ -211,6 +213,9 @@
   ]},
   { "type": "Disj", "reference": "Boitier B", "options": { "I": 20 },"next": [
     { "type": "Disj", "reference": "B01", "label": "KNX + sonnette", "next": [
+      { "type": "PlaceHolder", "next": [
+        { "type": "PlaceHolder" }
+      ]}
     ]},
     { "type": "Disj", "reference": "B11", "label": "ch parents", "next": [
       { "type": "P", "x": 854, "y": 339, "orientation": 0, "plan": "etage", "next": [
