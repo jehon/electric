@@ -179,7 +179,6 @@ export class CookingPlates extends OrthogonalFiliaireMixin(ElectricalElement) {
   }
 }
 
-/** TODO **********************/
 export class KNX extends ElectricalElement {
   constructor(data) {
     super(Object.assign({}, data, {
@@ -208,5 +207,23 @@ export class Bridge extends ElectricalElement {
 
   draw() {
     return '<path d="M0,0 l0,10"/>';
+  }
+}
+
+export class Transfo extends OrthogonalFiliaireMixin(ElectricalElement) {
+  constructor(data) {
+    super(Object.assign({}, data, {
+      width       : '20',
+      height      : '20',
+      name        : 'Transformateur'
+    }));
+  }
+
+  draw() {
+    return '<line x1=0 x2=0 y1=0 y2=2 />'
+      + '<circle cx=0 cy=7 r=5 />'
+      + '<circle cx=0 cy=13 r=5 />'
+      + '<line x1=0 x2=0 y1=18 y2=20 />'
+      ;
   }
 }
