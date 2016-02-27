@@ -212,9 +212,14 @@
     ]}
   ]},
   { "type": "Disj", "reference": "Boitier B", "options": { "I": 20 },"next": [
-    { "type": "Disj", "reference": "B01", "label": "KNX + sonnette", "next": [
-      { "type": "Transfo", "next": [
-        { "type": "Transfo" }
+    { "type": "Disj", "reference": "B01", "next": [
+      { "type": "Transfo", "alternate": [
+        { "type": "Label", "options": { "text": "Sonnette" }}
+      ],
+      "next": [
+        { "type": "Transfo", "alternate": [
+          { "type": "Label", "options": { "text": "KNX alim" } }
+        ]}
       ]}
     ]},
     { "type": "Disj", "reference": "B11", "label": "ch parents", "next": [
