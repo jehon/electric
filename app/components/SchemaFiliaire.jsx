@@ -7,8 +7,9 @@ export default class SchemaFiliaire extends React.Component {
   render() {
     return (
         <MySVG
-          width={3000}
+          width={800}
           height={600}
+          viewBox='1500 0 800 600'
           title='my-electric-house - schema-filiaire'
         >
           <g transform='translate(50, 50)' stroke='black' fill='none' >
@@ -22,3 +23,9 @@ export default class SchemaFiliaire extends React.Component {
 SchemaFiliaire.propTypes = {
   schema: React.PropTypes.object
 };
+
+/*
+          width={3000}
+          height={600}
+
+*/

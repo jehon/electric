@@ -6,6 +6,7 @@ export default class ElementFiliaire extends React.Component {
   render() {
     // Parameters
     const item    = this.props.item;
+    const debug   = 'none';
 
     /* eslint-disable react/no-danger */
     return (
@@ -13,7 +14,7 @@ export default class ElementFiliaire extends React.Component {
         {
           <g>
             <g dangerouslySetInnerHTML={{__html: item.filiaireDraw()}} />
-            <rect x={-item.filiaireAlignX()} y={0} width={item.filiaireHierarchicalWidth()} height={item.filiaireHeight()} fill='none' stroke='none' />
+            <rect x={-item.filiaireAlignX()} y={0} width={item.filiaireHierarchicalWidth()} height={item.filiaireHeight()} fill='none' stroke={debug} />
             <text x={2} y={-2} fontFamily="Verdana" fontSize="6">
               {item.getReferenceLong()}
             </text>

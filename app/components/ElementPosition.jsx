@@ -12,7 +12,7 @@ class ElementPosition extends React.Component {
 
     // Helpers
     const tp      = away(item.height, item.positionOrientation);
-    const debug   = 'yellow';
+    const debug   = 'none';
 
     /* eslint-disable react/no-danger */
     return (

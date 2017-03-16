@@ -472,7 +472,7 @@
       ]},
       { "type": "Disj", "reference": "C07", "options": { "Isec":30 }, "next": [
         { "type": "Disj", "reference": "C16", "label": "fond jardin", "next": [
-          { "type": "P", "x": 750, "y": 20, "orientation": 0, "plan": "rdc", "label": "Fond jardin" }
+          { "type": "P", "x": 833, "y": 407, "orientation": 270, "plan": "exterieurs", "label": "Fond jardin" }
         ]},
         { "type": "Disj", "reference": "C17", "label": "fond cave", "next": [
           { "type": "P", "x": 637, "y": 233, "orientation": 180, "plan": "cave", "label": "Fond cave" }
