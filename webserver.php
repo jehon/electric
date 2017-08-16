@@ -6,7 +6,12 @@ $path = parse_url($uri,  PHP_URL_PATH);
 
 if (substr($path, 0, 4) === "/api") {
   $v = explode("/", $path)[2];
-  require_once("www/api/$v/server.php");
+
+  // For Laravel:
+  //require_once(__DIR__ . "/www/api/$v/server.php");
+
+  // For tests:
+  require_once(__DIR__ . "/www/" . $path);
   return true;
 }
 
