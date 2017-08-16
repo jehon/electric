@@ -1,7 +1,4 @@
 
-import React from 'react';
-import away  from 'helpers/away';
-
 var debug = false;
 
 class ElementPosition extends React.Component {

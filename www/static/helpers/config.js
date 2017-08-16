@@ -5,5 +5,3 @@ let config = {
     spaceH: 10
   }
 };
-
-export default config;

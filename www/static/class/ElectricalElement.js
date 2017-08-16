@@ -1,7 +1,5 @@
 
-import config from 'helpers/config';
-
-export default class ElectricalElement {
+class ElectricalElement {
   constructor(data) {
     this.internal = {
       filiaire: {
@@ -156,7 +154,7 @@ export default class ElectricalElement {
 }
 
 
-export var OrthogonalFiliaireMixin = Base => class extends Base {
+let OrthogonalFiliaireMixin = Base => class extends Base {
   filiaireDraw() {
     return (`
       <g>

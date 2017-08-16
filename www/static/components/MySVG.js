@@ -1,7 +1,5 @@
 
-import React           from 'react';
-
-export default class MySVG extends React.Component {
+class MySVG extends React.Component {
   render() {
     console.log(this.props);
     return (

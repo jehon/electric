@@ -1,13 +1,10 @@
 
-import ElectricalElement           from 'class/ElectricalElement';
-import { OrthogonalFiliaireMixin } from 'class/ElectricalElement';
-
 /*
   draw() -> draw a component, starting point being the line itself
     this, draw() will be naturally centered
 */
 
-export class PlaceHolder extends OrthogonalFiliaireMixin(ElectricalElement) {
+class PlaceHolder extends OrthogonalFiliaireMixin(ElectricalElement) {
   constructor(data) {
     super(Object.assign({}, {
       width       : 25,
@@ -21,7 +18,7 @@ export class PlaceHolder extends OrthogonalFiliaireMixin(ElectricalElement) {
   }
 }
 
-export class P extends OrthogonalFiliaireMixin(ElectricalElement) {
+class P extends OrthogonalFiliaireMixin(ElectricalElement) {
   constructor(data) {
     super(Object.assign({}, {
       width       : 25,
@@ -36,7 +33,7 @@ export class P extends OrthogonalFiliaireMixin(ElectricalElement) {
   }
 }
 
-export class L extends ElectricalElement {
+class L extends ElectricalElement {
   constructor(data) {
     super(Object.assign({}, {
       width       : 20,
@@ -51,7 +48,7 @@ export class L extends ElectricalElement {
   }
 }
 
-export class Neon extends L {
+class Neon extends L {
   constructor(data) {
     super(Object.assign({}, {
       width       : 10,
@@ -65,7 +62,7 @@ export class Neon extends L {
   }
 }
 
-export class S extends P {
+class S extends P {
   constructor(data) {
     super(Object.assign({}, {
       width        : 25,
@@ -90,7 +87,7 @@ export class S extends P {
   }
 }
 
-export class Disj extends ElectricalElement {
+class Disj extends ElectricalElement {
   constructor(data) {
     super(Object.assign({},{
       width        : '20',
@@ -111,7 +108,7 @@ export class Disj extends ElectricalElement {
   }
 }
 
-export class Hotte extends P {
+class Hotte extends P {
   constructor(data) {
     super(Object.assign({}, data, {
       width       : '20',
@@ -128,7 +125,7 @@ export class Hotte extends P {
   }
 }
 
-export class Heater extends OrthogonalFiliaireMixin(ElectricalElement) {
+class Heater extends OrthogonalFiliaireMixin(ElectricalElement) {
   constructor(data) {
     super(Object.assign({}, {
       width       : 20,
@@ -145,7 +142,7 @@ export class Heater extends OrthogonalFiliaireMixin(ElectricalElement) {
 
 
 /* *********** TODO hachuré ********************/
-export class Boiler extends OrthogonalFiliaireMixin(ElectricalElement) {
+class Boiler extends OrthogonalFiliaireMixin(ElectricalElement) {
   constructor(data) {
     super(Object.assign({}, {
       width       : 25,
@@ -160,7 +157,7 @@ export class Boiler extends OrthogonalFiliaireMixin(ElectricalElement) {
   }
 }
 
-export class CookingPlates extends OrthogonalFiliaireMixin(ElectricalElement) {
+class CookingPlates extends OrthogonalFiliaireMixin(ElectricalElement) {
   constructor(data) {
     super(Object.assign({}, {
       width       : 25,
@@ -179,7 +176,7 @@ export class CookingPlates extends OrthogonalFiliaireMixin(ElectricalElement) {
   }
 }
 
-export class KNX extends ElectricalElement {
+class KNX extends ElectricalElement {
   constructor(data) {
     super(Object.assign({}, data, {
       width       : '20',
@@ -196,7 +193,7 @@ export class KNX extends ElectricalElement {
   }
 }
 
-export class Bridge extends ElectricalElement {
+class Bridge extends ElectricalElement {
   constructor(data) {
     super(Object.assign({}, data, {
       width       : '1',
@@ -210,7 +207,7 @@ export class Bridge extends ElectricalElement {
   }
 }
 
-export class Transfo extends OrthogonalFiliaireMixin(ElectricalElement) {
+class Transfo extends OrthogonalFiliaireMixin(ElectricalElement) {
   constructor(data) {
     super(Object.assign({}, data, {
       width       : '20',
@@ -228,7 +225,7 @@ export class Transfo extends OrthogonalFiliaireMixin(ElectricalElement) {
   }
 }
 
-export class Label extends ElectricalElement {
+class Label extends ElectricalElement {
   constructor(data) {
     super(Object.assign({}, data, {
       width       : '20',

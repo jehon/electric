@@ -1,6 +1,6 @@
 
 // http://stackoverflow.com/a/16566198/1954789
-export default function getDataFromImageUrl(url) {
+function getDataFromImageUrl(url) {
   var img = new Image();
 
   img.setAttribute('crossOrigin', 'anonymous');

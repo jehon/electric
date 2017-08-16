@@ -1,8 +1,5 @@
 
-import React  from 'react';
-import config from 'helpers/config';
-
-export default class ElementFiliaire extends React.Component {
+class ElementFiliaire extends React.Component {
   render() {
     // Parameters
     const item    = this.props.item;

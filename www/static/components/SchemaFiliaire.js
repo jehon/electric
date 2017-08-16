@@ -1,9 +1,5 @@
 
-import React           from 'react';
-import MySVG           from 'components/MySVG';
-import ElementFiliaire from 'components/ElementFiliaire';
-
-export default class SchemaFiliaire extends React.Component {
+class SchemaFiliaire extends React.Component {
   render() {
     return (
         <MySVG
@@ -23,9 +19,3 @@ export default class SchemaFiliaire extends React.Component {
 SchemaFiliaire.propTypes = {
   schema: React.PropTypes.object
 };
-
-/*
-          width={3000}
-          height={600}
-
-*/

@@ -1,7 +1,5 @@
 
-import * as references from 'class/references';
-
-export default function build(data, nameStructure = { base: 'main', index: 0 }) {
+function build(data, nameStructure = { base: 'main', index: 0 }) {
   var o;
   var t = data.type;
   if (typeof(references[t]) == 'undefined') {

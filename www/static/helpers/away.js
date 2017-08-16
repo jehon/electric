@@ -1,5 +1,5 @@
 
-export default function away(d, angle) {
+function away(d, angle) {
   // Normalize angle in [O, 360[
   while (angle < 0) {
     angle += 360;

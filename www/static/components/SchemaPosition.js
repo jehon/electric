@@ -1,10 +1,4 @@
 
-import React                 from 'react';
-import MySVG                 from 'components/MySVG';
-import ElementPosition       from 'components/ElementPosition';
-import getDataFromImageUrl   from 'helpers/getDataFromImageUrl';
-
-
 function schemaClick(evt) {
   var e = evt.target;
   var dim = e.getBoundingClientRect();
@@ -13,7 +7,7 @@ function schemaClick(evt) {
   console.info('clicked on x: ' + Math.round(x) + ', y: ' + Math.round(y));
 }
 
-export default class SchemaPosition extends React.Component {
+class SchemaPosition extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
