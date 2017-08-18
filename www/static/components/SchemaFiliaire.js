@@ -1,7 +1,7 @@
 
-class SchemaFiliaire extends React.Component {
-  render() {
-    return (
+class SchemaFiliaire extends HTMLElement {
+  draw() {
+    this.innerHTML = `
         <MySVG
           width={800}
           height={600}
