@@ -14,7 +14,8 @@
     "tests"
   ],
   "dependencies": {
-    "webcomponentsjs": "latest",
+    "webcomponentsjs": "^0.7.22",
+    "custom-elements": "webcomponents/custom-elements#^1.0.0",
     "shadydom": "cloudydom#^1.0.*",
     "bootstrap": "^3.3",
     "moment": "momentjs#^2.15.2",
