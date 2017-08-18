@@ -5,10 +5,15 @@ fetch('/api/v0.1/test.php').then(function(response) {
   response.json().then(function(json) {
     state.oschema = build(json);
 
-    ReactDOM.render(
-      <SchemaFiliaire schema={state.oschema}/>,
-      document.getElementById('schema')
-    );
+    document.querySelectorAll("schema-filiaire schema-position").forEach(el => {
+        console.log("Setting schema on ", el);
+        el.setAttribute("schema", state.oschema);
+    })
+
+    // ReactDOM.render(
+    //   <SchemaFiliaire schema={state.oschema}/>,
+    //   document.getElementById('schema')
+    // );
 
     // ReactDOM.render(
     //   <SchemaPosition schema={state.oschema} plan='cave'
@@ -37,10 +42,10 @@ fetch('/api/v0.1/test.php').then(function(response) {
     //   document.getElementById('plan_grenier')
     // );
 
-    ReactDOM.render(
-       <SchemaPosition schema={state.oschema} plan='exterieurs'
-         image={{ src: '/exterieurs.png', scale: 1 }} />,
-       document.getElementById('plan_exterieurs')
-    );
+    // ReactDOM.render(
+    //    <SchemaPosition schema={state.oschema} plan='exterieurs'
+    //      image={{ src: '/exterieurs.png', scale: 1 }} />,
+    //    document.getElementById('plan_exterieurs')
+    // );
   });
 });
