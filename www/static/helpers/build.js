@@ -1,4 +1,21 @@
 
+const references = { 
+  PlaceHolder, 
+  P,
+  L,
+  Neon,
+  S,
+  Disj,
+  Hotte,
+  Heater,
+  Boiler, 
+  CookingPlates,
+  KNX,
+  Bridge,
+  Transfo,
+  Label
+};
+
 function build(data, nameStructure = { base: 'main', index: 0 }) {
   var o;
   var t = data.type;
