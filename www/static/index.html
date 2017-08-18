@@ -19,29 +19,32 @@
     <!-- - - - - - - - - - - - - -->
     <!-- JS - globals            -->
     <!-- - - - - - - - - - - - - -->
-    <script type='text/javascript' src='bower_components/shadydom/cloudydom.min.js'></script> <!-- web components v1 - shadyDom -->
+    <!-- <script type='text/javascript' src='../bower_components/webcomponentsjs/webcomponents-lite.js'></script> <!- - web components v0--> 
+    <!-- <script type='text/javascript' src='bower_components/shadydom/cloudydom.min.js'></script> <!- - web components v1 - shadyDom - -> -->
     <script type='text/javascript' src='bower_components/custom-elements/custom-elements.min.js'></script> <!-- web components v1 -->
 
     <!-- - - - - - - - - - - - - -->
     <!-- JS - custom             -->
     <!-- - - - - - - - - - - - - -->
-    <script type='text/javascript' src='helpers/away.js'></script>
     <script type='text/javascript' src='class/ElectricalElement.js'></script>
     <script type='text/javascript' src='class/ElectricalElementsReferences.js'></script>
     <script type='text/javascript' src='helpers/build.js'></script>
+    <script type='text/javascript' src='helpers/away.js'></script>
     <script type='text/javascript' src='helpers/config.js'></script>
     <script type='text/javascript' src='helpers/getDataFromImageUrl.js'></script>
 
+    <script type='text/javascript' src='components/MySVG.js'></script>
+    <script type='text/javascript' src='components/SchemaPosition.js'></script>
 
     <script type='text/javascript' src='js/main.js'></script>
 
   </head>
   <body>
   <h1>Schema</h1>
-  <div id='schema'></div>
+  <schema-filiaire></schema-filiaire>
 
   <h1>Plan cave</h1>
-  <div id='plan_cave'></div>
+  <schema-position value='cave' image='{ src: "/cave.jpg", scale: 0.50, viewBox: "175 100 850 550" }'></schema-position>
 
   <h1>Plan RDC</h1>
   <div id='plan_rdc'></div>
