@@ -29,7 +29,7 @@
     "nightwatch": "latest",
     "nightwatch-html-reporter": "latest",
     "selenium-server": "latest",
-    "webcomponentsjs": "latest"
+    "webcomponentsjs": "0.7.*"
   },
   "scripts": {
     "reset": "./bin/dev-reset.sh",

@@ -28,24 +28,18 @@ module.exports = function(config) {
 
     files : [
       // Custom Elements v0
-      'bower_components/webcomponentsjs/webcomponents-lite.js',
+      'static/bower_components/webcomponentsjs/webcomponents-lite.js',
 
       // Custom Elements v1
-      'bower_components/shadydom/cloudydom.min.js',
-      'bower_components/custom-elements/custom-elements.min.js',
+      'static/bower_components/shadydom/cloudydom.min.js',
+      'static/bower_components/custom-elements/custom-elements.min.js',
 
-      'bower_components/angular/angular.min.js',
-      'bower_components/angular-route/angular-route.min.js',
-      'bower_components/jquery/dist/jquery.min.js',
-      'bower_components/karma-read-json/karma-read-json.js',
-      'bower_components/clone.js/clone.js',
-      'bower_components/he/he.js',
-      { pattern: 'api/*/tests/references/*.json', included: false },
-      { pattern: "bower_components/**",              included: false, served: true, watched: false },
-      { pattern: "static/elements/resources/*",      included: false, served: true, watched: true },
-      'static/!(elements)/**/*.js',
-      'static/elements/*.js',
-      'static/elements/*.html',
+      'static/bower_components/jquery/dist/jquery.min.js',
+      'static/bower_components/karma-read-json/karma-read-json.js',
+      { pattern: "static/bower_components/**",    included: false, served: true, watched: false },
+//      { pattern: "static/elements/resources/*",   included: false, served: true, watched: true },
+      'static/!(elements,bower_components)/**/*.js',
+//      'static/elements/*.js',
       '../tests/unitjs/mocks/*.js',
       '../tests/unitjs/*.js',
     ],
@@ -55,11 +49,7 @@ module.exports = function(config) {
     browsers: [ 'Firefox' ],
 
     preprocessors: {
-      'static/**/*.js': [ 'coverage' ],
-      // '*.js': [ 'coverage' ],
-      // '*.html': [ 'coverage' ],
-      // '!(bower_components)/**/*.js': [ 'coverage' ],
-      // '!(bower_components)/**/*.html': [ 'coverage' ],
+      '**/(!bower_components)/**/*.js': [ 'coverage' ],
     },
 
     coverageReporter: {
