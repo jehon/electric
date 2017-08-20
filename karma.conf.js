@@ -39,7 +39,7 @@ module.exports = function(config) {
       { pattern: "static/bower_components/**",    included: false, served: true, watched: false },
 //      { pattern: "static/elements/resources/*",   included: false, served: true, watched: true },
       'static/!(elements,bower_components)/**/*.js',
-//      'static/elements/*.js',
+      'static/elements/*.js',
       '../tests/unitjs/mocks/*.js',
       '../tests/unitjs/*.js',
     ],
