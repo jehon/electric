@@ -2,7 +2,11 @@
 IdBuilder = (function() {
 	let uuidCounter = 1;
 
-	return class IdBuilder extends Builder {
+	class IdBuilder extends Builder {
+		static nextUUID() {
+			return uuidCounter;
+		}
+
 		buildSelf(element, uuid = false) {
 			if (!("getId" in element)) {
 				// Copy the value to fix it
@@ -11,7 +15,7 @@ IdBuilder = (function() {
 			}
 			if (uuid) {
 				if (element.getId() == uuid) {
-					return uuid;
+					return element;
 				}
 			}
 			return false;
@@ -29,12 +33,11 @@ IdBuilder = (function() {
 			return na;
 		}
 
-		static nextUUID() {
-			return uuidCounter;
+		findByUUID(uuid) {
+			return this.build(uuid);
 		}
 	}
+
+	return IdBuilder;
 })();
 
-function findByUUID(uuid) {
-
-}
