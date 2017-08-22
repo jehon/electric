@@ -2,14 +2,23 @@
 class Builder {
 	constructor(schema) {
 		this._schema = schema;
-		this._builders = {};
+
+		// This should be a WealMap !
+		this._builders = new WeakMap();
+		this._keys = new Map();
 	}
 
-	_getBuilder(i, element) {
-		if (typeof(this._builders[i]) == "undefined") {
-			this._builders[i] = new this.constructor(element);
+	_getBuilder(range, i, element) {
+		let mk = range + '_' + i;
+		if (!this._keys.has(mk)) {
+			this._keys.set(mk, { range: range, i: i });
 		}
-		return this._builders[i];
+		let k = this._keys.get(mk);
+		if (!this._builders.has(k)) {
+			this._builders.set(k, new this.constructor(element));
+		}
+
+		return this._builders.get(k);
 	}
 	
 	build(...args) {
@@ -38,12 +47,12 @@ class Builder {
 	}
 
 	getOneNext(i, element, ...args) {
-		let builder = this._getBuilder('next_' + i, element);
+		let builder = this._getBuilder('next', i, element);
 		return builder.build(...args);
 	}
 
 	getOneAlternate(i, element, ...args) {
-		let builder = this._getBuilder('alt_' + i, element);
+		let builder = this._getBuilder('alt', i, element);
 		return builder.build(...args);
 	}
 
