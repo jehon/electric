@@ -46,6 +46,7 @@ describe("BuilderTest.js", function() {
 		expect(i.alt).toBe(3);
 		expect(i.assembly).toBe(8);
 
+		// count the number of occurent in string (thanks to https://stackoverflow.com/a/4009768/1954789)
 		expect(res.match(/Disj/g).length).toBe(1);
 		expect(res.match(/P/g).length).toBe(2);
 		expect(res.match(/S/g).length).toBe(3);
@@ -67,9 +68,12 @@ describe("BuilderTest.js", function() {
 		expect(i.assembly).toBe(8);
 		expect(res).toContain("|HAHAHA|");
 
+		// count the number of occurent in string (thanks to https://stackoverflow.com/a/4009768/1954789)
+		// new elements
 		expect(res.match(/HAHAHA/g).length).toBe(1);
 		expect(res.match(/P/g).length).toBe(1);
 
+		// conserved elements
 		expect(res.match(/Disj/g).length).toBe(1);
 		expect(res.match(/S/g).length).toBe(3);
 		expect(res.match(/Neon/g).length).toBe(2);
