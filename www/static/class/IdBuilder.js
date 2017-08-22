@@ -7,6 +7,10 @@ IdBuilder = (function() {
 			return uuidCounter;
 		}
 
+		static testResetUUID() {
+			uuidCounter = 1;
+		}
+
 		buildSelf(element, uuid = false) {
 			if (!("getId" in element)) {
 				// Copy the value to fix it
