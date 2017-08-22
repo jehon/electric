@@ -34,7 +34,7 @@ describe("BuilderTest.js", function() {
 		}
 	}
 
-	it("should parse a simple object", function() {
+	it("should parse a simple object with a MockBuilder", function() {
 		resetCounters();
 
 		//let schema = mockSimpleCircuit();
@@ -55,7 +55,7 @@ describe("BuilderTest.js", function() {
 	});
 
 
-	it("should parse the simpleCircuit mock", function() {
+	it("should parse the simpleCircuit mock  with a MockBuilder", function() {
 		resetCounters();
 
 		let schema = mockSimpleCircuit();
