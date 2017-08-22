@@ -1,17 +1,5 @@
 
 describe("IdBuilderTest.js", function() {
-	let i;
-
-	let resetCounters = function() {
-		i = { 
-			next: 0,
-			alt: 0,
-			assembly: 0,
-			self: 0
-		};
-	};
-	resetCounters();
-
 	it("should refresh the data when data is modified", function() {
 		let schema = mockSimpleCircuit();
 		expect(schema).not.toBeNull();
