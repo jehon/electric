@@ -34,25 +34,26 @@ describe("BuilderTest.js", function() {
 		}
 	}
 
-	it("should parse a simple object with a MockBuilder", function() {
-		resetCounters();
+	// it("should parse a simple object with a MockBuilder", function() {
+	// 	resetCounters();
 
-		//let schema = mockSimpleCircuit();
-		//expect(schema).not.toBeNull();
-		let schema = new Disj();
-		schema.next.push(new P());
-		schema.alternate.push(new S());
+	// 	//let schema = mockSimpleCircuit();
+	// 	//expect(schema).not.toBeNull();
+	// 	let schema = new Disj();
+	// 	schema.next.push(new P());
+	// 	schema.alternate.push(new S());
 
-		schema.next[0].next.push(new Disj());
+	// 	schema.next[0].next.push(new Disj());
 
-		let cb = new MockBuilder(schema);
+	// 	let cb = new MockBuilder(schema);
 
-		cb.build();
-		expect(i.self).toBe(4);
-		expect(i.next).toBe(2);
-		expect(i.alt).toBe(1);
-		expect(i.assembly).toBe(4);
-	});
+	// 	res = cb.build();
+	// 	expect(i.self).toBe(4);
+	// 	expect(i.next).toBe(2);
+	// 	expect(i.alt).toBe(1);
+	// 	expect(i.assembly).toBe(4);
+	// 	console.log("Result: ", res);
+	// });
 
 
 	it("should parse the simpleCircuit mock  with a MockBuilder", function() {

@@ -2,7 +2,7 @@
 
 describe("parsing the json", function() {
 	it("should parse object simpleCircuit", function() {
-		let schema = mockSimpleCircuit();
+		let schema = build(mockSimpleCircuit());
 		expect(schema).not.toBeNull();
 		expect(schema).toEqual(jasmine.any(Disj));
 		expect(schema.next[0]).toEqual(jasmine.any(P));
