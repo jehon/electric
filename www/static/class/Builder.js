@@ -52,6 +52,8 @@ class Builder {
 	}
 
 	buildAssembly(self, next, alternate) {
-		return "";
+		return self
+		+ (next.length > 0 ? "\n" + next.join("\n") : "");
+		+ (alternate.length > 0 ? "\n" + alternate.join("\n") : "");
 	}
 }
