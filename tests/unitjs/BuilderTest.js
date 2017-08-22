@@ -63,10 +63,12 @@ describe("BuilderTest.js", function() {
 		expect(schema).not.toBeNull();
 		let cb = new MockBuilder(schema);
 
-		cb.build();
+		res = cb.build();
 		expect(i.self).toBe(8);
 		expect(i.next).toBe(4);
 		expect(i.alt).toBe(3);
 		expect(i.assembly).toBe(8);
+		console.log("Result: ", res);
+	});
 	});
 });

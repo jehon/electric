@@ -5,9 +5,9 @@ class Builder {
 		this._builders = {};
 	}
 
-	_getBuilder(i, schema) {
+	_getBuilder(i, element) {
 		if (typeof(this._builders[i]) == "undefined") {
-			this._builders[i] = new this.constructor(schema);
+			this._builders[i] = new this.constructor(element);
 		}
 		return this._builders[i];
 	}
@@ -23,14 +23,14 @@ class Builder {
 
 		// Build next's
 		let next = [];
-		if (this._schema.data.next) {
-		    next = this._schema.data.next.map((e, i) => this.getOneNext(i, e));
+		if (this._schema.next) {
+		    next = this._schema.next.map((e, i) => this.getOneNext(i, this._schema.next[i], ...args));
 		}
 
 		// Build for alternate
 		let alternate = [];
-		if (this._schema.data.alternate) {
-		    alternate = this._schema.data.alternate.map((e, i) => this.getOneAlternate(i, this._schema.data.alternate[i]));
+		if (this._schema.alternate) {
+		    alternate = this._schema.alternate.map((e, i) => this.getOneAlternate(i, this._schema.alternate[i], ...args));
 		}
 
 		// Compose the whole stuff into one
@@ -48,12 +48,12 @@ class Builder {
 	}
 
 	buildSelf(element, ...args) {
-		return "";
+		return element.type + "|";
 	}
 
 	buildAssembly(self, next, alternate) {
 		return self
-		+ (next.length > 0 ? "\n" + next.join("\n") : "");
-		+ (alternate.length > 0 ? "\n" + alternate.join("\n") : "");
+		+ (next.length > 0 ? next.join("") : "")
+		+ (alternate.length > 0 ? alternate.join("") : "");
 	}
 }
