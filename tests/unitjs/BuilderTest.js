@@ -1,6 +1,42 @@
 
 describe("BuilderTest.js", function() {
+	let i;
+
+	let resetCounters = function() {
+		i = { 
+			next: 0,
+			alt: 0,
+			assembly: 0,
+			self: 0
+		};
+	};
+	resetCounters();
+
+	class MockBuilder extends Builder {
+		getOneNext(...args) {
+			i.next++;
+			return super.getOneNext(...args);
+		}
+
+		getOneAlternate(...args) {
+			i.alt++;
+			return super.getOneAlternate(...args);
+		}
+
+		buildSelf(...args) {
+			i.self++;
+			return super.buildSelf(...args);
+		}
+
+		buildAssembly(...args) {
+			i.assembly++;
+			return super.buildAssembly(...args);
+		}
+	}
+
 	it("should parse a simple object", function() {
+		resetCounters();
+
 		//let schema = mockSimpleCircuit();
 		//expect(schema).not.toBeNull();
 		let schema = new Disj();
@@ -9,17 +45,27 @@ describe("BuilderTest.js", function() {
 
 		schema.next[0].next.push(new Disj());
 
-		let cb = new Builder(schema);
-
-
-		let i = 0;
-
-		cb.getOneNext      = () => { i = i + 1 };
-		cb.getOneAlternate = () => { i = i + 10 };
-		cb.buildSelf       = () => { i = i + 100 };
-		cb.buildAssembly   = () => { i = i + 1000 };
+		let cb = new MockBuilder(schema);
 
 		cb.build();
-		expect(i).toBe(2212);
-	})
+		expect(i.self).toBe(4);
+		expect(i.next).toBe(2);
+		expect(i.alt).toBe(1);
+		expect(i.assembly).toBe(4);
+	});
+
+
+	it("should parse the simpleCircuit mock", function() {
+		resetCounters();
+
+		let schema = mockSimpleCircuit();
+		expect(schema).not.toBeNull();
+		let cb = new MockBuilder(schema);
+
+		cb.build();
+		expect(i.self).toBe(8);
+		expect(i.next).toBe(4);
+		expect(i.alt).toBe(3);
+		expect(i.assembly).toBe(8);
+	});
 });

@@ -2,6 +2,14 @@
 class Builder {
 	constructor(schema) {
 		this._schema = schema;
+		this._builders = {};
+	}
+
+	_getBuilder(i, schema) {
+		if (typeof(this._builders[i]) == "undefined") {
+			this._builders[i] = new this.constructor(schema);
+		}
+		return this._builders[i];
 	}
 	
 	build(...args) {
@@ -16,29 +24,31 @@ class Builder {
 		// Build next's
 		let next = [];
 		if (this._schema.data.next) {
-		    next = this._schema.data.next.map((e, i) => this.getOneNext(this._schema.data.next[i]));
+		    next = this._schema.data.next.map((e, i) => this.getOneNext(i, e));
 		}
 
 		// Build for alternate
 		let alternate = [];
 		if (this._schema.data.alternate) {
-		    next = this._schema.data.alternate.map((e, i) => this.getOneAlternate(this._schema.data.alternate[i]));
+		    alternate = this._schema.data.alternate.map((e, i) => this.getOneAlternate(i, this._schema.data.alternate[i]));
 		}
 
 		// Compose the whole stuff into one
 		return this.buildAssembly(this.buildSelf(this._schema, ...args), next, alternate);
 	}
 
-	getOneNext(element, ...args) {
-		return "";
+	getOneNext(i, element, ...args) {
+		let builder = this._getBuilder('next_' + i, element);
+		return builder.build(...args);
 	}
 
-	getOneAlternate(element, ...args) {
-		return "";
+	getOneAlternate(i, element, ...args) {
+		let builder = this._getBuilder('alt_' + i, element);
+		return builder.build(...args);
 	}
 
 	buildSelf(element, ...args) {
-		return element.draw();
+		return "";
 	}
 
 	buildAssembly(self, next, alternate) {
