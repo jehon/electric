@@ -3,17 +3,21 @@ class Builder {
 	constructor(schema) {
 		this._schema = schema;
 
-		// This should be a WealMap !
-		this._builders = new WeakMap();
-		this._keys = new Map();
+		// Thinking: what should be a WeakMap: builder, schema?
+		// Schema -> so some builder could live without a schema -> no way!
+		// Builder -> if builder is not related anymore, we can build it again!
+		// In fact, it shouldnt be a weakmap
+		this._builders = new Map();
+		// this._keys = new Map();
 	}
 
 	_getBuilder(range, i, element) {
-		let mk = range + '_' + i;
-		if (!this._keys.has(mk)) {
-			this._keys.set(mk, { range: range, i: i });
-		}
-		let k = this._keys.get(mk);
+		// let mk = range + '_' + i;
+		// if (!this._keys.has(mk)) {
+		// 	this._keys.set(mk, { range: range, i: i });
+		// }
+		// let k = this._keys.get(mk);
+		let k = { range, i };
 		if (!this._builders.has(k)) {
 			this._builders.set(k, new this.constructor(element));
 		}
