@@ -23,9 +23,9 @@ describe("BuilderTest.js", function() {
 			return super.getOneAlternate(...args);
 		}
 
-		buildSelf(...args) {
+		buildSelf(element, ...args) {
 			i.self++;
-			return super.buildSelf(...args);
+			return element.type + "|";
 		}
 
 		buildAssembly(...args) {
@@ -34,41 +34,44 @@ describe("BuilderTest.js", function() {
 		}
 	}
 
-	// it("should parse a simple object with a MockBuilder", function() {
-	// 	resetCounters();
-
-	// 	//let schema = mockSimpleCircuit();
-	// 	//expect(schema).not.toBeNull();
-	// 	let schema = new Disj();
-	// 	schema.next.push(new P());
-	// 	schema.alternate.push(new S());
-
-	// 	schema.next[0].next.push(new Disj());
-
-	// 	let cb = new MockBuilder(schema);
-
-	// 	res = cb.build();
-	// 	expect(i.self).toBe(4);
-	// 	expect(i.next).toBe(2);
-	// 	expect(i.alt).toBe(1);
-	// 	expect(i.assembly).toBe(4);
-	// 	console.log("Result: ", res);
-	// });
-
-
 	it("should parse the simpleCircuit mock  with a MockBuilder", function() {
-		resetCounters();
-
 		let schema = mockSimpleCircuit();
 		expect(schema).not.toBeNull();
 		let cb = new MockBuilder(schema);
 
+		resetCounters();
 		res = cb.build();
 		expect(i.self).toBe(8);
 		expect(i.next).toBe(4);
 		expect(i.alt).toBe(3);
 		expect(i.assembly).toBe(8);
-		console.log("Result: ", res);
+
+		expect(res.match(/Disj/g).length).toBe(1);
+		expect(res.match(/P/g).length).toBe(2);
+		expect(res.match(/S/g).length).toBe(3);
+		expect(res.match(/Neon/g).length).toBe(2);
 	});
+
+	it("should refresh the data when data is modified", function() {
+		let schema = mockSimpleCircuit();
+		expect(schema).not.toBeNull();
+		let cb = new MockBuilder(schema);
+
+		schema.next[0].type = "HAHAHA";
+
+		resetCounters();
+		res = cb.build();
+		expect(i.self).toBe(8);
+		expect(i.next).toBe(4);
+		expect(i.alt).toBe(3);
+		expect(i.assembly).toBe(8);
+		expect(res).toContain("|HAHAHA|");
+
+		expect(res.match(/HAHAHA/g).length).toBe(1);
+		expect(res.match(/P/g).length).toBe(1);
+
+		expect(res.match(/Disj/g).length).toBe(1);
+		expect(res.match(/S/g).length).toBe(3);
+		expect(res.match(/Neon/g).length).toBe(2);
 	});
 });
