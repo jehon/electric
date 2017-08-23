@@ -13,6 +13,11 @@ describe("BuilderTest.js", function() {
 	resetCounters();
 
 	class MockBuilder extends Builder {
+		buildSelf(...args) {
+			i.self++;
+			return this._currentElement.type + "|";
+		}
+
 		getOneNext(...args) {
 			i.next++;
 			return super.getOneNext(...args);
@@ -21,11 +26,6 @@ describe("BuilderTest.js", function() {
 		getOneAlternate(...args) {
 			i.alt++;
 			return super.getOneAlternate(...args);
-		}
-
-		buildSelf(element, ...args) {
-			i.self++;
-			return element.type + "|";
 		}
 
 		buildAssembly(...args) {

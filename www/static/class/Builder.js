@@ -1,10 +1,13 @@
 
 class Builder {
-	constructor(schema) {
-		this._schema = schema;
+	constructor(currentElement) {
+		if (typeof(currentElement) != "object") {
+			throw "No schema given in Builder: " + this.constructor.name;
+		}
+		this._currentElement = currentElement;
 
-		// Thinking: what should be a WeakMap: builder, schema?
-		// Schema -> so some builder could live without a schema -> no way!
+		// Thinking: what should be a WeakMap: builder, currentElement?
+		// Schema -> so some builder could live without a currentElement -> no way!
 		// Builder -> if builder is not related anymore, we can build it again!
 		// In fact, it shouldnt be a weakmap
 		this._builders = new Map();
@@ -27,27 +30,33 @@ class Builder {
 	
 	build(...args) {
 		// Here: let's cache the current state (not in partial ones)
-		// let newJsonSchema = JSON.stringify(this._schema);
+		// let newJsonSchema = JSON.stringify(this._currentElement);
 		// if (this._jsonSchema == newJsonSchema) {
 		// 	return this._result;
 		// }
 
 		// Do the work
+		// Some need the "self" to be build to calculate childrens (NameBuilder)
+		let me = this.buildSelf(...args);
 
 		// Build next's
 		let next = [];
-		if (this._schema.next) {
-		    next = this._schema.next.map((e, i) => this.getOneNext(i, this._schema.next[i], ...args));
+		if (this._currentElement.next) {
+		    next = this._currentElement.next.map((e, i) => this.getOneNext(i, this._currentElement.next[i], ...args));
 		}
 
 		// Build for alternate
 		let alternate = [];
-		if (this._schema.alternate) {
-		    alternate = this._schema.alternate.map((e, i) => this.getOneAlternate(i, this._schema.alternate[i], ...args));
+		if (this._currentElement.alternate) {
+		    alternate = this._currentElement.alternate.map((e, i) => this.getOneAlternate(i, this._currentElement.alternate[i], ...args));
 		}
 
 		// Compose the whole stuff into one
-		return this.buildAssembly(this.buildSelf(this._schema, ...args), next, alternate);
+		return this.buildAssembly(me, next, alternate);
+	}
+
+	buildSelf(...args) {
+		return this._currentElement.type + "|";
 	}
 
 	getOneNext(i, element, ...args) {
@@ -58,10 +67,6 @@ class Builder {
 	getOneAlternate(i, element, ...args) {
 		let builder = this._getBuilder('alt', i, element);
 		return builder.build(...args);
-	}
-
-	buildSelf(element, ...args) {
-		return element.type + "|";
 	}
 
 	buildAssembly(self, next, alternate) {

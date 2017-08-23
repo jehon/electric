@@ -11,15 +11,15 @@ IdBuilder = (function() {
 			uuidCounter = 1;
 		}
 
-		buildSelf(element, uuid = false) {
-			if (!("getId" in element)) {
+		buildSelf(uuid = false) {
+			if (!("getId" in this._currentElement)) {
 				// Copy the value to fix it
 				const localUUID = uuidCounter++;
-				element.getId = () => localUUID;
+				this._currentElement.getId = () => localUUID;
 			}
 			if (uuid) {
-				if (element.getId() == uuid) {
-					return element;
+				if (this._currentElement.getId() == uuid) {
+					return this._currentElement;
 				}
 			}
 			return false;
