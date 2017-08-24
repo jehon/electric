@@ -8,8 +8,8 @@
 // }
 
 class SchemaPosition extends HTMLElement {
-  // constructor() {
-  //   super();
+  constructor() {
+    super();
   //   this.image = {
   //     b64: ' data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
   //     width: 1,
@@ -24,11 +24,11 @@ class SchemaPosition extends HTMLElement {
   //       this.image = Object.assign({}, this.image, data);
   //       this.render();
   //     });
-  // }
+  }
 
-  // static get observedAttributes() { return ['value', 'image' ]; }
+  static get observedAttributes() { return ['value', 'plan' ]; }
 
-  // attributeChangedCallback(attributeName, oldValue, newValue, namespace) {
+  attributeChangedCallback(attributeName, oldValue, newValue, namespace) {
   //   switch(attributeName) {
   //     case 'image': 
 
@@ -46,7 +46,7 @@ class SchemaPosition extends HTMLElement {
   //         width=1 height=1
   //         xlinkHref=${this.image.b64} />
   //   `;
-  // }
+  }
 }
 
 customElements.define('schema-position', SchemaPosition);
