@@ -1,61 +1,61 @@
 
 class ElectricalElement {
   constructor(data) {
-    this.internal = {
-      filiaire: {
-        x: [],
-        width: 0,
-        height: 0
-      }
-    };
+  //   this.internal = {
+  //     filiaire: {
+  //       x: [],
+  //       width: 0,
+  //       height: 0
+  //     }
+  //   };
 
-    this.data = data;
-    if (!this.data.options) {
-      this.data.options = {};
-    }
-    if (!this.data.next) {
-      this.data.next = [];
-    }
-    if (!this.data.alternate) {
-      this.data.alternate = [];
-    }
+    // this.data = data;
+    // if (!this.data.options) {
+    //   this.data.options = {};
+    // }
+    // if (!this.data.next) {
+    //   this.data.next = [];
+    // }
+    // if (!this.data.alternate) {
+    //   this.data.alternate = [];
+    // }
 
     if (this.data.availOptions && this.data.options) {
     }
   }
 
-  setNames(short, long) {
-    this.getReferenceShort = function() {
-      return short;
-    };
-    this.getReferenceLong = function() {
-      return long;
-    };
-  }
+  // setNames(short, long) {
+  //   this.getReferenceShort = function() {
+  //     return short;
+  //   };
+  //   this.getReferenceLong = function() {
+  //     return long;
+  //   };
+  // }
 
-  get width() {
-    return parseFloat(this.data.width);
-  }
+  // get width() {
+  //   return parseFloat(this.data.width);
+  // }
 
-  get alignX() {
-    return this.width / 2;
-  }
+  // get alignX() {
+  //   return this.width / 2;
+  // }
 
-  get height() {
-    return parseFloat(this.data.height);
-  }
+  // get height() {
+  //   return parseFloat(this.data.height);
+  // }
 
-  get next() {
-    return this.data.next;
-  }
+  // get next() {
+  //   return this.data.next;
+  // }
 
-  get alternate() {
-    return this.data.alternate;
-  }
+  // get alternate() {
+  //   return this.data.alternate;
+  // }
 
-  draw() {
-    console.log('empty draw');
-  }
+  // draw() {
+  //   console.log('empty draw');
+  // }
 
   /*************************************************
   // Specific for POSITION
