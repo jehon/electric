@@ -1,14 +1,13 @@
 
-function draw(data) {
-	return new Drawer(data);
-}
-
-let Drawer = (function() {
+let draw = (function() {
+	function draw(element) {
+		return new Drawer(element);
+	}
 
     // Rotate: P, S, Heater, Boiler, CookingPlates, Transfo
 
-	let extending = (name, what, data) => {
-		List[name] = Object.assign({}, what, data);
+	let extending = (name, what, typeDef) => {
+		List[name] = Object.assign({}, what, typeDef);
 	}
 
 	function rotate(height, svg) {
@@ -150,31 +149,35 @@ let Drawer = (function() {
     });
 
 	class Drawer {
-		constructor(data) {
-		    this.data = data;
+		constructor(element) {
+		    this._element = element;
 
-		    if (!this.data.type) {
-		    	throw "Data.type not found on " + JSON.stringify(this.data);
+		    if (!this._element.type) {
+		    	throw "Element.type not found on " + JSON.stringify(this._element);
 		    }
 
-		    if (!List[this.data.type]) {
-		    	throw "Type not found in List: " + this.data.type;
+		    if (!List[this._element.type]) {
+		    	throw "Type not found in List: " + this._element.type;
 		    }
+
+		    this.type = List[this._element.type];
 
 		    // TODO: check options
 
 		    this._svg = "";
-		    if (typeof(this.data.draw) == "function") {
-		    	this._svg = this.data.draw(this.getOptions());
+		    if (typeof(this.type.draw) == "function") {
+		    	this._svg = this.type.draw(this.getOptions());
+		    } else {
+		    	this._svg = this.type.draw;
 		    }
-		    this._svg = `<g electrical-type='${this.data.type}'>${this._svg}</g>`;
+		    this._svg = `<g electrical-type='${this._element.type}' id='${this._element.getId()}'>${this._svg}</g>`;
 		}
 
 		getOptions() {
-			if (!("options" in this.data)) {
+			if (!("options" in this._element)) {
 				return {};
 			}
-			return this.data.options;
+			return this._element.options;
 		}
 
 		getOption(name, def) {
@@ -186,37 +189,39 @@ let Drawer = (function() {
 		}
 
 		get width() {
-			if (!("width" in this.data)) {
+			if (!("width" in this._element)) {
 				return 0;
 			}
-			return parseFloat(this.data.width);
+			return parseFloat(this._element.width);
 		}
 
 		get height() {
-			if (!("height" in this.data)) {
+			if (!("height" in this._element)) {
 				return 0;
 			}
-			return parseFloat(this.data.height);
+			return parseFloat(this._element.height);
 		}
 
 		get alignX() {
 			return this.getOption("alignX", this.width / 2);
 		}
 
-
-
 		// SVG transform the result
 
-		rotate(angle) {
+		label() {
+			return this;
+		}
 
+		rotate(angle) {
+			return this;
 		}
 
 		group() {
-
+			return this;
 		}
 
 		scale() {
-
+			return this;
 		}
 
 		// Draw the result
@@ -226,5 +231,5 @@ let Drawer = (function() {
 		}
 	}
 
-	return Drawer;
+	return draw;
 })();
