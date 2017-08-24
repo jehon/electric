@@ -11,6 +11,16 @@ let Drawer = (function() {
 		List[name] = Object.assign({}, what, data);
 	}
 
+	function rotate(height, svg) {
+		return `
+	        <g transform='translate(0, ${height / 2})'>
+	          <g transform='rotate(270)'>
+	            ${svg}
+	          </g>
+	        </g>
+	    `;
+	}
+
 	let List = {
 		PlaceHolder: {
 	  		width        : 25,
@@ -18,12 +28,12 @@ let Drawer = (function() {
 	  		name         : 'Place vide',
 			draw         : ''
 		},
-		P: { // Todo: Rotate
-			width        : 25,
-			height       : 20,
+		P: {
+			width        : 20,
+			height       : 25,
 			innerHeight  : 15,
 			name         : 'Prise',
-			draw         : '<path d="M0,0 L0,10 m-7.5,0 l15,0 m-20,7.5 l5,0 a7.5 7.5 0 0 1 15 0 l5,0" />'
+			draw         : rotate(25, '<path d="M0,0 L0,10 m-7.5,0 l15,0 m-20,7.5 l5,0 a7.5 7.5 0 0 1 15 0 l5,0" />')
 		},
 		L: {
 			width        : 20,
@@ -46,35 +56,36 @@ let Drawer = (function() {
 			    + '</text>';
       		}
     	},
-    	Heater: /* TODO: rotate */ {
+    	Heater: {
 			width        : 20,
 			height       : 20,
 			name         : 'Chauffage',
-      		draw         : '<rect x=-10 y=0 width=20 height=20 />'
-				+ '<path d="M-10,0 l0,20 M-5,0 l0,20 M0,0 l0,20 M5,0 l0,20" />'
+      		draw         : rotate(20, '<rect x=-10 y=0 width=20 height=20 />'
+				+ '<path d="M-10,0 l0,20 M-5,0 l0,20 M0,0 l0,20 M5,0 l0,20" />')
 		},
-    	Boiler: /* TODO: rotate */  /* *********** TODO hachuré ********************/ {
-			width        : 25,
-			height       : 20,
+    	Boiler: {
+			width        : 20,
+			height       : 25,
 			innerHeight  : 15,
 			name         : 'Boiler',
-      		draw         : '<path d="M0,0 L0,10 m-7.5,0 l15,0 m-20,7.5 l5,0 a7.5 7.5 0 0 1 15 0 l5,0" />'
+    		/* *********** TODO hachuré ********************/ 
+      		draw         : rotate(25, '<path d="M0,0 L0,10 m-7.5,0 l15,0 m-20,7.5 l5,0 a7.5 7.5 0 0 1 15 0 l5,0" />')
 		},
 
     	CookingPlates: /* TODO: rotate */ {
-			width        : 25,
-			height       : 20,
+			width        : 20,
+			height       : 25,
 			innerHeight  : 15,
 			name         : 'Cuisinière',
-      		draw         : '<rect x=-10 y=0 width=20 height=20 />'
+      		draw         : rotate(25, '<rect x=-10 y=0 width=20 height=20 />'
 				+ '<circle cx=5  cy=15 r=2 fill="auto" />'
       			+ '<circle cx=-5 cy=5  r=2 fill="auto" />'
-      			+ '<circle cx=-5 cy=15 r=2 fill="auto" />'
+      			+ '<circle cx=-5 cy=15 r=2 fill="auto" />')
 		},
 
     	KNX: {
-			width        : '20',
-      		height       : '35',
+			width        : 20,
+      		height       : 35,
       		name         : 'Relais KNX',
 			draw         : '<rect x=-10 y=0 width=20 height=35 />'
 				+ '<path d="M-5,5 l0,10 l10,0" />'
@@ -86,14 +97,14 @@ let Drawer = (function() {
 			name         : 'Bridge',
 			draw         : '<path d="M0,0 l0,10"/>'
   		},
-    	Transfo: /* TODO: rotate */ {
-			width        : '20',
-			height       : '20',
+    	Transfo: {
+			width        : 20,
+			height       : 20,
 			name         : 'Transformateur',
-			draw         : '<line x1=0 x2=0 y1=0 y2=2 />'
+			draw         : rotate(20, '<line x1=0 x2=0 y1=0 y2=2 />'
 				+ '<circle cx=0 cy=7 r=5 />'
 				+ '<circle cx=0 cy=13 r=5 />'
-				+ '<line x1=0 x2=0 y1=18 y2=20 />'
+				+ '<line x1=0 x2=0 y1=18 y2=20 />')
 		},
     	Label: {
 			width        : '20',
@@ -117,16 +128,16 @@ let Drawer = (function() {
 		innerHeight      : 15,
 		name             : 'Interrupteur',
 		availOptions     : [ 'bipol', 'bidir', 'variator', 'light' ],
-		draw             : (options) => {
-			return  '<path d="M0,0 L0,10 l8,8 l4,-4 m-4,4'
-	      	+ (options.bipol ? 'm -2,-2 l4,-4 m-4,4 m2,2 ' : '')
-      		+ (options.bidir ? 'M0,8 l-8,-8 l-4,4 ' : '')
-      		+ (options.inverter ? 'M0,8 l-8,-8 l-4,4 M0,8 l8,-8 l4,4 M0,8 l-8,8 l-4,-4 ' : '')
-      		+ (options.variator ? 'M-6,15 l12,0 l0,4 l-12,-4 ' : '')
-      		+ '" />'
-      		+ '<circle cx=0 cy=10 r=3 fill="white" />'
-      		+ (options.light ? '<path d="M0,10 l2,2 M0,10 l2,-2 M0,10 l-2,2 M0,10 l-2,-2" />' : '')
-		}
+		draw             : (options) => rotate(25,
+			'<path d="M0,0 L0,10 l8,8 l4,-4 m-4,4'
+		      	+ (options.bipol ? 'm -2,-2 l4,-4 m-4,4 m2,2 ' : '')
+	      		+ (options.bidir ? 'M0,8 l-8,-8 l-4,4 ' : '')
+	      		+ (options.inverter ? 'M0,8 l-8,-8 l-4,4 M0,8 l8,-8 l4,4 M0,8 l-8,8 l-4,-4 ' : '')
+	      		+ (options.variator ? 'M-6,15 l12,0 l0,4 l-12,-4 ' : '')
+	      		+ '" />'
+	      		+ '<circle cx=0 cy=10 r=3 fill="white" />'
+	      		+ (options.light ? '<path d="M0,10 l2,2 M0,10 l2,-2 M0,10 l-2,2 M0,10 l-2,-2" />' : '')
+   		)
     });
 
     extending("Hotte", List.P, {
