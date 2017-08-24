@@ -60,13 +60,11 @@ class Builder {
 	}
 
 	getOneNext(i, element, ...args) {
-		let builder = this._getBuilder('next', i, element);
-		return builder.build(...args);
+		return this._getBuilder('next', i, element).build(...args);
 	}
 
 	getOneAlternate(i, element, ...args) {
-		let builder = this._getBuilder('alt', i, element);
-		return builder.build(...args);
+		return this._getBuilder('alt', i, element).build(...args);
 	}
 
 	buildAssembly(self, next, alternate) {
