@@ -11,8 +11,8 @@ class NameBuilder extends Builder {
 		this._print = false;
 	}
 
-	_getBuilder(range, i, element) {
-		let el = super._getBuilder(range, i, element);
+	_getBuilder(...args) {
+		let el = super._getBuilder(...args);
 		el._print = this._print;
 		if (this._print !== false) {
 			this._print = this._print + ' ';
