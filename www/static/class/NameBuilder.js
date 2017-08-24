@@ -43,7 +43,12 @@ class NameBuilder extends Builder {
     		_setNames(ref.base + (ref.index == 0 ? '' : '.' + ref.index), ref.index);
 		}
 		if (this._print !== false) {
-			console.log(this._print + this._currentElement.getName(), ': ', this._currentElement.type);
+			console.log(
+				(("getId" in this._currentElement ? (this._currentElement.getId()) : "") + "     ").substring(0, 1 + Math.ceil(Math.log10(IdBuilder.nextUUID())))
+				+ this._print 
+				+ this._currentElement.getName() 
+				+ ': ' 
+				+ this._currentElement.type);
 		}
 
 		return super.buildSelf(ref);
