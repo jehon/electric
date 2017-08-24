@@ -152,39 +152,60 @@ let Drawer = (function() {
 	class Drawer {
 		constructor(data) {
 		    this.data = data;
-		    this.internal = {
-		      filiaire: {
-		        x: [],
-		        width: 0,
-		        height: 0
-		      }
-		    };
 
-		    if (!this.data.options) {
-		      this.data.options = {};
-		    }
-		    if (!this.data.next) {
-		      this.data.next = [];
-		    }
-		    if (!this.data.alternate) {
-		      this.data.alternate = [];
+		    if (!this.data.type) {
+		    	throw "Data.type not found on " + JSON.stringify(this.data);
 		    }
 
-		    if (this.data.availOptions && this.data.options) {
+		    if (!List[this.data.type]) {
+		    	throw "Type not found in List: " + this.data.type;
 		    }
+
+		    // TODO: check options
+
+		    this._svg = "";
+		    if (typeof(this.data.draw) == "function") {
+		    	this._svg = this.data.draw(this.getOptions());
+		    }
+		    this._svg = `<g electrical-type='${this.data.type}'>${this._svg}</g>`;
+		}
+
+		getOptions() {
+			if (!("options" in this.data)) {
+				return {};
+			}
+			return this.data.options;
+		}
+
+		getOption(name, def) {
+			let opts = this.getOptions();
+			if (!(name in opts)) {
+				return def;
+			}
+			return opts[name];
 		}
 
 		get width() {
+			if (!("width" in this.data)) {
+				return 0;
+			}
 			return parseFloat(this.data.width);
 		}
 
 		get height() {
+			if (!("height" in this.data)) {
+				return 0;
+			}
 			return parseFloat(this.data.height);
 		}
 
 		get alignX() {
-			return this.width / 2;
+			return this.getOption("alignX", this.width / 2);
 		}
+
+
+
+		// SVG transform the result
 
 		rotate(angle) {
 
@@ -198,7 +219,10 @@ let Drawer = (function() {
 
 		}
 
+		// Draw the result
+
 		build() {
+			return this._svg;
 		}
 	}
 
