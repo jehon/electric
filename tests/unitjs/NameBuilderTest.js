@@ -1,10 +1,11 @@
 
 describe("NameBuilderTest.js", function() {
 	it("should build correct names", function() {
+		IdBuilder.testResetUUID();
 		let schema = mockSimpleCircuit();
 		expect(schema).not.toBeNull();
 		let cb = new NameBuilder(schema);
-		cb.buildWithPrint();
+		cb.build();
 
 		expect(schema.getName()).toBe("A11");
 		expect(schema.next[0].getName()).toBe('A11.1');
