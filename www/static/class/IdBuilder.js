@@ -11,12 +11,18 @@ IdBuilder = (function() {
 			uuidCounter = 1;
 		}
 
-		buildSelf(uuid = false) {
-			if (!("getId" in this._currentElement)) {
+		static assignUUID(element) {
+			if (!("getId" in element)) {
 				// Copy the value to fix it
 				const localUUID = uuidCounter++;
-				this._currentElement.getId = () => localUUID;
+				element.getId = () => localUUID;
 			}
+		}
+
+		buildSelf(uuid = false) {
+			this.constructor.assignUUID(this._currentElement);
+
+			// Return value to search by UUID
 			if (uuid) {
 				if (this._currentElement.getId() == uuid) {
 					return this._currentElement;
@@ -26,6 +32,7 @@ IdBuilder = (function() {
 		}
 
 		buildAssembly(self, next, alternate) {
+			// Return value to search by UUID
 			if (self) {
 				return self;
 			}
@@ -38,6 +45,7 @@ IdBuilder = (function() {
 		}
 
 		findByUUID(uuid) {
+			// Use the return value sent by the iterator
 			return this.build(uuid);
 		}
 	}
