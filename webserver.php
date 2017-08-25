@@ -1,6 +1,5 @@
 <?php
 
-
 $uri = $_SERVER["REQUEST_URI"];
 $path = parse_url($uri,  PHP_URL_PATH);
 
@@ -24,6 +23,7 @@ define("www", __DIR__ . "/www/");
 $file = constant("www") . $path;
 if (!file_exists($file)) {
   header("I say: Not found", 404);
+  echo "404: not found";
   return true;
 }
 
