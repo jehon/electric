@@ -83,9 +83,9 @@
     console.log("response");
     response.json().then(function(ourschema) {
 
-      document.querySelectorAll("schema-filiaire schema-position").forEach(el => {
           console.log("Setting schema on ", el);
           el.setAttribute("schema", ourchema);
+      document.querySelectorAll("schema-filiaire, schema-position").forEach(el => {
       })
 
       // ReactDOM.render(
