@@ -1,12 +1,4 @@
 
-// function schemaClick(evt) {
-//   var e = evt.target;
-//   var dim = e.getBoundingClientRect();
-//   var x = evt.clientX - dim.left;
-//   var y = evt.clientY - dim.top;
-//   console.info('clicked on x: ' + Math.round(x) + ', y: ' + Math.round(y));
-// }
-
 class Legend extends HTMLElement {
   constructor() {
     super();
@@ -30,13 +22,17 @@ class Legend extends HTMLElement {
   }
 
   render() {
-    let builder = new Builder({ type: this.value, options: this.options, x: 10, y: 10 });
+    let schema = { type: this.value, options: this.options };
+    // (new IdBuilder(schema)).build();
+    let builder = new PositionBuilder(schema);
     this.innerHTML = `
       <div>HHH
         <div>${this.value}</div>
         <svg preserveAspectRatio='xMinYMin slice'>
           <rect x='0' y='0' width='100%' height='100%' fill='white' stroke='red'/>
-          ${builder.build()}
+            <g stroke="black">
+                ${builder.build()}
+            </g>
         </svg>
       </div>
     `;
