@@ -82,6 +82,10 @@
 
     // console.log("fetch response: ", response);
     response.json().then((ourschema) => {
+
+      (new NameBuilder(ourschema)).build();
+      (new IdBuilder(ourschema)).build();
+
       document.querySelectorAll("schema-filiaire, schema-position").forEach(el => {
       })
 
