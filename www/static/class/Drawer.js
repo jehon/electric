@@ -32,14 +32,14 @@ let draw = (function() {
 			height       : 25,
 			innerHeight  : 15,
 			name         : 'Prise',
-			draw         : rotate(25, '<path d="M0,0 L0,10 m-7.5,0 l15,0 m-20,7.5 l5,0 a7.5 7.5 0 0 1 15 0 l5,0" />')
+			draw         : rotate(25, '<path d="M0,0 L0,10 m-7.5,0 l15,0 m-20,7.5 l5,0 a7.5 7.5 0 0 1 15 0 l5,0" fill="none"/>')
 		},
 		L: {
 			width        : 20,
 			height       : 20,
 			innerHeight  : 10,
 			name         : 'Light',
-			draw         : '<path d="M0,10 l5,5 l-10,-10 l5,5 l5,-5 l-10,10" />'
+			draw         : '<path d="M0,10 l5,5 l-10,-10 l5,5 l5,-5 l-10,10" fill="none"/>'
     	},
     	Disj: {
       		width        : '20',
@@ -47,7 +47,7 @@ let draw = (function() {
       		name         : 'Disjoncteur',
       		availOptions : [ 'I', 'Isec' ],
       		draw         : (options) => {
-  			    return '<path d="M0,0 l0,10 l10,35 m-10,0 l0,15"/>'
+  			    return '<path d="M0,0 l0,10 l10,35 m-10,0 l0,15" fill="none"/>'
 			    + '<path d="M10,45 L14,43 L12.5,39 L9,41 z" fill="currentColor"/>'
 			    + '<text x=10 y=20 font-family="Verdana" font-size="8" >'
 			    + (options.I    ? 'I:' + options.I    + 'A '             : '' )
@@ -59,8 +59,8 @@ let draw = (function() {
 			width        : 20,
 			height       : 20,
 			name         : 'Chauffage',
-      		draw         : rotate(20, '<rect x=-10 y=0 width=20 height=20 />'
-				+ '<path d="M-10,0 l0,20 M-5,0 l0,20 M0,0 l0,20 M5,0 l0,20" />')
+      		draw         : rotate(20, '<rect x=-10 y=0 width=20 height=20 fill="none" />'
+				+ '<path d="M-10,0 l0,20 M-5,0 l0,20 M0,0 l0,20 M5,0 l0,20" fill="none" />')
 		},
     	Boiler: {
 			width        : 20,
@@ -68,7 +68,7 @@ let draw = (function() {
 			innerHeight  : 15,
 			name         : 'Boiler',
     		/* *********** TODO hachuré ********************/ 
-      		draw         : rotate(25, '<path d="M0,0 L0,10 m-7.5,0 l15,0 m-20,7.5 l5,0 a7.5 7.5 0 0 1 15 0 l5,0" />')
+      		draw         : rotate(25, '<path d="M0,0 L0,10 m-7.5,0 l15,0 m-20,7.5 l5,0 a7.5 7.5 0 0 1 15 0 l5,0" fill="none" />')
 		},
 
     	CookingPlates: /* TODO: rotate */ {
@@ -76,34 +76,34 @@ let draw = (function() {
 			height       : 25,
 			innerHeight  : 15,
 			name         : 'Cuisinière',
-      		draw         : rotate(25, '<rect x=-10 y=0 width=20 height=20 />'
-				+ '<circle cx=5  cy=15 r=2 fill="auto" />'
-      			+ '<circle cx=-5 cy=5  r=2 fill="auto" />'
-      			+ '<circle cx=-5 cy=15 r=2 fill="auto" />')
+      		draw         : rotate(25, '<rect x=-10 y=0 width=20 height=20 fill="none" />'
+				+ '<circle cx=5  cy=15 r=2 fill="auto" fill="none" />'
+      			+ '<circle cx=-5 cy=5  r=2 fill="auto" fill="none" />'
+      			+ '<circle cx=-5 cy=15 r=2 fill="auto" fill="none" />')
 		},
 
     	KNX: {
 			width        : 20,
       		height       : 35,
       		name         : 'Relais KNX',
-			draw         : '<rect x=-10 y=0 width=20 height=35 />'
-				+ '<path d="M-5,5 l0,10 l10,0" />'
-				+ '<path d="M-5,30 l0,-10 l10,0" />'
+			draw         : '<rect x=-10 y=0 width=20 height=35 fill="none" />'
+				+ '<path d="M-5,5 l0,10 l10,0" fill="none" />'
+				+ '<path d="M-5,30 l0,-10 l10,0" fill="none" />'
 		},
     	Bridge: {
 			width        : '1',
 			height       : '10',
 			name         : 'Bridge',
-			draw         : '<path d="M0,0 l0,10"/>'
+			draw         : '<path d="M0,0 l0,10" fill="none" />'
   		},
     	Transfo: {
 			width        : 20,
 			height       : 20,
 			name         : 'Transformateur',
-			draw         : rotate(20, '<line x1=0 x2=0 y1=0 y2=2 />'
-				+ '<circle cx=0 cy=7 r=5 />'
-				+ '<circle cx=0 cy=13 r=5 />'
-				+ '<line x1=0 x2=0 y1=18 y2=20 />')
+			draw         : rotate(20, '<line x1=0 x2=0 y1=0 y2=2 fill="none" />'
+				+ '<circle cx=0 cy=7 r=5 fill="none" />'
+				+ '<circle cx=0 cy=13 r=5 fill="none" />'
+				+ '<line x1=0 x2=0 y1=18 y2=20 fill="none" />')
 		},
     	Label: {
 			width        : '20',
@@ -118,7 +118,7 @@ let draw = (function() {
 		width            : 10,
 		height           : 35,
 		name             : 'Neon',
-		draw             : '<path d="M0,5 l5,0 l-10,0 m5,0 l0,30 l5,0 l-10,0" />'
+		draw             : '<path d="M0,5 l5,0 l-10,0 m5,0 l0,30 l5,0 l-10,0" fill="none" />'
 	});
 
 	extending("S", List.P, {
@@ -133,9 +133,9 @@ let draw = (function() {
 	      		+ (options.bidir ? 'M0,8 l-8,-8 l-4,4 ' : '')
 	      		+ (options.inverter ? 'M0,8 l-8,-8 l-4,4 M0,8 l8,-8 l4,4 M0,8 l-8,8 l-4,-4 ' : '')
 	      		+ (options.variator ? 'M-6,15 l12,0 l0,4 l-12,-4 ' : '')
-	      		+ '" />'
-	      		+ '<circle cx=0 cy=10 r=3 fill="white" />'
-	      		+ (options.light ? '<path d="M0,10 l2,2 M0,10 l2,-2 M0,10 l-2,2 M0,10 l-2,-2" />' : '')
+	      		+ '" fill="none" />'
+	      		+ '<circle cx=0 cy=10 r=3 fill="white" fill="none" />'
+	      		+ (options.light ? '<path d="M0,10 l2,2 M0,10 l2,-2 M0,10 l-2,2 M0,10 l-2,-2" fill="none" />' : '')
    		)
     });
 
@@ -143,9 +143,9 @@ let draw = (function() {
 		width           : '20',
 		height          : '20',
 		name            : 'Hotte',
-		draw            : '<rect x=-10 y=0 width=20 height=20 />'
-      		+ '<circle cx=0 cy=6  r=4 />'
-      		+ '<circle cx=0 cy=14 r=4 />'
+		draw            : '<rect x=-10 y=0 width=20 height=20 fill="none" />'
+      		+ '<circle cx=0 cy=6  r=4 fill="none" />'
+      		+ '<circle cx=0 cy=14 r=4 fill="none" />'
     });
 
 	class Drawer {
@@ -170,7 +170,7 @@ let draw = (function() {
 		    } else {
 		    	this._svg = this.type.draw;
 		    }
-		    this._svg = `<g electrical-type='${this._element.type}' id='${this._element.getId()}'>${this._svg}</g>`;
+		    this._svg = `<g electrical-type='${this._element.type}' id='${"getId" in this._element ? this._element.getId() : ""}'>${this._svg}</g>`;
 		}
 
 		getOptions() {
