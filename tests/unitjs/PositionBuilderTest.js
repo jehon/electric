@@ -6,12 +6,14 @@ describe("PositionBuilderTest.js", function() {
 	(new IdBuilder(schema)).build();
 
 	it("should build P", function() {
+		// PositionBuilder.separator = ".";
+
 		let pb = new PositionBuilder(schema);
 
 		let el = schema.next[0];
-		let s
+		let s = pb.build();
 
-		s = pb.build();
+		// console.log(s);
 		expect(s).toContain("<g electrical-type='P'");
 		expect(s).toContain("<path d=\"M0,0");
 

@@ -1,7 +1,14 @@
 
 class PositionBuilder extends Builder {
-	buildSelf(...args) {
-		super.buildSelf(...args);
-		return draw(this._currentElement).label().build();
+
+	build(space = "", ...args) {
+		return super.build(space + this.constructor.separator, ...args);
+	}
+
+	buildSelf(space, ...args) {
+		super.buildSelf(space, ...args);
+		return space + draw(this._currentElement).label().build().split("\n").join("\n" + space) + "\n";
 	}
 }
+
+PositionBuilder.separator = " ";
