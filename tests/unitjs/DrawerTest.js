@@ -17,11 +17,7 @@ describe("DrawerTest.js", function() {
 		expect(s).toMatch("<g electrical-type='P' id='" + el.getId() + "'");
 		expect(s).toMatch("<path d=\"M0,0");
 
-		s = draw(el).rotate().group().build();
-		expect(s).toMatch("<g electrical-type='P' id='" + el.getId() + "'");
-		expect(s).toMatch("<path d=\"M0,0");
-		
-		s = draw(el).rotate().group().scale().build();
+		s = draw(el).rotate().scale().build();
 		expect(s).toMatch("<g electrical-type='P' id='" + el.getId() + "'");
 		expect(s).toMatch("<path d=\"M0,0");
 	});

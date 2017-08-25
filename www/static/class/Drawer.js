@@ -209,18 +209,17 @@ let draw = (function() {
 		// SVG transform the result
 
 		label() {
+			// TODO
 			return this;
 		}
 
 		rotate(angle) {
-			return this;
-		}
-
-		group() {
+			// TODO
 			return this;
 		}
 
 		scale() {
+			// TODO
 			return this;
 		}
 
