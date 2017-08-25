@@ -26,17 +26,19 @@
     <!-- - - - - - - - - - - - - -->
     <!-- JS - custom             -->
     <!-- - - - - - - - - - - - - -->
+    <script type='text/javascript' src='class/Drawer.js'></script>
+
     <script type='text/javascript' src='class/Builder.js'></script>
-    <script type='text/javascript' src='class/ElectricalElement.js'></script>
-    <script type='text/javascript' src='class/ElectricalElementsReferences.js'></script>
-    <script type='text/javascript' src='helpers/build.js'></script>
+    <script type='text/javascript' src='class/IdBuilder.js'></script>
+    <script type='text/javascript' src='class/NameBuilder.js'></script>
+    <script type='text/javascript' src='class/PositionBuilder.js'></script>
+
+
     <script type='text/javascript' src='helpers/away.js'></script>
     <script type='text/javascript' src='helpers/config.js'></script>
     <script type='text/javascript' src='helpers/getDataFromImageUrl.js'></script>
 
-    <script type='text/javascript' src='components/MySVG.js'></script>
     <script type='text/javascript' src='components/SchemaPosition.js'></script>
-
   </head>
   <body>
   <h1>Schema</h1>
@@ -60,8 +62,8 @@
   </body>
   <script>
   fetch('/api/v0.1/server.php').then(function(response) {
-    response.json().then(function(json) {
-      ourchema = build(json);
+    console.log("response");
+    response.json().then(function(ourschema) {
 
       document.querySelectorAll("schema-filiaire schema-position").forEach(el => {
           console.log("Setting schema on ", el);
