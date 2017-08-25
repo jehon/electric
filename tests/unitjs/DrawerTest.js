@@ -1,5 +1,5 @@
 
-describe("DrawerBuilderTest.js", function() {
+describe("DrawerTest.js", function() {
 	IdBuilder.testResetUUID();
 	let schema = mockSimpleCircuit();
 	(new NameBuilder(schema)).build();

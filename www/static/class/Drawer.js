@@ -41,7 +41,7 @@ let draw = (function() {
 			name         : 'Light',
 			draw         : '<path d="M0,10 l5,5 l-10,-10 l5,5 l5,-5 l-10,10" />'
     	},
-    	Dist: {
+    	Disj: {
       		width        : '20',
       		height       : '60',
       		name         : 'Disjoncteur',
