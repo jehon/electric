@@ -17,6 +17,6 @@ describe("PositionBuilderTest.js", function() {
 
 		expect(s).toContain("<g electrical-type='S'");
 		expect(s).toContain("<g electrical-type='Disj'");
--		expect(s).toContain("<g electrical-type='Neon'");
+		expect(s).toContain("<g electrical-type='Neon'");
 	});
 });
