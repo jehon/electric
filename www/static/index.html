@@ -79,11 +79,9 @@
   </body>
   <script>
   fetch('/api/v0.1/server.php').then(function(response) {
-    console.log("response");
-    response.json().then(function(ourschema) {
 
-          console.log("Setting schema on ", el);
-          el.setAttribute("schema", ourchema);
+    // console.log("fetch response: ", response);
+    response.json().then((ourschema) => {
       document.querySelectorAll("schema-filiaire, schema-position").forEach(el => {
       })
 
