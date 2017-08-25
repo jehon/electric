@@ -29,6 +29,10 @@ class Builder {
 	}
 	
 	build(...args) {
+		if (this._currentElement == null) {
+			return;
+		}
+
 		// Here: let's cache the current state (not in partial ones)
 		// let newJsonSchema = JSON.stringify(this._currentElement);
 		// if (this._jsonSchema == newJsonSchema) {
