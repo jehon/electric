@@ -22,12 +22,15 @@ let draw = (function() {
 
 	let List = {
 		PlaceHolder: {
+			// Todo: review
 	  		width        : 25,
 	  		height       : 25,
 	  		name         : 'Place vide',
 			draw         : ''
 		},
 		P: {
+			// Todo: review
+			// rotate 270, move -10
 			width        : 20,
 			height       : 25,
 			innerHeight  : 15,
@@ -35,6 +38,7 @@ let draw = (function() {
 			draw         : rotate(25, '<path d="M0,0 L0,10 m-7.5,0 l15,0 m-20,7.5 l5,0 a7.5 7.5 0 0 1 15 0 l5,0" fill="none"/>')
 		},
 		L: {
+			// Todo: review - en cours
 			width        : 20,
 			height       : 20,
 			innerHeight  : 10,
@@ -42,6 +46,7 @@ let draw = (function() {
 			draw         : '<path d="M0,10 l5,5 l-10,-10 l5,5 l5,-5 l-10,10" fill="none"/>'
     	},
     	Disj: {
+			// Todo: review
       		width        : '20',
       		height       : '60',
       		name         : 'Disjoncteur',
@@ -56,6 +61,7 @@ let draw = (function() {
       		}
     	},
     	Heater: {
+			// Todo: review
 			width        : 20,
 			height       : 20,
 			name         : 'Chauffage',
@@ -63,6 +69,7 @@ let draw = (function() {
 				+ '<path d="M-10,0 l0,20 M-5,0 l0,20 M0,0 l0,20 M5,0 l0,20" fill="none" />')
 		},
     	Boiler: {
+			// Todo: review
 			width        : 20,
 			height       : 25,
 			innerHeight  : 15,
@@ -73,6 +80,7 @@ let draw = (function() {
 		},
 
     	CookingPlates: /* TODO: rotate */ {
+			// Todo: review
 			width        : 20,
 			height       : 25,
 			innerHeight  : 15,
@@ -84,6 +92,7 @@ let draw = (function() {
 		},
 
     	KNX: {
+			// Todo: review
 			width        : 20,
       		height       : 35,
       		name         : 'Relais KNX',
@@ -92,12 +101,14 @@ let draw = (function() {
 				+ '<path d="M-5,30 l0,-10 l10,0" fill="none" />'
 		},
     	Bridge: {
+			// Todo: review
 			width        : '1',
 			height       : '10',
 			name         : 'Bridge',
 			draw         : '<path d="M0,0 l0,10" fill="none" />'
   		},
     	Transfo: {
+			// Todo: review
 			width        : 20,
 			height       : 20,
 			name         : 'Transformateur',
@@ -107,6 +118,7 @@ let draw = (function() {
 				+ '<line x1=0 x2=0 y1=18 y2=20 fill="none" />')
 		},
     	Label: {
+			// Todo: review
 			width        : '20',
 			height       : '20',
 			name         : 'Label libre',
@@ -116,6 +128,7 @@ let draw = (function() {
 	}
 
 	extending("Neon", List.L, {
+		// Todo: review
 		width            : 10,
 		height           : 35,
 		name             : 'Neon',
@@ -123,6 +136,7 @@ let draw = (function() {
 	});
 
 	extending("S", List.P, {
+		// Todo: review
 		width            : 25,
 		height           : 20,
 		innerHeight      : 15,
@@ -141,6 +155,7 @@ let draw = (function() {
     });
 
     extending("Hotte", List.P, {
+		// Todo: review
 		width           : '20',
 		height          : '20',
 		name            : 'Hotte',
