@@ -78,9 +78,9 @@ let draw = (function() {
 			innerHeight  : 15,
 			name         : 'Cuisinière',
       		draw         : rotate(25, '<rect x=-10 y=0 width=20 height=20 fill="none" />'
-				+ '<circle cx=5  cy=15 r=2 fill="auto" fill="none" />'
-      			+ '<circle cx=-5 cy=5  r=2 fill="auto" fill="none" />'
-      			+ '<circle cx=-5 cy=15 r=2 fill="auto" fill="none" />')
+				+ '<circle cx=5  cy=15 r=2 fill="currentColor" />'
+      			+ '<circle cx=-5 cy=5  r=2 fill="currentColor" />'
+      			+ '<circle cx=-5 cy=15 r=2 fill="currentColor" />')
 		},
 
     	KNX: {
