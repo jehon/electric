@@ -167,26 +167,18 @@ let draw = (function() {
 
 		    this._svg = "";
 		    if (typeof(this.type.draw) == "function") {
-		    	this._svg = this.type.draw(this.getOptions());
+		    	this._svg = this.type.draw(this._element);
 		    } else {
 		    	this._svg = this.type.draw;
 		    }
 		    this._svg = `<g electrical-type='${this._element.type}' id='${"getId" in this._element ? this._element.getId() : ""}'>${this._svg}</g>`;
 		}
 
-		getOptions() {
-			if (!("options" in this._element)) {
-				return {};
-			}
-			return this._element.options;
-		}
-
-		getOption(name, def) {
-			let opts = this.getOptions();
-			if (!(name in opts)) {
+		getParameter(name, def = 0) {
+			if (!(name in this._element)) {
 				return def;
 			}
-			return opts[name];
+			return this._element[name];			
 		}
 
 		get width() {
