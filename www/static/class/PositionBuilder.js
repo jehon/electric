@@ -7,7 +7,12 @@ class PositionBuilder extends Builder {
 
 	buildSelf(space, ...args) {
 		super.buildSelf(space, ...args);
-		return space + draw(this._currentElement).label().build().split("\n").join("\n" + space) + "\n";
+		this._draw = draw(this._currentElement);
+		let str = this._draw.rotate(this._draw.getParameter('angle'))
+			.translate(this._draw.getParameter("x"), this._draw.getParameter("y"))
+			.build();
+
+		return space + str.split("\n").join("\n" + space) + "\n";
 	}
 }
 
