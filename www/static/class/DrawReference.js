@@ -103,8 +103,8 @@ let drawReference = (function() {
 		},
     	Bridge: {
 			// Todo: review
-			width        : '1',
-			height       : '10',
+			width        : 1,
+			height       : 10,
 			name         : 'Bridge',
 			draw         : '<path d="M0,0 l0,10" fill="none" />'
   		},
