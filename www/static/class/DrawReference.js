@@ -21,7 +21,7 @@ let drawReference = (function() {
 
     // Rotate: P, S, Heater, Boiler, CookingPlates, Transfo
 
- 	const List = {
+ 	let List = {
 		PlaceHolder: {
 			// Todo: review
 	  		width        : 25,
@@ -164,6 +164,7 @@ let drawReference = (function() {
       		+ '<circle cx=0 cy=6  r=4 fill="none" />'
       		+ '<circle cx=0 cy=14 r=4 fill="none" />'
     });
+
 
 	return function(type) {
 		if (!(type in List)) {
