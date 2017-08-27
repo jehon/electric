@@ -68,7 +68,8 @@ let draw = (function() {
 			innerHeight  : 15,
 			name         : 'Boiler',
     		/* *********** TODO hachuré ********************/ 
-      		draw         : rotate(25, '<path d="M0,0 L0,10 m-7.5,0 l15,0 m-20,7.5 l5,0 a7.5 7.5 0 0 1 15 0 l5,0" fill="none" />')
+    		draw         : '<circle cx=10 cy=0 r=5 fill="none" />'
+    			+ '<circle cx=10 cy=0 r=10 fill="none" />'
 		},
 
     	CookingPlates: /* TODO: rotate */ {
