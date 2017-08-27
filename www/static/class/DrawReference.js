@@ -48,8 +48,8 @@ let drawReference = (function() {
     	},
     	Disj: {
 			// Todo: review
-      		width        : '20',
-      		height       : '60',
+      		width        : 20,
+      		height       : 60,
       		name         : 'Disjoncteur',
       		availOptions : [ 'I', 'Isec' ],
       		draw         : (options) => {
@@ -157,8 +157,8 @@ let drawReference = (function() {
 
     extending("Hotte", List.P, {
 		// Todo: review
-		width           : '20',
-		height          : '20',
+		width           : 20,
+		height          : 20,
 		name            : 'Hotte',
 		draw            : '<rect x=-10 y=0 width=20 height=20 fill="none" />'
       		+ '<circle cx=0 cy=6  r=4 fill="none" />'
