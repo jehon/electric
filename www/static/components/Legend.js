@@ -15,14 +15,14 @@ class Legend extends HTMLElement {
         this.render();
         break;
       case 'options':
-        this.optins = this.getAttribute("options");
+        this.options = JSON.parse(this.getAttribute("options"));
         this.render();
         break;
     }
   }
 
   render() {
-    let schema = { type: this.value, options: this.options, x: 10, y: 20 };
+    let schema = Object.assign({ type: this.value, x: 10, y: 20 }, this.options);
     // (new IdBuilder(schema)).build();
     let builder = new PositionBuilder(schema);
     let ref = drawReference(this.value);
