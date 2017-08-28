@@ -45,25 +45,39 @@
   <body>
 
   <h1>Legend</h1>
-  <x-legend value='P'></x-legend>
-  <x-legend value='S'></x-legend>
-  <x-legend value='Neon'></x-legend>
+  <style>
+    x-legend {
+      width: 100%;
+    }
+  </style>
+  <div class="container-fluid"> 
+    <x-legend value='P'></x-legend>
+    <x-legend value='S' options='{}'></x-legend>
+    <x-legend value='S' options='{ "bipol": true }'></x-legend>
+    <x-legend value='S' options='{ "bidir": true }'></x-legend>
+    <x-legend value='S' options='{ "inverter": true }'></x-legend>
+    <x-legend value='S' options='{ "variator": true }'></x-legend>
+    <x-legend value='S' options='{ "light": true }'></x-legend>
 
-  <x-legend value='L'></x-legend>
-  <x-legend value='Disj'></x-legend>
+    <x-legend value='Neon'></x-legend>
 
-  <x-legend value='Heater'></x-legend>
-  <x-legend value='Boiler'></x-legend>
+    <x-legend value='L'></x-legend>
+    <x-legend value='Disj'></x-legend>
 
-  <x-legend value='CookingPlates'></x-legend>
-  <x-legend value='KNX'></x-legend>
-  <x-legend value='Bridge'></x-legend>
-  <x-legend value='Transfo'></x-legend>
-  <x-legend value='Hotte'></x-legend>
+    <x-legend value='Heater'></x-legend>
+    <x-legend value='Boiler'></x-legend>
+
+    <x-legend value='CookingPlates'></x-legend>
+    <x-legend value='KNX'></x-legend>
+    <x-legend value='Bridge'></x-legend>
+    <x-legend value='Transfo'></x-legend>
+    <x-legend value='Hotte'></x-legend>
+  </div>
 
   <h1>Schema filiaire</h1>
 
   <h1>Plan cave</h1>
+  <xxxxxxxxxxxxxxxx-schema-position value='cave' plan='{ src: "/cave.jpg", scale: 0.50, viewBox: "175 100 850 550" }'></xxxxxxxxxxxxxxxx-schema-position>
 
   <h1>Plan RDC</h1>
   <div id='plan_rdc'></div>
@@ -88,6 +102,8 @@
       (new IdBuilder(ourschema)).build();
 
       document.querySelectorAll("schema-filiaire, schema-position").forEach(el => {
+          console.log("Setting schema on ", el, " to ", ourschema);
+          el.setSchema(ourschema);
       })
 
       // ReactDOM.render(
