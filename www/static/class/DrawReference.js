@@ -45,7 +45,7 @@ let drawReference = (function() {
 			width        : 20,
 			height       : 20,
 			name         : 'Light',
-			draw         : '<path d="M0,0 l5,5 l-10,-10 l5,5 l5,-5 l-10,10" fill="none"/>'
+			draw         : '<path d="M5,0 l5,5 l-10,-10 l5,5 l5,-5 l-10,10" fill="none"/>'
     	},
     	Neon: {
 			width        : 10,
