@@ -106,10 +106,10 @@ let drawReference = (function() {
 				+ '<path d="M-5,30 l0,-10 l10,0" fill="none" />'
 		},
     	Bridge: {
-			width        : 1,
-			height       : 10,
+			width        : 10,
+			height       : 1,
 			name         : 'Bridge',
-			draw         : '<path d="M0,0 l0,10" fill="none" />'
+			draw         : '<path d="M0,0 l10,0" fill="none" />'
   		},
     	Transfo: {
 			width        : 20,
