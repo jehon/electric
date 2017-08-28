@@ -1,6 +1,7 @@
 const mockSimpleCircuitJSON = JSON.stringify(
     // reference -> name
-    // Rotate: P, S, Hotte, Heater, Boiler, CookingPlates, Transfo
+    // Rotate: +270: P, S, Hotte, Heater, Boiler, CookingPlates, Transfo
+    //          <g transform='translate(0, ${height / 2})'>
     // options -> on value
 
     { "type": "Disj", "name": "A11", "label": "atelier/ecl", "next": [
