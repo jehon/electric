@@ -17,6 +17,11 @@ IdBuilder = (function() {
 				const localUUID = uuidCounter++;
 				element.getId = () => localUUID;
 			}
+
+			if (!("getType" in element)) {
+				const ref = drawReference(element.type);
+				element.getType = () => ref;
+			}
 		}
 
 		buildSelf(uuid = false) {
