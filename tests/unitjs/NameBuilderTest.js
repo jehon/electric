@@ -2,7 +2,7 @@
 describe("NameBuilderTest.js", function() {
 	it("should build correct names", function() {
 		IdBuilder.testResetUUID();
-		let schema = mockSimpleCircuit();
+		let schema = mockSimpleCircuit().schema;
 		expect(schema).not.toBeNull();
 		let cb = new NameBuilder(schema);
 		cb.build();
@@ -17,7 +17,7 @@ describe("NameBuilderTest.js", function() {
 
 	it("should build correct names when id are set", function() {
 		IdBuilder.testResetUUID();
-		let schema = mockSimpleCircuit();
+		let schema = mockSimpleCircuit().schema;
 		expect(schema).not.toBeNull();
 		let cb = new NameBuilder(schema);
 		let id = new IdBuilder(schema);

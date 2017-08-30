@@ -1,7 +1,7 @@
 
 describe("PositionBuilderTest.js", function() {
 	IdBuilder.testResetUUID();
-	let schema = mockSimpleCircuit();
+	let schema = mockSimpleCircuit().schema;
 	(new NameBuilder(schema)).build();
 	(new IdBuilder(schema)).build();
 

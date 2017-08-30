@@ -2,7 +2,7 @@
 describe("IdBuilderTest.js", function() {
 	it("should refresh the data when data is modified", function() {
 		IdBuilder.testResetUUID();
-		let schema = mockSimpleCircuit();
+		let schema = mockSimpleCircuit().schema;
 		expect(schema).not.toBeNull();
 		let cb = new IdBuilder(schema);
 		cb.build();

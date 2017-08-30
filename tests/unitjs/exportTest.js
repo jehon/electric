@@ -6,7 +6,7 @@ describe("exporting to json", function() {
 		expect(schema).not.toBeNull();
 
 		// Use the idbuilder
-		let cb = new IdBuilder(schema);
+		let cb = new IdBuilder(schema.schema);
 		expect(cb.findByUUID(2).type).toBe('P');
 
 		// The export must not change !

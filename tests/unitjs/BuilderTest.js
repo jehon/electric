@@ -35,7 +35,7 @@ describe("BuilderTest.js", function() {
 	}
 
 	it("should parse the simpleCircuit mock  with a MockBuilder", function() {
-		let schema = mockSimpleCircuit();
+		let schema = mockSimpleCircuit().schema;
 		expect(schema).not.toBeNull();
 		let cb = new MockBuilder(schema);
 
@@ -54,7 +54,7 @@ describe("BuilderTest.js", function() {
 	});
 
 	it("should refresh the data when data is modified", function() {
-		let schema = mockSimpleCircuit();
+		let schema = mockSimpleCircuit().schema;
 		expect(schema).not.toBeNull();
 		let cb = new MockBuilder(schema);
 
