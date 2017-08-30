@@ -142,8 +142,6 @@ let drawReference = (function() {
 
 		// TODO: build other values... => build up an object
 
-	    // def = Ojbect.assign({}, List[type]);
-
-		return Object.freeze(List[type]);
+		return Object.freeze(Object.assign({ type: type }, List[type]));
 	};
 })();
