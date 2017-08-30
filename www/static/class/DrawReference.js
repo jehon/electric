@@ -1,7 +1,7 @@
 // Coordonate system
 //
-// Y -> page width
-// X -> page height
+// X -> page width
+// Y -> page height
 //
 
 let drawReference = (function() {
@@ -23,8 +23,7 @@ let drawReference = (function() {
 			name         : 'Prise',
 			draw         : '<path d="M0,0 L10,0 m0,-7.5 l0,15 m7.5,-20 l0,5 a7.5 7.5 0 0 0 0 15 l0,5" fill="none"/>'
 		},
-		S: {
-			// Todo: review
+		S: { // Todo: review
 			width        : 25,
 			height       : 20,
 			innerHeight  : 15,
@@ -53,7 +52,7 @@ let drawReference = (function() {
 			name         : 'Neon',
 			draw         : '<path d="M0,0 l0,5 l0,-10 m0,5 l30,0 l0,5 l0,-10" fill="none" />'
 		},
-    	Disj: {
+    	Disj: { // Rotate ?
       		width        : 20,
       		height       : 60,
       		name         : 'Disjoncteur',
@@ -96,8 +95,7 @@ let drawReference = (function() {
       			+ '<circle cx=5  cy=-5 r=2 fill="currentColor" />'
       			+ '<circle cx=15 cy=-5 r=2 fill="currentColor" />'
 		},
-
-    	KNX: {
+    	KNX: { // Rotate ?
 			width        : 20,
       		height       : 35,
       		name         : 'Relais KNX',
