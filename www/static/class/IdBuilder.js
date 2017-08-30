@@ -18,9 +18,9 @@ IdBuilder = (function() {
 				element.getId = () => localUUID;
 			}
 
-			if (!("getType" in element)) {
+			if (!("getReference" in element)) {
 				const ref = drawReference(element.type);
-				element.getType = () => ref;
+				element.getReference = () => ref;
 			}
 		}
 
