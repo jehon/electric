@@ -140,8 +140,14 @@ let drawReference = (function() {
 	    	throw "Type not found: " + type;
 		}
 
-		// TODO: build other values... => build up an object
+		// TODO: build not specified values... => build up an object
 
-		return Object.freeze(Object.assign({ type: type }, List[type]));
+		let ref = List[type];
+
+		return Object.freeze(Object.assign({ 
+			type: type,
+			availOptions: [],
+			innerHeight: ref.height,
+		}, ref));
 	};
 })();
