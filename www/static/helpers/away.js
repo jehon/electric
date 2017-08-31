@@ -15,6 +15,7 @@ function away(d, angle) {
     get y() {
       return d * Math.cos(angle / 180 * Math.PI);
     },
+
     alignmentH: function() {
       if (angle < 45)  { return 'middle'; }
       if (angle < 135) { return 'end'; }
@@ -22,6 +23,7 @@ function away(d, angle) {
       if (angle < 325) { return 'start'; }
       return 'middle';
     },
+
     alignementV: function() {
       if (angle < 45)  { return '+1em'; }
       if (angle < 135) { return '+0.4em'; }
