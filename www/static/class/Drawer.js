@@ -57,8 +57,10 @@ let draw = (function() {
 
 		// SVG transform the result
 
-		label() {
-			// TODO
+		label(label = "") {
+			if (!label) {
+				return this;
+			}
 			return this;
 		}
 
