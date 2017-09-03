@@ -1,14 +1,24 @@
 
 class PositionBuilder extends Builder {
 
-	build(space = "", ...args) {
-		return super.build(space + this.constructor.separator, ...args);
+	build(plan, space = "", ...args) {
+		return super.build(plan, space + this.constructor.separator, ...args);
 	}
 
-	buildSelf(space, ...args) {
-		super.buildSelf(space, ...args);
+	buildSelf(plan, space, ...args) {
+		super.buildSelf(plan, space, ...args);
+
+		if (!("plan" in this._currentElement)) {
+			return "";
+		}
+
+		if (plan != this._currentElement.plan) {
+			return "";
+		}
+
 		this._draw = draw(this._currentElement);
-		let str = this._draw.rotate(this._draw.getParameter('angle'))
+		let str = this._draw
+			.rotate(this._draw.getParameter('angle'))
 			.translate(this._draw.getParameter("x"), this._draw.getParameter("y"))
 			.build();
 
