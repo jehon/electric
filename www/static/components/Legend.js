@@ -22,7 +22,7 @@ class Legend extends HTMLElement {
   }
 
   render() {
-    let schema = Object.assign({ type: this.value, x: 10, y: 20 }, this.options);
+    let schema = Object.assign({ type: this.value, x: 10, y: 20, plan: "legend" }, this.options);
     (new IdBuilder(schema)).build();
     let builder = new PositionBuilder(schema);
     let ref = drawReference(this.value);
@@ -37,7 +37,7 @@ class Legend extends HTMLElement {
                     <g stroke="black">
                       <line x1=-100 y1=20 x2=100 y2=20 stroke="red" />
                       <line x1=10 y1=-100 x2=10 y2=100 stroke="red" />
-                      ${builder.build()}
+                      ${builder.build("legend")}
                     </g>
                 </svg>
             </div>
