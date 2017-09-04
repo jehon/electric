@@ -44,7 +44,7 @@ class NameBuilder extends Builder {
 		}
 		if (this._print !== false) {
 			console.log(
-				(("getId" in this._currentElement ? (this._currentElement.getId()) : "") + "     ").substring(0, 1 + Math.ceil(Math.log10(IdBuilder.nextUUID())))
+				(("getId" in this._currentElement ? (this._currentElement.getId()) : "") + "     ").substring(0, 1 + Math.ceil(Math.log10(SingleElementBuilder.nextUUID())))
 				+ this._print 
 				+ this._currentElement.getName() 
 				+ ': ' 
