@@ -22,7 +22,9 @@ class Legend extends HTMLElement {
   }
 
   render() {
-    let schema = Object.assign({ type: this.value, x: 10, y: 20, plan: "legend" }, this.options);
+    const X0 = 10;
+    const Y0 = 20;
+    let schema = Object.assign({ type: this.value, x: X0, y: Y0, plan: "legend" }, this.options);
     (new SingleElementBuilder(schema)).build();
     // (new NameBuilder(schema)).build();
     let builder = new PositionBuilder(schema);
@@ -32,11 +34,14 @@ class Legend extends HTMLElement {
             <div class="col-md-1">${this.value}</div>
             <div class="col-md-2">${JSON.stringify(this.options)}</div>
             <div class="col-md-1">
-                <svg preserveAspectRatio='xMinYMin slice' width="${schema.getVal("width") + 40}" height="${schema.getVal("height") + 20}">
-                    <g stroke="black">
-                      <line x1=-100 y1=20 x2=100 y2=20 stroke="red" />
-                      <line x1=10 y1=-100 x2=10 y2=100 stroke="red" />
-                      ${builder.build("legend")}
+                <svg preserveAspectRatio='xMinYMin slice' width="${schema.getVal("width") + 40}" height="${schema.getVal("height") + 30}">
+                    <g stroke="red">
+                      <line x1=-100 y1=20 x2=100 y2=20 />
+                      <line x1=10 y1=-100 x2=10 y2=100 />
+                      <rect x=${X0} y=${Y0 -schema.getVal("height")/2} width=${schema.getVal("width")} height=${schema.getVal("height")} fill="none"/>
+                      <g stroke="black">
+                        ${builder.build("legend")}
+                      </g>
                     </g>
                 </svg>
             </div>
