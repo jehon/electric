@@ -57,10 +57,17 @@ let draw = (function() {
 
 		// SVG transform the result
 
-		label(label = "") {
+		label(label = "", w, h) {
 			if (!label) {
 				return this;
 			}
+
+			this._svg += `
+				<g transform='translate(${w}, ${h})'>
+					<g transform='rotate(45)'>
+		                <text>${label}</text>
+		            </g>
+		        </g>`
 			return this;
 		}
 
