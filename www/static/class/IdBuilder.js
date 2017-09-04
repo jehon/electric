@@ -24,34 +24,9 @@ IdBuilder = (function() {
 			}
 		}
 
-		buildSelf(uuid = false) {
+		// Param uuid is used when searching for an UUID
+		buildSelf() {
 			this.constructor.assignUUID(this._currentElement);
-
-			// Return value to search by UUID
-			if (uuid) {
-				if (this._currentElement.getId() == uuid) {
-					return this._currentElement;
-				}
-			}
-			return false;
-		}
-
-		buildAssembly(self, next, alternate) {
-			// Return value to search by UUID
-			if (self) {
-				return self;
-			}
-			let nv = next.reduce((acc, val) => (acc ? acc : (val ? val : false)), false);
-			if (nv) {
-				return nv;
-			}
-			let na = alternate.reduce((acc, val) => (acc ? acc : (val ? val : false)), false);
-			return na;
-		}
-
-		findByUUID(uuid) {
-			// Use the return value sent by the iterator
-			return this.build(uuid);
 		}
 	}
 

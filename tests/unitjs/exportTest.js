@@ -7,7 +7,8 @@ describe("exporting to json", function() {
 
 		// Use the idbuilder
 		let cb = new IdBuilder(schema.schema);
-		expect(cb.findByUUID(2).type).toBe('P');
+		let cbf = new IdFinderBuilder(schema.schema);
+		expect(cbf.findByUUID(2).type).toBe('P');
 
 		// The export must not change !
 		expect(JSON.stringify(schema)).toEqual(mockSimpleCircuitJSON);
