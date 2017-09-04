@@ -1,26 +1,5 @@
 
 class NameBuilder extends SingleElementBuilder {
-	constructor(...args) {
-		super(...args);
-		this._print = false;
-	}
-
-	buildWithPrint() {
-		this._print = ' ';
-		this.build();
-		this._print = false;
-	}
-
-	_getBuilder(...args) {
-		let el = super._getBuilder(...args);
-		el._print = this._print;
-		if (this._print !== false) {
-			this._print = this._print + ' ';
-		}
-		return el;
-	}
-
-
 	// Set initial values
 	// Build by one object, to allow buildSelf to modify it
 	build(ref = { base : "main", index : 0 }) {
@@ -42,15 +21,6 @@ class NameBuilder extends SingleElementBuilder {
 		} else {
     		_setNames(ref.base + (ref.index == 0 ? '' : '.' + ref.index), ref.index);
 		}
-		if (this._print !== false) {
-			console.log(
-				(("getId" in this._currentElement ? (this._currentElement.getId()) : "") + "     ").substring(0, 1 + Math.ceil(Math.log10(SingleElementBuilder.nextUUID())))
-				+ this._print 
-				+ this._currentElement.getName() 
-				+ ': ' 
-				+ this._currentElement.type);
-		}
-
 		return super.buildSelf(ref);
 	}
 
