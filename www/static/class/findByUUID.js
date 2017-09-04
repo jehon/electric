@@ -3,10 +3,11 @@ findByUUID = (function() {
 	class IdFinderBuilder extends IdBuilder {
 		// Param uuid is used when searching for an UUID
 		buildSelf(uuid) {
-			super.buildSelf();
+			// If we are looking by uuid, we should not generate new one !
+			// super.buildSelf();
 
 			// Return value to search by UUID
-			if (this._currentElement.getId() == uuid) {
+			if ((typeof(this._currentElement.getId) == "function") && (this._currentElement.getId() == uuid)) {
 				return this._currentElement;
 			}
 			return false;
