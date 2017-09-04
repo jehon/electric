@@ -1,5 +1,5 @@
 
-class NameBuilder extends Builder {
+class NameBuilder extends SingleElementBuilder {
 	constructor(...args) {
 		super(...args);
 		this._print = false;

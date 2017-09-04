@@ -3,7 +3,6 @@ describe("PositionBuilderTest.js", function() {
 	SingleElementBuilder.testResetUUID();
 	let schema = mockSimpleCircuit().schema;
 	(new NameBuilder(schema)).build();
-	(new SingleElementBuilder(schema)).build();
 
 	it("should build P", function() {
 		// PositionBuilder.separator = ".";

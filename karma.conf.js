@@ -38,6 +38,8 @@ module.exports = function(config) {
       'static/bower_components/karma-read-json/karma-read-json.js',
       { pattern: "static/bower_components/**",    included: false, served: true, watched: false },
 //      { pattern: "static/elements/resources/*",   included: false, served: true, watched: true },
+      'static/class/Builder.js',
+      'static/class/SingleElementBuilder.js',
       'static/!(elements,bower_components)/**/*.js',
       'static/elements/*.js',
       '../tests/unitjs/mocks/*.js',

@@ -20,8 +20,6 @@ describe("NameBuilderTest.js", function() {
 		let schema = mockSimpleCircuit().schema;
 		expect(schema).not.toBeNull();
 		let cb = new NameBuilder(schema);
-		let id = new SingleElementBuilder(schema);
-		id.build();
 		cb.buildWithPrint();
 
 		expect(schema.getName()).toBe("A11");
