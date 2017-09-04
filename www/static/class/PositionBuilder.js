@@ -14,8 +14,8 @@ class PositionBuilder extends Builder {
 
 		this._draw = draw(this._currentElement);
 		let str = this._draw
+			.label(("getName" in this._currentElement) ? this._currentElement.getName() : false, this._currentElement.getVal("width"), this._currentElement.getVal("height") / 2)
 			.rotate(this._draw.getParameter('orientation'))
-			.label(("getName" in this._currentElement) ? this._currentElement.getName() : false)
 			.translate(this._draw.getParameter("x"), this._draw.getParameter("y"))
 			.build();
 
