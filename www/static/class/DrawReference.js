@@ -1,9 +1,3 @@
-// Coordonate system
-//
-// X -> page width
-// Y -> page height
-//
-
 let drawReference = (function() {
 	let extending = (name, what, typeDef) => {
 		List[name] = Object.assign({}, what, typeDef);
