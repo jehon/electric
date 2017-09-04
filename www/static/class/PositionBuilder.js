@@ -8,7 +8,7 @@ class PositionBuilder extends Builder {
 	buildSelf(plan, space, ...args) {
 		super.buildSelf(plan, space, ...args);
 
-		if (!(this._currentElement.getVal("plan", false))) {
+		if (this._currentElement.getVal("plan", false) != plan) {
 			return "";
 		}
 
