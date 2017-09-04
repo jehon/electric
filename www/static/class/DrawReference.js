@@ -18,7 +18,7 @@ let drawReference = (function() {
 			draw         : '<path d="M0,0 L10,0 m0,-7.5 l0,15 m7.5,-20 l0,5 a7.5 7.5 0 0 0 0 15 l0,5" fill="none"/>'
 		},
 		S: { // Todo: review
-			width        : 25,
+			width        : 22,
 			height       : 20,
 			innerHeight  : 15,
 			name         : 'Interrupteur',
@@ -35,14 +35,14 @@ let drawReference = (function() {
 	    },
 		L: {
 			type         : "roof",
-			width        : 20,
-			height       : 20,
+			width        : 10,
+			height       : 10,
 			name         : 'Light',
 			draw         : '<path d="M5,0 l5,5 l-10,-10 l5,5 l5,-5 l-10,10" fill="none"/>'
     	},
     	Neon: {
-			width        : 10,
-			height       : 35,
+			width        : 30,
+			height       : 10,
 			name         : 'Neon',
 			draw         : '<path d="M0,0 l0,5 l0,-10 m0,5 l30,0 l0,5 l0,-10" fill="none" />'
 		},
