@@ -24,7 +24,15 @@ SingleElementBuilder = (function() {
 			}
 
 			if (!("get" in element)) {
-				element.get = (name, def) => (name in this._currentElement ? this._currentElement[name] : def);
+				element.get = function(name, def) {
+					if (name in this._currentElement) {
+						return this._currentElement[name];
+					}
+					if (name in this.getReference) {
+						return this.getReference()[name];
+					}
+					return def;
+				}
 			}
 		}
 
