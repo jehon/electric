@@ -10,42 +10,59 @@
 class SchemaPosition extends HTMLElement {
   constructor() {
     super();
-  //   this.image = {
-  //     b64: ' data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
-  //     width: 1,
-  //     height: 1,
+    this.plan = {
+      b64: ' data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
+      width: 1,
+      height: 1,
 
-  //     src: '',
-  //     scale: 1,
-  //     viewBox: '0 0 100 100'
-  //   };
-  //   getDataFromImageUrl(this.image.src)
-  //     .then((data) => {
-  //       this.image = Object.assign({}, this.image, data);
-  //       this.render();
-  //     });
+      src: '',
+      scale: 1,
+      viewBox: '0 0 100 100',
+      title: 'Loading...'
+    };
   }
 
-  static get observedAttributes() { return ['value', 'plan' ]; }
+  setSchema(schema) {
+    if (!schema) {
+      console.log("no schema found");
+      return ;
+    }
+    console.log("set schema: ", schema);
+    this.schema = schema;
+    this._builder = new PositionBuilder(schema);
+    this.render();
+  }
+
+  static get observedAttributes() { return [ 'value' ]; }
 
   attributeChangedCallback(attributeName, oldValue, newValue, namespace) {
-  //   switch(attributeName) {
-  //     case 'image': 
+    switch(attributeName) {
+      case 'value':
+        this.value = newValue;
+      //   getDataFromImageUrl(this.plan.src)
+      //     .then((data) => {
+      //       this.plan.b64 = Object.assign({}, this.plan.b64, data);
+      //       this.render();
+      //     });
+          break;
+    }
+  }
 
-  //     case 'value':
-  //       this[attributeName] = newValue;
-  //       this.render();
-  //       break;
-  //   }
-  // }
-
-  // getChildren() {
-  //   return `
-  //     <image opacity='0.5'
-  //         x='0' y='0'
-  //         width=1 height=1
-  //         xlinkHref=${this.image.b64} />
-  //   `;
+  render() {
+    if (!this.schema || !this.value) {
+      console.log("no render");
+      return ;
+    }
+    this.innerHTML = `
+      <div>
+        <div>${this.value}: ${this.title}</div>
+        <svg preserveAspectRatio='xMinYMin slice' width='1000px' height='800px'>
+          <rect x='0' y='0' width='100%' height='100%' fill='white' stroke='red'/>
+          <image opacity='0.5' x='0' y='0' width=1 height=1 xlinkHref=${this.plan.b64} />
+          ${this._builder.build("" + this.value)}
+        </svg>
+      </div>
+    `;
   }
 }
 
