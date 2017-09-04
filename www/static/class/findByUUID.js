@@ -1,7 +1,5 @@
 
-IdFinderBuilder = (function() {
-	let uuidCounter = 1;
-
+findByUUID = (function() {
 	class IdFinderBuilder extends IdBuilder {
 		// Param uuid is used when searching for an UUID
 		buildSelf(uuid) {
@@ -29,13 +27,10 @@ IdFinderBuilder = (function() {
 			}
 			return null;
 		}
-
-		findByUUID(uuid) {
-			// Use the return value sent by the iterator
-			return this.build(uuid);
-		}
 	}
 
-	return IdFinderBuilder;
+	return (schema, uuid) => {
+		let builder = new IdFinderBuilder(schema);
+		return builder.build(uuid);
+	}
 })();
-
