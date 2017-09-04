@@ -23,13 +23,13 @@ SingleElementBuilder = (function() {
 				element.getReference = () => ref;
 			}
 
-			if (!("get" in element)) {
-				element.get = function(name, def) {
-					if (name in this._currentElement) {
-						return this._currentElement[name];
+			if (!("getVal" in element)) {
+				element.getVal = function(name, def) {
+					if (name in element) {
+						return element[name];
 					}
-					if (name in this.getReference) {
-						return this.getReference()[name];
+					if (name in element) {
+						return element.getReference()[name];
 					}
 					return def;
 				}
