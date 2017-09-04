@@ -1,11 +1,11 @@
 
 describe("exporting to json", function() {
 	it("should export simpleCircuit", function() {
-		IdBuilder.testResetUUID();
+		SingleElementBuilder.testResetUUID();
 		let schema = mockSimpleCircuit();
 		expect(schema).not.toBeNull();
 
-		(new IdBuilder(schema.schema)).build();
+		(new SingleElementBuilder(schema.schema)).build();
 
 		// Use the idFinderbuilder
 		expect(findByUUID(schema.schema, 2).type).toBe('P');

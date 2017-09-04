@@ -30,7 +30,7 @@
     <script type='text/javascript' src='class/Drawer.js'></script>
 
     <script type='text/javascript' src='class/Builder.js'></script>
-    <script type='text/javascript' src='class/IdBuilder.js'></script>
+    <script type='text/javascript' src='class/SingleElementBuilder.js'></script>
     <script type='text/javascript' src='class/NameBuilder.js'></script>
     <script type='text/javascript' src='class/PositionBuilder.js'></script>
 
@@ -100,7 +100,7 @@
     response.json().then((ourschema) => {
 
       (new NameBuilder(ourschema)).build();
-      (new IdBuilder(ourschema)).build();
+      (new SingleElementBuilder(ourschema.schema)).build();
 
       document.querySelectorAll("schema-filiaire, schema-position").forEach(el => {
           console.log("Setting schema on ", el, " to ", ourschema);

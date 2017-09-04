@@ -1,6 +1,6 @@
 
 findByUUID = (function() {
-	class IdFinderBuilder extends IdBuilder {
+	class IdFinderBuilder extends SingleElementBuilder {
 		// Param uuid is used when searching for an UUID
 		buildSelf(uuid) {
 			// If we are looking by uuid, we should not generate new one !

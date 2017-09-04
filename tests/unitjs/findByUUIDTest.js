@@ -1,11 +1,11 @@
 
 describe("findByUUIDTest.js", function() {
 	it("should find back the uuid", function() {
-		IdBuilder.testResetUUID();
+		SingleElementBuilder.testResetUUID();
 		let schema = mockSimpleCircuit().schema;
 		expect(schema).not.toBeNull();
 
-		let cb = new IdBuilder(schema);
+		let cb = new SingleElementBuilder(schema);
 		cb.build();
 
 		expect(schema.next[0].type).toBe('P');

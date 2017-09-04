@@ -1,9 +1,9 @@
 
 describe("PositionBuilderTest.js", function() {
-	IdBuilder.testResetUUID();
+	SingleElementBuilder.testResetUUID();
 	let schema = mockSimpleCircuit().schema;
 	(new NameBuilder(schema)).build();
-	(new IdBuilder(schema)).build();
+	(new SingleElementBuilder(schema)).build();
 
 	it("should build P", function() {
 		// PositionBuilder.separator = ".";

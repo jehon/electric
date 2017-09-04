@@ -23,7 +23,8 @@ class Legend extends HTMLElement {
 
   render() {
     let schema = Object.assign({ type: this.value, x: 10, y: 20, plan: "legend" }, this.options);
-    (new IdBuilder(schema)).build();
+    (new SingleElementBuilder(schema)).build();
+    (new NameBuilder(schema)).build();
     let builder = new PositionBuilder(schema);
     let ref = drawReference(this.value);
 

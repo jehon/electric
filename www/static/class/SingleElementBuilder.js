@@ -1,8 +1,8 @@
 
-IdBuilder = (function() {
+SingleElementBuilder = (function() {
 	let uuidCounter = 1;
 
-	class IdBuilder extends Builder {
+	class SingleElementBuilder extends Builder {
 		static nextUUID() {
 			return uuidCounter;
 		}
@@ -22,6 +22,10 @@ IdBuilder = (function() {
 				const ref = drawReference(element.type);
 				element.getReference = () => ref;
 			}
+
+			if (!("get" in element)) {
+				element.get = (name, def) => (name in this._currentElement ? this._currentElement[name] : def);
+			}
 		}
 
 		// Param uuid is used when searching for an UUID
@@ -30,6 +34,6 @@ IdBuilder = (function() {
 		}
 	}
 
-	return IdBuilder;
+	return SingleElementBuilder;
 })();
 

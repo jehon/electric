@@ -1,13 +1,13 @@
 
-describe("IdBuilderTest.js", function() {
+describe("SingleElementBuilderTest.js", function() {
 	it("should refresh the data when data is modified", function() {
-		IdBuilder.testResetUUID();
+		SingleElementBuilder.testResetUUID();
 		let schema = mockSimpleCircuit().schema;
 		expect(schema).not.toBeNull();
-		let cb = new IdBuilder(schema);
+		let cb = new SingleElementBuilder(schema);
 		cb.build();
 
-		expect(IdBuilder.nextUUID()).toBe(9);
+		expect(SingleElementBuilder.nextUUID()).toBe(9);
 		expect(schema.next[0].type).toBe('P');
 		expect(schema.next[0].getId()).toBe(2);
 		expect(schema.next[0].getReference().type).toBe('P');
