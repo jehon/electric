@@ -28,7 +28,7 @@ SingleElementBuilder = (function() {
 					if (name in element) {
 						return element[name];
 					}
-					if (name in element) {
+					if (name in element.getReference()) {
 						return element.getReference()[name];
 					}
 					return def;

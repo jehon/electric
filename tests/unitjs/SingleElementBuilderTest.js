@@ -11,6 +11,10 @@ describe("SingleElementBuilderTest.js", function() {
 		expect(schema.next[0].type).toBe('P');
 		expect(schema.next[0].getId()).toBe(2);
 		expect(schema.next[0].getReference().type).toBe('P');
+		expect(schema.next[0].getVal("type")).toBe('P');
+		expect(schema.next[0].getVal("x")).toBe(10);
+		expect(schema.next[0].getVal("width")).toBe(20);
+		expect(schema.next[0].getVal("anything", false)).toBe(false);
 
 		expect(schema.next[0].next[0].type).toBe('S');
 		expect(schema.next[0].next[0].getId()).toBe(3);
