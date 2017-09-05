@@ -57,15 +57,18 @@ let draw = (function() {
 
 		// SVG transform the result
 
-		label(label = "", w, h) {
+		label(label = "", w, h, a) {
 			if (!label) {
 				return this;
 			}
 
+			const tp = away(w, h, a);
+
 			this._svg += `
-				<g transform='translate(${w}, ${h})'>
+				<g transform='translate(${tp.x + 2}, ${tp.y - 2})'>
+					<circle cx=0 cy=0 r=2 fill=red />
 					<g transform='rotate(45)'>
-		                <text>${label}</text>
+		                <text font-family="Verdana" font-size="6">${label}</text>
 		            </g>
 		        </g>`
 			return this;
