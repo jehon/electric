@@ -13,9 +13,20 @@ class PositionBuilder extends Builder {
 		}
 
 		this._draw = draw(this._currentElement);
+
+
+// TODO:
+//    label are ok in normal view
+//    but not in rotated view, because rotation is made around side object
+//    ...
+//
+
 		let str = this._draw
-			.label(("getName" in this._currentElement) ? this._currentElement.getName() : false, this._currentElement.getVal("width"), this._currentElement.getVal("height") / 2)
 			.rotate(this._draw.getParameter('orientation'))
+			.label(("getName" in this._currentElement) ? this._currentElement.getName() : false, 
+				this._currentElement.getVal("width"), 
+				this._currentElement.getVal("height") / 2,
+				this._currentElement.getVal("orientation", 0))
 			.translate(this._draw.getParameter("x"), this._draw.getParameter("y"))
 			.build();
 
