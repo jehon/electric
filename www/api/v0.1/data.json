@@ -1,4 +1,11 @@
 {
+  "plans": {
+    "cave":       { "src": "/cave.jpg",       "scale": 0.50, "viewBox": "175 100 850 550" },
+    "rdc":        { "src": "/rdc.png",        "scale": 0.50, "viewBox": "200 100 900 550" },
+    "etage":      { "src": "/etage.png",      "scale": 0.50, "viewBox": "175 100 900 550" },
+    "grenier":    { "src": "/grenier.png",    "scale": 0.50, "viewBox": "0 0 100 100" },
+    "exterieurs": { "src": "/exterieurs.png", "scale": 1,    "viewBox": "0 0 100 100" },
+  },
   "schema": 
   { "type": "Disj", "reference": "Central", "options": { "Isec": 300, "I": 40 }, "next": [
     { "type": "Disj", "reference": "A11", "label": "atelier/ecl", "next": [
