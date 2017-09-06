@@ -57,7 +57,7 @@ let draw = (function() {
 
 		// SVG transform the result
 
-		label(label = "", w, h, a) {
+		rotatedLabel(label = "", w, h, a) {
 			if (!label) {
 				return this;
 			}

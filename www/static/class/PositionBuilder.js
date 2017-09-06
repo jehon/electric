@@ -16,7 +16,7 @@ class PositionBuilder extends Builder {
 
 		let str = this._draw
 			.rotate(this._draw.getParameter('orientation'))
-			.label(("getName" in this._currentElement) ? this._currentElement.getName() : false, 
+			.rotatedLabel(("getName" in this._currentElement) ? this._currentElement.getName() : false, 
 				this._currentElement.getVal("width"), 
 				this._currentElement.getVal("height") / 2,
 				this._currentElement.getVal("orientation", 0))
