@@ -65,12 +65,20 @@ let draw = (function() {
 			const tp = away(w, h, a);
 
 			this._svg += `
-				<g transform='translate(${tp.x + 2}, ${tp.y - 2})'>
+				<g transform='translate(${tp.x}, ${tp.y})'>
 					<circle cx=0 cy=0 r=2 fill=red />
 					<g transform='rotate(45)'>
-		                <text font-family="Verdana" font-size="6">${label}</text>
+		                <text x=2 y="-2" font-family="Verdana" font-size="6">${label}</text>
 		            </g>
 		        </g>`
+			return this;
+		}
+
+		label(label= false) {
+			if (!label) {
+				return this;
+			}
+			this._svg += `<text x="2" y="-2" font-family="Verdana" font-size="6">${label}</text>`
 			return this;
 		}
 
