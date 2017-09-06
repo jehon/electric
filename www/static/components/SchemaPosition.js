@@ -8,26 +8,11 @@
 // }
 
 class SchemaPosition extends HTMLElement {
-  constructor() {
-    super();
-    this.plan = {
-      b64: ' data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
-      width: 1,
-      height: 1,
-
-      src: '',
-      scale: 1,
-      viewBox: '0 0 100 100',
-      title: 'Loading...'
-    };
-  }
-
   setSchema(schema) {
     if (!schema) {
       console.log("no schema found");
       return ;
     }
-    console.log("set schema: ", schema);
     this.schema = schema;
     this._builder = new PositionBuilder(schema.schema);
     this.render();
@@ -59,8 +44,6 @@ class SchemaPosition extends HTMLElement {
       plan.width = size.width;
       plan.height = size.height;
   
-      console.log("Plan: ", plan);
-
       this.innerHTML = `
         <div>
           <div>${this.value}: ${this.title}</div>
