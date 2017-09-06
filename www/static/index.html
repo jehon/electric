@@ -57,19 +57,19 @@
   <h1>Schema filiaire</h1>
 
   <h1>Plan cave</h1>
-  <schema-position value='cave'></schema-position>
+    <schema-position value='cave'></schema-position>
 
   <h1>Plan RDC</h1>
-  <div id='plan_rdc'></div>
+    <schema-position value='rdc'></schema-position>
 
   <h1>Plan Etage</h1>
-  <div id='plan_etage'></div>
+    <schema-position value='etage'></schema-position>
 
   <h1>Plan Grenier</h1>
-  <div id='plan_grenier'></div>
+    <schema-position value='grenier'></schema-position>
 
   <h1>Plan Exterieurs</h1>
-  <div id='plan_exterieurs'></div>
+    <schema-position value='exterieurs'></schema-position>
 
   <h1>Légende</h1>
     <x-legend value='P'></x-legend>
@@ -104,13 +104,11 @@
 
       (new MigrationBuilder(ourschema.schema)).build();
 
-
       (new NameBuilder(ourschema.schema)).build();
-      (new SingleElementBuilder(ourschema.schema)).build();
+      // (new SingleElementBuilder(ourschema.schema)).build();
 
       document.querySelectorAll("schema-filiaire, schema-position").forEach(el => {
-          console.log("Setting schema on ", el, " to ", ourschema);
-          el.setSchema(ourschema.schema);
+          el.setSchema(ourschema);
       })
 
       // ReactDOM.render(
