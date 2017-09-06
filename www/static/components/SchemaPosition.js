@@ -29,7 +29,7 @@ class SchemaPosition extends HTMLElement {
     }
     console.log("set schema: ", schema);
     this.schema = schema;
-    this._builder = new PositionBuilder(schema);
+    this._builder = new PositionBuilder(schema.schema);
     this.render();
   }
 
@@ -39,13 +39,9 @@ class SchemaPosition extends HTMLElement {
     switch(attributeName) {
       case 'value':
         this.value = newValue;
-      //   getDataFromImageUrl(this.plan.src)
-      //     .then((data) => {
-      //       this.plan.b64 = Object.assign({}, this.plan.b64, data);
-      //       this.render();
-      //     });
-          break;
+        break;
     }
+    this.render();
   }
 
   render() {
@@ -53,16 +49,29 @@ class SchemaPosition extends HTMLElement {
       console.log("no render");
       return ;
     }
-    this.innerHTML = `
-      <div>
-        <div>${this.value}: ${this.title}</div>
-        <svg preserveAspectRatio='xMinYMin slice' width='1000px' height='800px'>
-          <rect x='0' y='0' width='100%' height='100%' fill='white' stroke='red'/>
-          <image opacity='0.5' x='0' y='0' width=1 height=1 xlinkHref=${this.plan.b64} />
-          ${this._builder.build("" + this.value)}
-        </svg>
-      </div>
-    `;
+    if (!(this.value in this.schema.plans)) {
+      console.log("Plan is unknown: ", this.value, " in ", this.schema.plans);
+      return ;
+    }
+
+    let plan = this.schema.plans[this.value];
+    imageSize(plan.src).then(size => {
+      plan.width = size.width;
+      plan.height = size.height;
+  
+      console.log("Plan: ", plan);
+
+      this.innerHTML = `
+        <div>
+          <div>${this.value}: ${this.title}</div>
+          <svg preserveAspectRatio="xMinYMin slice" width="${plan.width}px" height="${plan.height}px" view-box="${plan.viewBox}">
+            <rect x=0 y=0 width="100%" height="100%" fill="white" stroke="red"/>
+            <image opacity=0.5 x=0 y=0 width="${plan.width}px" height="${plan.height}px" href=${plan.src} />
+            ${this._builder.build("" + this.value)}
+          </svg>
+        </div>
+      `;
+    });
   }
 }
 
