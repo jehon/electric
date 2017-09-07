@@ -31,7 +31,6 @@ class SchemaPosition extends HTMLElement {
 
   render() {
     if (!this.schema || !this.value) {
-      console.log("no render");
       return ;
     }
     if (!(this.value in this.schema.plans)) {
