@@ -3,7 +3,7 @@ MigrationBuilder = (function() {
 	class MigrationBuilder extends Builder {
 		buildSelf(...args) {
 			// Integrate options directly here
-			if ("options" in this) {
+			if ("options" in this._currentElement) {
 				Object.assign(this._currentElement, this._currentElement.options);	
 			}
 			if ("reference" in this._currentElement) {
