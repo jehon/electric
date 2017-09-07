@@ -28,6 +28,29 @@ class FiliaireBuilder extends NameBuilder {
 		super.buildAssembly(self, next, alternate);
 
 		let res = self;
+		res.svg += `<g transform="translate(0, ${this._currentElement.getVal("height")})">`;
+		let dx = 0;
+		let subHeigth = 0;
+
+		// Add one array element
+		let addOne = (e, i) => {
+			// TODO: link to the previous one if (i > 0)
+			res.svg += `<g transform="translate(${dx}, 0)">${e.svg}</g>`;
+			dx = dx + e.width;
+			subHeigth = Math.max(subHeigth, e.height);
+		}
+
+		if (next != null) {
+			// TODO: link the first one
+			next.forEach((e, i) => addOne(e, i));
+		}
+		if (alternate != null) {
+			// TODO: link the first one
+			alternate.forEach((e, i) => addOne(e, i));
+		}
+		res.svg += `</g>`;
+		res.width = Math.max(res.width, dx);
+		res.height = res.height + subHeigth;
 
 		return res;
 	}
