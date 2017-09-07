@@ -24,11 +24,14 @@ class SchemaFiliaire extends HTMLElement {
       return ;
     }
 
+    let res = this._builder.build();
+    console.log("res: ", res);
+
     this.innerHTML = `
       <div>
         <svg preserveAspectRatio="xMinYMin slice">
           <rect x=0 y=0 width="100%" height="100%" fill="white" stroke="red"/>
-          ${this._builder.build("" + this.value)}
+          ${res.svg}
         </svg>
       </div>
     `;
