@@ -22,23 +22,7 @@ class FiliaireBuilder extends NameBuilder {
 		};
 	}
 
-	getOneNext(i, element, ...args) {
-		super.getOneNext(i, element, ...args);
-		return {
-			svg: "",
-			width: 0,
-			height: 0
-		};
-	}
 
-	getOneAlternate(i, element, ...args) {
-		super.getOneAlternate(i, element, ...args);
-		return {
-			svg: "",
-			width: 0,
-			height: 0
-		};
-	}
 
 	buildAssembly(self, next, alternate) {
 		super.buildAssembly(self, next, alternate);
