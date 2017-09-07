@@ -16,11 +16,11 @@ class FiliaireBuilder extends NameBuilder {
 		super.buildSelf(...args);
 
 		return {
+			width: this._currentElement.getVal("width", 0),
+			height: this._currentElement.getVal("height", 0),
 			svg: draw(this._currentElement)
 				.label()
-				.build(),
-			width: this._currentElement.getVal("width", 0),
-			height: this._currentElement.getVal("height", 0)
+				.build()
 		};
 	}
 
