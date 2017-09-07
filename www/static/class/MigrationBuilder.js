@@ -9,6 +9,11 @@ MigrationBuilder = (function() {
 			if ("reference" in this._currentElement) {
 				this._currentElement.name = this._currentElement.reference;
 			}
+			if (this._currentElement.type == "Disj") {
+				if (!("I" in this._currentElement)) {
+					this._currentElement.I = "20";
+				}
+			}
 			this._currentElement.orientation = ("orientation" in this._currentElement ? this._currentElement.orientation : 0 ) + 90;
 			return super.buildSelf(...args);
 		}
