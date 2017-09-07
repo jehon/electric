@@ -2,8 +2,8 @@
 class NameBuilder extends SingleElementBuilder {
 	// Set initial values
 	// Build by one object, to allow buildSelf to modify it
-	build(ref = { base : "main", index : 0 }) {
-		super.build(ref);
+	build(ref = { base : "main", index : 0 }, ...args) {
+		return super.build(ref, ...args);
 	}
 
 	buildSelf(ref) {
