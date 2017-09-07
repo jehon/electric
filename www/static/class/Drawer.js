@@ -57,7 +57,12 @@ let draw = (function() {
 
 		// SVG transform the result
 
-		rotatedLabel(label = "", w, h, a) {
+		rotatedLabel() {
+			let label = ("getName" in this._element) ? this._element.getName() : "";
+			let w     = this._element.getVal("width");
+			let h     = this._element.getVal("height") / 2;
+			let a     = this._element.getVal("orientation", 0);
+
 			if (!label) {
 				return this;
 			}
