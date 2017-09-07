@@ -74,11 +74,14 @@ let draw = (function() {
 			return this;
 		}
 
-		label(label= false) {
-			if (!label) {
+		label() {
+			if (!this._element.getName()) {
 				return this;
 			}
-			this._svg += `<text x="2" y="-2" font-family="Verdana" font-size="6">${label}</text>`
+			this._svg +=
+				`<text x="${2}" y="${-this._element.getVal("height")/2}" font-family="Verdana" font-size="6">
+					${this._element.getName()}
+				</text>`
 			return this;
 		}
 
