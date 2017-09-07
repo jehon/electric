@@ -1,35 +1,49 @@
 
-class FiliaireBuilder extends Builder {
-	constructor(...args) {
-		super(...args);
-		this._cache = {};
-	}
+class FiliaireBuilder extends NameBuilder {
+	// Object sent back is:
+	//  {
+	//     svg:
+	//     width:
+	//     heigh:
+	// }
+	//
 
-	buildSelf(plan, space, ...args) {
-		return super.buildSelf(plan, space, ...args);
+	// constructor(...args) {
+	// 	super(...args);
+	// }
 
-		// return draw(this._currentElement)
-		// 	.label(("getName" in this._currentElement) ? this._currentElement.getName() : false, 
-		// 		this._currentElement.getVal("width"), 
-		// 		this._currentElement.getVal("height") / 2,
-		// 		this._currentElement.getVal("orientation", 0))
-		// 	.build();
+	buildSelf(...args) {
+		super.buildSelf(...args);
 
-		// return space + str.split("\n").join("\n" + space) + "\n";
+		return {
+			svg: draw(this._currentElement),
+			width: this._currentElement.getVal("width", 0),
+			height: this._currentElement.getVal("height", 0)
+		};
 	}
 
 	getOneNext(i, element, ...args) {
-		return super.getOneNext(i, element, ...args);
+		super.getOneNext(i, element, ...args);
+		return {
+			svg: "",
+			width: 0,
+			height: 0
+		};
 	}
 
 	getOneAlternate(i, element, ...args) {
-		return super.getOneAlternate(i, element, ...args);
+		super.getOneAlternate(i, element, ...args);
+		return {
+			svg: "",
+			width: 0,
+			height: 0
+		};
 	}
 
 	buildAssembly(self, next, alternate) {
-		return super.buildAssembly(self, next, alternate);
+		super.buildAssembly(self, next, alternate);
+		return self;
 	}
-
 
 	//
 	// 
