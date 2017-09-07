@@ -24,11 +24,12 @@ class FiliaireBuilder extends NameBuilder {
 		};
 	}
 
-
-
 	buildAssembly(self, next, alternate) {
 		super.buildAssembly(self, next, alternate);
-		return self;
+
+		let res = self;
+
+		return res;
 	}
 
 	//
