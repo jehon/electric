@@ -16,7 +16,7 @@ class FiliaireBuilder extends NameBuilder {
 		super.buildSelf(...args);
 
 		return {
-			svg: draw(this._currentElement),
+			svg: draw(this._currentElement).build(),
 			width: this._currentElement.getVal("width", 0),
 			height: this._currentElement.getVal("height", 0)
 		};
