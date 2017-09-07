@@ -87,7 +87,7 @@ let draw = (function() {
 			if (x == 0 && y == 0) {
 				return this;
 			}
-			this._svg = `<g transform='translate(${x}, ${y})' stroke='black' fill='none' >\n  ${this._svg}\n</g>`;
+			this._svg = `<g transform='translate(${x}, ${y})'>\n  ${this._svg}\n</g>`;
 			return this;
 		}
 

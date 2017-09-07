@@ -47,7 +47,7 @@ class SchemaPosition extends HTMLElement {
       this.innerHTML = `
         <div>
           <div>${this.value}: ${this.title}</div>
-          <svg preserveAspectRatio="xMinYMin slice" width="${plan.width}px" height="${plan.height}px">
+          <svg preserveAspectRatio="xMinYMin slice" width="${plan.width}px" height="${plan.height}px" stroke='black' fill='none' >
             <rect x=0 y=0 width="100%" height="100%" fill="white" stroke="red"/>
             <image opacity=0.5 x=0 y=0 width="${plan.width}px" height="${plan.height}px" href=${plan.src} />
             ${this._builder.build("" + this.value)}

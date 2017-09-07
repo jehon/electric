@@ -29,7 +29,7 @@ class SchemaFiliaire extends HTMLElement {
 
     this.innerHTML = `
       <div>
-        <svg preserveAspectRatio="xMinYMin slice">
+        <svg preserveAspectRatio="xMinYMin slice" stroke='black' fill='none' >
           <rect x=0 y=0 width="100%" height="100%" fill="white" stroke="red"/>
           ${res.svg}
         </svg>
