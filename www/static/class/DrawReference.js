@@ -52,9 +52,9 @@ let drawReference = (function() {
       		name         : 'Disjoncteur',
       		availOptions : [ 'I', 'Isec' ],
       		draw         : (options) => {
-  			    return '<path d="M0,0 l0,10 l10,35 m-10,0 l0,15" fill="none"/>'
-			    + '<path d="M10,45 L14,43 L12.5,39 L9,41 z" fill="currentColor"/>'
-			    + '<text x=10 y=20 font-family="Verdana" font-size="8" >'
+  			    return '<path d="M0,-30 l0,10 l10,35 m-10,0 l0,15" fill="none"/>'
+			    + '<path d="M10,15 L14,13 L12.5,9 L9,11 z" fill="currentColor"/>'
+			    + '<text x=10 y=-10 font-family="Verdana" font-size="8" >'
 			    + (options.I    ? 'I:' + options.I    + 'A '             : '' )
 			    + (options.Isec ? '\u25B3' + options.Isec + 'mA ' : '' )
 			    + '</text>';
