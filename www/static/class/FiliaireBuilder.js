@@ -47,20 +47,52 @@ class FiliaireBuilder extends NameBuilder {
 		let _svg = '';
 
 		// Add one array element
-		let addOne = (e, i) => {
-			// TODO: link to the previous one if (i > 0)
-			res.svg += `<g transform="translate(${dx}, 0)">${e.svg}</g>`;
-			dx = dx + e.width;
-			subHeigth = Math.max(subHeigth, e.height);
+		let drawOneLine = (e, i, deltay) => {
+
+			if (i == 0) {
+				_svg += `<g transform="translate(${currentBlockWidth}, ${deltay})">`;
+			} else {
+				// If we are not the first element, we gain some place above
+				_svg += `<g transform="translate(${currentBlockWidth}, ${deltay})">`;
+			}
+			// In this block, we are suppose to be at the correct level to draw an element
+
+			// Link to the previous element
+			// _svg += `<line x1=0 x2=0 y1=${- this._currentElement.getVal("height") / 2} y2=${vmargin} stroke='red'/>`
+
+			// The element himself, with enough space on top
+			_svg += `${e.svg}`;
+
+			_svg += `</g>`;
+
+			// Prepare for next line
+			currentBlockWidth = currentBlockWidth + e.width + hmargin;
+			maxHeightOfLine = Math.max(maxHeightOfLine, deltay + e.height);
 		}
 
+		let deltay = self.height + vmargin;
+
 		if (next != null) {
-			// TODO: link the first one
-			next.forEach((e, i) => addOne(e, i));
+
+		// 	// Add a line to the target level
+		// 	res.svg += `<line x1=0 x2=0 y1=0 y2=${targety} stroke="green" />`
+
+			// Add the sub-components at a h/2 + vmargin level
+
+
+		// 	// TODO: link the first one
+		// 	//res.svg += `<line x1=0 x2=0 y1=0 y2=${-this._currentElement.getVal("height")} stroke='red'/>`;
+
+			// For the first element of the line, we gain some place
+			next.forEach((e, i) => drawOneLine(e, i, deltay));
+
+			// Close the group
+			// _svg += `</g>`;
 		}
+
 		if (alternate != null) {
-			// TODO: link the first one
-			alternate.forEach((e, i) => addOne(e, i));
+		// 	// TODO: link the first one
+			alternate.forEach((e, i) => drawOneLine(e, i, deltay));
 		}
 
 		// Draw the current element on top of all that
