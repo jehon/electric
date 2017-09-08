@@ -38,10 +38,13 @@ class FiliaireBuilder extends NameBuilder {
 	buildAssembly(self, next, alternate) {
 		super.buildAssembly(self, next, alternate);
 
-		let res = self;
-		res.svg += `<g transform="translate(0, ${this._currentElement.getVal("height")})">`;
-		let dx = 0;
-		let subHeigth = 0;
+		// Line = one of next / alternate line starting from this element
+		// Block = this element + each lines
+
+		let currentBlockWidth = 0;
+		let maxHeightOfLine = 0;
+
+		let _svg = '';
 
 		// Add one array element
 		let addOne = (e, i) => {
@@ -59,11 +62,14 @@ class FiliaireBuilder extends NameBuilder {
 			// TODO: link the first one
 			alternate.forEach((e, i) => addOne(e, i));
 		}
-		res.svg += `</g>`;
-		res.width = Math.max(res.width, dx);
-		res.height = res.height + subHeigth;
 
-		return res;
+		// Draw the current element on top of all that
+		return {
+			svg: _svg + self.svg,
+			// Width = position of next line
+			width: Math.max(self.width, currentBlockWidth),
+			height: Math.max(self.height, maxHeightOfLine)
+		}
 	}
 
 	//
