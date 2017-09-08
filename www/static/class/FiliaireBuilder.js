@@ -1,4 +1,7 @@
 
+const hmargin = 10;
+const vmargin = 10;
+
 class FiliaireBuilder extends NameBuilder {
 	// Object sent back is:
 	//  {
