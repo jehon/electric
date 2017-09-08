@@ -18,13 +18,21 @@ class FiliaireBuilder extends NameBuilder {
 	buildSelf(...args) {
 		super.buildSelf(...args);
 
-		return {
+		// build up the block, but with (0,0) = top left corner
+		// and (w, h) = bottom right corner
+
+		let res = {
 			width: this._currentElement.getVal("width", 0),
 			height: this._currentElement.getVal("height", 0),
 			svg: draw(this._currentElement)
 				.label()
+				.translate(0, this._currentElement.getVal("height", 0) / 2)
 				.build()
 		};
+
+		res.svg += `<rect x=0 y=0 width=${res.width} height=${res.height} stroke='blue' />`
+
+		return res;
 	}
 
 	buildAssembly(self, next, alternate) {
