@@ -89,13 +89,13 @@ let drawReference = (function() {
       			+ '<circle cx=5  cy=-5 r=2 fill="currentColor" />'
       			+ '<circle cx=15 cy=-5 r=2 fill="currentColor" />'
 		},
-    	KNX: { // Rotate ?
+    	KNX: { // TODO: offshift !!!
 			width        : 20,
-      		height       : 35,
+      		height       : 36,
       		name         : 'Relais KNX',
-			draw         : '<rect x=-10 y=0 width=20 height=35 fill="none" />'
-				+ '<path d="M-5,5 l0,10 l10,0" fill="none" />'
-				+ '<path d="M-5,30 l0,-10 l10,0" fill="none" />'
+			draw         : '<rect x=0 y=-18 width=20 height=36 fill="none" />'
+				+ '<path d="M5,-13 l0,10 l10,0" fill="none" />'
+				+ '<path d="M5,13 l0,-10 l10,0" fill="none" />'
 		},
     	Bridge: {
 			width        : 10,
