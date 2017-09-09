@@ -52,7 +52,7 @@ let drawReference = (function() {
       		name         : 'Disjoncteur',
       		availOptions : [ 'I', 'Isec' ],
       		draw         : (options) => {
-  			    return '<rect x=-1 y=-30 width=3 height=60 fill="white" stroke="none" />' /* To prevent lines to be drawn accros it */
+  			    return '<rect x=-1 y=-25 width=3 height=50 fill="white" stroke="none" />' /* To prevent lines to be drawn accros it */
   			    + '<path d="M0,-30 l0,10 l10,35 m-10,0 l0,15" fill="none"/>'
 			    + '<path d="M10,15 L14,13 L12.5,9 L9,11 z" fill="currentColor"/>'
 			    + '<text x=10 y=-10 font-family="Verdana" font-size="8" >'
