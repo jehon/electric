@@ -30,7 +30,7 @@ class FiliaireBuilder extends NameBuilder {
 				.build()
 		};
 
-		res.svg += `<rect x=0 y=0 width=${res.width} height=${res.height} stroke='blue' />`
+		// res.svg += `<rect x=0 y=0 width=${res.width} height=${res.height} stroke='blue' />`
 
 		return res;
 	}
@@ -41,6 +41,9 @@ class FiliaireBuilder extends NameBuilder {
 		// Line = one of next / alternate line starting from this element
 		// Block = this element + each lines
 
+		// (0,0) = top-left of "self/currentElement"
+
+		let previousLineY = 0;
 		let currentBlockWidth = 0;
 		let maxHeightOfLine = 0;
 
@@ -48,17 +51,21 @@ class FiliaireBuilder extends NameBuilder {
 
 		// Add one array element
 		let drawOneLine = (e, i, deltay) => {
+			// TODO: draw a line inside the rectangle to the (0,0) center of the previous element (=self)
 
-			if (i == 0) {
-				_svg += `<g transform="translate(${currentBlockWidth}, ${deltay})">`;
-			} else {
-				// If we are not the first element, we gain some place above
-				_svg += `<g transform="translate(${currentBlockWidth}, ${deltay})">`;
+			_svg += `<g transform="translate(${currentBlockWidth}, ${deltay})">`;
+
+			// (0,0) = top left of first element of the line
+
+			if (i > 0) {
+				// If we are not the first element
+				// - Horizontal line to the previous line (== "NEXT/ALTERNATE" LINE)
+				_svg += `<line x1=${-previousLineY} x2=${-currentBlockWidth} y1=0 y2=0 />`;
 			}
 			// In this block, we are suppose to be at the correct level to draw an element
 
-			// Link to the previous element
-			// _svg += `<line x1=0 x2=0 y1=${- this._currentElement.getVal("height") / 2} y2=${vmargin} stroke='red'/>`
+			// Vertical line to the top of the line element
+			_svg += `<line x1=0 x2=0 y1=${+ this._currentElement.getVal("height") / 2} y2=0 />`
 
 			// The element himself, with enough space on top
 			_svg += `${e.svg}`;
@@ -66,32 +73,27 @@ class FiliaireBuilder extends NameBuilder {
 			_svg += `</g>`;
 
 			// Prepare for next line
+			previousLineY = currentBlockWidth;
 			currentBlockWidth = currentBlockWidth + e.width + hmargin;
 			maxHeightOfLine = Math.max(maxHeightOfLine, deltay + e.height);
 		}
 
 		let deltay = self.height + vmargin;
 
-		if (next != null) {
+		if (next != null && next.length > 0) {
 
-		// 	// Add a line to the target level
-		// 	res.svg += `<line x1=0 x2=0 y1=0 y2=${targety} stroke="green" />`
+			// Vertical line from the "next" line to the center of self
+			_svg += `<line x1=0 x2=0 y1=${self.height / 2} y2=${deltay} />`
 
-			// Add the sub-components at a h/2 + vmargin level
-
-
-		// 	// TODO: link the first one
-		// 	//res.svg += `<line x1=0 x2=0 y1=0 y2=${-this._currentElement.getVal("height")} stroke='red'/>`;
-
-			// For the first element of the line, we gain some place
 			next.forEach((e, i) => drawOneLine(e, i, deltay));
-
-			// Close the group
-			// _svg += `</g>`;
 		}
 
-		if (alternate != null) {
-		// 	// TODO: link the first one
+		if (alternate != null && alternate.length > 0) {
+
+			// 	horizontal and vertical line to connect to the self
+			_svg += `<line x1=${self.width} x2=${currentBlockWidth} y1=${self.height/2} y2=${self.height/2} stroke='black' />`
+			_svg += `<line x1=${currentBlockWidth} x2=${currentBlockWidth} y1=${self.height/2} y2=${deltay} stroke='black' />`
+
 			alternate.forEach((e, i) => drawOneLine(e, i, deltay));
 		}
 
