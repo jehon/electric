@@ -88,8 +88,8 @@ class FiliaireBuilder extends NameBuilder {
 		if (alternate != null && alternate.length > 0) {
 
 			// 	horizontal and vertical line to connect to the self
-			_svg += `<line x1=${self.width} x2=${currentBlockWidth} y1=${self.height/2} y2=${self.height/2} stroke='black' />`
-			_svg += `<line x1=${currentBlockWidth} x2=${currentBlockWidth} y1=${self.height/2} y2=${deltay} stroke='black' />`
+			_svg += `<line x1=${self.width} x2=${currentBlockWidth} y1=${self.height/2} y2=${self.height/2} />`
+			_svg += `<line x1=${currentBlockWidth} x2=${currentBlockWidth} y1=${self.height/2} y2=${deltay} />`
 
 			alternate.forEach((e, i) => drawOneLine(e, i, deltay));
 		}
