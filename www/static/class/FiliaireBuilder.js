@@ -51,16 +51,13 @@ class FiliaireBuilder extends NameBuilder {
 
 		// Add one array element
 		let drawOneLine = (e, i, deltay) => {
-			// TODO: draw a line inside the rectangle to the (0,0) center of the previous element (=self)
-
 			_svg += `<g transform="translate(${currentBlockWidth}, ${deltay})">`;
-
 			// (0,0) = top left of first element of the line
 
 			if (i > 0) {
 				// If we are not the first element
 				// - Horizontal line to the previous line (== "NEXT/ALTERNATE" LINE)
-				_svg += `<line x1=${-previousLineY} x2=${-currentBlockWidth} y1=0 y2=0 />`;
+				_svg += `<line x1=${-previousLineY} x2=0 y1=0 y2=0 />`;
 			}
 			// In this block, we are suppose to be at the correct level to draw an element
 
@@ -73,7 +70,7 @@ class FiliaireBuilder extends NameBuilder {
 			_svg += `</g>`;
 
 			// Prepare for next line
-			previousLineY = currentBlockWidth;
+			previousLineY = e.width;
 			currentBlockWidth = currentBlockWidth + e.width + hmargin;
 			maxHeightOfLine = Math.max(maxHeightOfLine, deltay + e.height);
 		}
