@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Your electric installation</title>
+    <meta name="description" content="charset:utf-8"/>
+
+    <!-- Required meta tags for bootstrap -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- - - - - - - - - - - - - -->
+    <!-- CSS - globals           -->
+    <!-- - - - - - - - - - - - - -->
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- - - - - - - - - - - - - -->
+    <!-- CSS - custom            -->
+    <!-- - - - - - - - - - - - - -->
+    <link rel="stylesheet" type="text/css" href="css/application.css">
+
+    <!-- - - - - - - - - - - - - -->
+    <!-- JS - globals            -->
+    <!-- - - - - - - - - - - - - -->
+    <!-- <script type='text/javascript' src='../bower_components/webcomponentsjs/webcomponents-lite.js'></script> <!- - web components v0--> 
+    <!-- <script type='text/javascript' src='bower_components/shadydom/cloudydom.min.js'></script> <!- - web components v1 - shadyDom - -> -->
+    <script type='text/javascript' src='bower_components/custom-elements/custom-elements.min.js'></script> <!-- web components v1 -->
+
+    <!-- <script type='text/javascript' src='bower_components/jquery/dist/jquery.min.js'></script> --> <!-- boostrap -->
+    <!-- <script type='text/javascript' src='bower_components/popper.js/dist/umd/popper.min.js'></script> --> <!-- boostrap -->
+    <!-- <script type='text/javascript' src='bower_components/bootstrap/dist/js/bootstrap.min.js'></script> --> <!-- boostrap -->
+
+    <!-- - - - - - - - - - - - - -->
+    <!-- JS - custom             -->
+    <!-- - - - - - - - - - - - - -->
+    <!-- <script type='text/javascript' src='router.js'></script> -->
+
+    <script type='text/javascript' src='class/DrawReference.js'></script>
+    <script type='text/javascript' src='class/Drawer.js'></script>
+
+    <script type='text/javascript' src='class/Builder.js'></script>
+    <script type='text/javascript' src='class/BuildMigration.js'></script>
+    <script type='text/javascript' src='class/BuildSingleElement.js'></script>
+    <script type='text/javascript' src='class/BuildName.js'></script>
+    <script type='text/javascript' src='class/BuildPosition.js'></script>
+    <script type='text/javascript' src='class/BuildFiliaire.js'></script>
+
+    <script type='text/javascript' src='class/findByUUID.js'></script>
+    <script type='text/javascript' src='class/dumpSchema.js'></script>
+
+    <script type='text/javascript' src='helpers/StateDispatcher.js'></script>
+    <script type='text/javascript' src='helpers/away.js'></script>
+    <script type='text/javascript' src='helpers/imageSize.js'></script>
+    <script type='text/javascript' src='helpers/start.js'></script>
+
+    <script type='text/javascript' src='components/Legend.js'></script>
+    <script type='text/javascript' src='components/InstallationAbstract.js'></script>
+    <script type='text/javascript' src='components/InstallationNavigation.js'></script>
+    <script type='text/javascript' src='components/InstallationAbstractSVG.js'></script>
+    <script type='text/javascript' src='components/InstallationPosition.js'></script>
+    <script type='text/javascript' src='components/InstallationFiliaire.js'></script>
+    <script type='text/javascript' src='components/ElementEditor.js'></script>
+  </head>
+  <body>
+    <style>
+      x-legend {
+        width: 100%;
+      }
+
+      #tab_target {
+        flex-basis: 200px;
+        flex-grow:  2;
+      }
+
+      element-editor {
+        flex-basis: 200px;
+        flex-grow:  1;
+        display:    block;
+      }
+    </style>
+
+    <installation-navigation></installation-navigation>
+
+    <div style='display: flex'>
+      <div id='tab_target'></div>
+      <element-editor id='editor'>Here we have the editor</element-editor>
+    </div>
+
+  </body>
+  <script>
+  fetch('/api/v0.1/server.php').then(function(response) {
+    response.json().then((installation) => {
+      (new BuildMigration(installation.schema)).build();
+      (new BuildName(installation.schema)).build();
+
+      installationDispatcher.setState(installation);
+    });
+  });
+  </script>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Your electric installation</title>
+    <meta name="description" content="charset:utf-8"/>
+    <meta charset='utf-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!-- - - - - - - - - - - - - -->
+    <!-- CSS - globals           -->
+    <!-- - - - - - - - - - - - - -->
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- - - - - - - - - - - - - -->
+    <!-- CSS - custom            -->
+    <!-- - - - - - - - - - - - - -->
+    <link rel="stylesheet" type="text/css" href="css/application.css">
+
+    <!-- - - - - - - - - - - - - -->
+    <!-- JS - globals            -->
+    <!-- - - - - - - - - - - - - -->
+    <!-- <script type='text/javascript' src='../bower_components/webcomponentsjs/webcomponents-lite.js'></script> <!- - web components v0--> 
+    <!-- <script type='text/javascript' src='bower_components/shadydom/cloudydom.min.js'></script> <!- - web components v1 - shadyDom - -> -->
+    <script type='text/javascript' src='bower_components/custom-elements/custom-elements.min.js'></script> <!-- web components v1 -->
+
+    <!-- - - - - - - - - - - - - -->
+    <!-- JS - custom             -->
+    <!-- - - - - - - - - - - - - -->
+    <!-- <script type='text/javascript' src='router.js'></script> -->
+
+    <script type='text/javascript' src='class/DrawReference.js'></script>
+    <script type='text/javascript' src='class/Drawer.js'></script>
+
+    <script type='text/javascript' src='class/Builder.js'></script>
+    <script type='text/javascript' src='class/BuildMigration.js'></script>
+    <script type='text/javascript' src='class/BuildSingleElement.js'></script>
+    <script type='text/javascript' src='class/BuildName.js'></script>
+    <script type='text/javascript' src='class/BuildPosition.js'></script>
+    <script type='text/javascript' src='class/BuildFiliaire.js'></script>
+
+    <script type='text/javascript' src='class/findByUUID.js'></script>
+    <script type='text/javascript' src='class/dumpSchema.js'></script>
+
+    <script type='text/javascript' src='helpers/away.js'></script>
+    <script type='text/javascript' src='helpers/config.js'></script>
+    <script type='text/javascript' src='helpers/imageSize.js'></script>
+
+    <script type='text/javascript' src='components/Legend.js'></script>
+    <script type='text/javascript' src='components/SchemaNavigation.js'></script>
+    <script type='text/javascript' src='components/SchemaPosition.js'></script>
+    <script type='text/javascript' src='components/SchemaFiliaire.js'></script>
+  </head>
+  <body>
+  <style>
+    x-legend {
+      width: 100%;
+    }
+  </style>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- <a class="navbar-brand" href="/main.html">Retour</a> -->
+    <ul class="navbar-nav" id='navbar-main'>
+      <li class="nav-item">
+        <a class="nav-link" href="#filiaire">Filiaire</a>
+      </li>
+    </ul>
+  </nav>
+
+  <h1>Légende</h1>
+    <x-legend value='P'></x-legend>
+    <x-legend value='S' options='{}'></x-legend>
+    <x-legend value='S' options='{ "bipol": true }'></x-legend>
+    <x-legend value='S' options='{ "bidir": true }'></x-legend>
+    <x-legend value='S' options='{ "inverter": true }'></x-legend>
+    <x-legend value='S' options='{ "variator": true }'></x-legend>
+    <x-legend value='S' options='{ "light": true }'></x-legend>
+
+    <x-legend value='Neon'></x-legend>
+
+    <x-legend value='L'></x-legend>
+    <x-legend value='Disj'></x-legend>
+
+    <x-legend value='Heater'></x-legend>
+    <x-legend value='Boiler'></x-legend>
+
+    <x-legend value='CookingPlates'></x-legend>
+    <x-legend value='KNX'></x-legend>
+    <x-legend value='Bridge'></x-legend>
+    <x-legend value='Transfo'></x-legend>
+    <x-legend value='Hotte'></x-legend>
+  </div>
+
+  </body>
+</html>

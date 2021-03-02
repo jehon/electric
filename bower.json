@@ -1,0 +1,26 @@
+{
+  "name": "cryptomedic-app",
+  "description": "Cryptomedic application for all plateforms",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://github.com/jehon/cryptomedic",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/bower_components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "webcomponentsjs": "^0.7.22",
+    "custom-elements": "webcomponents/custom-elements#^1.0.0",
+    "shadydom": "cloudydom#^1.0.*",
+    "moment": "momentjs#^2.15.2",
+    "karma-read-json": "^1.1.0",
+    "html2canvas": "^0.4.1",
+    "he": "^1.1.1",
+    "bootstrap": "v4.0.0-beta"
+  }
+}
