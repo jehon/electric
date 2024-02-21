@@ -55,30 +55,10 @@
     <script type='text/javascript' src='components/ElementEditor.js'></script>
   </head>
   <body>
-    <style>
-      x-legend {
-        width: 100%;
-      }
-
-      #tab_target {
-        flex-basis: 200px;
-        flex-grow:  2;
-      }
-
-      element-editor {
-        flex-basis: 200px;
-        flex-grow:  1;
-        display:    block;
-      }
-    </style>
-
     <installation-navigation></installation-navigation>
 
-    <div style='display: flex'>
-      <div id='tab_target'></div>
-      <!-- <element-editor id='editor'>Here we have the editor</element-editor> -->
-    </div>
-
+    <div id='tab_target' style="width: min-content"></div>
+    <!-- <element-editor id='editor'>Here we have the editor</element-editor> -->
   </body>
   <script>
   fetch('/api/v0.1/server.php').then(function(response) {

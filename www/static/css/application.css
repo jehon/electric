@@ -1,3 +1,7 @@
+html,
+body {
+	width: min-content;
+}
 
 .nav-tabs > .active {
 	background-color: darkgray;
@@ -8,13 +12,6 @@ svg {
   border: 1px red dashed;
 }
 
-#tab_target {
-	min-height: calc(100vh - 42px);
-	max-height: calc(100vh - 42px);
-	overflow-y: scroll;
-	overflow-x: scroll;
-}
-
 .highlighted {
 	stroke: red;
 }
@@ -22,4 +19,18 @@ svg {
 .highlighted > rect {
 	fill: lightgray;
 	fill-opacity: 1;
+}
+x-legend {
+	width: 100%;
+}
+
+#tab_target {
+	flex-basis: 200px;
+	flex-grow: 2;
+}
+
+element-editor {
+	flex-basis: 200px;
+	flex-grow: 1;
+	display: block;
 }
