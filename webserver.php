@@ -11,8 +11,10 @@ if (substr($path, 0, 4) === "/api") {
   return true;
 }
 
-if ($path == "") {
-  $path = "/";
+if ($path == "/") {
+  header('Location: /static/index.html');
+  echo "Redirecting";
+  die();
 }
 
 if (substr($path, -1, 1) == "/") {
