@@ -1,9 +1,9 @@
 {
   "name": "Electric",
   "private": true,
-  "version": "5.1.3",
-  "description": "Cryptomedic application for all plateforms",
-  "repository": "https://github.com/jehon/CryptomedicApp",
+  "version": "0.0.1",
+  "description": "Electric mapping",
+  "repository": "https://github.com/jehon/electric",
   "license": "MIT",
   "dependencies": {
     "angular": "1.4.x",
@@ -11,12 +11,20 @@
     "angular-route": "1.4.x"
   },
   "devDependencies": {
-    "eslint": "3.*",
+    "@types/node": "20.11.17",
+    "@typescript-eslint/eslint-plugin": "6.21.0",
+    "@typescript-eslint/parser": "6.21.0",
+    "eslint": "8.56.0",
     "fs-extra": "latest",
     "glob": "latest",
-    "kill-by-port": "0.0.1"
+    "kill-by-port": "0.0.1",
+    "prettier": "3.2.5",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "webpack-cli": "^5.1.4"
   },
   "scripts": {
+    "build": "webpack",
     "start": "kill-by-port --port 5565 && php -S localhost:5565 webserver.php"
   }
 }

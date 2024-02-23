@@ -1,13 +1,8 @@
-/target/
-/live/
 /tmp/
+/www/dist
 
-/**/build/
-/**/logs/
 /**/node_modules/
-/**/bower_components/
 /**/tmp/
-/**/unused/
 /**/vendor/
 
 commit.msg
@@ -16,11 +11,3 @@ commit.msg
 .~lock.*
 *.bak
 *.log
-
-/.buildpath
-/.externalToolBuilders/
-/.idea
-/.metadata
-/.project
-/.settings
-/.DS_Store
