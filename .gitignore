@@ -11,3 +11,13 @@ commit.msg
 .~lock.*
 *.bak
 *.log
+
+#
+# Angular
+#
+
+/dist
+/tmp
+/out-tsc
+/bazel-out
+.angular
