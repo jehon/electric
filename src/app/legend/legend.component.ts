@@ -1,28 +1,26 @@
-// const X0 = 10;
-// const Y0 = 20;
-// let schema = Object.assign({ type: this.value, x: X0, y: Y0, plan: "legend" }, this.options);
-// (new BuildSingleElement(schema)).build();
-// // (new BuildName(schema)).build();
-// let builder = new BuildPosition(schema);
 
-// this.innerHTML = `
-//     <div class="row">
-//         <div class="col-md-1">${this.value}</div>
-//         <div class="col-md-2">${JSON.stringify(this.options)}</div>
-//         <div class="col-md-1">
-//             <svg preserveAspectRatio='xMinYMin slice' width="${schema.getVal("width") + 40}" height="${schema.getVal("height") + 30}">
-//                 <g stroke="red">
-//                   <line x1=-100 y1=20 x2=100 y2=20 />
-//                   <line x1=10 y1=-100 x2=10 y2=100 />
-//                   <rect x=${X0} y=${Y0 - schema.getVal("toTop")} width=${schema.getVal("width")} height=${schema.getVal("height")} fill="none"/>
-//                   <g stroke="black">
-//                     ${builder.build("legend")}
-//                   </g>
-//                 </g>
-//             </svg>
-//         </div>
-//         <div class="col-md-8">
-//           <pre>${JSON.stringify(drawReference(this.value), null, 2)}</pre>
-//         </div>
-//     </div>
-// `;
+import { Component, OnInit } from '@angular/core';
+import { NgFor } from '@angular/common';
+import GenericElectricalComponent from '../elements/electrical-generic';
+import { ElectricalOutlet } from '../elements/electrical-outlet';
+import { ElectricalPlaceHolder } from '../elements/electrical-place-holder';
+
+@Component({
+    standalone: true,
+    selector: 'app-legend',
+    templateUrl: './legend.component.html',
+    styleUrls: ['./legend.component.css'],
+    imports: [
+        NgFor
+    ]
+})
+export class LegendComponent implements OnInit {
+    elements: GenericElectricalComponent[] = [
+        new ElectricalPlaceHolder(),
+        new ElectricalOutlet()
+    ];
+
+    ngOnInit(): void {
+
+    }
+}

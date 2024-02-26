@@ -1,14 +1,15 @@
 
-export default class ElectricalGenericComponent {
+export default class ElectricalGeneric {
     #props;
 
     constructor(props: {
         type: string,
         label?: string,
         height: number,
+        innerHeight?: number
         width: number,
-        draw?: string
     }) {
+        Object.freeze(props);
         this.#props = props
     }
 
@@ -28,7 +29,7 @@ export default class ElectricalGenericComponent {
         return this.#props.height;
     }
 
-    get draw(): string {
-        return this.#props.draw ?? '';
+    get innerHeight(): number {
+        return this.#props.innerHeight ?? this.#props.height;
     }
 }

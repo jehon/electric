@@ -1,11 +1,8 @@
 
 import { Component } from '@angular/core';
-import ElectricalGenericComponent from './electrical-generic.component';
+import ElectricalGeneric from './electrical-generic';
 
-@Component({
-    selector: 'electrical-place-holder',
-})
-export class ElectricalPlaceHolderComponent extends ElectricalGenericComponent {
+export class ElectricalPlaceHolder extends ElectricalGeneric {
     constructor() {
         super({
             type: "PlaceHolder",
