@@ -110,7 +110,7 @@
       "options": "Impulsion",
       "plan": "etage",
       "x": 830,
-      "y": 340,
+      "y": 310,
       "orientation": 90
     },
     {
@@ -431,18 +431,21 @@
           ]}
         ]}
       ]},
-      { "type": "Disj", "reference": "B11", "label": "ch parents", "next": [
-        { "type": "P", "x": 854, "y": 339, "orientation": 0, "plan": "etage", "next": [
+      {
+        "type": "Disj",
+        "reference": "B11",
+        "label": "ch parents",
+        "next": [
           { "type": "P", "x": 930, "y": 436, "orientation": 90, "plan": "etage", "next": [
             { "type": "P", "x": 930, "y": 530, "orientation": 90, "plan": "etage", "next": [
               { "type": "P", "x": 844, "y": 589, "orientation": 180, "plan": "etage" }
-            ]}
-          ]}
+            ]
+          }
         ]},
         {
           "type": "S",
           "x": 844,
-          "y": 389,
+          "y": 400,
           "orientation": 0,
           "plan": "etage",
           "options": {
@@ -633,7 +636,13 @@
             ]},
             { "type": "P", "x": 523, "y": 531, "orientation": 270, "plan": "etage", "next": [
               { "type": "S", "x": 778, "y": 303, "orientation": 270, "plan": "etage", "options": { "bipol": true, "light": true }, "next": [
-                { "type": "L", "x": 863, "y": 303, "orientation": 270, "plan": "etage" }
+                {
+                  "type": "L",
+                  "x": 863,
+                  "y": 363,
+                  "orientation": 270,
+                  "plan": "etage"
+                }
               ]}
             ]}
           ]}
