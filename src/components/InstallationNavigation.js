@@ -3,20 +3,24 @@
   class InstallationNavigation extends InstallationAbstract {
     render() {
         if (!this.value) {
+          this.value = document.location.hash.substring(1);
+        }
+        
+        if (!this.value) {
             this.value = "filiaire";
         }
 
         // navbar-dark bg-dark
         let res = `
           <ul class="nav nav-fill nav-tabs ">
-            <li class="nav-item" id='filiaire'>
+            <li class="nav-item" element='filiaire'>
               <a class="nav-link">Filiaire</a>
             </li>
         `;
 
         Object.keys(this.installation.plans).forEach(k => {
           res += `
-            <li class="nav-item" id='${k}'>
+            <li class="nav-item" element='${k}'>
               <a class="nav-link">${k}</a>
             </li>
         `});
@@ -35,9 +39,9 @@
 
         // this.querySelector(`#${this.value}`).className += " active";
         this.querySelectorAll('li').forEach(e => {
-          let id = e.getAttribute('id');
+          let element = e.getAttribute('element');
           e.addEventListener("click", (event) => {
-            this.select(id);
+            this.select(element);
           })
         });
         if (this.value) {
@@ -47,8 +51,8 @@
 
     select(val) {
       this.value = val;
-      this.querySelectorAll(`li:not(#${val})`).forEach(e => e.className = e.className.replace("active", ""));
-      this.querySelectorAll(`li#${val}`).forEach(e => e.className += " active");
+      this.querySelectorAll(`li:not([element=${val}])`).forEach(e => e.className = e.className.replace("active", ""));
+      this.querySelectorAll(`li[element=${val}]`).forEach(e => e.className += " active");
 
       let el = document.querySelector("#tab_target");
       if (el == null) {
@@ -65,6 +69,7 @@
           html += `<installation-position value='${val}'></installation-position>`;
       }
       el.innerHTML = html;
+      document.location.hash = val;
     }
 
     getPlan() {
