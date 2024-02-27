@@ -1,5 +1,6 @@
 @media print {
-    installation-navigation {
+    installation-navigation,
+        element-editor {
         display: none;
     }
 }
