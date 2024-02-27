@@ -1,0 +1,5 @@
+@media print {
+    installation-navigation {
+        display: none;
+    }
+}
