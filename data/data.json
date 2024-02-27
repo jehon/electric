@@ -141,22 +141,72 @@
       ]}
     ]},
     { "type": "Disj", "reference": "A16", "label": "TV", "next": [
-      { "type": "S", "x": 694, "y": 371, "orientation": 0, "plan": "cave", "options": { "bidir": true }, "alternate": [
-        { "type": "S", "x": 620, "y": 427, "orientation": 180, "plan": "rdc", "options": { "bidir": true }, "alternate": [
-          { "type": "L", "x": 620, "y": 483, "plan": "cave", "orientation": 0 }
+      {
+        "type": "S",
+        "x": 540,
+        "y": 370,
+        "orientation": 270,
+        "plan": "rdc",
+        "options": {
+          "bidir": true
+        },
+        "alternate": [
+          {
+            "type": "S",
+            "x": 694,
+            "y": 371,
+            "orientation": 0,
+            "plan": "cave",
+            "options": {
+              "inverter": true
+            },
+            "alternate": [
+              {
+                "type": "S",
+                "x": 536,
+                "y": 428,
+                "orientation": 270,
+                "plan": "cave",
+                "alternate": [
+                  {
+                    "type": "L",
+                    "x": 620,
+                    "y": 483,
+                    "plan": "cave",
+                    "orientation": 0,
+                    "next": [
+                      {
+                        "type": "P",
+                        "x": 516,
+                        "y": 428,
+                        "orientation": 270,
+                        "plan": "cave",
+                        "next": [
+                          {
+                            "type": "L",
+                            "x": 454,
+                            "y": 450,
+                            "plan": "cave",
+                            "orientation": 0
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
         ]}
       ]}
     ]},
     { "type": "Disj", "reference": "A17", "label": "Energies", "next": [
       { "type": "S", "x": 516, "y": 388, "orientation": 270, "plan": "cave", "alternate": [
-        { "type": "L", "x": 550, "y": 400, "plan": "cave", "orientation": 270 }
-
-      ], "next": [
-        { "type": "P", "x": 516, "y": 428, "orientation": 270, "plan": "cave", "next": [
-          { "type": "S", "x": 536, "y": 428, "orientation": 270, "plan": "cave", "alternate": [
-            { "type": "L", "x": 454, "y": 450, "plan": "cave", "orientation": 0 }
-          ]}
-        ]}
+        {
+          "type": "L",
+          "x": 550,
+          "y": 400,
+          "plan": "cave",
+          "orientation": 270
+        }
       ]}
     ]},
     { "type": "Disj", "reference": "A18", "label": "PC", "next": [
