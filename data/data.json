@@ -89,6 +89,38 @@
       "y": 427,
       "orientation": 180
     },
+    {
+      "type": "S",
+      "options": "Impulsion",
+      "plan": "etage",
+      "x": 570,
+      "y": 430,
+      "orientation": 180
+    },
+    {
+      "type": "S",
+      "options": "Impulsion",
+      "plan": "etage",
+      "x": 550,
+      "y": 320,
+      "orientation": 0
+    },
+    {
+      "type": "S",
+      "options": "Impulsion",
+      "plan": "etage",
+      "x": 830,
+      "y": 340,
+      "orientation": 90
+    },
+    {
+      "type": "P",
+      "x": 520,
+      "y": 454,
+      "reference": "chauffage",
+      "orientation": 270,
+      "plan": "etage"
+    },
     { "type": "Disj", "reference": "A11", "label": "atelier/ecl", "next": [
       {
         "type": "Relais",
@@ -407,7 +439,16 @@
             ]}
           ]}
         ]},
-        { "type": "S", "x": 584, "y": 359, "orientation": 0, "plan": "etage", "options": { "bidir": true }, "next": [
+        {
+          "type": "S",
+          "x": 844,
+          "y": 389,
+          "orientation": 0,
+          "plan": "etage",
+          "options": {
+            "bidir": true
+          },
+          "next": [
           { "type": "S", "x": 910, "y": 436, "orientation": 90, "plan": "etage", "options": { "inverter": true }, "next": [
             { "type": "S", "x": 910, "y": 530, "orientation": 90, "plan": "etage", "options": { "inverter": true }, "next": [
               { "type": "S", "x": 768, "y": 538, "orientation": 0, "plan": "etage", "options": { "bidir": true }, "next": [
@@ -427,10 +468,8 @@
                 { "type": "L", "x": 736, "y": 504, "orientation": 0, "plan": "etage" }
               ]}
             ]}
-          ]}
-        ]},
-        { "type": "S", "x": 757, "y": 467, "orientation": 180, "plan": "etage", "next": [
-          { "type": "L", "x": 757, "y": 443, "orientation": 270, "plan": "etage" }
+          ]
+        }
         ]}
       ]},
       { "type": "Disj", "reference": "B13", "label": "ch coin douche/D", "next": [
@@ -449,7 +488,22 @@
           { "type": "P", "x": 702, "y": 306, "orientation": 180, "plan": "etage", "next": [
             { "type": "S", "x": 702, "y": 286, "orientation": 180, "plan": "etage", "options": { "bidir": true }, "next": [
               { "type": "S", "x": 830, "y": 250, "orientation": 180, "plan": "etage", "options": { "bidir": true }, "next": [
-                { "type": "L", "x": 772, "y": 244, "orientation": 0, "plan": "etage" }
+                {
+                  "type": "L",
+                  "x": 710,
+                  "y": 240,
+                  "orientation": 0,
+                  "plan": "etage",
+                  "next": [
+                    {
+                      "type": "L",
+                      "x": 860,
+                      "y": 240,
+                      "orientation": 0,
+                      "plan": "etage"
+                    }
+                  ]
+                }
               ]}
             ]},
             { "type": "P", "x": 682, "y": 140, "orientation": 0, "plan": "etage", "next": [
@@ -462,7 +516,22 @@
         { "type": "P", "x": 537, "y": 319, "orientation": 0, "plan": "etage", "next": [
           { "type": "P", "x": 603, "y": 309, "orientation": 180, "plan": "etage", "next": [
             { "type": "S", "x": 603, "y": 290, "orientation": 180, "plan": "etage", "options": { "bidir": true }, "next": [
-              { "type": "L", "x": 535, "y": 274, "orientation": 0, "plan": "etage" }
+              {
+                "type": "L",
+                "x": 480,
+                "y": 250,
+                "orientation": 0,
+                "plan": "etage",
+                "next": [
+                  {
+                    "type": "L",
+                    "x": 570,
+                    "y": 250,
+                    "orientation": 0,
+                    "plan": "etage"
+                  }
+                ]
+              }
             ]},
             { "type": "P", "x": 642, "y": 139, "orientation": 0, "plan": "etage", "next": [
               { "type": "P", "x": 642, "y": 159, "orientation": 0, "plan": "etage", "next": [
@@ -624,31 +693,16 @@
             { "type": "L", "x": 546, "y": 275, "orientation": 180, "plan": "rdc" }
           ]}
         ]}
-      ]},
-      { "type": "Disj", "reference": "B22", "label": "KNX", "options": {"I": 10 }, "next": [
-        { "type": "KNX", "reference": "6a", "next": [
-          { "type": "L", "x": 597, "y": 397, "orientation": 0, "plan": "etage", "next": [
-            { "type": "L", "x": 653, "y": 397, "orientation": 0, "plan": "etage", "next": [
-              {
-                "type": "L",
-                "x": 711,
-                "y": 397,
-                "orientation": 0,
-                "plan": "etage",
-                "next": [
-                  {
-                    "type": "P",
-                    "reference": "biblio",
-                    "x": 735,
-                    "y": 427,
-                    "orientation": 180,
-                    "plan": "rdc"
-                  }
-                ]
-              }
-            ]}
-          ]}
-        ]},
+      ]
+    },
+    {
+        "type": "Disj",
+        "reference": "B22",
+        "label": "KNX",
+        "options": {
+          "I": 10
+        },
+        "next": [
         { "type": "KNX", "reference": "8a", "next": [
           { "type": "P", "x": 518, "y": 358, "orientation": 180, "plan": "rdc" }
         ]},
