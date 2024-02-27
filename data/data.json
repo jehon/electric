@@ -23,12 +23,6 @@
       "scale": 0.50,
       "width": 1025,
       "height": 675
-    },
-    "exterieurs": {
-      "src": "/data/exterieurs.png",
-      "scale": 1,
-      "width": 1312,
-      "height": 667
     }
   },
   "schema": {
