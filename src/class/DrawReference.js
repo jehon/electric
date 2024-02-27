@@ -98,6 +98,14 @@ let drawReference = (function() {
 				+ '<path d="M5,-13 l0,10 l10,0" fill="none" />'
 				+ '<path d="M5,13 l0,-10 l10,0" fill="none" />'
 		},
+    	Relais: { // TODO: offshift !!!
+			width        : 20,
+      		height       : 36,
+      		name         : 'Relais',
+			draw         : '<rect x=0 y=-18 width=20 height=36 fill="white" />'
+				+ '<path d="M5,-13 l0,10 l10,0" fill="none" />'
+				+ '<path d="M5,13 l0,-10 l10,0" fill="none" />'
+		},
     	Bridge: {
 			width        : 10,
 			height       : 1,
