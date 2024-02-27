@@ -33,6 +33,14 @@
   },
   "schema": 
   { "type": "Disj", "reference": "Central", "options": { "Isec": 300, "I": 40 }, "next": [
+    {
+      "type": "P",
+      "reference": "hall",
+      "x": 535,
+      "y": 375,
+      "orientation": 90,
+      "plan": "rdc"
+    },
     { "type": "Disj", "reference": "A11", "label": "atelier/ecl", "next": [
       {
         "type": "Relais",
@@ -414,7 +422,13 @@
       ]},
       { "type": "Disj", "reference": "B18", "label": "", "options": {"Isec": 30 }, "next": [
         { "type": "Disj", "reference": "B28", "label": "KNX", "options": {"I": 10 }, "next": [
-          { "type": "KNX", "reference": "11a", "next": [
+          {
+            "type": "S",
+            "plan": "rdc",
+            "x": 540,
+            "y": 480,
+            "orientation": 270,
+            "next": [
             { "type": "Neon", "x": 630, "y": 500, "orientation": 90, "plan": "rdc" }
           ]},
           { "type": "KNX", "reference": "12a", "next": [
@@ -429,11 +443,13 @@
           { "type": "KNX", "reference": "12b", "next": [
             { "type": "P", "x": 524, "y": 514, "orientation": 270, "plan": "etage", "next": [
               { "type": "L", "x": 546, "y": 455, "orientation": 270, "plan": "etage", "next": [
-                { "type": "L", "x": 546, "y": 507, "orientation": 270, "plan": "etage", "next": [
-                  { "type": "L", "x": 546, "y": 561, "orientation": 270, "plan": "etage", "next": [
-                    { "type": "L", "x": 602, "y": 561, "orientation": 270, "plan": "etage" }
-                  ]}
-                ]}
+                {
+                  "type": "L",
+                  "x": 546,
+                  "y": 507,
+                  "orientation": 270,
+                  "plan": "etage"
+                }
               ]}
             ]}
           ]}
@@ -488,7 +504,13 @@
             { "type": "L", "x": 310, "y": 255, "orientation": 270, "plan": "rdc" }
           ]}
         ]},
-        { "type": "KNX", "reference": "2a", "next": [
+        {
+          "type": "S",
+          "plan": "rdc",
+          "x": 795,
+          "y": 510,
+          "orientation": 270,
+          "next": [
           { "type": "L", "x": 865, "y": 485, "orientation": 270, "plan": "rdc" }
         ]},
         { "type": "KNX", "reference": "2b", "next": [
@@ -540,7 +562,13 @@
             { "type": "L", "x": 480, "y": 255, "orientation": 270, "plan": "rdc" }
           ]}
         ]},
-        { "type": "KNX", "reference": "10b", "next": [
+        {
+          "type": "S",
+          "x": 440,
+          "y": 420,
+          "orientation": 270,
+          "plan": "rdc",
+          "next": [
           { "type": "L", "x": 471, "y": 402, "orientation": 90, "plan": "rdc", "next": [
             { "type": "L", "x": 471, "y": 452, "orientation": 90, "plan": "rdc" }
           ]}
