@@ -1,10 +1,35 @@
 {
   "plans": {
-    "cave":       { "src": "/cave.jpg",       "scale": 0.50, "width": 1090, "height": 721 },
-    "rdc":        { "src": "/rdc.png",        "scale": 0.50, "width": 1089, "height": 722 },
-    "etage":      { "src": "/etage.png",      "scale": 0.50, "width": 1089, "height": 722 },
-    "grenier":    { "src": "/grenier.png",    "scale": 0.50, "width": 1025, "height": 675 },
-    "exterieurs": { "src": "/exterieurs.png", "scale": 1   , "width": 1312, "height": 667 }
+    "cave": {
+      "src": "/data/cave.jpg",
+      "scale": 0.50,
+      "width": 1090,
+      "height": 721
+    },
+    "rdc": {
+      "src": "/data/rdc.png",
+      "scale": 0.50,
+      "width": 1089,
+      "height": 722
+    },
+    "etage": {
+      "src": "/data/etage.png",
+      "scale": 0.50,
+      "width": 1089,
+      "height": 722
+    },
+    "grenier": {
+      "src": "/data/grenier.png",
+      "scale": 0.50,
+      "width": 1025,
+      "height": 675
+    },
+    "exterieurs": {
+      "src": "/data/exterieurs.png",
+      "scale": 1,
+      "width": 1312,
+      "height": 667
+    }
   },
   "schema": 
   { "type": "Disj", "reference": "Central", "options": { "Isec": 300, "I": 40 }, "next": [
