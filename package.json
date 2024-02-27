@@ -5,33 +5,8 @@
   "description": "Electric mapping",
   "repository": "https://github.com/jehon/electric",
   "license": "MIT",
-  "dependencies": {
-    "angular": "1.4.x",
-    "angular-mocks": "1.4.x",
-    "angular-route": "1.4.x",
-    "@angular/animations": "^17.2.0",
-    "@angular/common": "^17.2.0",
-    "@angular/compiler": "^17.2.0",
-    "@angular/core": "^17.2.0",
-    "@angular/forms": "^17.2.0",
-    "@angular/platform-browser": "^17.2.0",
-    "@angular/platform-browser-dynamic": "^17.2.0",
-    "@angular/router": "^17.2.0",
-    "rxjs": "~7.8.0",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.14.3"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@angular-devkit/build-angular": "^17.2.1",
-    "@angular/cli": "^17.2.1",
-    "@angular/compiler-cli": "^17.2.0",
-    "@types/jasmine": "~5.1.0",
-    "jasmine-core": "~5.1.0",
-    "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.3.2",
     "@types/node": "20.11.17",
     "@typescript-eslint/eslint-plugin": "6.21.0",
@@ -39,17 +14,11 @@
     "eslint": "8.56.0",
     "fs-extra": "latest",
     "glob": "latest",
-    "kill-by-port": "0.0.1",
     "prettier": "3.2.5",
     "ts-loader": "^9.5.1",
     "webpack-cli": "^5.1.4"
   },
   "scripts": {
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "e2e": "ng e2e",
-    "start-old": "kill-by-port --port 5565 && php -S localhost:5565 webserver.php"
+    "start": "open src/index.html"
   }
 }

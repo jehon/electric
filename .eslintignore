@@ -1,5 +1,2 @@
-vendor/**
-**/bower_components/**
-**/tmp/**
-**/documentation/**
 **/build/**
+**/node_modules/**

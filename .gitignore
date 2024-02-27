@@ -1,23 +1,5 @@
 /tmp/
 /www/dist
 
-/**/node_modules/
+node_modules
 /**/tmp/
-/**/vendor/
-
-commit.msg
-.git
-.vagrant
-.~lock.*
-*.bak
-*.log
-
-#
-# Angular
-#
-
-/dist
-/tmp
-/out-tsc
-/bazel-out
-.angular
