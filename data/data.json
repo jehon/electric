@@ -41,6 +41,54 @@
       "orientation": 90,
       "plan": "rdc"
     },
+    {
+      "type": "S",
+      "options": "Impulsion",
+      "plan": "rdc",
+      "x": 545,
+      "y": 130,
+      "orientation": 0
+    },
+    {
+      "type": "S",
+      "options": "Impulsion",
+      "plan": "rdc",
+      "x": 660,
+      "y": 130,
+      "orientation": 0
+    },
+    {
+      "type": "S",
+      "options": "Impulsion",
+      "plan": "rdc",
+      "x": 790,
+      "y": 130,
+      "orientation": 0
+    },
+    {
+      "type": "S",
+      "options": "Impulsion",
+      "plan": "rdc",
+      "x": 270,
+      "y": 335,
+      "orientation": 180
+    },
+    {
+      "type": "S",
+      "options": "Impulsion",
+      "plan": "rdc",
+      "x": 500,
+      "y": 355,
+      "orientation": 180
+    },
+    {
+      "type": "S",
+      "options": "Impulsion",
+      "plan": "rdc",
+      "x": 755,
+      "y": 427,
+      "orientation": 180
+    },
     { "type": "Disj", "reference": "A11", "label": "atelier/ecl", "next": [
       {
         "type": "Relais",
