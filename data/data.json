@@ -1985,7 +1985,7 @@
           {
             "type": "Disj",
             "reference": "B19",
-            "label": "VMC et grenier",
+            "label": "Vers boitier D",
             "next": [
               {
                 "type": "P",
