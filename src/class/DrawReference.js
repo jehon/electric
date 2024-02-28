@@ -17,7 +17,7 @@ let drawReference = (function() {
 			name         : 'Prise',
 			draw         : '<path d="M0,0 L10,0 m0,-7.5 l0,15 m7.5,-20 l0,5 a7.5 7.5 0 0 0 0 15 l0,5" fill="none"/>'
 		},
-		S: { // Todo: review
+		S: {
 			width        : 22,
 			height       : 20,
 			innerHeight  : 15,
@@ -32,6 +32,18 @@ let drawReference = (function() {
 		      		+ '<circle cx=10 cy=0 r=3 fill="white" fill="none" />'
 		      		+ (options.light ? '<path d="M10,0 l2,2 M10,0 l2,-2 M10,0 l-2,2 M10,0 l-2,-2" fill="none" />' : '')
 	   		}
+	    },
+		PB: {
+			width        : 22,
+			height       : 20,
+			innerHeight  : 15,
+			name         : 'Bouton poussoir',
+			availOptions : [ 'light' ],
+			draw         : (options) => { return ''
+				+ '<path d="M0,0 L10,0" fill="none" />'
+				+ '<circle cx=10 cy=0 r=3 fill="white" fill="none" />'
+				+ (options.light ? '<path d="M10,0 l2,2 M10,0 l2,-2 M10,0 l-2,2 M10,0 l-2,-2" fill="none" />' : '')
+			}
 	    },
 		L: {
 			type         : "roof",
