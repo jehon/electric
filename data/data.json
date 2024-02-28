@@ -85,14 +85,6 @@
         "type": "S",
         "options": "Impulsion",
         "plan": "etage",
-        "x": 570,
-        "y": 430,
-        "orientation": 180
-      },
-      {
-        "type": "S",
-        "options": "Impulsion",
-        "plan": "etage",
         "x": 550,
         "y": 320,
         "orientation": 0
@@ -106,12 +98,13 @@
         "orientation": 90
       },
       {
-        "type": "P",
-        "x": 520,
-        "y": 454,
-        "reference": "chauffage",
-        "orientation": 270,
-        "plan": "etage"
+        "type": "S",
+        "options": "Impulsion",
+        "label": "Hall Nuit",
+        "plan": "etage",
+        "x": 590,
+        "y": 430,
+        "orientation": 180
       },
       {
         "type": "Disj",
@@ -1645,7 +1638,7 @@
           {
             "type": "Disj",
             "reference": "B18",
-            "label": "",
+            "label": "30mA vers B28/29",
             "options": {
               "Isec": 30
             },
@@ -1653,21 +1646,22 @@
               {
                 "type": "Disj",
                 "reference": "B28",
-                "label": "KNX",
+                "label": "Eclairages",
                 "options": {
                   "I": 10
                 },
                 "next": [
                   {
                     "type": "S",
+                    "label": "E. Buanderie",
                     "plan": "rdc",
                     "x": 540,
                     "y": 480,
                     "orientation": 270,
                     "next": [
                       {
-                        "type": "Neon",
-                        "x": 630,
+                        "type": "L",
+                        "x": 680,
                         "y": 500,
                         "orientation": 90,
                         "plan": "rdc"
@@ -1675,8 +1669,80 @@
                     ]
                   },
                   {
-                    "type": "KNX",
-                    "reference": "12a",
+                    "type": "S",
+                    "label": "Hall",
+                    "x": 440,
+                    "y": 420,
+                    "orientation": 270,
+                    "plan": "rdc",
+                    "next": [
+                      {
+                        "type": "L",
+                        "x": 471,
+                        "y": 402,
+                        "orientation": 90,
+                        "plan": "rdc",
+                        "next": [
+                          {
+                            "type": "L",
+                            "x": 471,
+                            "y": 452,
+                            "orientation": 90,
+                            "plan": "rdc"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "P",
+                    "x": 520,
+                    "y": 454,
+                    "label": "chauffage sdb",
+                    "orientation": 270,
+                    "plan": "etage"
+                  },
+                  {
+                    "type": "S",
+                    "options": {
+                      "bipol": true
+                    },
+                    "label": "Sdb",
+                    "plan": "etage",
+                    "x": 570,
+                    "y": 430,
+                    "orientation": 180,
+                    "next": [
+                      {
+                        "type": "P",
+                        "x": 524,
+                        "y": 514,
+                        "orientation": 270,
+                        "plan": "etage",
+                        "next": [
+                          {
+                            "type": "L",
+                            "x": 546,
+                            "y": 455,
+                            "orientation": 270,
+                            "plan": "etage",
+                            "next": [
+                              {
+                                "type": "L",
+                                "x": 546,
+                                "y": 507,
+                                "orientation": 270,
+                                "plan": "etage"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Relais",
+                    "label": "Hall nuit (boitier déporté)",
                     "next": [
                       {
                         "type": "L",
@@ -1707,37 +1773,6 @@
                                     "plan": "etage"
                                   }
                                 ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "KNX",
-                    "reference": "12b",
-                    "next": [
-                      {
-                        "type": "P",
-                        "x": 524,
-                        "y": 514,
-                        "orientation": 270,
-                        "plan": "etage",
-                        "next": [
-                          {
-                            "type": "L",
-                            "x": 546,
-                            "y": 455,
-                            "orientation": 270,
-                            "plan": "etage",
-                            "next": [
-                              {
-                                "type": "L",
-                                "x": 546,
-                                "y": 507,
-                                "orientation": 270,
-                                "plan": "etage"
                               }
                             ]
                           }
@@ -2074,7 +2109,7 @@
           {
             "type": "Disj",
             "reference": "B22",
-            "label": "KNX",
+            "label": "Telerupteurs",
             "options": {
               "I": 10
             },
@@ -2121,31 +2156,6 @@
                         "x": 480,
                         "y": 255,
                         "orientation": 270,
-                        "plan": "rdc"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "S",
-                "x": 440,
-                "y": 420,
-                "orientation": 270,
-                "plan": "rdc",
-                "next": [
-                  {
-                    "type": "L",
-                    "x": 471,
-                    "y": 402,
-                    "orientation": 90,
-                    "plan": "rdc",
-                    "next": [
-                      {
-                        "type": "L",
-                        "x": 471,
-                        "y": 452,
-                        "orientation": 90,
                         "plan": "rdc"
                       }
                     ]
