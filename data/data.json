@@ -34,14 +34,6 @@
     },
     "next": [
       {
-        "type": "P",
-        "reference": "hall",
-        "x": 535,
-        "y": 375,
-        "orientation": 90,
-        "plan": "rdc"
-      },
-      {
         "type": "S",
         "options": "Impulsion",
         "plan": "rdc",
@@ -1058,19 +1050,6 @@
                       "text": "Sonnette"
                     }
                   }
-                ],
-                "next": [
-                  {
-                    "type": "Transfo",
-                    "alternate": [
-                      {
-                        "type": "Label",
-                        "options": {
-                          "text": "KNX alim"
-                        }
-                      }
-                    ]
-                  }
                 ]
               }
             ]
@@ -1952,9 +1931,13 @@
             },
             "next": [
               {
-                "type": "KNX",
-                "reference": "1a",
-                "next": [
+                  "type": "P",
+                  "label": "hall",
+                  "x": 535,
+                  "y": 375,
+                  "orientation": 90,
+                  "plan": "rdc",
+                  "next": [
                   {
                     "type": "L",
                     "x": 310,
