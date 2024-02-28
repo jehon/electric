@@ -2338,6 +2338,15 @@
               },
               {
                 "type": "Disj",
+                "reference": "C08",
+                "label": "Vers boitier E",
+                "options": {
+                  "I": 32
+                },
+                "next": []
+              },
+              {
+                "type": "Disj",
                 "reference": "C07",
                 "options": {
                   "Isec": 30
