@@ -27,7 +27,7 @@
   },
   "schema": {
     "type": "Disj",
-    "reference": "Central",
+    "reference": "A00/Central",
     "options": {
       "Isec": 300,
       "I": 40
@@ -979,9 +979,9 @@
       },
       {
         "type": "Disj",
-        "reference": "Boitier B",
+        "reference": "A07/Boitier B",
         "options": {
-          "I": 20
+          "I": 32
         },
         "next": [
           {
@@ -2168,7 +2168,7 @@
       },
       {
         "type": "Disj",
-        "reference": "Boitier C",
+        "reference": "A05/Boitier C",
         "options": {
           "I": 90
         },
