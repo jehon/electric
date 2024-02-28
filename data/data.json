@@ -34,48 +34,6 @@
     },
     "next": [
       {
-        "type": "PB",
-        "plan": "rdc",
-        "x": 545,
-        "y": 130,
-        "orientation": 0
-      },
-      {
-        "type": "PB",
-        "plan": "rdc",
-        "x": 660,
-        "y": 130,
-        "orientation": 0
-      },
-      {
-        "type": "PB",
-        "plan": "rdc",
-        "x": 790,
-        "y": 130,
-        "orientation": 0
-      },
-      {
-        "type": "PB",
-        "plan": "rdc",
-        "x": 270,
-        "y": 335,
-        "orientation": 180
-      },
-      {
-        "type": "PB",
-        "plan": "rdc",
-        "x": 500,
-        "y": 355,
-        "orientation": 180
-      },
-      {
-        "type": "PB",
-        "plan": "rdc",
-        "x": 755,
-        "y": 427,
-        "orientation": 180
-      },
-      {
         "type": "Disj",
         "reference": "A11",
         "label": "atelier/ecl",
@@ -784,7 +742,17 @@
                 "x": 292,
                 "y": 135,
                 "orientation": 0,
-                "plan": "rdc"
+                "plan": "rdc",
+                "next": [
+                  {
+                    "type": "P",
+                    "label": "Prise entre portes",
+                    "x": 518,
+                    "y": 358,
+                    "orientation": 180,
+                    "plan": "rdc"
+                  }
+                ]
               }
             ]
           }
@@ -1962,7 +1930,6 @@
           {
             "type": "Disj",
             "reference": "B21",
-            "label": "KNX",
             "options": {
               "I": 10
             },
@@ -1974,9 +1941,90 @@
                 "y": 375,
                 "orientation": 90,
                 "plan": "rdc",
+                "next": []
+              },
+              {
+                "type": "S",
+                "label": "xxx coin jeux",
+                "plan": "rdc",
+                "x": 795,
+                "y": 510,
+                "orientation": 270,
                 "next": [
                   {
                     "type": "L",
+                    "x": 865,
+                    "y": 485,
+                    "orientation": 270,
+                    "plan": "rdc"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "Disj",
+            "reference": "B22",
+            "label": "Telerupteurs",
+            "options": {
+              "I": 10
+            },
+            "next": [
+              {
+                "type": "PlaceHolder",
+                "reference": "PB",
+                "next": [
+                  {
+                    "type": "PB",
+                    "plan": "rdc",
+                    "x": 545,
+                    "y": 130,
+                    "orientation": 0
+                  },
+                  {
+                    "type": "PB",
+                    "plan": "rdc",
+                    "x": 660,
+                    "y": 130,
+                    "orientation": 0
+                  },
+                  {
+                    "type": "PB",
+                    "plan": "rdc",
+                    "x": 790,
+                    "y": 130,
+                    "orientation": 0
+                  },
+                  {
+                    "type": "PB",
+                    "plan": "rdc",
+                    "x": 270,
+                    "y": 335,
+                    "orientation": 180
+                  },
+                  {
+                    "type": "PB",
+                    "plan": "rdc",
+                    "x": 500,
+                    "y": 355,
+                    "orientation": 180
+                  },
+                  {
+                    "type": "PB",
+                    "plan": "rdc",
+                    "x": 755,
+                    "y": 427,
+                    "orientation": 180
+                  }
+                ]
+              },
+              {
+                "type": "Relais",
+                "label": "G1 - Salon / spot light",
+                "next": [
+                  {
+                    "type": "L",
+                    "label": "coins",
                     "x": 310,
                     "y": 165,
                     "orientation": 270,
@@ -2012,11 +2060,29 @@
                 ]
               },
               {
-                "type": "KNX",
-                "reference": "1b",
+                "type": "Relais",
+                "label": "G2 - Salon / spot heavy",
                 "next": [
                   {
                     "type": "L",
+                    "label": "Salon - carré / avant",
+                    "x": 480,
+                    "y": 210,
+                    "orientation": 270,
+                    "plan": "rdc",
+                    "next": [
+                      {
+                        "type": "L",
+                        "x": 480,
+                        "y": 255,
+                        "orientation": 270,
+                        "plan": "rdc"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "L",
+                    "label": "Salon - carré / fond",
                     "x": 310,
                     "y": 210,
                     "orientation": 270,
@@ -2030,31 +2096,10 @@
                         "plan": "rdc"
                       }
                     ]
-                  }
-                ]
-              },
-              {
-                "type": "S",
-                "plan": "rdc",
-                "x": 795,
-                "y": 510,
-                "orientation": 270,
-                "next": [
+                  },
                   {
                     "type": "L",
-                    "x": 865,
-                    "y": 485,
-                    "orientation": 270,
-                    "plan": "rdc"
-                  }
-                ]
-              },
-              {
-                "type": "KNX",
-                "reference": "2b",
-                "next": [
-                  {
-                    "type": "L",
+                    "label": "Salon - carré / transverses",
                     "x": 395,
                     "y": 165,
                     "orientation": 270,
@@ -2068,28 +2113,10 @@
                         "plan": "rdc"
                       }
                     ]
-                  }
-                ]
-              },
-              {
-                "type": "KNX",
-                "reference": "4a",
-                "next": [
+                  },
                   {
                     "type": "L",
-                    "x": 395,
-                    "y": 230,
-                    "orientation": 270,
-                    "plan": "rdc"
-                  }
-                ]
-              },
-              {
-                "type": "KNX",
-                "reference": "4b",
-                "next": [
-                  {
-                    "type": "L",
+                    "label": "passage",
                     "x": 546,
                     "y": 225,
                     "orientation": 180,
@@ -2105,62 +2132,33 @@
                     ]
                   }
                 ]
-              }
-            ]
-          },
-          {
-            "type": "Disj",
-            "reference": "B22",
-            "label": "Telerupteurs",
-            "options": {
-              "I": 10
-            },
-            "next": [
+              },
               {
-                "type": "KNX",
-                "reference": "8a",
+                "type": "Relais",
+                "label": "G3 - Salon / central",
                 "next": [
                   {
-                    "type": "P",
-                    "x": 518,
-                    "y": 358,
-                    "orientation": 180,
+                    "type": "L",
+                    "label": "Salon central",
+                    "x": 395,
+                    "y": 230,
+                    "orientation": 270,
                     "plan": "rdc"
                   }
                 ]
               },
               {
-                "type": "KNX",
-                "reference": "8b",
+                "type": "Relais",
+                "reference": "G4",
+                "label": "G4 - Sam",
                 "next": [
                   {
                     "type": "L",
-                    "x": 651,
+                    "label": "sdb",
+                    "x": 720,
                     "y": 237,
                     "orientation": 0,
                     "plan": "rdc"
-                  }
-                ]
-              },
-              {
-                "type": "KNX",
-                "reference": "10a",
-                "next": [
-                  {
-                    "type": "L",
-                    "x": 480,
-                    "y": 210,
-                    "orientation": 270,
-                    "plan": "rdc",
-                    "next": [
-                      {
-                        "type": "L",
-                        "x": 480,
-                        "y": 255,
-                        "orientation": 270,
-                        "plan": "rdc"
-                      }
-                    ]
                   }
                 ]
               }
