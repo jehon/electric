@@ -506,6 +506,23 @@
                 ]
               }
             ]
+          },
+          {
+            "type": "S",
+            "label": "Coin jeux",
+            "plan": "rdc",
+            "x": 795,
+            "y": 510,
+            "orientation": 270,
+            "next": [
+              {
+                "type": "L",
+                "x": 865,
+                "y": 485,
+                "orientation": 270,
+                "plan": "rdc"
+              }
+            ]
           }
         ]
       },
@@ -1942,23 +1959,6 @@
                 "orientation": 90,
                 "plan": "rdc",
                 "next": []
-              },
-              {
-                "type": "S",
-                "label": "xxx coin jeux",
-                "plan": "rdc",
-                "x": 795,
-                "y": 510,
-                "orientation": 270,
-                "next": [
-                  {
-                    "type": "L",
-                    "x": 865,
-                    "y": 485,
-                    "orientation": 270,
-                    "plan": "rdc"
-                  }
-                ]
               }
             ]
           },
