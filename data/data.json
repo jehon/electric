@@ -2369,8 +2369,7 @@
                       {
                         "type": "Disj",
                         "reference": "C16",
-                        "label": "fond jardin",
-                        "next": []
+                        "label": "vide"
                       },
                       {
                         "type": "Disj",
