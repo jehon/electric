@@ -1790,6 +1790,7 @@
                 "next": [
                   {
                     "type": "P",
+                    "label": "Hall",
                     "x": 457,
                     "y": 504,
                     "orientation": 180,
@@ -1841,6 +1842,7 @@
                       },
                       {
                         "type": "P",
+                        "label": "Sdb always on",
                         "x": 523,
                         "y": 531,
                         "orientation": 270,
@@ -1848,6 +1850,7 @@
                         "next": [
                           {
                             "type": "S",
+                            "label": "douche",
                             "x": 778,
                             "y": 303,
                             "orientation": 270,
@@ -1859,6 +1862,7 @@
                             "next": [
                               {
                                 "type": "L",
+                                "label": "douche",
                                 "x": 863,
                                 "y": 363,
                                 "orientation": 270,
