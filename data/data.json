@@ -34,76 +34,45 @@
     },
     "next": [
       {
-        "type": "S",
-        "options": "Impulsion",
+        "type": "PB",
         "plan": "rdc",
         "x": 545,
         "y": 130,
         "orientation": 0
       },
       {
-        "type": "S",
-        "options": "Impulsion",
+        "type": "PB",
         "plan": "rdc",
         "x": 660,
         "y": 130,
         "orientation": 0
       },
       {
-        "type": "S",
-        "options": "Impulsion",
+        "type": "PB",
         "plan": "rdc",
         "x": 790,
         "y": 130,
         "orientation": 0
       },
       {
-        "type": "S",
-        "options": "Impulsion",
+        "type": "PB",
         "plan": "rdc",
         "x": 270,
         "y": 335,
         "orientation": 180
       },
       {
-        "type": "S",
-        "options": "Impulsion",
+        "type": "PB",
         "plan": "rdc",
         "x": 500,
         "y": 355,
         "orientation": 180
       },
       {
-        "type": "S",
-        "options": "Impulsion",
+        "type": "PB",
         "plan": "rdc",
         "x": 755,
         "y": 427,
-        "orientation": 180
-      },
-      {
-        "type": "S",
-        "options": "Impulsion",
-        "plan": "etage",
-        "x": 550,
-        "y": 320,
-        "orientation": 0
-      },
-      {
-        "type": "S",
-        "options": "Impulsion",
-        "plan": "etage",
-        "x": 830,
-        "y": 310,
-        "orientation": 90
-      },
-      {
-        "type": "S",
-        "options": "Impulsion",
-        "label": "Hall Nuit",
-        "plan": "etage",
-        "x": 590,
-        "y": 430,
         "orientation": 180
       },
       {
@@ -539,26 +508,19 @@
                 "type": "P",
                 "x": 578,
                 "y": 371,
-            "orientation": 0,
-            "plan": "cave",
-            "next": [
-              {
-                "type": "P",
-                "x": 550,
-                "y": 427,
-                "orientation": 180,
-                "plan": "rdc",
+                "orientation": 0,
+                "plan": "cave",
                 "next": [
                   {
                     "type": "P",
-                    "x": 580,
+                    "x": 550,
                     "y": 427,
                     "orientation": 180,
                     "plan": "rdc",
                     "next": [
                       {
                         "type": "P",
-                        "x": 775,
+                        "x": 580,
                         "y": 427,
                         "orientation": 180,
                         "plan": "rdc",
@@ -566,9 +528,18 @@
                           {
                             "type": "P",
                             "x": 775,
-                            "y": 407,
+                            "y": 427,
                             "orientation": 180,
-                            "plan": "rdc"
+                            "plan": "rdc",
+                            "next": [
+                              {
+                                "type": "P",
+                                "x": 775,
+                                "y": 407,
+                                "orientation": 180,
+                                "plan": "rdc"
+                              }
+                            ]
                           }
                         ]
                       }
@@ -579,8 +550,6 @@
             ]
           }
         ]
-      }
-    ]
       },
       {
         "type": "Disj",
@@ -1705,7 +1674,8 @@
                   {
                     "type": "S",
                     "options": {
-                      "bipol": true
+                      "bipol": true,
+                      "light": true
                     },
                     "label": "Sdb",
                     "plan": "etage",
@@ -1745,32 +1715,60 @@
                     "label": "Hall nuit (boitier déporté)",
                     "next": [
                       {
-                        "type": "L",
-                        "x": 800,
-                        "y": 319,
-                        "orientation": 270,
+                        "type": "PB",
+                        "label": "Hall Nuit",
                         "plan": "etage",
+                        "x": 590,
+                        "y": 430,
+                        "orientation": 180,
                         "next": [
                           {
-                            "type": "L",
-                            "x": 659,
-                            "y": 344,
-                            "orientation": 270,
+                            "type": "PB",
                             "plan": "etage",
+                            "x": 550,
+                            "y": 320,
+                            "orientation": 0,
                             "next": [
                               {
-                                "type": "L",
-                                "x": 475,
-                                "y": 381,
-                                "orientation": 270,
+                                "type": "PB",
                                 "plan": "etage",
+                                "x": 830,
+                                "y": 310,
+                                "orientation": 90,
                                 "next": [
                                   {
                                     "type": "L",
-                                    "x": 475,
-                                    "y": 466,
+                                    "x": 800,
+                                    "y": 319,
                                     "orientation": 270,
-                                    "plan": "etage"
+                                    "plan": "etage",
+                                    "next": [
+                                      {
+                                        "type": "L",
+                                        "x": 659,
+                                        "y": 344,
+                                        "orientation": 270,
+                                        "plan": "etage",
+                                        "next": [
+                                          {
+                                            "type": "L",
+                                            "x": 475,
+                                            "y": 381,
+                                            "orientation": 270,
+                                            "plan": "etage",
+                                            "next": [
+                                              {
+                                                "type": "L",
+                                                "x": 475,
+                                                "y": 466,
+                                                "orientation": 270,
+                                                "plan": "etage"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
                                   }
                                 ]
                               }
@@ -1785,9 +1783,9 @@
               {
                 "type": "Disj",
                 "reference": "B29",
-                "label": "KNX + WC + sdb",
+                "label": "WC + sdb",
                 "options": {
-                  "I": 10
+                  "I": 20
                 },
                 "next": [
                   {
@@ -1966,13 +1964,13 @@
             },
             "next": [
               {
-                  "type": "P",
-                  "label": "hall",
-                  "x": 535,
-                  "y": 375,
-                  "orientation": 90,
-                  "plan": "rdc",
-                  "next": [
+                "type": "P",
+                "label": "hall",
+                "x": 535,
+                "y": 375,
+                "orientation": 90,
+                "plan": "rdc",
+                "next": [
                   {
                     "type": "L",
                     "x": 310,
