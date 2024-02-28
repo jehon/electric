@@ -405,7 +405,7 @@
                   {
                     "type": "L",
                     "x": 845,
-                    "y": 241,
+                    "y": 500,
                     "plan": "cave",
                     "orientation": 0
                   }
@@ -522,7 +522,7 @@
           {
             "type": "S",
             "x": 516,
-            "y": 388,
+            "y": 410,
             "orientation": 270,
             "plan": "cave",
             "alternate": [
@@ -544,8 +544,16 @@
         "next": [
           {
             "type": "P",
-            "x": 578,
-            "y": 371,
+            "label": "ADSL",
+            "x": 520,
+            "y": 365,
+            "orientation": 0,
+            "plan": "cave",
+            "next": [
+              {
+                "type": "P",
+                "x": 578,
+                "y": 371,
             "orientation": 0,
             "plan": "cave",
             "next": [
@@ -586,6 +594,8 @@
             ]
           }
         ]
+      }
+    ]
       },
       {
         "type": "Disj",
