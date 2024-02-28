@@ -1112,7 +1112,7 @@
           },
           {
             "type": "Disj",
-            "reference": "A07/Boitier B",
+            "reference": "A07/coffret B",
             "options": {
               "I": 32
             },
@@ -1830,7 +1830,7 @@
                       },
                       {
                         "type": "Relais",
-                        "label": "Hall nuit (boitier déporté)",
+                        "label": "Hall nuit (déporté)",
                         "next": [
                           {
                             "type": "PB",
@@ -1999,7 +1999,7 @@
               {
                 "type": "Disj",
                 "reference": "B19",
-                "label": "Vers boitier D",
+                "label": "Vers coffret D",
                 "next": [
                   {
                     "type": "P",
@@ -2301,7 +2301,7 @@
           },
           {
             "type": "Disj",
-            "reference": "A05/Boitier C",
+            "reference": "A05/coffret C",
             "options": {
               "I": 90
             },
@@ -2353,7 +2353,7 @@
                   {
                     "type": "Disj",
                     "reference": "C08",
-                    "label": "Vers boitier E",
+                    "label": "Vers coffret E",
                     "options": {
                       "I": 32
                     },
