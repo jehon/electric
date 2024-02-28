@@ -749,7 +749,7 @@
                           {
                             "type": "P",
                             "x": 950,
-                            "y": 360,
+                            "y": 400,
                             "orientation": 90,
                             "label": "fenêtre",
                             "plan": "rdc"
@@ -772,7 +772,7 @@
           {
             "type": "P",
             "x": 950,
-            "y": 410,
+            "y": 330,
             "orientation": 90,
             "plan": "rdc",
             "label": "frigo"
@@ -879,8 +879,8 @@
             "x": 590,
             "y": 587,
             "orientation": 180,
-            "label": "Lessiveuse",
-            "plan": "rdc"
+            "plan": "rdc",
+            "label": "Lessiveuse"
           }
         ]
       },
@@ -894,7 +894,7 @@
             "x": 570,
             "y": 587,
             "orientation": 180,
-            "label": "Séchoir",
+            "label": "Essoreuse",
             "plan": "rdc"
           }
         ]
@@ -902,74 +902,24 @@
       {
         "type": "Disj",
         "reference": "A31",
-        "label": "KNX",
         "options": {
           "I": 16
         },
         "next": [
           {
-            "type": "KNX",
-            "reference": "G1",
-            "next": [
-              {
-                "type": "Bridge",
-                "reference": "G.G1",
-                "next": [
-                  {
-                    "type": "L",
-                    "x": 337,
-                    "y": 500,
-                    "orientation": 0,
-                    "plan": "rdc"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "KNX",
-            "reference": "G2",
-            "next": [
-              {
-                "type": "Bridge",
-                "reference": "G.G2",
-                "next": [
-                  {
-                    "type": "L",
-                    "x": 229,
-                    "y": 317,
-                    "orientation": 90,
-                    "plan": "cave"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "KNX",
-            "reference": "G3",
-            "next": [
-              {
-                "type": "Bridge",
-                "reference": "G.G3",
-                "next": [
-                  {
-                    "type": "P",
-                    "x": 232,
-                    "y": 151,
-                    "orientation": 90,
-                    "plan": "cave"
-                  }
-                ]
-              }
-            ]
+            "type": "L",
+            "x": 340,
+            "y": 475,
+            "orientation": 0,
+            "plan": "rdc",
+            "legend": "exterieur"
           }
         ]
       },
       {
         "type": "Disj",
         "reference": "A39",
-        "label": "KNX",
+        "label": "Programmable",
         "options": {
           "I": 16
         },
@@ -983,7 +933,8 @@
                 "x": 694,
                 "y": 135,
                 "orientation": 0,
-                "plan": "rdc"
+                "plan": "rdc",
+                "label": "Porte-fenêtre D"
               }
             ]
           },
@@ -996,7 +947,8 @@
                 "x": 310,
                 "y": 341,
                 "orientation": 180,
-                "plan": "rdc"
+                "plan": "rdc",
+                "label": "Salon - fond gauche"
               }
             ]
           },
@@ -1009,7 +961,8 @@
                 "x": 310,
                 "y": 135,
                 "orientation": 0,
-                "plan": "rdc"
+                "plan": "rdc",
+                "label": "Salon - fond droit"
               }
             ]
           },
@@ -1022,7 +975,8 @@
                 "x": 519,
                 "y": 135,
                 "orientation": 0,
-                "plan": "rdc"
+                "plan": "rdc",
+                "label": "Porte-fenêtre G"
               }
             ]
           },
@@ -1033,9 +987,10 @@
               {
                 "type": "P",
                 "x": 949,
-                "y": 310,
+                "y": 320,
                 "orientation": 90,
-                "plan": "rdc"
+                "plan": "rdc",
+                "label": "Derrière frigo"
               }
             ]
           },
@@ -1048,7 +1003,8 @@
                 "x": 423,
                 "y": 391,
                 "orientation": 90,
-                "plan": "rdc"
+                "plan": "rdc",
+                "label": "Entrée couverte"
               }
             ]
           },
@@ -1061,7 +1017,8 @@
                 "x": 446,
                 "y": 335,
                 "orientation": 270,
-                "plan": "rdc"
+                "plan": "rdc",
+                "label": "Prise poele D"
               }
             ]
           },
@@ -1074,7 +1031,8 @@
                 "x": 446,
                 "y": 350,
                 "orientation": 270,
-                "plan": "rdc"
+                "plan": "rdc",
+                "label": "Prise poele G"
               }
             ]
           }
