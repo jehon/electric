@@ -23,7 +23,14 @@
       "scale": 0.50,
       "width": 1025,
       "height": 675
+    },
+    "abri-jardin": {
+      "src": "/data/abri-jardin.png",
+      "scale": 0.25,
+      "width": 690,
+      "height": 465
     }
+
   },
   "schema": {
     "type": "Disj",
@@ -33,6 +40,118 @@
       "I": 40
     },
     "next": [
+      {
+        "type": "Disj",
+        "reference": "A09",
+        "label": "abri jardin",
+        "next": [
+          {
+            "type": "P",
+            "x": 325,
+            "y": 280,
+            "orientation": 90,
+            "plan": "abri-jardin",
+            "next": [
+              {
+                "type": "S",
+                "label": "éclairage intérieur",
+                "x": 325,
+                "y": 270,
+                "orientation": 90,
+                "plan": "abri-jardin",
+                "alternate": [
+                  {
+                    "type": "L",
+                    "x": 280,
+                    "y": 270,
+                    "plan": "abri-jardin"
+                  }
+                ]
+              },
+              {
+                "type": "S",
+                "label": "Chargeur vélo",
+                "x": 330,
+                "y": 200,
+                "orientation": 90,
+                "plan": "abri-jardin",
+                "alternate": [
+                  {
+                    "type": "P",
+                    "x": 315,
+                    "y": 200,
+                    "orientation": 90,
+                    "plan": "abri-jardin"
+                  }
+                ]
+              },
+              {
+                "type": "S",
+                "label": "Outillage",
+                "x": 330,
+                "y": 250,
+                "orientation": 90,
+                "plan": "abri-jardin",
+                "alternate": [
+                  {
+                    "type": "P",
+                    "x": 315,
+                    "y": 250,
+                    "plan": "abri-jardin",
+                    "orientation": 90
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "S",
+            "label": "poubelles",
+            "x": 250,
+            "y": 420,
+            "orientation": 180,
+            "plan": "abri-jardin",
+            "alternate": [
+              {
+                "type": "Neon",
+                "label": "Poubelles",
+                "x": 300,
+                "y": 420,
+                "plan": "abri-jardin",
+                "orientation": 90
+              }
+            ]
+          },
+          {
+            "type": "S",
+            "label": "passage",
+            "x": 360,
+            "y": 300,
+            "orientation": 180,
+            "plan": "abri-jardin",
+            "alternate": [
+              {
+                "type": "Neon",
+                "label": "Passage",
+                "x": 360,
+                "y": 250,
+                "plan": "abri-jardin",
+                "orientation": 90,
+                "next": [
+                  {
+                    "type": "Neon",
+                    "label": "Terrasse couverte",
+                    "x": 300,
+                    "y": 100,
+                    "plan": "abri-jardin",
+                    "orientation": 0
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
       {
         "type": "Disj",
         "reference": "A11",
