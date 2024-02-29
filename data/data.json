@@ -2329,35 +2329,7 @@
                   },
                   {
                     "type": "Disj",
-                    "reference": "C06",
-                    "label": "Boiler",
-                    "next": [
-                      {
-                        "type": "P",
-                        "x": 895,
-                        "y": 358,
-                        "orientation": 180,
-                        "plan": "cave",
-                        "next": [
-                          {
-                            "type": "Boiler",
-                            "x": 895,
-                            "y": 328,
-                            "orientation": 180,
-                            "plan": "cave"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "Disj",
-                    "reference": "C08",
-                    "label": "Vers coffret E",
-                    "options": {
-                      "I": 32
-                    },
-                    "next": []
+                    "reference": "C06"
                   },
                   {
                     "type": "Disj",
@@ -2368,27 +2340,235 @@
                     "next": [
                       {
                         "type": "Disj",
-                        "reference": "C16",
-                        "label": "vide"
+                        "reference": "C08",
+                        "label": "Vers coffret E",
+                        "options": {
+                          "I": 32
+                        },
+                        "next": []
                       },
                       {
                         "type": "Disj",
-                        "reference": "C17",
-                        "label": "fond cave",
+                        "reference": "C11",
+                        "label": "Cuisinière",
+                        "options": {
+                          "I": 32
+                        },
                         "next": [
                           {
-                            "type": "P",
-                            "x": 637,
-                            "y": 233,
-                            "orientation": 180,
-                            "plan": "cave",
-                            "label": "Fond cave"
+                            "type": "CookingPlates",
+                            "x": 811,
+                            "y": 229,
+                            "orientation": 270,
+                            "plan": "rdc"
                           }
                         ]
                       },
                       {
                         "type": "Disj",
-                        "reference": "C18",
+                        "reference": "C12",
+                        "label": "vide"
+                      },
+                      {
+                        "type": "Disj",
+                        "reference": "C13",
+                        "label": "Boiler",
+                        "next": [
+                          {
+                            "type": "P",
+                            "x": 895,
+                            "y": 358,
+                            "orientation": 180,
+                            "plan": "cave",
+                            "next": [
+                              {
+                                "type": "Boiler",
+                                "x": 895,
+                                "y": 328,
+                                "orientation": 180,
+                                "plan": "cave"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Disj",
+                        "reference": "C14",
+                        "label": "Hotte + éclairage + prises murales",
+                        "next": [
+                          {
+                            "type": "Hotte",
+                            "x": 811,
+                            "y": 250,
+                            "orientation": 270,
+                            "plan": "rdc",
+                            "next": [
+                              {
+                                "type": "P",
+                                "x": 829,
+                                "y": 269,
+                                "orientation": 270,
+                                "plan": "rdc",
+                                "next": [
+                                  {
+                                    "type": "S",
+                                    "x": 849,
+                                    "y": 269,
+                                    "orientation": 270,
+                                    "plan": "rdc",
+                                    "next": [
+                                      {
+                                        "type": "L",
+                                        "x": 811,
+                                        "y": 200,
+                                        "orientation": 90,
+                                        "plan": "rdc",
+                                        "next": [
+                                          {
+                                            "type": "L",
+                                            "x": 811,
+                                            "y": 158,
+                                            "orientation": 90,
+                                            "plan": "rdc"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": "S",
+                                    "x": 849,
+                                    "y": 289,
+                                    "orientation": 270,
+                                    "plan": "rdc",
+                                    "next": [
+                                      {
+                                        "type": "L",
+                                        "x": 876,
+                                        "y": 153,
+                                        "orientation": 270,
+                                        "plan": "rdc",
+                                        "next": [
+                                          {
+                                            "type": "L",
+                                            "x": 876,
+                                            "y": 200,
+                                            "orientation": 270,
+                                            "plan": "rdc",
+                                            "next": [
+                                              {
+                                                "type": "L",
+                                                "x": 876,
+                                                "y": 250,
+                                                "orientation": 270,
+                                                "plan": "rdc"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "P",
+                            "x": 823,
+                            "y": 136,
+                            "orientation": 0,
+                            "plan": "rdc",
+                            "next": [
+                              {
+                                "type": "P",
+                                "x": 823,
+                                "y": 156,
+                                "orientation": 0,
+                                "plan": "rdc"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Disj",
+                        "reference": "C15",
+                        "label": "prises coins + dans armoire",
+                        "next": [
+                          {
+                            "type": "P",
+                            "x": 920,
+                            "y": 136,
+                            "orientation": 0,
+                            "plan": "rdc",
+                            "next": [
+                              {
+                                "type": "P",
+                                "x": 920,
+                                "y": 156,
+                                "orientation": 0,
+                                "plan": "rdc",
+                                "next": [
+                                  {
+                                    "type": "P",
+                                    "x": 950,
+                                    "y": 190,
+                                    "orientation": 90,
+                                    "plan": "rdc",
+                                    "next": [
+                                      {
+                                        "type": "P",
+                                        "x": 930,
+                                        "y": 190,
+                                        "orientation": 90,
+                                        "plan": "rdc"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Disj",
+                        "reference": "C16",
+                        "label": "four + prises",
+                        "next": [
+                          {
+                            "type": "P",
+                            "x": 950,
+                            "y": 270,
+                            "orientation": 90,
+                            "plan": "rdc",
+                            "label": "four",
+                            "next": [
+                              {
+                                "type": "P",
+                                "x": 950,
+                                "y": 230,
+                                "orientation": 90,
+                                "plan": "rdc",
+                                "next": [
+                                  {
+                                    "type": "P",
+                                    "x": 930,
+                                    "y": 230,
+                                    "orientation": 90,
+                                    "plan": "rdc"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Disj",
+                        "reference": "C17",
                         "label": "four vapeur",
                         "next": [
                           {
@@ -2403,7 +2583,7 @@
                       },
                       {
                         "type": "Disj",
-                        "reference": "C19",
+                        "reference": "C18",
                         "label": "lave vaisselle",
                         "next": [
                           {
@@ -2423,202 +2603,19 @@
                             ]
                           }
                         ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "Disj",
-                    "reference": "C11",
-                    "label": "Cuisinière",
-                    "options": {
-                      "I": 32
-                    },
-                    "next": [
+                      },
                       {
-                        "type": "CookingPlates",
-                        "x": 811,
-                        "y": 229,
-                        "orientation": 270,
-                        "plan": "rdc"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "Disj",
-                    "reference": "C12",
-                    "label": "Hotte + son eclairage",
-                    "next": [
-                      {
-                        "type": "Hotte",
-                        "x": 811,
-                        "y": 250,
-                        "orientation": 270,
-                        "plan": "rdc",
+                        "type": "Disj",
+                        "reference": "C19",
+                        "label": "fond cave",
                         "next": [
                           {
                             "type": "P",
-                            "x": 829,
-                            "y": 269,
-                            "orientation": 270,
-                            "plan": "rdc",
-                            "next": [
-                              {
-                                "type": "S",
-                                "x": 849,
-                                "y": 269,
-                                "orientation": 270,
-                                "plan": "rdc",
-                                "next": [
-                                  {
-                                    "type": "L",
-                                    "x": 811,
-                                    "y": 200,
-                                    "orientation": 90,
-                                    "plan": "rdc",
-                                    "next": [
-                                      {
-                                        "type": "L",
-                                        "x": 811,
-                                        "y": 158,
-                                        "orientation": 90,
-                                        "plan": "rdc"
-                                      }
-                                    ]
-                                  }
-                                ]
-                              },
-                              {
-                                "type": "S",
-                                "x": 849,
-                                "y": 289,
-                                "orientation": 270,
-                                "plan": "rdc",
-                                "next": [
-                                  {
-                                    "type": "L",
-                                    "x": 876,
-                                    "y": 153,
-                                    "orientation": 270,
-                                    "plan": "rdc",
-                                    "next": [
-                                      {
-                                        "type": "L",
-                                        "x": 876,
-                                        "y": 200,
-                                        "orientation": 270,
-                                        "plan": "rdc",
-                                        "next": [
-                                          {
-                                            "type": "L",
-                                            "x": 876,
-                                            "y": 250,
-                                            "orientation": 270,
-                                            "plan": "rdc"
-                                          }
-                                        ]
-                                      }
-                                    ]
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "Disj",
-                    "reference": "C13",
-                    "label": "prises murales",
-                    "next": [
-                      {
-                        "type": "P",
-                        "x": 823,
-                        "y": 136,
-                        "orientation": 0,
-                        "plan": "rdc",
-                        "next": [
-                          {
-                            "type": "P",
-                            "x": 823,
-                            "y": 156,
-                            "orientation": 0,
-                            "plan": "rdc"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "Disj",
-                    "reference": "C14",
-                    "label": "prises coins + dans armoire",
-                    "next": [
-                      {
-                        "type": "P",
-                        "x": 920,
-                        "y": 136,
-                        "orientation": 0,
-                        "plan": "rdc",
-                        "next": [
-                          {
-                            "type": "P",
-                            "x": 920,
-                            "y": 156,
-                            "orientation": 0,
-                            "plan": "rdc",
-                            "next": [
-                              {
-                                "type": "P",
-                                "x": 950,
-                                "y": 190,
-                                "orientation": 90,
-                                "plan": "rdc",
-                                "next": [
-                                  {
-                                    "type": "P",
-                                    "x": 930,
-                                    "y": 190,
-                                    "orientation": 90,
-                                    "plan": "rdc"
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "Disj",
-                    "reference": "C15",
-                    "label": "four + prises",
-                    "next": [
-                      {
-                        "type": "P",
-                        "x": 950,
-                        "y": 270,
-                        "orientation": 90,
-                        "plan": "rdc",
-                        "label": "four",
-                        "next": [
-                          {
-                            "type": "P",
-                            "x": 950,
-                            "y": 230,
-                            "orientation": 90,
-                            "plan": "rdc",
-                            "next": [
-                              {
-                                "type": "P",
-                                "x": 930,
-                                "y": 230,
-                                "orientation": 90,
-                                "plan": "rdc"
-                              }
-                            ]
+                            "x": 637,
+                            "y": 233,
+                            "orientation": 180,
+                            "plan": "cave",
+                            "label": "Fond cave"
                           }
                         ]
                       }
