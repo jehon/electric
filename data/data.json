@@ -2439,7 +2439,15 @@
                                 "options": {
                                   "I": 8
                                 },
-                                "next": []
+                                "next": [
+                                  {
+                                    "type": "P",
+                                    "plan": "piscine-technique",
+                                    "x": 314,
+                                    "y": 128,
+                                    "orientation": 90
+                                  }
+                                ]
                               },
                               {
                                 "type": "Disj",
@@ -2448,7 +2456,15 @@
                                 "options": {
                                   "I": 20
                                 },
-                                "next": []
+                                "next": [
+                                  {
+                                    "type": "Heater",
+                                    "plan": "piscine",
+                                    "x": 99,
+                                    "y": 549,
+                                    "orientation": 90
+                                  }
+                                ]
                               },
                               {
                                 "type": "Disj",
@@ -2492,7 +2508,15 @@
                                     "options": {
                                       "I": 16
                                     },
-                                    "next": []
+                                    "next": [
+                                      {
+                                        "type": "P",
+                                        "plan": "piscine-technique",
+                                        "x": 137,
+                                        "y": 642,
+                                        "orientation": 180
+                                      }
+                                    ]
                                   },
                                   {
                                     "type": "Disj",
@@ -2501,7 +2525,15 @@
                                     "options": {
                                       "I": 10
                                     },
-                                    "next": []
+                                    "next": [
+                                      {
+                                        "type": "Transfo",
+                                        "plan": "piscine-technique",
+                                        "x": 100,
+                                        "y": 642,
+                                        "orientation": 180
+                                      }
+                                    ]
                                   },
                                   {
                                     "type": "Disj",
