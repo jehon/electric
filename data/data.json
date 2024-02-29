@@ -2315,20 +2315,6 @@
                 "next": [
                   {
                     "type": "Disj",
-                    "reference": "C05",
-                    "label": "Chauffage",
-                    "next": [
-                      {
-                        "type": "Heater",
-                        "x": 809,
-                        "y": 160,
-                        "orientation": 270,
-                        "plan": "cave"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "Disj",
                     "reference": "C06"
                   },
                   {
@@ -2367,7 +2353,16 @@
                       {
                         "type": "Disj",
                         "reference": "C12",
-                        "label": "vide"
+                        "label": "Chauffage",
+                        "next": [
+                          {
+                            "type": "Heater",
+                            "x": 809,
+                            "y": 160,
+                            "orientation": 270,
+                            "plan": "cave"
+                          }
+                        ]
                       },
                       {
                         "type": "Disj",
