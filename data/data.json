@@ -2483,16 +2483,25 @@
                                     },
                                     "next": [
                                       {
-                                        "type": "L",
+                                        "type": "S",
                                         "plan": "piscine",
-                                        "x": 480,
-                                        "y": 540
-                                      },
-                                      {
-                                        "type": "L",
-                                        "plan": "piscine",
-                                        "x": 600,
-                                        "y": 820
+                                        "x": 160,
+                                        "y": 330,
+                                        "orientation": 90,
+                                        "next": [
+                                          {
+                                            "type": "L",
+                                            "plan": "piscine",
+                                            "x": 480,
+                                            "y": 540
+                                          },
+                                          {
+                                            "type": "L",
+                                            "plan": "piscine",
+                                            "x": 600,
+                                            "y": 820
+                                          }
+                                        ]
                                       }
                                     ]
                                   },
@@ -2542,7 +2551,57 @@
                                     "options": {
                                       "I": 10
                                     },
-                                    "next": []
+                                    "next": [
+                                      {
+                                        "type": "S",
+                                        "legend": "éclairage",
+                                        "plan": "piscine",
+                                        "x": 160,
+                                        "y": 320,
+                                        "orientation": 90,
+                                        "next": [
+                                          {
+                                            "type": "L",
+                                            "plan": "piscine",
+                                            "x": 90,
+                                            "y": 340
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "type": "S",
+                                        "plan": "piscine",
+                                        "legend": "audio",
+                                        "x": 140,
+                                        "y": 320,
+                                        "orientation": 90,
+                                        "next": [
+                                          {
+                                            "type": "P",
+                                            "plan": "piscine",
+                                            "x": 160,
+                                            "y": 240,
+                                            "orientation": 90
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "type": "P",
+                                        "plan": "piscine",
+                                        "label": "tête de colonne",
+                                        "x": 160,
+                                        "y": 360,
+                                        "orientation": 90
+                                      },
+                                      {
+                                        "type": "P",
+                                        "plan": "piscine",
+                                        "label": "tondeuse",
+                                        "x": 160,
+                                        "y": 475,
+                                        "orientation": 90
+                                      }
+                                    ]
                                   },
                                   {
                                     "type": "Disj",
