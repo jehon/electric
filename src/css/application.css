@@ -3,23 +3,26 @@ body {
 	width: min-content;
 }
 
-.nav-tabs > .active {
+.nav-tabs>.active {
 	background-color: darkgray;
 }
 
 svg {
-  padding: 5px;
-  border: 1px red dashed;
+	padding: 5px;
+	border: 1px red dashed;
+	font-family: Open Sans;
+	font-size: 10px;
 }
 
 .highlighted {
 	stroke: red;
 }
 
-.highlighted > rect {
+.highlighted>rect {
 	fill: lightgray;
 	fill-opacity: 1;
 }
+
 x-legend {
 	width: 100%;
 }

@@ -33,7 +33,13 @@ class InstallationAbstractSVG extends InstallationAbstract {
 
 	    this.innerHTML = `
 	      <div style='height: 100%; width: 100%'>
-	        <svg preserveAspectRatio="xMinYMin slice" stroke='black' fill='none' width=${res.width} height=${res.height}>
+	        <svg 
+					preserveAspectRatio="xMinYMin slice" 
+					stroke='black'
+					fill='none'
+					width=${res.width}
+					height=${res.height}
+				>
 	          ${res.svg}
 	        </svg>
 	      </div>

@@ -52,7 +52,7 @@ class BuildPosition extends BuildName {
 
 		return `<g transform='translate(${tp.x}, ${tp.y})'>
 					<g transform='rotate(45)'>
-	                	<text x=2 y="-2" font-family="Verdana" font-size="6">${label}</text>
+	                	<text x=2 y="-2">${label}</text>
 		            </g>
 		        </g>`
 	}

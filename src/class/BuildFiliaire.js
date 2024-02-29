@@ -102,7 +102,7 @@ class BuildFiliaire extends BuildName {
 		if (!this._currentElement.getName()) {
 			return this;
 		}
-		return `<text x="${2}" y="${-this._currentElement.getVal("toTop")}" font-family="Verdana" font-size="6">
+		return `<text x="${2}" y="${-this._currentElement.getVal("toTop")}">
 				${this._currentElement.getName()}
 			</text>`
 	}

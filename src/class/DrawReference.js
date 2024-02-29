@@ -67,7 +67,7 @@ let drawReference = (function() {
   			    return '<rect x=-1 y=-25 width=3 height=50 fill="white" stroke="none" />' /* To prevent lines to be drawn accros it */
   			    + '<path d="M0,-30 l0,10 l10,35 m-10,0 l0,15" fill="none"/>'
 			    + '<path d="M10,15 L14,13 L12.5,9 L9,11 z" fill="currentColor"/>'
-			    + '<text x=10 y=-10 font-family="Verdana" font-size="8" >'
+			    + '<text x=10 y=-10>'
 			    + (options.I    ? 'I:' + options.I    + 'A '             : '' )
 			    + (options.Isec ? '\u25B3' + options.Isec + 'mA ' : '' )
 			    + '</text>';
@@ -138,7 +138,7 @@ let drawReference = (function() {
 			height       : '20',
 			name         : 'Label libre',
 			availOptions : [ 'text' ],
-			draw         : (options) => '<text x="0" y="10" font-family="Verdana" font-size="6">' + options.text + '</text>'
+			draw         : (options) => '<text x="0" y="10">' + options.text + '</text>'
   		},
   		Hotte: {
 			width        : 20,
