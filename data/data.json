@@ -2,31 +2,36 @@
   "plans": {
     "cave": {
       "src": "/data/cave.jpg",
-      "scale": 0.50,
       "width": 1090,
       "height": 721
     },
     "rdc": {
       "src": "/data/rdc.png",
-      "scale": 0.50,
       "width": 1089,
       "height": 722
     },
     "etage": {
       "src": "/data/etage.png",
-      "scale": 0.50,
       "width": 1089,
       "height": 722
     },
     "grenier": {
       "src": "/data/grenier.png",
-      "scale": 0.50,
       "width": 1025,
       "height": 675
     },
     "abri-jardin": {
       "src": "/data/abri-jardin.png",
-      "scale": 0.25,
+      "width": 690,
+      "height": 465
+    },
+    "piscine": {
+      "src": "/data/piscine.jpg",
+      "width": 690,
+      "height": 465
+    },
+    "piscine-technique": {
+      "src": "/data/piscine-technique.png",
       "width": 690,
       "height": 465
     }

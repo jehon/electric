@@ -40,11 +40,6 @@ let draw = (function() {
 
 		// SVG transform the result
 
-		scale(proportion) {
-			// TODO: implement and check
-			return this;
-		}
-
 		// Draw the result
 
 		build() {
