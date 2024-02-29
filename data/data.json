@@ -1527,29 +1527,20 @@
                         "next": [
                           {
                             "type": "S",
-                            "x": 205,
-                            "y": 373,
+                            "x": 310,
+                            "y": 390,
                             "orientation": 180,
-                            "plan": "grenier",
+                            "plan": "etage",
                             "options": {
                               "bidir": true
                             },
                             "next": [
                               {
                                 "type": "L",
-                                "x": 209,
-                                "y": 320,
+                                "x": 270,
+                                "y": 370,
                                 "orientation": 0,
-                                "plan": "grenier",
-                                "next": [
-                                  {
-                                    "type": "L",
-                                    "x": 110,
-                                    "y": 320,
-                                    "orientation": 0,
-                                    "plan": "grenier"
-                                  }
-                                ]
+                                "plan": "etage"
                               }
                             ]
                           }
