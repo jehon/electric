@@ -10,6 +10,11 @@ let drawReference = (function() {
 	  		name         : 'Place vide',
 			draw         : ''
 		},
+		Text: {
+			width        : 0,
+			height       : 0,
+			name         : 'Texte',
+		},
 		P: {
 			width        : 20,
 			height       : 25,

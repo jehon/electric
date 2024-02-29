@@ -2435,17 +2435,17 @@
                               {
                                 "type": "Disj",
                                 "reference": "E07",
-                                "label": "Pompe",
+                                "label": "Pompe piscine",
                                 "options": {
                                   "I": 8
                                 },
                                 "next": [
                                   {
-                                    "type": "P",
+                                    "type": "Text",
+                                    "label": "Pompe",
                                     "plan": "piscine-technique",
-                                    "x": 314,
-                                    "y": 128,
-                                    "orientation": 90
+                                    "x": 230,
+                                    "y": 450
                                   }
                                 ]
                               },
@@ -2477,11 +2477,24 @@
                                   {
                                     "type": "Disj",
                                     "reference": "E12",
-                                    "label": "Eclairages",
+                                    "label": "Eclairage sous-marins",
                                     "options": {
                                       "I": 4
                                     },
-                                    "next": []
+                                    "next": [
+                                      {
+                                        "type": "L",
+                                        "plan": "piscine",
+                                        "x": 480,
+                                        "y": 540
+                                      },
+                                      {
+                                        "type": "L",
+                                        "plan": "piscine",
+                                        "x": 600,
+                                        "y": 820
+                                      }
+                                    ]
                                   },
                                   {
                                     "type": "Disj",
@@ -2490,7 +2503,37 @@
                                     "options": {
                                       "I": 10
                                     },
-                                    "next": []
+                                    "next": [
+                                      {
+                                        "type": "S",
+                                        "plan": "piscine-technique",
+                                        "x": 80,
+                                        "y": 290,
+                                        "orientation": 270,
+                                        "next": [
+                                          {
+                                            "type": "L",
+                                            "plan": "piscine-technique",
+                                            "x": 170,
+                                            "y": 330
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "type": "P",
+                                        "plan": "piscine-technique",
+                                        "x": 60,
+                                        "y": 290,
+                                        "orientation": 270
+                                      },
+                                      {
+                                        "type": "P",
+                                        "plan": "piscine-technique",
+                                        "x": 314,
+                                        "y": 128,
+                                        "orientation": 90
+                                      }
+                                    ]
                                   },
                                   {
                                     "type": "Disj",
