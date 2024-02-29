@@ -1993,76 +1993,21 @@
                 "label": "Vers coffret D",
                 "next": [
                   {
-                    "type": "P",
-                    "x": 446,
-                    "y": 557,
-                    "orientation": 180,
-                    "plan": "grenier",
+                    "type": "Disj",
+                    "reference": "D1",
+                    "label": "Coffret D",
                     "next": [
                       {
-                        "type": "P",
-                        "x": 446,
-                        "y": 527,
-                        "orientation": 180,
-                        "plan": "grenier",
-                        "next": [
-                          {
-                            "type": "P",
-                            "x": 206,
-                            "y": 389,
-                            "orientation": 0,
-                            "plan": "grenier",
-                            "next": [
-                              {
-                                "type": "S",
-                                "x": 206,
-                                "y": 410,
-                                "orientation": 0,
-                                "plan": "grenier",
-                                "options": {
-                                  "bidir": true
-                                },
-                                "next": [
-                                  {
-                                    "type": "S",
-                                    "x": 590,
-                                    "y": 430,
-                                    "orientation": 180,
-                                    "plan": "grenier",
-                                    "options": {
-                                      "bidir": true
-                                    },
-                                    "next": [
-                                      {
-                                        "type": "Neon",
-                                        "x": 470,
-                                        "y": 396,
-                                        "orientation": 90,
-                                        "plan": "grenier",
-                                        "next": [
-                                          {
-                                            "type": "Neon",
-                                            "x": 135,
-                                            "y": 420,
-                                            "orientation": 90,
-                                            "plan": "grenier"
-                                          },
-                                          {
-                                            "type": "Neon",
-                                            "x": 791,
-                                            "y": 170,
-                                            "orientation": 90,
-                                            "plan": "grenier"
-                                          }
-                                        ]
-                                      }
-                                    ]
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
+                        "type": "Disj",
+                        "reference": "D2",
+                        "label": "Coffret D",
+                        "next": []
+                      },
+                      {
+                        "type": "Disj",
+                        "reference": "D3",
+                        "label": "Coffret D",
+                        "next": []
                       }
                     ]
                   }
