@@ -27,13 +27,13 @@
     },
     "piscine": {
       "src": "/data/piscine.jpg",
-      "width": 690,
-      "height": 465
+      "width": 826,
+      "height": 1169
     },
     "piscine-technique": {
       "src": "/data/piscine-technique.png",
-      "width": 690,
-      "height": 465
+      "width": 423,
+      "height": 720
     }
   },
   "schema": {
@@ -2423,7 +2423,107 @@
                         "options": {
                           "I": 32
                         },
-                        "next": []
+                        "next": [
+                          {
+                            "type": "Disj",
+                            "reference": "E01",
+                            "label": "Général",
+                            "options": {
+                              "I": 32
+                            },
+                            "next": [
+                              {
+                                "type": "Disj",
+                                "reference": "E07",
+                                "label": "Pompe",
+                                "options": {
+                                  "I": 8
+                                },
+                                "next": []
+                              },
+                              {
+                                "type": "Disj",
+                                "reference": "E08",
+                                "label": "Pompe-à-chaleur",
+                                "options": {
+                                  "I": 20
+                                },
+                                "next": []
+                              },
+                              {
+                                "type": "Disj",
+                                "reference": "E11",
+                                "options": {
+                                  "I": 40,
+                                  "Isec": "30"
+                                },
+                                "next": [
+                                  {
+                                    "type": "Disj",
+                                    "reference": "E12",
+                                    "label": "Eclairages",
+                                    "options": {
+                                      "I": 4
+                                    },
+                                    "next": []
+                                  },
+                                  {
+                                    "type": "Disj",
+                                    "reference": "E13",
+                                    "label": "Sous-sol",
+                                    "options": {
+                                      "I": 10
+                                    },
+                                    "next": []
+                                  },
+                                  {
+                                    "type": "Disj",
+                                    "reference": "E14",
+                                    "label": "Pool house",
+                                    "options": {
+                                      "I": 10
+                                    },
+                                    "next": []
+                                  },
+                                  {
+                                    "type": "Disj",
+                                    "reference": "E15",
+                                    "label": "Chimie",
+                                    "options": {
+                                      "I": 16
+                                    },
+                                    "next": []
+                                  },
+                                  {
+                                    "type": "Disj",
+                                    "reference": "E16",
+                                    "label": "Volet",
+                                    "options": {
+                                      "I": 10
+                                    },
+                                    "next": []
+                                  },
+                                  {
+                                    "type": "Disj",
+                                    "reference": "E17",
+                                    "label": "vide",
+                                    "options": {
+                                      "I": 20
+                                    }
+                                  },
+                                  {
+                                    "type": "Disj",
+                                    "reference": "E18",
+                                    "label": "vide",
+                                    "options": {
+                                      "I": 20
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
                       },
                       {
                         "type": "Disj",
