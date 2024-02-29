@@ -2001,13 +2001,157 @@
                         "type": "Disj",
                         "reference": "D2",
                         "label": "Coffret D",
-                        "next": []
+                        "next": [
+                          {
+                            "type": "PB",
+                            "label": "Escalier",
+                            "plan": "grenier",
+                            "x": 680,
+                            "y": 270,
+                            "orientation": 180,
+                            "next": [
+                              {
+                                "type": "PB",
+                                "label": "Escalier",
+                                "plan": "grenier",
+                                "x": 770,
+                                "y": 315,
+                                "orientation": 90,
+                                "next": [
+                                  {
+                                    "type": "L",
+                                    "label": "Escalier",
+                                    "plan": "grenier",
+                                    "x": 720,
+                                    "y": 290
+                                  },
+                                  {
+                                    "type": "L",
+                                    "label": "Escalier",
+                                    "plan": "grenier",
+                                    "x": 650,
+                                    "y": 160
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "S",
+                            "label": "Grande pièce",
+                            "plan": "grenier",
+                            "x": 680,
+                            "y": 260,
+                            "orientation": 180,
+                            "next": [
+                              {
+                                "type": "L",
+                                "plan": "grenier",
+                                "x": 740,
+                                "y": 160
+                              },
+                              {
+                                "type": "L",
+                                "plan": "grenier",
+                                "x": 800,
+                                "y": 160
+                              },
+                              {
+                                "type": "L",
+                                "plan": "grenier",
+                                "x": 860,
+                                "y": 160
+                              },
+                              {
+                                "type": "L",
+                                "plan": "grenier",
+                                "x": 920,
+                                "y": 160
+                              }
+                            ]
+                          }
+                        ]
                       },
                       {
                         "type": "Disj",
                         "reference": "D3",
                         "label": "Coffret D",
-                        "next": []
+                        "next": [
+                          {
+                            "type": "P",
+                            "label": "Pièce centrale",
+                            "plan": "grenier",
+                            "x": 600,
+                            "y": 150,
+                            "orientation": 90
+                          },
+                          {
+                            "type": "S",
+                            "label": "Pièce centrale",
+                            "plan": "grenier",
+                            "x": 600,
+                            "y": 170,
+                            "orientation": 90,
+                            "next": [
+                              {
+                                "type": "L",
+                                "plan": "grenier",
+                                "x": 350,
+                                "y": 320
+                              },
+                              {
+                                "type": "L",
+                                "plan": "grenier",
+                                "x": 500,
+                                "y": 320
+                              }
+                            ]
+                          },
+                          {
+                            "type": "P",
+                            "plan": "grenier",
+                            "label": "Petite pièce",
+                            "x": 275,
+                            "y": 520,
+                            "orientation": 90
+                          },
+                          {
+                            "type": "S",
+                            "label": "Petite pièce",
+                            "plan": "grenier",
+                            "x": 275,
+                            "y": 500,
+                            "orientation": 90,
+                            "next": [
+                              {
+                                "type": "L",
+                                "plan": "grenier",
+                                "x": 270,
+                                "y": 450
+                              },
+                              {
+                                "type": "L",
+                                "plan": "grenier",
+                                "x": 200,
+                                "y": 360
+                              },
+                              {
+                                "type": "L",
+                                "plan": "grenier",
+                                "x": 120,
+                                "y": 360
+                              }
+                            ]
+                          },
+                          {
+                            "type": "P",
+                            "plan": "grenier",
+                            "label": "VMC",
+                            "x": 430,
+                            "y": 590,
+                            "orientation": 180
+                          }
+                        ]
                       }
                     ]
                   }
