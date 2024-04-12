@@ -37,15 +37,16 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
     let res = this.getSVG();
 
     this.innerHTML = `
-	      <div style='height: 100%; width: 100%'>
+        <button id="print">print</button>
+        <div style='height: 100%; width: 100%'>
 		  	  <h3>${this.getTitle()}</h3>
 	        <svg 
-					preserveAspectRatio="xMinYMin slice" 
-					stroke='black'
-					fill='none'
-					width=${res.width}
-					height=${res.height}
-				>
+            preserveAspectRatio="xMinYMin slice" 
+            stroke='black'
+            fill='none'
+            width=${res.width}
+            height=${res.height}
+          >
 	          ${res.svg}
 	        </svg>
 	      </div>
@@ -67,6 +68,10 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
         currentElementDispatcher.setState(el);
       })
     );
+
+    this.querySelector("#print").addEventListener("click", () => {
+      this.print();
+    });
 
     this.selectElement();
   }
