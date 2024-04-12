@@ -4,17 +4,23 @@ class InstallationPosition extends InstallationAbstractSVG {
     return new BuildPosition(this.installation.schema);
   }
 
-  static get observedAttributes() { return [ 'value' ]; }
+  static get observedAttributes() {
+    return ["value"];
+  }
 
   attributeChangedCallback(attributeName, oldValue, newValue, namespace) {
-    switch(attributeName) {
-      case 'value':
+    switch (attributeName) {
+      case "value":
         this.value = newValue;
         break;
     }
     if (this.installation) {
       this.render();
     }
+  }
+
+  getTitle() {
+    return "Plan: " + this.value;
   }
 
   getSVG() {
@@ -25,7 +31,13 @@ class InstallationPosition extends InstallationAbstractSVG {
 
     if (!(this.value in this.installation.plans)) {
       this.empty();
-      return Promise.reject("Plan is unknown: ", this.value, " in ", Object.keys(installation.plans), " in installation-position.getSVG()");
+      return Promise.reject(
+        "Plan is unknown: ",
+        this.value,
+        " in ",
+        Object.keys(installation.plans),
+        " in installation-position.getSVG()"
+      );
     }
 
     let plan = this.installation.plans[this.value];
@@ -35,7 +47,7 @@ class InstallationPosition extends InstallationAbstractSVG {
       svg: `
             <image opacity=0.5 x=0 y=0 width="${plan.width}px" height="${plan.height}px" href=${plan.src} />
             ${this.getCachedBuilder().build("" + this.value)}
-      `
+      `,
     };
   }
 }
