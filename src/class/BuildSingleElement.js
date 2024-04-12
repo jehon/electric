@@ -1,44 +1,41 @@
+import Builder from "./Builder.js";
+import drawReference from "./DrawReference.js";
 
-BuildSingleElement = (function() {
-	let uuidCounter = 1;
+let uuidCounter = 1;
 
-	class BuildSingleElement extends Builder {
-		static nextUUID() {
-			return uuidCounter;
-		}
+export default class BuildSingleElement extends Builder {
+  static nextUUID() {
+    return uuidCounter;
+  }
 
-		static testResetUUID() {
-			uuidCounter = 1;
-		}
+  static testResetUUID() {
+    uuidCounter = 1;
+  }
 
-		static assignUUID(element) {
-			if (!("getId" in element)) {
-				// Copy the value to fix it
-				const localUUID = uuidCounter++;
-				element.getId = () => localUUID;
-			}
+  static assignUUID(element) {
+    if (!("getId" in element)) {
+      // Copy the value to fix it
+      const localUUID = uuidCounter++;
+      element.getId = () => localUUID;
+    }
 
-			if (!("getReference" in element)) {
-				const ref = drawReference(element.type);
-				element.getReference = () => ref;
-			}
+    if (!("getReference" in element)) {
+      const ref = drawReference(element.type);
+      element.getReference = () => ref;
+    }
 
-			if (!("getVal" in element)) {
-				element.getVal = function(name) {
-					if (name in element) {
-						return element[name];
-					}
-					return (element.getReference().getVal(name));
-				}
-			}
-		}
+    if (!("getVal" in element)) {
+      element.getVal = function (name) {
+        if (name in element) {
+          return element[name];
+        }
+        return element.getReference().getVal(name);
+      };
+    }
+  }
 
-		// Param uuid is used when searching for an UUID
-		buildSelf() {
-			this.constructor.assignUUID(this._currentElement);
-		}
-	}
-
-	return BuildSingleElement;
-})();
-
+  // Param uuid is used when searching for an UUID
+  buildSelf() {
+    this.constructor.assignUUID(this._currentElement);
+  }
+}

@@ -1,11 +1,5 @@
+export default class DisplayAccordeon extends HTMLElement {
+  connectedCallback() {}
+}
 
-(function() {
-  class DisplayAccordeon extends HTMLElement {
-  	connectedCallback() {
-		  		
-  	}
-  }
-
-  customElements.define('display-accordeon', DisplayAccordeon);
-
-})();
+customElements.define("display-accordeon", DisplayAccordeon);

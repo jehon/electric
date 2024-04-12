@@ -1,4 +1,9 @@
-class InstallationAbstractSVG extends InstallationAbstract {
+// See https://raw.githack.com/MrRio/jsPDF/master/docs/index.html
+// import { jsPDF } from "jspdf";
+
+import InstallationAbstract from "./InstallationAbstract.js";
+
+export default class InstallationAbstractSVG extends InstallationAbstract {
   constructor() {
     super();
     this.builder = false;
@@ -86,6 +91,17 @@ class InstallationAbstractSVG extends InstallationAbstract {
   redrawElement(i) {
     // replacedNode = parentNode.replaceChild(newChild, oldChild);
     this.render();
+  }
+
+  print() {
+    // Default export is a4 paper, portrait, using millimeters for units
+    const doc = new jsPDF({
+      orientation: "landscape",
+    });
+
+    doc.text("Hello world!", 10, 10);
+    doc.save(this.getTitle() + ".pdf");
+    // doc.output("pdfjsnewwindow");
   }
 }
 

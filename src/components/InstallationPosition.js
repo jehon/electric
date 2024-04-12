@@ -1,5 +1,7 @@
+import InstallationAbstractSVG from "./InstallationAbstractSVG.js";
+import BuildPosition from "../class/BuildPosition.js";
 
-class InstallationPosition extends InstallationAbstractSVG {
+export default class InstallationPosition extends InstallationAbstractSVG {
   getBuilderForInstallation() {
     return new BuildPosition(this.installation.schema);
   }
@@ -52,4 +54,4 @@ class InstallationPosition extends InstallationAbstractSVG {
   }
 }
 
-customElements.define('installation-position', InstallationPosition);
+customElements.define("installation-position", InstallationPosition);

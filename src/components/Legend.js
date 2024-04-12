@@ -1,20 +1,23 @@
+import DrawReference from "../class/DrawReference";
 
-class Legend extends HTMLElement {
+export default class Legend extends HTMLElement {
   constructor() {
     super();
     this.value = "P";
     this.options = {};
   }
 
-  static get observedAttributes() { return ['value', 'options' ]; }
+  static get observedAttributes() {
+    return ["value", "options"];
+  }
 
   attributeChangedCallback(attributeName, oldValue, newValue, namespace) {
-    switch(attributeName) {
-      case 'value':
+    switch (attributeName) {
+      case "value":
         this.value = this.getAttribute("value");
         this.render();
         break;
-      case 'options':
+      case "options":
         this.options = JSON.parse(this.getAttribute("options"));
         this.render();
         break;
@@ -24,8 +27,11 @@ class Legend extends HTMLElement {
   render() {
     const X0 = 10;
     const Y0 = 20;
-    let schema = Object.assign({ type: this.value, x: X0, y: Y0, plan: "legend" }, this.options);
-    (new BuildSingleElement(schema)).build();
+    let schema = Object.assign(
+      { type: this.value, x: X0, y: Y0, plan: "legend" },
+      this.options
+    );
+    new BuildSingleElement(schema).build();
     // (new BuildName(schema)).build();
     let builder = new BuildPosition(schema);
 
@@ -38,7 +44,7 @@ class Legend extends HTMLElement {
                     <g stroke="red">
                       <line x1=-100 y1=20 x2=100 y2=20 />
                       <line x1=10 y1=-100 x2=10 y2=100 />
-                      <rect x=${X0} y=${Y0 -schema.getVal("toTop")} width=${schema.getVal("width")} height=${schema.getVal("height")} fill="none"/>
+                      <rect x=${X0} y=${Y0 - schema.getVal("toTop")} width=${schema.getVal("width")} height=${schema.getVal("height")} fill="none"/>
                       <g stroke="black">
                         ${builder.build("legend")}
                       </g>
@@ -46,11 +52,11 @@ class Legend extends HTMLElement {
                 </svg>
             </div>
             <div class="col-md-8">
-              <pre>${JSON.stringify(drawReference(this.value), null, 2)}</pre>
+              <pre>${JSON.stringify(DrawReference(this.value), null, 2)}</pre>
             </div>
         </div>
     `;
   }
 }
 
-customElements.define('x-legend', Legend);
+customElements.define("x-legend", Legend);

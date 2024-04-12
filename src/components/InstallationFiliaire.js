@@ -1,5 +1,7 @@
+import InstallationAbstractSVG from "./InstallationAbstractSVG.js";
+import BuildFiliaire from "../class/BuildFiliaire.js";
 
-class InstallationFiliaire extends InstallationAbstractSVG {
+export default class InstallationFiliaire extends InstallationAbstractSVG {
   constructor() {
     super();
     this.value = "filiaire";
@@ -18,4 +20,4 @@ class InstallationFiliaire extends InstallationAbstractSVG {
   }
 }
 
-customElements.define('installation-filiaire', InstallationFiliaire);
+customElements.define("installation-filiaire", InstallationFiliaire);
