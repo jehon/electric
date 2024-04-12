@@ -96,9 +96,9 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
       orientation: "landscape",
     });
 
-    pdf.text("Hello world!", 10, 10);
+    pdf.text(this.getTitle(), 10, 10);
+    // Open a save-as window
     pdf.save(this.getTitle() + ".pdf");
-    // doc.output("pdfjsnewwindow");
   }
 }
 
