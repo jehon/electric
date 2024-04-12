@@ -5,9 +5,6 @@
   "description": "Electric mapping",
   "repository": "https://github.com/jehon/electric",
   "license": "MIT",
-  "dependencies": {
-    "jspdf": "2.5.1"
-  },
   "devDependencies": {
     "@types/node": "20.11.17",
     "@typescript-eslint/eslint-plugin": "6.21.0",

@@ -1,6 +1,3 @@
-// See https://raw.githack.com/MrRio/jsPDF/master/docs/index.html
-// import { jsPDF } from "jspdf";
-
 import InstallationAbstract from "./InstallationAbstract.js";
 
 export default class InstallationAbstractSVG extends InstallationAbstract {
@@ -95,12 +92,12 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
 
   print() {
     // Default export is a4 paper, portrait, using millimeters for units
-    const doc = new jsPDF({
+    const pdf = new window.jspdf.jsPDF({
       orientation: "landscape",
     });
 
-    doc.text("Hello world!", 10, 10);
-    doc.save(this.getTitle() + ".pdf");
+    pdf.text("Hello world!", 10, 10);
+    pdf.save(this.getTitle() + ".pdf");
     // doc.output("pdfjsnewwindow");
   }
 }
