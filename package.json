@@ -5,9 +5,10 @@
   "description": "Electric mapping",
   "repository": "https://github.com/jehon/electric",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "jspdf": "2.5.1"
+  },
   "devDependencies": {
-    "typescript": "~5.3.2",
     "@types/node": "20.11.17",
     "@typescript-eslint/eslint-plugin": "6.21.0",
     "@typescript-eslint/parser": "6.21.0",
@@ -15,8 +16,8 @@
     "fs-extra": "latest",
     "glob": "latest",
     "prettier": "3.2.5",
-    "ts-loader": "^9.5.1",
-    "webpack-cli": "^5.1.4"
+    "ts-loader": "9.5.1",
+    "typescript": "5.3.2"
   },
   "scripts": {
     "start": "open src/index.html"
