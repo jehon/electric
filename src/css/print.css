@@ -1,6 +1,6 @@
 @media print {
-    installation-navigation,
-        element-editor {
-        display: none;
-    }
+  installation-navigation,
+  element-editor {
+    display: none;
+  }
 }

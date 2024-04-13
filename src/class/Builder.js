@@ -1,4 +1,3 @@
-
 // For override: see findByUUID !
 
 // Problem: how to initialize default values correctly? See BuildName init
@@ -28,7 +27,7 @@ export default class Builder {
     // Caching should be done here...
 
     return new this.constructor(element).build(
-      this.getDescendantBuildParameters({ isDirect, index })
+      this.getDescendantBuildParameters({ isDirect, index }),
     );
   }
 

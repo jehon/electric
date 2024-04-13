@@ -49,7 +49,7 @@ export default class BuildPosition extends BuildName {
     const tp = away(
       this._currentElement.getVal("width"),
       this._currentElement.getVal("toTop"),
-      this._currentElement.getVal("orientation")
+      this._currentElement.getVal("orientation"),
     );
 
     //					<circle cx=0 cy=0 r=2 fill=red />

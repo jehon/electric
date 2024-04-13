@@ -1,4 +1,3 @@
-
 // Thanks to https://stackoverflow.com/a/26339560/1954789
 export default function imageSize(url) {
   let img = new Image();

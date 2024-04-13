@@ -211,7 +211,7 @@ export default function (type) {
         innerHeight: ref.height,
         getVal: getVal,
       },
-      ref
-    )
+      ref,
+    ),
   );
 }

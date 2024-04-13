@@ -47,4 +47,3 @@ export class Drawer {
 export default function draw(element) {
   return new Drawer(element);
 }
-

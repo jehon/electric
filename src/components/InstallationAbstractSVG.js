@@ -32,6 +32,13 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
   getSVGTag() {
     let res = this.getSVG();
 
+    const svg = res.svg
+      .replaceAll(/\r/g, "")
+      .replaceAll(/\n/g, "")
+      .replaceAll(/\t/g, "")
+      .replaceAll(/> +</g, "><")
+      .trim();
+
     return `<svg 
         preserveAspectRatio="xMinYMin slice" 
         stroke='black'
@@ -100,6 +107,31 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
   }
 
   async print() {
+    const svg = this.getSVGTag();
+    // https://github.com/parallax/jsPDF/blob/master/examples/canvg_context2d/bar_graph_with_text_and_lines.html
+    // var c = pdf.canvas;
+    // c.width = 1000;
+    // c.height = 500;
+
+    // var ctx = c.getContext("2d");
+    // ctx.ignoreClearRect = true;
+    // ctx.fillStyle = "#ffff00";
+    // ctx.fillRect(0, 0, 1000, 700);
+
+    // //load a svg snippet in the canvas with id = 'drawingArea'
+    // const v = await Canvg.Canvg.from(
+    //   ctx,
+    //   document.querySelector("svg").outerHTML
+    //   // Canvg.presets.offscreen()
+    // );
+    // await v.render();
+
+    // var canvas = document.createElement("canvas");
+    // // const c = new Canvg.Canvg(canvas, svg);
+    // var imgData = canvas.toDataURL("image/png");
+    // console.log(imgData);
+    // pdf.addImage(imgData, "PNG", 40, 40, 750, 750);
+
     // Default export is a4 paper, portrait, using millimeters for units
     const pdf = new jsPDF({
       orientation: "landscape",
@@ -107,23 +139,7 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
 
     pdf.text(this.getTitle(), 10, 10);
 
-    // https://github.com/parallax/jsPDF/blob/master/examples/canvg_context2d/bar_graph_with_text_and_lines.html
-    var c = pdf.canvas;
-    c.width = 1000;
-    c.height = 500;
-
-    var ctx = c.getContext("2d");
-    ctx.ignoreClearRect = true;
-    ctx.fillStyle = "#fffff0";
-    ctx.fillRect(0, 0, 1000, 700);
-
-    //load a svg snippet in the canvas with id = 'drawingArea'
-    const v = await Canvg.Canvg.from(
-      ctx,
-      document.querySelector("svg").outerHTML,
-      Canvg.presets.offscreen()
-    );
-    await v.render();
+    await pdf.addSvgAsImage(svg, 20, 20, 100, 100);
 
     // Open a save-as window
     pdf.save(this.getTitle() + ".pdf");

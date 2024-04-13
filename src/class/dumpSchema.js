@@ -16,12 +16,12 @@ class DumpSchemaBuilder extends BuildName {
     console.info(
       (this._currentElement.getId() + "     ").substring(
         0,
-        1 + Math.ceil(Math.log10(BuildSingleElement.nextUUID()))
+        1 + Math.ceil(Math.log10(BuildSingleElement.nextUUID())),
       ) +
         this.print +
         this._currentElement.getName() +
         ": " +
-        this._currentElement.type
+        this._currentElement.type,
     );
   }
 }

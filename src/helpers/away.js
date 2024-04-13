@@ -1,4 +1,3 @@
-
 export default function away(w, h, angle) {
   // Normalize angle in [O, 360[
   while (angle < 0) {

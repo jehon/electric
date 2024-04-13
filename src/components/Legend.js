@@ -29,7 +29,7 @@ export default class Legend extends HTMLElement {
     const Y0 = 20;
     let schema = Object.assign(
       { type: this.value, x: X0, y: Y0, plan: "legend" },
-      this.options
+      this.options,
     );
     new BuildSingleElement(schema).build();
     // (new BuildName(schema)).build();

@@ -38,7 +38,7 @@ export default class InstallationPosition extends InstallationAbstractSVG {
         this.value,
         " in ",
         Object.keys(installation.plans),
-        " in installation-position.getSVG()"
+        " in installation-position.getSVG()",
       );
     }
 

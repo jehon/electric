@@ -35,7 +35,7 @@ class IdFinderBuilder extends BuildSingleElement {
     }
     let na = alternate.reduce(
       (acc, val) => (acc ? acc : val ? val : false),
-      false
+      false,
     );
     if (na) {
       return na;

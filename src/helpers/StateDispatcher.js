@@ -66,4 +66,4 @@ export default class StateDispatch {
       this[listMap].delete(k);
     };
   }
-};
+}

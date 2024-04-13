@@ -56,10 +56,10 @@ export default class InstallationNavigation extends InstallationAbstract {
   select(val) {
     this.value = val;
     this.querySelectorAll(`li:not([element=${val}])`).forEach(
-      (e) => (e.className = e.className.replace("active", ""))
+      (e) => (e.className = e.className.replace("active", "")),
     );
     this.querySelectorAll(`li[element=${val}]`).forEach(
-      (e) => (e.className += " active")
+      (e) => (e.className += " active"),
     );
 
     let el = document.querySelector("#tab_target");
