@@ -14,7 +14,7 @@ describe("BuildSingleElementTest.js", function () {
     expect(schema.next[0].getVal("x")).toBe(10);
     expect(schema.next[0].getVal("width")).toBe(20);
     expect(() =>
-      schema.next[0].getVal("test-value-will-console.log"),
+      schema.next[0].getVal("test-value-will-console.log")
     ).toThrow();
 
     expect(schema.next[0].next[0].type).toBe("S");

@@ -3,19 +3,19 @@ const List = {
     width: 25,
     height: 25,
     name: "Place vide",
-    draw: "",
+    draw: ""
   },
   Text: {
     width: 0,
     height: 0,
-    name: "Texte",
+    name: "Texte"
   },
   P: {
     width: 20,
     height: 25,
     innerHeight: 15,
     name: "Prise",
-    draw: '<path d="M0,0 L10,0 m0,-7.5 l0,15 m7.5,-20 l0,5 a7.5 7.5 0 0 0 0 15 l0,5" fill="none"/>',
+    draw: '<path d="M0,0 L10,0 m0,-7.5 l0,15 m7.5,-20 l0,5 a7.5 7.5 0 0 0 0 15 l0,5" fill="none"/>'
   },
   S: {
     width: 22,
@@ -38,7 +38,7 @@ const List = {
           ? '<path d="M10,0 l2,2 M10,0 l2,-2 M10,0 l-2,2 M10,0 l-2,-2" fill="none" />'
           : "")
       );
-    },
+    }
   },
   PB: {
     width: 22,
@@ -55,20 +55,20 @@ const List = {
           ? '<path d="M10,0 l2,2 M10,0 l2,-2 M10,0 l-2,2 M10,0 l-2,-2" fill="none" />'
           : "")
       );
-    },
+    }
   },
   L: {
     type: "roof",
     width: 10,
     height: 10,
     name: "Light",
-    draw: '<path d="M5,0 l5,5 l-10,-10 l5,5 l5,-5 l-10,10" fill="none"/>',
+    draw: '<path d="M5,0 l5,5 l-10,-10 l5,5 l5,-5 l-10,10" fill="none"/>'
   },
   Neon: {
     width: 30,
     height: 10,
     name: "Neon",
-    draw: '<path d="M0,0 l0,5 l0,-10 m0,5 l30,0 l0,5 l0,-10" fill="none" />',
+    draw: '<path d="M0,0 l0,5 l0,-10 m0,5 l30,0 l0,5 l0,-10" fill="none" />'
   },
   Disj: {
     // Rotate ?
@@ -86,7 +86,7 @@ const List = {
         (options.Isec ? "\u25B3" + options.Isec + "mA " : "") +
         "</text>"
       );
-    },
+    }
   },
   Heater: {
     width: 20,
@@ -94,7 +94,7 @@ const List = {
     name: "Chauffage",
     draw:
       '<rect x="0" y="-10" width="20" height="20" fill="none" />' +
-      '<path d="M0,-10 l20,0 M0,-5 l20,0 M0,0 l20,0 M0,5 l20,0" fill="none" />',
+      '<path d="M0,-10 l20,0 M0,-5 l20,0 M0,0 l20,0 M0,5 l20,0" fill="none" />'
   },
   Boiler: {
     width: 20,
@@ -106,7 +106,7 @@ const List = {
       '<circle cx="10" cy="0" r="5" fill="none" >' +
       '<path d="M0,-10 l20,0 M0,-5 l20,0 M0,0 l20,0 M0,5 l20,0" fill="none" />' +
       "</circle>" +
-      '<circle cx="10" cy="0" r="10" fill="none" />',
+      '<circle cx="10" cy="0" r="10" fill="none" />'
   },
 
   CookingPlates: {
@@ -118,7 +118,7 @@ const List = {
       '<rect x="0" y="-10" width="20" height="20" fill="none" />' +
       '<circle cx="15" cy="5"  r="2" fill="currentColor" />' +
       '<circle cx="5"  cy="-5" r="2" fill="currentColor" />' +
-      '<circle cx="15" cy="-5" r="2" fill="currentColor" />',
+      '<circle cx="15" cy="-5" r="2" fill="currentColor" />'
   },
   KNX: {
     // TODO: offshift !!!
@@ -128,7 +128,7 @@ const List = {
     draw:
       '<rect x="0" y="-18" width="20" height="36" fill="white" />' +
       '<path d="M5,-13 l0,10 l10,0" fill="none" />' +
-      '<path d="M5,13 l0,-10 l10,0" fill="none" />',
+      '<path d="M5,13 l0,-10 l10,0" fill="none" />'
   },
   Relais: {
     // TODO: offshift !!!
@@ -138,13 +138,13 @@ const List = {
     draw:
       '<rect x="0" y="-18" width="20" height="36" fill="white" />' +
       '<path d="M5,-13 l0,10 l10,0" fill="none" />' +
-      '<path d="M5,13 l0,-10 l10,0" fill="none" />',
+      '<path d="M5,13 l0,-10 l10,0" fill="none" />'
   },
   Bridge: {
     width: 10,
     height: 1,
     name: "Bridge",
-    draw: '<path d="M0,0 l10,0" fill="none" />',
+    draw: '<path d="M0,0 l10,0" fill="none" />'
   },
   Transfo: {
     width: 20,
@@ -154,14 +154,14 @@ const List = {
       '<line x1="0" x2="2" y1="0" y2="0" fill="none" />' +
       '<circle cx="7"  cy="0" r="5" fill="none" />' +
       '<circle cx="13" cy="0" r="5" fill="none" />' +
-      '<line x1="18" x2="20" y1="0" y2="0" fill="none" />',
+      '<line x1="18" x2="20" y1="0" y2="0" fill="none" />'
   },
   Label: {
     width: "20",
     height: "20",
     name: "Label libre",
     availOptions: ["text"],
-    draw: (options) => '<text x="0" y="10">' + options.text + "</text>",
+    draw: (options) => '<text x="0" y="10">' + options.text + "</text>"
   },
   Hotte: {
     width: 20,
@@ -170,8 +170,8 @@ const List = {
     draw:
       '<rect x="0" y="-10" width="20" height="20" fill="none" />' +
       '<circle cx="6"  cy="0"  r="4" fill="none" />' +
-      '<circle cx="14" cy="0"  r="4" fill="none" />',
-  },
+      '<circle cx="14" cy="0"  r="4" fill="none" />'
+  }
 };
 
 let getVal = function (name) {
@@ -209,9 +209,9 @@ export default function (type) {
         type: type,
         availOptions: [],
         innerHeight: ref.height,
-        getVal: getVal,
+        getVal: getVal
       },
-      ref,
-    ),
+      ref
+    )
   );
 }

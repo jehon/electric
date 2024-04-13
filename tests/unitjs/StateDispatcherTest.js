@@ -15,14 +15,14 @@ describe("dispatcherStateTest", function () {
     expect(sd.getState()).toBe(1);
 
     expect(() => sd.add(1)).toThrow(
-      "Could not add something else than functions !",
+      "Could not add something else than functions !"
     );
   });
 
   it("should throw when adding a non-function as listener", function () {
     let sd = new StateDispatcher();
     expect(() => sd.add(1)).toThrow(
-      "Could not add something else than functions !",
+      "Could not add something else than functions !"
     );
   });
 

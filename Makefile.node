@@ -1,0 +1,70 @@
+ 
+.PHONY: node
+node: clear node-dump node-test node-lint ok
+
+dump: node-dump
+clean: node-clean
+dependencies: node-dependencies
+test: node-test
+lint: node-lint
+
+export PATH := $(ROOT)/node_modules/.bin:$(PATH)
+NODE_ROOT = src/
+NODE_TMP = $(TMP)/node
+NODE_DEPENDENCY_MARK = node_modules/.dependencies
+
+.PHONY: node-dump
+node-dump:
+	node --version
+	npm --version
+
+.PHONY: node-clean
+node-clean:
+	rm -fr "$(NODE_TMP)"
+
+.PHONY: node-dependencies
+node-dependencies: $(NODE_DEPENDENCY_MARK)
+
+$(NODE_DEPENDENCY_MARK): package-lock.json
+	npm ci
+	touch package-lock.json
+#Also done in package.json
+	touch "$@"
+
+package-lock.json: package.json
+	npm install --package-lock-only
+	@touch "$@"
+
+node-build: dist/main.js
+
+dist/main.js: $(NODE_ROOT)/** \
+		node-dependencies
+
+	./node_modules/.bin/webpack
+
+.PHONY: node-lint
+node-lint: node-lint-typescript node-lint-eslint
+
+.PHONY: node-lint-typescript
+node-lint-typescript: $(NODE_DEPENDENCY_MARK)
+	node_modules/.bin/tsc --noEmit
+
+.PHONY: node-lint-eslint
+node-lint-eslint: $(NODE_DEPENDENCY_MARK)
+	eslint --ext js,ts .
+
+.PHONY: eslint-fix
+node-eslint-fix: $(NODE_DEPENDENCY_MARK)
+	eslint --ext js,mjs . --fix
+
+.PHONY: node-test
+node-test: $(NODE_DEPENDENCY_MARK)
+	rm -fr "$(NODE_TMP)"
+	mkdir -p "$(NODE_TMP)"
+# Check reporters: https://nodejs.org/api/test.html#test-reporters
+# --experimental-test-coverage
+	node --import tsx/esm --harmony-temporal $(ARGS) --test "$(NODE_ROOT)/**/*.spec.ts"
+
+.PHONY: node-test-watch
+node-test-watch:
+	ARGS="--watch" make node-test

@@ -88,14 +88,14 @@ export default class ElementEditor extends InstallationAbstract {
     });
 
     this.querySelector("[name='name']").addEventListener("change", () =>
-      this.nameChanged(),
+      this.nameChanged()
     );
 
     this.querySelector("[name='plan']").addEventListener("change", () =>
-      this.planChanged(),
+      this.planChanged()
     );
     this.querySelectorAll("[name^='plan_']").forEach((el) =>
-      el.addEventListener("change", () => this.positionChanged()),
+      el.addEventListener("change", () => this.positionChanged())
     );
   }
 
@@ -184,21 +184,21 @@ export default class ElementEditor extends InstallationAbstract {
     if (this.currentElement.plan) {
       this.querySelector("[name='plan']").value = this.currentElement.plan;
       this.querySelectorAll("[name^='plan_']").forEach((el) =>
-        el.removeAttribute("disabled"),
+        el.removeAttribute("disabled")
       );
       this.querySelector("[name='plan']").value = "";
       this.querySelector("[name='plan_x']").value = this.currentElement.x;
       this.querySelector("[name='plan_y']").value = this.currentElement.y;
     } else {
       this.querySelectorAll("[name^='plan_']").forEach((el) =>
-        el.setAttribute("disabled", true),
+        el.setAttribute("disabled", true)
       );
     }
   }
 
   getMainElement() {
     return document.querySelector(
-      "installation-filiaire, installation-position",
+      "installation-filiaire, installation-position"
     );
   }
 }

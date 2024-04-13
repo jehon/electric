@@ -26,7 +26,7 @@ export default class BuildFiliaire extends BuildName {
 					${draw(this._currentElement).build()}
 					${this.label()}
 				</g>
-				`,
+				`
     };
 
     return res;
@@ -94,7 +94,7 @@ export default class BuildFiliaire extends BuildName {
       svg: _svg + self.svg,
       // Width = position of next line
       width: Math.max(self.width, currentBlockWidth),
-      height: Math.max(self.height, maxHeightOfLine),
+      height: Math.max(self.height, maxHeightOfLine)
     };
   }
 

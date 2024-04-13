@@ -17,7 +17,7 @@ export default function away(w, h, angle) {
     get y() {
       return Math.max(0, w * Math.sin(rad) + Math.abs((h / 2) * Math.cos(rad)));
       // return d * Math.cos(angle / 180 * Math.PI);
-    },
+    }
 
     // alignmentH: function() {
     //   if (angle < 45)  { return 'middle'; }

@@ -8,21 +8,21 @@ const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 export default {
   mode: "development",
   entry: {
-    main: path.join(__dirname, "/src/main.js"),
+    main: path.join(__dirname, "/src/main.js")
   },
   output: {
     path: path.join(__dirname, "dist"),
-    filename: "[name].js",
+    filename: "[name].js"
   },
   resolve: {
-    extensions: [".ts", ".js", ".tsx"],
+    extensions: [".ts", ".js", ".tsx"]
   },
   module: {
     rules: [
       {
         test: /\.tsx?/,
-        use: [{ loader: "ts-loader" }],
-      },
-    ],
-  },
+        use: [{ loader: "ts-loader" }]
+      }
+    ]
+  }
 };

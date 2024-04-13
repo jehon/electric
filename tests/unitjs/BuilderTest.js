@@ -5,7 +5,7 @@ describe("BuilderTest.js", function () {
     i = {
       desc: 0,
       assembly: 0,
-      self: 0,
+      self: 0
     };
   };
   resetCounters();

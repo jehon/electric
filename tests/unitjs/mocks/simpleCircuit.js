@@ -29,8 +29,8 @@ const mockSimpleCircuitJSON = JSON.stringify(
                   y: 20,
                   orientation: 270,
                   plan: "cave",
-                  alternate: [{ type: "Neon", x: 30, y: 30, plan: "cave" }],
-                },
+                  alternate: [{ type: "Neon", x: 30, y: 30, plan: "cave" }]
+                }
               ],
               next: [
                 {
@@ -45,21 +45,21 @@ const mockSimpleCircuitJSON = JSON.stringify(
                       y: 50,
                       plan: "cave",
                       bipol: true,
-                      alternate: [{ type: "Neon", x: 50, y: 50, plan: "cave" }],
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-      ],
+                      alternate: [{ type: "Neon", x: 50, y: 50, plan: "cave" }]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     plans: {
       cave: { src: "/cave.jpg", scale: 0.5, width: 100, height: 200 },
-      rdc: { src: "/rdc.png", scale: 0.5, width: 100, height: 200 },
-    },
-  },
+      rdc: { src: "/rdc.png", scale: 0.5, width: 100, height: 200 }
+    }
+  }
 );
 
 function mockSimpleCircuit() {

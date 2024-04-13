@@ -31,7 +31,7 @@ export default class BuildName extends BuildSingleElement {
     } else {
       _setNames(
         this.ref.base + (this.ref.index == 0 ? "" : "." + this.ref.index),
-        this.ref.index,
+        this.ref.index
       );
     }
     return super.buildSelf();

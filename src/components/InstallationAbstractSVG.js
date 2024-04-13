@@ -107,7 +107,6 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
   }
 
   async print() {
-    const svg = this.getSVGTag();
     // https://github.com/parallax/jsPDF/blob/master/examples/canvg_context2d/bar_graph_with_text_and_lines.html
     // var c = pdf.canvas;
     // c.width = 1000;
@@ -134,12 +133,12 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
 
     // Default export is a4 paper, portrait, using millimeters for units
     const pdf = new jsPDF({
-      orientation: "landscape",
+      orientation: "landscape"
     });
 
     pdf.text(this.getTitle(), 10, 10);
 
-    await pdf.addSvgAsImage(svg, 20, 20, 100, 100);
+    await pdf.addSvgAsImage(this.getSVGTag(), 20, 20, 100, 100);
 
     // Open a save-as window
     pdf.save(this.getTitle() + ".pdf");

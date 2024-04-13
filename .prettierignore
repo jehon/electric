@@ -1,0 +1,11 @@
+# Folders
+.mypy_cache
+.vscode
+data
+node_modules
+tmp
+🔒_unused
+
+# Some files
+package.json
+package-lock.json

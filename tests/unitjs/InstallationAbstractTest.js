@@ -75,5 +75,5 @@ webDescribe(
         expect(element().installationChanged).toHaveBeenCalledTimes(0);
       });
     });
-  },
+  }
 );

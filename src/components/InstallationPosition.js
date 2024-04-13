@@ -38,7 +38,7 @@ export default class InstallationPosition extends InstallationAbstractSVG {
         this.value,
         " in ",
         Object.keys(installation.plans),
-        " in installation-position.getSVG()",
+        " in installation-position.getSVG()"
       );
     }
 
@@ -49,7 +49,7 @@ export default class InstallationPosition extends InstallationAbstractSVG {
       svg: `
             <image opacity="0.5" x="0" y="0" width="${plan.width}px" height="${plan.height}px" href="${plan.src}" />
             ${this.getCachedBuilder().build("" + this.value)}
-      `,
+      `
     };
   }
 }

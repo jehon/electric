@@ -13,7 +13,7 @@ webDescribe(
 
         it("should load", function () {
           expect(element().tagName.toLowerCase()).toBe(
-            "installation-navigation",
+            "installation-navigation"
           );
         });
 
@@ -49,10 +49,10 @@ webDescribe(
             expect(element().querySelectorAll(".active").length).toBe(1);
             expect(element().querySelectorAll("#cave.active").length).toBe(1);
             expect(
-              tab_target().querySelectorAll("installation-filiaire").length,
+              tab_target().querySelectorAll("installation-filiaire").length
             ).toBe(0);
             expect(
-              tab_target().querySelectorAll("installation-position").length,
+              tab_target().querySelectorAll("installation-position").length
             ).toBe(1);
           });
 
@@ -60,13 +60,13 @@ webDescribe(
             clickTo(element().querySelector("#filiaire"));
             expect(element().querySelectorAll(".active").length).toBe(1);
             expect(element().querySelectorAll("#filiaire.active").length).toBe(
-              1,
+              1
             );
             expect(
-              tab_target().querySelectorAll("installation-filiaire").length,
+              tab_target().querySelectorAll("installation-filiaire").length
             ).toBe(1);
             expect(
-              tab_target().querySelectorAll("installation-position").length,
+              tab_target().querySelectorAll("installation-position").length
             ).toBe(0);
           });
 
@@ -75,14 +75,14 @@ webDescribe(
             expect(element().querySelectorAll(".active").length).toBe(1);
             expect(element().querySelectorAll("#cave.active").length).toBe(1);
             expect(
-              tab_target().querySelectorAll("installation-filiaire").length,
+              tab_target().querySelectorAll("installation-filiaire").length
             ).toBe(0);
             expect(
-              tab_target().querySelectorAll("installation-position").length,
+              tab_target().querySelectorAll("installation-position").length
             ).toBe(1);
           });
         });
-      },
+      }
     );
-  },
+  }
 );

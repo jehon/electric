@@ -57,5 +57,5 @@ webDescribe(
         expect(element().selectElement).toHaveBeenCalledTimes(2);
       });
     });
-  },
+  }
 );

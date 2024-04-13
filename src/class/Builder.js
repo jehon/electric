@@ -27,7 +27,7 @@ export default class Builder {
     // Caching should be done here...
 
     return new this.constructor(element).build(
-      this.getDescendantBuildParameters({ isDirect, index }),
+      this.getDescendantBuildParameters({ isDirect, index })
     );
   }
 
@@ -62,8 +62,13 @@ export default class Builder {
       );
     }
 
-    // Compose the whole stuff into one
-    return this.buildAssembly(me, next, alternate);
+    // Compose the whole stuff into one and clean it
+    return this.buildAssembly(me, next, alternate)
+      .replaceAll(/\r/g, "")
+      .replaceAll(/\n/g, "")
+      .replaceAll(/\t/g, "")
+      .replaceAll(/> +</g, "><")
+      .trim();
   }
 
   buildSelf() {

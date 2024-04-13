@@ -1,6 +1,6 @@
 import {
   currentElementDispatcher,
-  installationDispatcher,
+  installationDispatcher
 } from "../helpers/start.js";
 
 const callbackInstallation = Symbol("callbackInstallation");
@@ -19,10 +19,10 @@ export default class InstallationAbstract extends HTMLElement {
     }
     this.empty();
     this[callbackInstallation] = installationDispatcher.add((installation) =>
-      this.installationChanged(installation),
+      this.installationChanged(installation)
     );
     this[callbackElement] = currentElementDispatcher.add((element) =>
-      this.currentElementChanged(element),
+      this.currentElementChanged(element)
     );
   }
 

@@ -15,7 +15,7 @@ function clickTo(element, selector = false) {
     false,
     false /* modifier keys */,
     0 /*left*/,
-    null,
+    null
   );
   if (selector === false) {
     element.dispatchEvent(ev);
@@ -30,7 +30,7 @@ function loadMock(mock, type) {
     if (type) {
       data = appState().helpers.create(
         type,
-        appState().helpers.objectify(data),
+        appState().helpers.objectify(data)
       );
     }
     return data;
@@ -97,7 +97,7 @@ function webDescribe(title, html, fn) {
           clearInterval(interval);
           done.fail(
             "testComponent: component could not be instanciated ",
-            html,
+            html
           );
           return;
         }
