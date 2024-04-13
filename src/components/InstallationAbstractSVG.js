@@ -1,5 +1,7 @@
 import jsPDF from "jspdf";
 import BuildName from "../class/BuildName.js";
+import findByUUID from "../class/findByUUID.js";
+import { currentElementDispatcher } from "../helpers/start.js";
 import InstallationAbstract from "./InstallationAbstract.js";
 
 export default class InstallationAbstractSVG extends InstallationAbstract {
@@ -63,10 +65,10 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
           </div>
 	    `;
 
-    this.querySelector("svg").addEventListener("click", (event) => {
-      var rect = event.target.getBoundingClientRect();
-      var x = Math.round(event.clientX - rect.left); //x position within the element.
-      var y = Math.round(event.clientY - rect.top); //y position within the element.
+    this.querySelector("svg").addEventListener("click", (_event) => {
+      // const rect = event.target.getBoundingClientRect();
+      // const x = Math.round(event.clientX - rect.left); //x position within the element.
+      // const y = Math.round(event.clientY - rect.top); //y position within the element.
     });
 
     this.querySelectorAll("[electrical-type]").forEach((e) =>
