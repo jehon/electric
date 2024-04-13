@@ -49,8 +49,7 @@ node-lint: node-lint-typescript node-lint-eslint
 
 .PHONY: node-lint-typescript
 node-lint-typescript: $(NODE_DEPENDENCY_MARK)
-# node_modules/.bin/tsc --noEmit
-	@true
+	node_modules/.bin/tsc --noEmit
 
 .PHONY: node-lint-eslint
 node-lint-eslint: $(NODE_DEPENDENCY_MARK)
