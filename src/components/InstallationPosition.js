@@ -1,5 +1,5 @@
-import InstallationAbstractSVG from "./InstallationAbstractSVG.js";
 import BuildPosition from "../class/BuildPosition.js";
+import InstallationAbstractSVG from "./InstallationAbstractSVG.js";
 
 export default class InstallationPosition extends InstallationAbstractSVG {
   getBuilderForInstallation() {
@@ -10,7 +10,7 @@ export default class InstallationPosition extends InstallationAbstractSVG {
     return ["value"];
   }
 
-  attributeChangedCallback(attributeName, oldValue, newValue, namespace) {
+  attributeChangedCallback(attributeName, oldValue, newValue) {
     switch (attributeName) {
       case "value":
         this.value = newValue;
@@ -37,7 +37,7 @@ export default class InstallationPosition extends InstallationAbstractSVG {
         "Plan is unknown: ",
         this.value,
         " in ",
-        Object.keys(installation.plans),
+        Object.keys(this.installation.plans),
         " in installation-position.getSVG()"
       );
     }

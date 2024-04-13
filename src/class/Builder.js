@@ -63,12 +63,7 @@ export default class Builder {
     }
 
     // Compose the whole stuff into one and clean it
-    return this.buildAssembly(me, next, alternate)
-      .replaceAll(/\r/g, "")
-      .replaceAll(/\n/g, "")
-      .replaceAll(/\t/g, "")
-      .replaceAll(/> +</g, "><")
-      .trim();
+    return this.buildAssembly(me, next, alternate);
   }
 
   buildSelf() {

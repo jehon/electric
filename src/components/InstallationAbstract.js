@@ -63,7 +63,7 @@ export default class InstallationAbstract extends HTMLElement {
     this.innerHTML = "-full-";
   }
 
-  selectElement(currentElement) {}
+  selectElement(_currentElement) {}
 }
 
 customElements.define("installation-abstract", InstallationAbstract);

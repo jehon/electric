@@ -35,7 +35,7 @@ export default class InstallationNavigation extends InstallationAbstract {
     //     </li>
     // `;
 
-    res += ` 
+    res += `
           </ul>
         `;
 
@@ -44,7 +44,7 @@ export default class InstallationNavigation extends InstallationAbstract {
     // this.querySelector(`#${this.value}`).className += " active";
     this.querySelectorAll("li").forEach((e) => {
       let element = e.getAttribute("element");
-      e.addEventListener("click", (event) => {
+      e.addEventListener("click", () => {
         this.select(element);
       });
     });

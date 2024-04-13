@@ -1,3 +1,5 @@
+import BuildPosition from "../class/BuildPosition.js";
+import BuildSingleElement from "../class/BuildSingleElement.js";
 import DrawReference from "../class/DrawReference";
 
 export default class Legend extends HTMLElement {
@@ -11,7 +13,7 @@ export default class Legend extends HTMLElement {
     return ["value", "options"];
   }
 
-  attributeChangedCallback(attributeName, oldValue, newValue, namespace) {
+  attributeChangedCallback(attributeName, _oldValue, _newValue) {
     switch (attributeName) {
       case "value":
         this.value = this.getAttribute("value");

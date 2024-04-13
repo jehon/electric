@@ -13,7 +13,6 @@ const listMap = Symbol("listMap");
 const listKeys = Symbol("listKeys");
 
 const cnt = Symbol("cnt");
-const firing = Symbol("firing");
 const firingRound = Symbol("firingRound");
 
 export default class StateDispatch {
