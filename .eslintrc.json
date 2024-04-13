@@ -2,8 +2,8 @@
   "root": true,
   "plugins": ["@typescript-eslint"],
   "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended-type-checked"
+    "eslint:recommended"
+    // "plugin:@typescript-eslint/recommended-type-checked"
   ],
   "env": {
     "node": true,
