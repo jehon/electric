@@ -4,6 +4,7 @@ node: clear node-dump node-test node-lint ok
 
 dump: node-dump
 clean: node-clean
+build: node-build
 dependencies: node-dependencies
 test: node-test
 lint: node-lint
@@ -37,7 +38,8 @@ package-lock.json: package.json
 
 node-build: dist/main.js
 
-dist/main.js: $(NODE_ROOT)/** \
+dist/main.js: $(shell find $(NODE_ROOT)) \
+		$(wildcard $(NODE_ROOT)/**/*.js) \
 		node-dependencies
 
 	./node_modules/.bin/webpack
