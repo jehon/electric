@@ -52,14 +52,11 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
 	      </div>
 	    `;
 
-    this.querySelectorAll("svg").forEach((e) =>
-      e.addEventListener("click", (event) => {
-        var rect = event.target.getBoundingClientRect();
-        var x = Math.round(event.clientX - rect.left); //x position within the element.
-        var y = Math.round(event.clientY - rect.top); //y position within the element.
-        console.log({ x, y });
-      })
-    );
+    this.querySelector("svg").addEventListener("click", (event) => {
+      var rect = event.target.getBoundingClientRect();
+      var x = Math.round(event.clientX - rect.left); //x position within the element.
+      var y = Math.round(event.clientY - rect.top); //y position within the element.
+    });
 
     this.querySelectorAll("[electrical-type]").forEach((e) =>
       e.addEventListener("click", (event) => {
@@ -95,7 +92,7 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
     this.render();
   }
 
-  print() {
+  async print() {
     // Default export is a4 paper, portrait, using millimeters for units
     const pdf = new window.jspdf.jsPDF({
       orientation: "landscape",
