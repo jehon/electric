@@ -54,9 +54,9 @@ export default class BuildPosition extends BuildName {
 
     //					<circle cx=0 cy=0 r=2 fill=red />
 
-    return `<g transform='translate(${tp.x}, ${tp.y})'>
-					<g transform='rotate(45)'>
-	                	<text x=2 y="-2">${label}</text>
+    return `<g transform="translate(${tp.x}, ${tp.y})">
+					<g transform="rotate(45)">
+	                	<text x="2" y="-2">${label}</text>
 		            </g>
 		        </g>`;
   }

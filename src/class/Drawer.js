@@ -26,7 +26,7 @@ export class Drawer {
     }
     // this._svg = `<g electrical-type='${this._element.type}' id='${"getId" in this._element ? this._element.getId() : ""}'>${this._svg}</g>`;
     this._svg = `<g electrical-type='${this._element.type}' id='_${"getId" in this._element ? this._element.getId() : ""}'>
-		    		<rect x=0 y="-${this.type.getVal("toTop")}" width=${this.type.getVal("width")} height=${this.type.getVal("height")} fill='white' fill-opacity='0' stroke='none'></rect>
+		    		<rect x="0" y="-${this.type.getVal("toTop")}" width="${this.type.getVal("width")}" height="${this.type.getVal("height")}" fill="white" fill-opacity="0" stroke="none"></rect>
 		    		${this._svg}
 		    	</g>`;
   }

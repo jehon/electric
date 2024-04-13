@@ -47,7 +47,7 @@ export default class InstallationPosition extends InstallationAbstractSVG {
       width: plan.width,
       height: plan.height,
       svg: `
-            <image opacity=0.5 x=0 y=0 width="${plan.width}px" height="${plan.height}px" href=${plan.src} />
+            <image opacity="0.5" x="0" y="0" width="${plan.width}px" height="${plan.height}px" href="${plan.src}" />
             ${this.getCachedBuilder().build("" + this.value)}
       `,
     };

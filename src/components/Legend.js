@@ -44,7 +44,7 @@ export default class Legend extends HTMLElement {
                     <g stroke="red">
                       <line x1=-100 y1=20 x2=100 y2=20 />
                       <line x1=10 y1=-100 x2=10 y2=100 />
-                      <rect x=${X0} y=${Y0 - schema.getVal("toTop")} width=${schema.getVal("width")} height=${schema.getVal("height")} fill="none"/>
+                      <rect x="${X0}" y="${Y0 - schema.getVal("toTop")}" width="${schema.getVal("width")}" height="${schema.getVal("height")}" fill="none"/>
                       <g stroke="black">
                         ${builder.build("legend")}
                       </g>
