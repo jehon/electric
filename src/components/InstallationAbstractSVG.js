@@ -117,18 +117,19 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
     await pdf.addSvgAsImage(
       `<svg
           stroke='black'
-          fill='none'
+          fill='white'
           width='${pdf.internal.pageSize.getWidth() - 2 * pageMargin}'
           height='${pdf.internal.pageSize.getHeight() - 2 * pageMargin}'
-          viewBox='0 0 ${data.width} ${data.width}'
-          preserveAspectRatio="xMinYMin slice"
+          viewBox='0 0 ${data.width} ${data.height}'
         >
           ${this.getStrictSVG()}
       </svg>`,
       pageMargin,
       pageMargin,
       pdf.internal.pageSize.getWidth() - 2 * pageMargin,
-      pdf.internal.pageSize.getHeight() - 2 * pageMargin
+      pdf.internal.pageSize.getHeight() - 2 * pageMargin,
+      this.getTitle(),
+      false
     );
 
     pdf.text(this.getTitle(), pageMargin, pageMargin);
