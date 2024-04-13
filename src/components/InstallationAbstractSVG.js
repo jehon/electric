@@ -53,11 +53,10 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
         <div style='height: 100%; width: 100%'>
 		  	  <h3>${this.getTitle()}</h3>
           <svg
-              preserveAspectRatio="xMinYMin slice"
-              stroke='black'
-              fill='none'
               width='${data.width}'
               height='${data.height}'
+              stroke='black'
+              fill='none'
             >
             ${this.getStrictSVG()}
           </svg>
@@ -105,6 +104,7 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
   }
 
   async print() {
+    const pageMargin = 10;
     const data = this.getSVG();
     const orientationLandscape = data.width > data.height;
 
@@ -113,16 +113,15 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
       orientation: orientationLandscape ? "landscape" : "portrait"
     });
 
-    const pageMargin = 10;
-
     // eslint-disable-next-line @typescript-eslint/await-thenable
     await pdf.addSvgAsImage(
       `<svg
-          preserveAspectRatio="xMinYMin slice"
           stroke='black'
           fill='none'
-          width='${data.width}'
-          height='${data.height}'
+          width='${pdf.internal.pageSize.getWidth() - 2 * pageMargin}'
+          height='${pdf.internal.pageSize.getHeight() - 2 * pageMargin}'
+          viewBox='0 0 ${data.width} ${data.width}'
+          preserveAspectRatio="xMinYMin slice"
         >
           ${this.getStrictSVG()}
       </svg>`,
