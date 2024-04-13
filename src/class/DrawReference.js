@@ -33,7 +33,7 @@ const List = {
           : "") +
         (options.variator ? "M15,-6 l0,12 l4,0 l-4,-12 " : "") +
         '" fill="none" />' +
-        '<circle cx="10" cy="0" r="3" fill="white" fill="none" />' +
+        '<circle cx="10" cy="0" r="3" fill="white" />' +
         (options.light
           ? '<path d="M10,0 l2,2 M10,0 l2,-2 M10,0 l-2,2 M10,0 l-2,-2" fill="none" />'
           : "")
@@ -50,7 +50,7 @@ const List = {
       return (
         "" +
         '<path d="M0,0 L10,0" fill="none" />' +
-        '<circle cx="10" cy="0" r="3" fill="white" fill="none" />' +
+        '<circle cx="10" cy="0" r="3" fill="white" />' +
         (options.light
           ? '<path d="M10,0 l2,2 M10,0 l2,-2 M10,0 l-2,2 M10,0 l-2,-2" fill="none" />'
           : "")
