@@ -1,3 +1,6 @@
+import { installationDispatcher } from "../helpers/start.js";
+import BuildSingleElement from "./BuildSingleElement.js";
+
 class IdFinderBuilder extends BuildSingleElement {
   build(params = {}) {
     this.uuid = params.uuid;
