@@ -29,6 +29,21 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
     return { svg: "", width: 10, height: 10 };
   }
 
+  getSVGTag() {
+    let res = this.getSVG();
+
+    return `<svg 
+        preserveAspectRatio="xMinYMin slice" 
+        stroke='black'
+        fill='none'
+        width='${res.width}'
+        height='${res.height}'
+      >
+        ${res.svg}
+      </svg>
+    `;
+  }
+
   getTitle() {
     return "Schéma";
   }
@@ -36,22 +51,12 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
   render() {
     this.getCachedBuilder().build();
 
-    let res = this.getSVG();
-
     this.innerHTML = `
         <button id="print">print</button>
         <div style='height: 100%; width: 100%'>
 		  	  <h3>${this.getTitle()}</h3>
-	        <svg 
-            preserveAspectRatio="xMinYMin slice" 
-            stroke='black'
-            fill='none'
-            width=${res.width}
-            height=${res.height}
-          >
-	          ${res.svg}
-	        </svg>
-	      </div>
+          ${this.getSVGTag()}
+          </div>
 	    `;
 
     this.querySelector("svg").addEventListener("click", (event) => {
