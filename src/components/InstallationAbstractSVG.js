@@ -1,4 +1,5 @@
 import jsPDF from "jspdf";
+import BuildName from "../class/BuildName.js";
 import InstallationAbstract from "./InstallationAbstract.js";
 
 export default class InstallationAbstractSVG extends InstallationAbstract {
@@ -100,44 +101,32 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
     });
   }
 
-  redrawElement(i) {
+  redrawElement(_i) {
     // replacedNode = parentNode.replaceChild(newChild, oldChild);
     this.render();
   }
 
   async print() {
-    // https://github.com/parallax/jsPDF/blob/master/examples/canvg_context2d/bar_graph_with_text_and_lines.html
-    // var c = pdf.canvas;
-    // c.width = 1000;
-    // c.height = 500;
-
-    // var ctx = c.getContext("2d");
-    // ctx.ignoreClearRect = true;
-    // ctx.fillStyle = "#ffff00";
-    // ctx.fillRect(0, 0, 1000, 700);
-
-    // //load a svg snippet in the canvas with id = 'drawingArea'
-    // const v = await Canvg.Canvg.from(
-    //   ctx,
-    //   document.querySelector("svg").outerHTML
-    //   // Canvg.presets.offscreen()
-    // );
-    // await v.render();
-
-    // var canvas = document.createElement("canvas");
-    // // const c = new Canvg.Canvg(canvas, svg);
-    // var imgData = canvas.toDataURL("image/png");
-    // console.log(imgData);
-    // pdf.addImage(imgData, "PNG", 40, 40, 750, 750);
+    const data = this.getSVG();
+    const orientationLandscape = data.width > data.height;
 
     // Default export is a4 paper, portrait, using millimeters for units
     const pdf = new jsPDF({
-      orientation: "landscape"
+      orientation: orientationLandscape ? "landscape" : "portrait"
     });
 
-    pdf.text(this.getTitle(), 10, 10);
+    const pageMargin = 10;
 
-    await pdf.addSvgAsImage(this.getSVGTag(), 20, 20, 100, 100);
+    // eslint-disable-next-line @typescript-eslint/await-thenable
+    await pdf.addSvgAsImage(
+      this.getSVGTag(),
+      pageMargin,
+      pageMargin,
+      pdf.internal.pageSize.getWidth() - 2 * pageMargin,
+      pdf.internal.pageSize.getHeight() - 2 * pageMargin
+    );
+
+    pdf.text(this.getTitle(), pageMargin, pageMargin);
 
     // Open a save-as window
     pdf.save(this.getTitle() + ".pdf");
