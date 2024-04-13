@@ -1,7 +1,9 @@
 import jsPDF from "jspdf";
+import "svg2pdf.js";
 import BuildName from "../class/BuildName.js";
 import findByUUID from "../class/findByUUID.js";
 import { currentElementDispatcher } from "../helpers/start.js";
+import string2element from "../helpers/string2element.ts";
 import InstallationAbstract from "./InstallationAbstract.js";
 
 export default class InstallationAbstractSVG extends InstallationAbstract {
@@ -115,24 +117,43 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
       orientation: orientationLandscape ? "landscape" : "portrait"
     });
 
-    // eslint-disable-next-line @typescript-eslint/await-thenable
-    await pdf.addSvgAsImage(
+    // // eslint-disable-next-line @typescript-eslint/await-thenable
+    // await pdf.addSvgAsImage(
+    //   `<svg
+    //       stroke='black'
+    //       fill='white'
+    //       width='${pdf.internal.pageSize.getWidth() - 2 * pageMargin}'
+    //       height='${pdf.internal.pageSize.getHeight() - 2 * pageMargin}'
+    //       viewBox='0 0 ${data.width} ${data.height}'
+    //     >
+    //       ${this.getStrictSVG()}
+    //   </svg>`,
+    //   pageMargin,
+    //   pageMargin,
+    //   pdf.internal.pageSize.getWidth() - 2 * pageMargin,
+    //   pdf.internal.pageSize.getHeight() - 2 * pageMargin,
+    //   this.getTitle(),
+    //   false
+    // );
+
+    const svgElem = string2element(
       `<svg
-          stroke='black'
-          fill='white'
-          width='${pdf.internal.pageSize.getWidth() - 2 * pageMargin}'
-          height='${pdf.internal.pageSize.getHeight() - 2 * pageMargin}'
-          viewBox='0 0 ${data.width} ${data.height}'
-        >
-          ${this.getStrictSVG()}
-      </svg>`,
-      pageMargin,
-      pageMargin,
-      pdf.internal.pageSize.getWidth() - 2 * pageMargin,
-      pdf.internal.pageSize.getHeight() - 2 * pageMargin,
-      this.getTitle(),
-      false
+            stroke='black'
+            fill='white'
+            width='${pdf.internal.pageSize.getWidth() - 2 * pageMargin}'
+            height='${pdf.internal.pageSize.getHeight() - 2 * pageMargin}'
+            viewBox='0 0 ${data.width} ${data.height}'
+          >
+        ${this.getStrictSVG()}
+      </svg>`
     );
+
+    await pdf.svg(svgElem, {
+      x: 0,
+      y: 0,
+      width: pdf.internal.pageSize.width,
+      height: pdf.internal.pageSize.height
+    });
 
     pdf.text(this.getTitle(), pageMargin, pageMargin);
 
