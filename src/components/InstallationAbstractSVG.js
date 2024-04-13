@@ -29,26 +29,15 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
     return { svg: "", width: 10, height: 10 };
   }
 
-  getSVGTag() {
+  getStrictSVG() {
     let res = this.getSVG();
 
-    const strictSVG = res.svg
+    return res.svg
       .replaceAll(/\r/g, "")
       .replaceAll(/\n/g, "")
       .replaceAll(/\t/g, "")
       .replaceAll(/> +</g, "><")
       .trim();
-
-    return `<svg
-        preserveAspectRatio="xMinYMin slice"
-        stroke='black'
-        fill='none'
-        width='${res.width}'
-        height='${res.height}'
-      >
-        ${strictSVG}
-      </svg>
-    `;
   }
 
   getTitle() {
@@ -57,12 +46,21 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
 
   render() {
     this.getCachedBuilder().build();
+    const data = this.getSVG();
 
     this.innerHTML = `
         <button id="print">print</button>
         <div style='height: 100%; width: 100%'>
 		  	  <h3>${this.getTitle()}</h3>
-          ${this.getSVGTag()}
+          <svg
+              preserveAspectRatio="xMinYMin slice"
+              stroke='black'
+              fill='none'
+              width='${data.width}'
+              height='${data.height}'
+            >
+            ${this.getStrictSVG()}
+          </svg>
           </div>
 	    `;
 
@@ -119,7 +117,15 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
 
     // eslint-disable-next-line @typescript-eslint/await-thenable
     await pdf.addSvgAsImage(
-      this.getSVGTag(),
+      `<svg
+          preserveAspectRatio="xMinYMin slice"
+          stroke='black'
+          fill='none'
+          width='${data.width}'
+          height='${data.height}'
+        >
+          ${this.getStrictSVG()}
+      </svg>`,
       pageMargin,
       pageMargin,
       pdf.internal.pageSize.getWidth() - 2 * pageMargin,
