@@ -1,4 +1,6 @@
+import jsPDF from "jspdf";
 import InstallationAbstract from "./InstallationAbstract.js";
+import * as Canvg from "canvg";
 
 export default class InstallationAbstractSVG extends InstallationAbstract {
   constructor() {
@@ -94,11 +96,30 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
 
   async print() {
     // Default export is a4 paper, portrait, using millimeters for units
-    const pdf = new window.jspdf.jsPDF({
+    const pdf = new jsPDF({
       orientation: "landscape",
     });
 
     pdf.text(this.getTitle(), 10, 10);
+
+    // https://github.com/parallax/jsPDF/blob/master/examples/canvg_context2d/bar_graph_with_text_and_lines.html
+    var c = pdf.canvas;
+    c.width = 1000;
+    c.height = 500;
+
+    var ctx = c.getContext("2d");
+    ctx.ignoreClearRect = true;
+    ctx.fillStyle = "#fffff0";
+    ctx.fillRect(0, 0, 1000, 700);
+
+    //load a svg snippet in the canvas with id = 'drawingArea'
+    const v = await Canvg.Canvg.from(
+      ctx,
+      document.querySelector("svg").outerHTML,
+      Canvg.presets.offscreen()
+    );
+    await v.render();
+
     // Open a save-as window
     pdf.save(this.getTitle() + ".pdf");
   }

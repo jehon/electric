@@ -5,6 +5,7 @@
   "description": "Electric mapping",
   "repository": "https://github.com/jehon/electric",
   "license": "MIT",
+  "type": "module",
   "devDependencies": {
     "@types/node": "20.11.17",
     "@typescript-eslint/eslint-plugin": "6.21.0",
@@ -14,9 +15,15 @@
     "glob": "latest",
     "prettier": "3.2.5",
     "ts-loader": "9.5.1",
-    "typescript": "5.3.2"
+    "typescript": "5.3.2",
+    "webpack-cli": "5.1.4"
   },
   "scripts": {
-    "start": "open src/index.html"
+    "start": "open index.html",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "canvg": "3.0.6",
+    "jspdf": "2.5.1"
   }
 }

@@ -1,8 +1,50 @@
+<!doctype html>
 <html>
-<head>
-    <meta http-equiv="refresh" content="0; URL=/src/index.html" />
-</head>
-<body>
-    Redirecting...
-</body>
+  <head>
+    <title>Your electric installation</title>
+    <meta name="description" content="charset:utf-8" />
+
+    <!-- Required meta tags for bootstrap -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- - - - - - - - - - - - - -->
+    <!-- CSS - globals           -->
+    <!-- - - - - - - - - - - - - -->
+    <!-- https://fonts.google.com/selection/embed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- - - - - - - - - - - - - -->
+    <!-- CSS - custom            -->
+    <!-- - - - - - - - - - - - - -->
+    <link rel="stylesheet" type="text/css" href="src/css/application.css" />
+    <link rel="stylesheet" type="text/css" href="src/css/print.css" />
+
+    <!-- - - - - - - - - - - - - -->
+    <!-- JS - globals            -->
+    <!-- - - - - - - - - - - - - -->
+
+    <!-- See https://raw.githack.com/MrRio/jsPDF/master/docs/index.html -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="../node_modules/canvg/lib/index.js"></script> -->
+
+    <!-- - - - - - - - - - - - - -->
+    <!-- JS - custom             -->
+    <!-- - - - - - - - - - - - - -->
+    <script type="module" src="dist/main.js"></script>
+  </head>
+  <body>
+    <installation-navigation></installation-navigation>
+
+    <div id="tab_target" style="width: min-content"></div>
+    <element-editor id="editor">Here we have the editor</element-editor>
+  </body>
 </html>
