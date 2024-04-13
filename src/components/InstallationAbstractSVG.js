@@ -1,6 +1,5 @@
 import jsPDF from "jspdf";
 import InstallationAbstract from "./InstallationAbstract.js";
-import * as Canvg from "canvg";
 
 export default class InstallationAbstractSVG extends InstallationAbstract {
   constructor() {
@@ -32,21 +31,21 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
   getSVGTag() {
     let res = this.getSVG();
 
-    const svg = res.svg
+    const strictSVG = res.svg
       .replaceAll(/\r/g, "")
       .replaceAll(/\n/g, "")
       .replaceAll(/\t/g, "")
       .replaceAll(/> +</g, "><")
       .trim();
 
-    return `<svg 
-        preserveAspectRatio="xMinYMin slice" 
+    return `<svg
+        preserveAspectRatio="xMinYMin slice"
         stroke='black'
         fill='none'
         width='${res.width}'
         height='${res.height}'
       >
-        ${res.svg}
+        ${strictSVG}
       </svg>
     `;
   }
