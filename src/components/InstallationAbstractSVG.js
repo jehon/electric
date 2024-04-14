@@ -6,6 +6,10 @@ import { currentElementDispatcher } from "../helpers/start.js";
 import string2element from "../helpers/string2element.ts";
 import InstallationAbstract from "./InstallationAbstract.js";
 
+// Custom fonts
+// TTF -> JS: https://rawgit.com/MrRio/jsPDF/master/fontconverter/fontconverter.html
+import "../css/OpenSans-normal.js";
+
 export default class InstallationAbstractSVG extends InstallationAbstract {
   constructor() {
     super();
@@ -117,32 +121,17 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
       orientation: orientationLandscape ? "landscape" : "portrait"
     });
 
-    // // eslint-disable-next-line @typescript-eslint/await-thenable
-    // await pdf.addSvgAsImage(
-    //   `<svg
-    //       stroke='black'
-    //       fill='white'
-    //       width='${pdf.internal.pageSize.getWidth() - 2 * pageMargin}'
-    //       height='${pdf.internal.pageSize.getHeight() - 2 * pageMargin}'
-    //       viewBox='0 0 ${data.width} ${data.height}'
-    //     >
-    //       ${this.getStrictSVG()}
-    //   </svg>`,
-    //   pageMargin,
-    //   pageMargin,
-    //   pdf.internal.pageSize.getWidth() - 2 * pageMargin,
-    //   pdf.internal.pageSize.getHeight() - 2 * pageMargin,
-    //   this.getTitle(),
-    //   false
-    // );
+    pdf.setFont("Open Sans");
 
     const svgElem = string2element(
       `<svg
-            stroke='black'
-            fill='white'
-            width='${pdf.internal.pageSize.getWidth() - 2 * pageMargin}'
-            height='${pdf.internal.pageSize.getHeight() - 2 * pageMargin}'
-            viewBox='0 0 ${data.width} ${data.height}'
+            stroke="black"
+            fill="white"
+            width="${pdf.internal.pageSize.getWidth() - 2 * pageMargin}"
+            height="${pdf.internal.pageSize.getHeight() - 2 * pageMargin}"
+            viewBox="0 0 ${data.width} ${data.height}"
+            font="Open Sans"
+            font-size="10"
           >
         ${this.getStrictSVG()}
       </svg>`
@@ -155,6 +144,12 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
       height: pdf.internal.pageSize.height
     });
 
+    pdf.setFont("Open Sans");
+    pdf.setFontSize(16);
+    pdf.text("blablabla", pageMargin, 30);
+
+    pdf.setFont("Times");
+    pdf.setFontSize(16);
     pdf.text(this.getTitle(), pageMargin, pageMargin);
 
     // Open a save-as window
