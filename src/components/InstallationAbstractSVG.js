@@ -121,6 +121,30 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
       orientation: orientationLandscape ? "landscape" : "portrait"
     });
 
+    // See https://rawgit.com/MrRio/jsPDF/master/fontconverter/fontconverter.html
+    // "https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWtE6F15M.woff2";
+
+    // const font = "/src/css/OpenSans.ttf";
+
+    // const fontStringBase64 = (
+    //   await fetch(font)
+    //     .then((res) => res.blob())
+    //     .then(
+    //       (blob) =>
+    //         new Promise((resolve, _) => {
+    //           const reader = new FileReader();
+    //           reader.onloadend = () => resolve(reader.result);
+    //           reader.readAsDataURL(blob);
+    //         })
+    //     )
+    // ).replace("data:font/ttf;base64,", "");
+
+    // console.log(fontStringBase64);
+
+    // pdf.addFileToVFS("OpenSans.ttf", fontStringBase64);
+    // pdf.addFont("OpenSans.ttf", "Open Sans", "normal");
+    // pdf.setFont("Open Sans");
+
     pdf.setFont("Open Sans");
 
     const svgElem = string2element(
@@ -131,7 +155,7 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
             height="${pdf.internal.pageSize.getHeight() - 2 * pageMargin}"
             viewBox="0 0 ${data.width} ${data.height}"
             font="Open Sans"
-            font-size="10"
+            font-size="14"
           >
         ${this.getStrictSVG()}
       </svg>`
@@ -143,10 +167,6 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
       width: pdf.internal.pageSize.width,
       height: pdf.internal.pageSize.height
     });
-
-    pdf.setFont("Open Sans");
-    pdf.setFontSize(16);
-    pdf.text("blablabla", pageMargin, 30);
 
     pdf.setFont("Times");
     pdf.setFontSize(16);
