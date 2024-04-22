@@ -54,12 +54,12 @@ export default class BuildFiliaire extends BuildName {
       if (i > 0) {
         // If we are not the first element
         // - Horizontal line to the previous line (== "NEXT/ALTERNATE" LINE)
-        _svg += `<line x1=${-previousLineY} x2=0 y1=0 y2=0 />`;
+        _svg += `<line x1="${-previousLineY}" x2="0" y1="0" y2="0" />`;
       }
       // In this block, we are suppose to be at the correct level to draw an element
 
       // Vertical line to the top of the line element
-      _svg += `<line x1=0 x2=0 y1=${+this._currentElement.getVal("toTop")} y2=0 />`;
+      _svg += `<line x1="0" x2="0" y1="${+this._currentElement.getVal("toTop")}" y2="0" />`;
 
       // The element himself, with enough space on top
       _svg += `${e.svg}`;
@@ -76,15 +76,15 @@ export default class BuildFiliaire extends BuildName {
 
     if (next != null && next.length > 0) {
       // Vertical line from the "next" line to the center of self
-      _svg += `<line x1=0 x2=0 y1=${self.height / 2} y2=${deltay} />`;
+      _svg += `<line x1="0" x2="0" y1="${self.height / 2}" y2="${deltay}" />`;
 
       next.forEach((e, i) => drawOneLine(e, i, deltay));
     }
 
     if (alternate != null && alternate.length > 0) {
       // 	horizontal and vertical line to connect to the self
-      _svg += `<line x1=${self.width} x2=${currentBlockWidth} y1=${self.height / 2} y2=${self.height / 2} />`;
-      _svg += `<line x1=${currentBlockWidth} x2=${currentBlockWidth} y1=${self.height / 2} y2=${deltay} />`;
+      _svg += `<line x1="${self.width}" x2="${currentBlockWidth}" y1="${self.height / 2}" y2="${self.height / 2}" />`;
+      _svg += `<line x1="${currentBlockWidth}" x2="${currentBlockWidth}" y1="${self.height / 2}" y2="${deltay}" />`;
 
       alternate.forEach((e, i) => drawOneLine(e, i, deltay));
     }
