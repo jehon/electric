@@ -50,6 +50,21 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
     return "Schéma";
   }
 
+  getIntroduction() {
+    return `<style>
+        @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i");
+        text {
+          fill: black;
+          stroke: black;
+          font: 8px Open Sans;
+        }
+      </style>`;
+  }
+
+  getConclusion() {
+    return `<text x="0" y="20" style="font-size: 20px">${this.getTitle()}</text>`;
+  }
+
   async render() {
     this.getCachedBuilder().build();
     const data = await this.getSVG();
@@ -64,8 +79,8 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
               height='${data.height}'
               stroke='black'
               fill='none'
-            >
-            ${this.getStrictSVG(data.svg)}
+           >
+            ${this.getStrictSVG(this.getIntroduction() + data.svg + this.getConclusion())}
           </svg>
           </div>
 	    `;
@@ -152,15 +167,13 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
 
     const svgElem = string2element(
       `<svg
-            stroke="black"
-            fill="white"
-            width="${pdf.internal.pageSize.getWidth() - 2 * pageMargin}"
-            height="${pdf.internal.pageSize.getHeight() - 2 * pageMargin}"
-            viewBox="0 0 ${data.width} ${data.height}"
-            font="Open Sans"
-            font-size="14"
+          stroke="black"
+          fill="white"
+          width="${pdf.internal.pageSize.getWidth() - 2 * pageMargin}"
+          height="${pdf.internal.pageSize.getHeight() - 2 * pageMargin}"
+          viewBox="0 0 ${data.width} ${data.height}"
           >
-        ${this.getStrictSVG(data.svg)}
+          ${this.getStrictSVG(this.getIntroduction() + data.svg + this.getConclusion())}
       </svg>`
     );
 
@@ -186,13 +199,8 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
             fill="white"
             width="${data.width}"
             height="${data.height}"
-            font="Open Sans"
-            font-size="8"
           >
-          <style>
-          @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i");
-          </style>
-        ${this.getStrictSVG(data.svg)}
+        ${this.getStrictSVG(this.getIntroduction() + data.svg + this.getConclusion())}
       </svg>`;
 
     const element = document.createElement("a");
