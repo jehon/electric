@@ -1,5 +1,5 @@
-import InstallationAbstractSVG from "./InstallationAbstractSVG.js";
 import BuildFiliaire from "../class/BuildFiliaire.js";
+import InstallationAbstractSVG from "./InstallationAbstractSVG.js";
 
 export default class InstallationFiliaire extends InstallationAbstractSVG {
   constructor() {
@@ -11,8 +11,8 @@ export default class InstallationFiliaire extends InstallationAbstractSVG {
     return new BuildFiliaire(this.installation.schema);
   }
 
-  getSVG() {
-    return this.getBuilderForInstallation(this.installation).build();
+  async getSVG() {
+    return await this.getBuilderForInstallation(this.installation).build();
   }
 
   getTitle() {

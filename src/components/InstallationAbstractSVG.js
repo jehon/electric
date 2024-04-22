@@ -37,10 +37,8 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
     return { svg: "", width: 10, height: 10 };
   }
 
-  getStrictSVG() {
-    let res = this.getSVG();
-
-    return res.svg
+  getStrictSVG(svg) {
+    return svg
       .replaceAll(/\r/g, "")
       .replaceAll(/\n/g, "")
       .replaceAll(/\t/g, "")
@@ -52,12 +50,13 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
     return "Schéma";
   }
 
-  render() {
+  async render() {
     this.getCachedBuilder().build();
-    const data = this.getSVG();
+    const data = await this.getSVG();
 
     this.innerHTML = `
         <button id="print">print</button>
+        <button id="download">download</button>
         <div style='height: 100%; width: 100%'>
 		  	  <h3>${this.getTitle()}</h3>
           <svg
@@ -66,7 +65,7 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
               stroke='black'
               fill='none'
             >
-            ${this.getStrictSVG()}
+            ${this.getStrictSVG(data.svg)}
           </svg>
           </div>
 	    `;
@@ -87,6 +86,10 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
 
     this.querySelector("#print").addEventListener("click", () => {
       this.print();
+    });
+
+    this.querySelector("#download").addEventListener("click", () => {
+      this.download();
     });
 
     this.selectElement();
@@ -113,7 +116,7 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
 
   async print() {
     const pageMargin = 10;
-    const data = this.getSVG();
+    const data = await this.getSVG();
     const orientationLandscape = data.width > data.height;
 
     // Default export is a4 paper, portrait, using millimeters for units
@@ -157,7 +160,7 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
             font="Open Sans"
             font-size="14"
           >
-        ${this.getStrictSVG()}
+        ${this.getStrictSVG(data.svg)}
       </svg>`
     );
 
@@ -174,6 +177,35 @@ export default class InstallationAbstractSVG extends InstallationAbstract {
 
     // Open a save-as window
     pdf.save(this.getTitle() + ".pdf");
+  }
+
+  async download() {
+    const data = await this.getSVG(true);
+    const svgElem = `<svg
+            stroke="black"
+            fill="white"
+            width="${data.width}"
+            height="${data.height}"
+            font="Open Sans"
+            font-size="8"
+          >
+          <style>
+          @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i");
+          </style>
+        ${this.getStrictSVG(data.svg)}
+      </svg>`;
+
+    const element = document.createElement("a");
+    element.setAttribute(
+      "href",
+      "data:text/plain;charset=utf-8," + encodeURIComponent(svgElem)
+    );
+    element.setAttribute("download", this.getTitle() + ".svg");
+
+    element.style.display = "none";
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
   }
 }
 
