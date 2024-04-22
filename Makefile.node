@@ -5,6 +5,7 @@ node: clear node-dump node-test node-lint ok
 dump: node-dump
 clean: node-clean
 build: node-build
+dev: node-dev
 dependencies: node-dependencies
 test: node-test
 lint: node-lint
@@ -43,6 +44,13 @@ dist/main.js: $(shell find $(NODE_ROOT)) \
 		node-dependencies
 
 	./node_modules/.bin/webpack
+
+.PHONY: node-dev
+node-dev: $(shell find $(NODE_ROOT)) \
+		$(wildcard $(NODE_ROOT)/**/*.js) \
+		node-dependencies
+
+	./node_modules/.bin/webpack --watch
 
 .PHONY: node-lint
 node-lint: node-lint-typescript node-lint-eslint
